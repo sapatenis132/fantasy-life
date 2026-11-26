@@ -2,7 +2,7 @@
 
 26/11/2026 · Versão 0.4.0. Arquitetura de escolhas implementada sobre o laboratório anterior.
 
-Para experimentar, abra **`etapa_1_3/Fantasy_Life_Laboratorio_1_3.html`** em um navegador com JavaScript. Ele contém uma amostra fixa aos 16 anos, com iniciativas, escolhas, rotinas, diário e save/exportação. Testes visuais e Android ainda estão pendentes; confira o relatório antes de assumir suporte verificado.
+Para experimentar, abra **`etapa_1_3/Fantasy_Life_Laboratorio_1_3.html`** em um navegador com JavaScript. Ele contém uma amostra fixa aos 16 anos, com iniciativas, escolhas, rotinas, diário e save/exportação. A amostra também está online em https://sapatenis132.github.io/fantasy-life/. Um fluxo básico foi confirmado no Chrome remoto; testes de viewports, toque e Android ainda estão pendentes.
 
 ## Ordem de leitura
 

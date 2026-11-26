@@ -83,3 +83,7 @@ A meta de cinquenta horas orienta o design e ainda não foi demonstrada. A amost
 Há fundamentos reutilizáveis para ampliar variedade, mas não prova de balanceamento ou de ausência de estratégia dominante. O save fixa o catálogo completo e o histórico cresce; compactação e migração entre conteúdos precisam de trabalho posterior.
 
 O próximo bloco funcional é **1.4 — estrutura de personagens**, com identidade compartilhada jogador/NPC, progressão multidimensional e ligação dinâmica de participantes. A validação visual pode ser concluída em paralelo à revisão dessa base, preservando a HUD simples. O primeiro protótipo integral de vida permanece na etapa 1.6.
+
+## Atualização de publicação — 26/11/2026
+
+O repositório separado `sapatenis132/fantasy-life` foi criado e o jogo está disponível em https://sapatenis132.github.io/fantasy-life/. A execução inicial do Pages concluiu com sucesso. Um fluxo básico foi confirmado no Chrome remoto, incluindo renderização, escolha com duração, decisão que interrompe o salto, recuperação da decisão após reload e retorno às iniciativas. Essa verificação manual não substitui a bateria de viewports ou Android físico e não altera a contagem dos 67 testes automatizados. Evidências textuais em `../evidencias/VALIDACAO_PUBLICACAO.md`.

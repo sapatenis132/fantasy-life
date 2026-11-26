@@ -13,7 +13,7 @@ Há contrato versionado, condições, participantes, efeitos permitidos, resulta
 1. Ler `DOCUMENTO_MESTRE.md`, este plano, `etapa_1_3/README.md` e `docs/ARQUITETURA_ESCOLHAS.md`.
 2. Executar, da pasta principal: `node etapa_1_3/scripts/verificar.mjs`.
 3. Conferir os quatro percursos e estados em `etapa_1_3/evidencias/`.
-4. Abrir o HTML e completar a validação visual/toque/save/exportação em navegador e Android. Os testes de integração do HTML usam VM e DOM mínimo; não verificam layout. `tests/navegador.mjs` contém os cenários preparados, mas sua execução ficou bloqueada por falta de Chromium local utilizável. Não declarar esses testes como aprovados.
+4. O fluxo básico online foi confirmado no Chrome remoto; veja `etapa_1_3/evidencias/VALIDACAO_PUBLICACAO.md`. Completar a validação de viewports, toque, exportação/importação real e Android. Os testes automatizados de integração do HTML usam VM e DOM mínimo; não verificam layout. `tests/navegador.mjs` contém os cenários preparados, mas sua execução ficou bloqueada por falta de Chromium local utilizável. Não declarar esses testes como aprovados.
 5. Preservar o histórico antes de mexer nos contratos; não reiniciar o motor nem publicar no repositório do RPG isométrico.
 
 ## Próxima etapa funcional: 1.4 — estrutura de personagens

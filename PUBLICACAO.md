@@ -2,11 +2,15 @@
 
 Destino autorizado pelo usuário em 26/11/2026: repositório separado **sapatenis132/fantasy-life**, com GitHub Pages para testes pelo celular.
 
-## Estado desta preparação
+## Publicação confirmada
 
-Repositório público criado: [sapatenis132/fantasy-life](https://github.com/sapatenis132/fantasy-life). Arquivos e testes preparados. A ativação do GitHub Pages é a etapa final; o endereço online será registrado após confirmar a publicação.
+Repositório público: [sapatenis132/fantasy-life](https://github.com/sapatenis132/fantasy-life).
 
-## Configuração prevista
+**Jogo: https://sapatenis132.github.io/fantasy-life/**
+
+Primeira publicação concluída em 26/11/2026: [execução do GitHub Pages](https://github.com/sapatenis132/fantasy-life/actions/runs/45891525212), commit `6af6392c53c445189bd9e6087a16037ca426af26`. O fluxo básico foi testado no Chrome remoto: escolha, interrupção do avanço, save/reload, adiamento e retorno às iniciativas. Veja `etapa_1_3/evidencias/VALIDACAO_PUBLICACAO.md`.
+
+## Configuração ativa
 
 - Repositório público próprio do Fantasy Life.
 - Código-fonte completo e documentos preservados.

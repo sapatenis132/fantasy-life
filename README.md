@@ -6,7 +6,9 @@ Estado atual: **etapa 1.3 — arquitetura de escolhas**, versão 0.4.0. A amostr
 
 ## Testar
 
-A amostra para o GitHub Pages está em `docs/index.html`. Abra o endereço do Pages quando a publicação estiver ativada. O mesmo arquivo funciona como HTML autocontido, em um navegador com JavaScript. Não exige servidor de jogo ou API externa.
+**[Abrir Fantasy Life no navegador](https://sapatenis132.github.io/fantasy-life/)**
+
+A amostra está publicada no GitHub Pages a partir de `docs/index.html`. O mesmo arquivo funciona como HTML autocontido, em um navegador com JavaScript. Não exige servidor de jogo ou API externa.
 
 O jogo tenta salvar no próprio navegador. A seção de arquivos permite exportar/importar a vida. O save do endereço online é separado do save de um arquivo baixado; use a exportação/importação para transferir progresso.
 

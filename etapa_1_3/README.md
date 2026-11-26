@@ -4,6 +4,10 @@ Arquitetura de escolhas e agência, continuando o motor 1.2. Versão do trabalho
 
 ## Experimentar
 
+**Online: https://sapatenis132.github.io/fantasy-life/**
+
+Após a etapa 1.3, um fluxo básico foi confirmado no Chrome remoto: escolhas, pausa e recuperação do save. Os testes automatizados de múltiplos viewports e o Android físico continuam pendentes.
+
 Abra `Fantasy_Life_Laboratorio_1_3.html` em um navegador com JavaScript habilitado. O arquivo inclui motor, conteúdo e interface; não precisa de instalação, servidor ou conexão para executar a lógica. O suporte real de abertura de arquivos e armazenamento no Android ainda precisa ser verificado.
 
 A amostra começa aos 16 anos em uma vila fixa, com 12 moedas e um livro encontrado. Abra **Atividades e iniciativas** e escolha o que fazer. **Envelhecer** avança um ano e para diante de decisões. Após responder, escolha **Retomar avanço** ou **Encerrar avanço**. Compromissos progridem automaticamente. Consulte habilidades e posses quando precisar.
