@@ -1,5 +1,5 @@
 Fantasy Life — verificação da etapa 1.3
-Data: 2026-11-26T20:13:26.267Z
+Data: 2026-11-26T21:00:40.688Z
 Node: v24.22.3
 
 == Base original (14 testes históricos) ==
@@ -43,68 +43,72 @@ OK — 500 trajetórias de laboratório sem inconsistência
 == Empacotamento do HTML ==
 Gerado: Fantasy_Life_Laboratorio_1_3.html (sem dependências externas).
 
-== Agência e integração HTML (47 + 6 testes) ==
-✔ catálogo possui 12 decisões, 34 opções e operações declarativas (4.204425ms)
-✔ iniciativa não depende de evento sorteado (4.26864ms)
-✔ trabalho e estudo combinam rotinas sem agenda de horas (4.422919ms)
-✔ examinar antes de vender conserva conhecimento e notas (3.102158ms)
-✔ vender primeiro fecha o estudo do livro, mas abre contato depois (1.959671ms)
-✔ conhecimento do mentor não é conhecimento do jogador nem da irmã (2.016735ms)
-✔ recusa de aprendizagem não inicia profissão nem elimina iniciativa (2.7737ms)
-✔ requisito de recursos tem motivo público e bloqueio atômico (2.008263ms)
-✔ efeito que falha reverte dinheiro, diário, IDs e PRNG (0.522265ms)
-✔ decisão pendente bloqueia envelhecer e nova iniciativa (2.411031ms)
-✔ token da decisão impede clique duplo e decisão errada (2.210964ms)
-✔ opções com projeto incompatível são bloqueadas sem gastar (2.418643ms)
-✔ pagar, reparar e recusar mudam recursos, habilidade e moradia (5.141187ms)
-✔ adiar volta em dez dias e sobrevive ao save (1.755037ms)
-✔ consequência tardia ocorre uma vez após carregar (2.111606ms)
-✔ morte no mesmo dia invalida convite antes de apresentá-lo (1.149808ms)
-✔ mudança de local invalida consequência presencial (1.288294ms)
-✔ morte durante consulta preserva custo e tempo, sem resultado impossível (1.129988ms)
-✔ atividade deixa de produzir depois da morte do mentor (1.164299ms)
-✔ ação de sete dias é interrompida no segundo dia sem recompensa antecipada (0.451751ms)
-✔ reação demorada pausa a ação anterior e conta seu próprio tempo (0.256892ms)
-✔ resposta com duração não retoma automaticamente o resto do ano (0.315599ms)
-✔ ação interrompida pode ser abandonada sem reembolso ou recompensa (0.263251ms)
-✔ morte do jogador durante ação não concede recompensa posterior (0.198515ms)
-✔ consultas de UI não sorteiam nem registram exposição (1.830619ms)
-✔ marcos semanais têm o mesmo resultado em salto e cliques diários (45.569367ms)
-✔ salvar e retomar repetidamente não duplica a seleção do marco (5.832583ms)
-✔ consequência privada não vaza no diário público ou na visão (1.078071ms)
-✔ projeto próprio exige combinação de conhecimentos e conserva notas vendidas (2.466463ms)
-✔ estudo sem dinheiro é interrompido, sem renda ou dívida fantasma (1.150308ms)
-✔ cancelar estudo preserva aprendizado e cessa custos futuros (1.233993ms)
-✔ retomar o telhado permite trocar uma lanterna construída mais tarde (2.40328ms)
-✔ adiar o poço permite iniciativa posterior e abre uma encomenda real (2.393616ms)
-✔ opção de atributo avalia resultado condicional sem excluir fallback (2.39643ms)
-✔ sementes iguais e escolhas iguais reproduzem resultados incertos (3.302656ms)
-✔ resultados incertos incluem sucesso e ferimento em múltiplas seeds (75.547124ms)
-✔ save v1 migra relógio, dinheiro, ofertas pendentes e agenda (0.858005ms)
-✔ catálogo alterado não reutiliza silenciosamente save antigo (1.640497ms)
-✔ saves malformados, negativos e com instâncias duplicadas são rejeitados (2.013961ms)
-✔ proteção contra propriedades de protótipo e scripts no conteúdo (1.80419ms)
-✔ referências, custos, versões e fallback são validados na autoria (2.58535ms)
-✔ conteúdo externo não altera um motor já compilado (0.947578ms)
-✔ 500 percursos válidos atravessam pausas, saves e abandono sem violar invariantes (1155.865362ms)
-✔ arquivos históricos continuam presentes sem serem sobrescritos (0.451551ms)
-✔ conclusão que cancela outro projeto impede recompensa fantasma no mesmo dia (1.383114ms)
-✔ erros de digitação em condições e operações são rejeitados (0.852457ms)
-✔ saves que reintroduzem saúde zero numa pessoa viva são rejeitados (0.870142ms)
-✔ HTML autocontido empacota sem imports e inicializa a apresentação (10.876936ms)
-✔ HTML executa escolha e recarrega progresso salvo sem repetir efeitos (11.355598ms)
-✔ HTML apresenta decisão, bloqueia avanço e retoma só por comando (6.821833ms)
-✔ HTML preserva vida anterior após importar arquivo inválido (5.243849ms)
-✔ HTML importa uma decisão pendente e mantém a pausa (7.894536ms)
-✔ HTML comunica falha ao salvar sem perder a decisão na memória (2.950532ms)
-ℹ tests 53
+== Agência e integração HTML (47 + 10 testes) ==
+✔ catálogo possui 12 decisões, 34 opções e operações declarativas (5.955295ms)
+✔ iniciativa não depende de evento sorteado (5.132442ms)
+✔ trabalho e estudo combinam rotinas sem agenda de horas (5.120575ms)
+✔ examinar antes de vender conserva conhecimento e notas (4.883142ms)
+✔ vender primeiro fecha o estudo do livro, mas abre contato depois (1.578905ms)
+✔ conhecimento do mentor não é conhecimento do jogador nem da irmã (4.483978ms)
+✔ recusa de aprendizagem não inicia profissão nem elimina iniciativa (3.64938ms)
+✔ requisito de recursos tem motivo público e bloqueio atômico (1.462853ms)
+✔ efeito que falha reverte dinheiro, diário, IDs e PRNG (0.48428ms)
+✔ decisão pendente bloqueia envelhecer e nova iniciativa (1.760464ms)
+✔ token da decisão impede clique duplo e decisão errada (1.351948ms)
+✔ opções com projeto incompatível são bloqueadas sem gastar (1.534859ms)
+✔ pagar, reparar e recusar mudam recursos, habilidade e moradia (4.622975ms)
+✔ adiar volta em dez dias e sobrevive ao save (1.780634ms)
+✔ consequência tardia ocorre uma vez após carregar (2.121571ms)
+✔ morte no mesmo dia invalida convite antes de apresentá-lo (1.22517ms)
+✔ mudança de local invalida consequência presencial (1.409874ms)
+✔ morte durante consulta preserva custo e tempo, sem resultado impossível (1.412657ms)
+✔ atividade deixa de produzir depois da morte do mentor (1.294883ms)
+✔ ação de sete dias é interrompida no segundo dia sem recompensa antecipada (0.433845ms)
+✔ reação demorada pausa a ação anterior e conta seu próprio tempo (0.313756ms)
+✔ resposta com duração não retoma automaticamente o resto do ano (0.569175ms)
+✔ ação interrompida pode ser abandonada sem reembolso ou recompensa (0.315579ms)
+✔ morte do jogador durante ação não concede recompensa posterior (0.261408ms)
+✔ consultas de UI não sorteiam nem registram exposição (3.125733ms)
+✔ marcos semanais têm o mesmo resultado em salto e cliques diários (50.797701ms)
+✔ salvar e retomar repetidamente não duplica a seleção do marco (5.865441ms)
+✔ consequência privada não vaza no diário público ou na visão (1.114425ms)
+✔ projeto próprio exige combinação de conhecimentos e conserva notas vendidas (2.494445ms)
+✔ estudo sem dinheiro é interrompido, sem renda ou dívida fantasma (1.254083ms)
+✔ cancelar estudo preserva aprendizado e cessa custos futuros (1.288974ms)
+✔ retomar o telhado permite trocar uma lanterna construída mais tarde (2.728511ms)
+✔ adiar o poço permite iniciativa posterior e abre uma encomenda real (2.475807ms)
+✔ opção de atributo avalia resultado condicional sem excluir fallback (2.497048ms)
+✔ sementes iguais e escolhas iguais reproduzem resultados incertos (3.216547ms)
+✔ resultados incertos incluem sucesso e ferimento em múltiplas seeds (96.941371ms)
+✔ save v1 migra relógio, dinheiro, ofertas pendentes e agenda (0.961178ms)
+✔ catálogo alterado não reutiliza silenciosamente save antigo (1.42779ms)
+✔ saves malformados, negativos e com instâncias duplicadas são rejeitados (2.082172ms)
+✔ proteção contra propriedades de protótipo e scripts no conteúdo (1.820694ms)
+✔ referências, custos, versões e fallback são validados na autoria (2.354677ms)
+✔ conteúdo externo não altera um motor já compilado (0.95589ms)
+✔ 500 percursos válidos atravessam pausas, saves e abandono sem violar invariantes (1292.973672ms)
+✔ arquivos históricos continuam presentes sem serem sobrescritos (0.506702ms)
+✔ conclusão que cancela outro projeto impede recompensa fantasma no mesmo dia (1.563191ms)
+✔ erros de digitação em condições e operações são rejeitados (1.424565ms)
+✔ saves que reintroduzem saúde zero numa pessoa viva são rejeitados (0.993656ms)
+✔ HTML autocontido empacota sem imports e inicializa a apresentação (12.129734ms)
+✔ HTML executa escolha e recarrega progresso salvo sem repetir efeitos (14.486324ms)
+✔ HTML apresenta decisão, bloqueia avanço e retoma só por comando (8.146478ms)
+✔ HTML preserva vida anterior após importar arquivo inválido (8.89423ms)
+✔ HTML importa uma decisão pendente e mantém a pausa (9.239171ms)
+✔ HTML comunica falha ao salvar sem perder a decisão na memória (5.323045ms)
+✔ abrir e fechar uma iniciativa não executa a ação nem passa tempo (4.030486ms)
+✔ abas deixam a história disponível sem alterar o estado do jogo (4.393445ms)
+✔ consultar personagem durante decisão não escolhe nem retoma o tempo (3.861325ms)
+✔ o resultado fica na história sem repetir o registro técnico de intenção (5.899401ms)
+ℹ tests 57
 ℹ suites 0
-ℹ pass 53
+ℹ pass 57
 ℹ fail 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 1446.238269
+ℹ duration_ms 1648.514385
 
 == Quatro trajetórias estruturais e seus saves ==
 # Quatro trajetórias a partir do mesmo começo
@@ -163,6 +167,6 @@ Copiar antes de vender; trabalhar e estudar; adiar o poço; voltar ao telhado co
 Quatro perfis controlados comprovam divergência de estado na fatia; não medem diversão, balanceamento, ausência de estratégia dominante ou cinquenta horas de novidade. Os saves em `vidas/` podem ser importados no HTML desta versão.
 
 
-Total do motor evoluído e HTML: 67 testes aprovados. Base original: 14, verificada separadamente.
+Total do motor evoluído e HTML: 71 testes aprovados. Base original: 14, verificada separadamente.
 500 percursos novos + 500 casos da regressão; números não medem cinquenta horas de variedade.
-Smoke HTML em VM/DOM mínimo. Testes visuais de Chromium e Android físico pendentes.
+Smoke HTML em VM/DOM mínimo. Bateria Chromium local e Android físico pendentes; comparação responsiva em Chrome remoto documentada em REVISAO_UX_0_4_1.md.

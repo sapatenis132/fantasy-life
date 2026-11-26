@@ -15,23 +15,24 @@ function boot({raw,saveFails=false}={}){
     get firstChild(){return this.children[0];}get childElementCount(){return this.children.length;}
     append(...nodes){this.children.push(...nodes);}replaceChildren(...nodes){this.text='';this.children=nodes;}
     setAttribute(k,v){this[k]=v;}addEventListener(k,f){this.events[k]=f;}focus(){document.activeElement=this;}scrollIntoView(){}
-    click(){if(!this.disabled)return this.events.click?.({target:this});}
+    click(){if(!this.disabled)return this.events.click?.({target:this})??this.onclick?.({target:this});}
+    showModal(){this.open=true;}close(){this.open=false;}
   }
   document={createElement:tag=>new Element(tag),querySelector:selector=>ids.get(selector.slice(1)),activeElement:null};
   for(const match of html.matchAll(/<(\w+)[^>]*\bid="([^"]+)"/g)){const el=new Element(match[1]);el.id=match[2];}
   ids.get('seed').value='2026';
-  const context=vm.createContext({document,localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>{if(saveFails)throw new Error('sem espaço');storage.set(k,v);}},Blob,URL,setTimeout});
+  const context=vm.createContext({document,window:{scrollTo(){}},localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>{if(saveFails)throw new Error('sem espaço');storage.set(k,v);}},Blob,URL,setTimeout});
   new vm.Script(code,{filename:'Fantasy_Life_Laboratorio_1_3.html'}).runInContext(context);
   const walk=el=>[el,...el.children.flatMap(walk)];
   const button=label=>[...ids.values()].flatMap(walk).find(el=>el.tagName==='button'&&el.textContent.startsWith(label));
-  return {get:key=>ids.get(key),button,raw:()=>storage.get('fantasy-life-agencia-1.3')};
+  return {get:key=>ids.get(key),button,openBook:()=>ids.get('context-action').click(),raw:()=>storage.get('fantasy-life-agencia-1.3')};
 }
 test('HTML autocontido empacota sem imports e inicializa a apresentação',()=>{
-  const b=boot();assert.match(b.get('stats').textContent,/16 anos/);assert.ok(b.button('Examinar e copiar'));assert.ok(!/^import /m.test(code));
+  const b=boot();assert.match(b.get('stats').textContent,/16 anos/);assert.equal(b.get('story-panel').hidden,false);assert.equal(b.get('activities-panel').hidden,true);assert.equal(b.get('character-panel').hidden,true);assert.equal(b.get('choice-options').childElementCount,0);assert.match(b.get('story-copy').textContent,/Você tem 16 anos/);assert.ok(!/^import /m.test(code));
 });
 test('HTML executa escolha e recarrega progresso salvo sem repetir efeitos',()=>{
-  const b=boot();b.button('Examinar e copiar').click();assert.equal(JSON.parse(b.raw()).day,2);
-  const restored=boot({raw:b.raw()});assert.match(restored.get('diary').textContent,/Você copia um circuito/);assert.equal(restored.raw(),b.raw());
+  const b=boot();b.openBook();b.button('Examinar e copiar').click();assert.equal(JSON.parse(b.raw()).day,2);
+  const restored=boot({raw:b.raw()});assert.match(restored.get('story-copy').textContent,/Você copia um circuito/);assert.equal(restored.raw(),b.raw());
 });
 test('HTML apresenta decisão, bloqueia avanço e retoma só por comando',()=>{
   const b=boot();b.get('advance').click();assert.equal(JSON.parse(b.raw()).day,14);assert.ok(b.get('advance').disabled);
@@ -39,7 +40,7 @@ test('HTML apresenta decisão, bloqueia avanço e retoma só por comando',()=>{
   b.get('advance').click();assert.equal(JSON.parse(b.raw()).day,365);assert.equal(JSON.parse(b.raw()).money,3);
 });
 test('HTML preserva vida anterior após importar arquivo inválido',async()=>{
-  const b=boot();b.button('Examinar e copiar').click();const before=b.raw();
+  const b=boot();b.openBook();b.button('Examinar e copiar').click();const before=b.raw();
   b.get('import').files=[{text:async()=>'{"version":2}'}];await b.get('import').events.change({target:b.get('import')});
   assert.equal(b.raw(),before);assert.match(b.get('message').textContent,/não foi importada/);
 });
@@ -49,5 +50,24 @@ test('HTML importa uma decisão pendente e mantém a pausa',async()=>{
   assert.equal(other.get('decision-title').textContent,'A chuva está chegando');assert.ok(other.get('advance').disabled);assert.equal(other.raw(),raw);
 });
 test('HTML comunica falha ao salvar sem perder a decisão na memória',()=>{
-  const b=boot({saveFails:true});b.button('Examinar e copiar').click();assert.match(b.get('message').textContent,/não conseguiu salvar/);assert.match(b.get('diary').textContent,/Você copia um circuito/);
+  const b=boot({saveFails:true});b.openBook();b.button('Examinar e copiar').click();assert.match(b.get('message').textContent,/não conseguiu salvar/);assert.match(b.get('story-copy').textContent,/Você copia um circuito/);
+});
+
+test('abrir e fechar uma iniciativa não executa a ação nem passa tempo',()=>{
+  const b=boot();b.openBook();assert.equal(b.get('decision').hidden,false);assert.equal(b.raw(),undefined);
+  b.get('choice-back').click();assert.equal(b.get('decision').hidden,true);assert.equal(b.raw(),undefined);
+});
+test('abas deixam a história disponível sem alterar o estado do jogo',()=>{
+  const b=boot();b.get('nav-character').click();assert.equal(b.get('character-panel').hidden,false);assert.equal(b.get('story-panel').hidden,true);
+  b.get('nav-activities').click();assert.equal(b.get('activities-panel').hidden,false);assert.ok(b.button('Procurar a oficina'));
+  b.get('nav-story').click();assert.equal(b.get('story-panel').hidden,false);assert.equal(b.raw(),undefined);
+});
+test('consultar personagem durante decisão não escolhe nem retoma o tempo',()=>{
+  const b=boot();b.get('advance').click();const before=b.raw();b.get('nav-character').click();assert.equal(b.get('advance').textContent,'Voltar à escolha');
+  b.get('advance').click();assert.equal(b.get('story-panel').hidden,false);assert.equal(b.get('decision').hidden,false);assert.equal(b.raw(),before);
+});
+test('o resultado fica na história sem repetir o registro técnico de intenção',()=>{
+  const b=boot();b.openBook();b.button('Examinar e copiar').click();
+  assert.match(b.get('story-copy').textContent,/Você copia um circuito/);assert.ok(!b.get('history').textContent.includes('Estudar o livro antes'));
+  assert.equal(b.get('activities-panel').hidden,true);assert.equal(b.get('story-panel').hidden,false);
 });

@@ -1,5 +1,15 @@
 # Histórico de desenvolvimento
 
+## 0.4.1 — 26/11/2026 — revisão mobile
+
+- História e resultado atual na primeira tela, próximos das decisões.
+- Cabeçalho compacto, um controle principal de tempo e navegação História/Atividades/Personagem.
+- Arquivos, seed e informações do protótipo em menu separado.
+- Consulta de iniciativas sem aplicação automática; navegação não avança o relógio.
+- Save e regras do motor preservados; 71 testes locais aprovados.
+- Comparação de versões em 320×568, 360×640 e 412×915 no Chrome remoto. Android físico e bateria Playwright completa ainda pendentes.
+- Pesquisa e evidências documentadas em `etapa_1_3/docs/REVISAO_UX_0_4_1.md`.
+
 ## 0.4.0 — 26/11/2026 — etapa 1.3
 
 - Evolução do relógio e seletor 1.2; código histórico preservado.

@@ -1,5 +1,5 @@
 # Fantasy Life — documento mestre de design
-Versão de consolidação 0.4 | 26/11/2026 | Nome de trabalho, não título comercial definitivo.
+Versão de consolidação 0.4.1 | 26/11/2026 | Nome de trabalho, não título comercial definitivo.
 
 ## 1. Identidade
 Simulador de vida textual em um mundo medieval fantástico, inspirado na acessibilidade de BitLife, nas escolhas e RPG de Life in Adventure e na diversidade inicial de 1 in 8 Billion. O jogador vive como um indivíduo, do nascimento à morte, não como herói predestinado. Vida comum e vida extraordinária são igualmente legítimas. Sem história principal, classe permanente ou objetivo universal obrigatório. Sucessão e dinastias são propostas futuras, não implementação existente.
@@ -53,3 +53,6 @@ Etapa 1.3 concluída como fatia de arquitetura, com validação visual pendente.
 
 ## 10. Princípio final
 O mundo oferece circunstâncias. O jogador toma decisões. Os sistemas transformam essas decisões em uma história.
+
+## Revisão da HUD — 0.4.1
+A crítica do usuário no celular estabeleceu a prioridade de apresentação: a história precisa aparecer primeiro, com a decisão junto do texto. A versão 0.4.1 aplica cabeçalho compacto, navegação História/Atividades/Personagem, envelhecer na parte inferior e arquivos em menu separado. O primeiro contato não expõe todos os sistemas. Há 71 testes locais e comparação responsiva real em iframes de 320×568, 360×640 e 412×915, com a narrativa inicial inteira acima dos controles. O motor e os saves foram preservados. Detalhes e limites em `etapa_1_3/docs/REVISAO_UX_0_4_1.md`; Android físico continua pendente.

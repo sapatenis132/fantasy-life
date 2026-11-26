@@ -1,0 +1,64 @@
+{
+  "method": "Chrome remoto, viewport de iframe, primeiro contato com save de teste isolado",
+  "initial": [
+    {
+      "width": 320,
+      "height": 568,
+      "oldDiaryTop": 1268,
+      "storyTop": 148,
+      "storyBottom": 289,
+      "dockTop": 453,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 360,
+      "height": 640,
+      "oldDiaryTop": 1191,
+      "storyTop": 148,
+      "storyBottom": 261,
+      "dockTop": 525,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 412,
+      "height": 915,
+      "oldDiaryTop": 1106,
+      "storyTop": 148,
+      "storyBottom": 261,
+      "dockTop": 800,
+      "horizontalOverflow": false
+    }
+  ],
+  "pendingDecision": [
+    {
+      "width": 320,
+      "height": 568,
+      "storyTop": 148,
+      "firstOptionTop": 281,
+      "dockTop": 493
+    },
+    {
+      "width": 360,
+      "height": 640,
+      "storyTop": 148,
+      "firstOptionTop": 281,
+      "dockTop": 579
+    },
+    {
+      "width": 412,
+      "height": 915,
+      "storyTop": 148,
+      "firstOptionTop": 253,
+      "dockTop": 854
+    }
+  ],
+  "filesDialog": {
+    "width": 320,
+    "height": 568,
+    "dialogWidth": 282,
+    "top": 44,
+    "bottom": 524,
+    "focusReturnedTo": "open-menu"
+  },
+  "physicalAndroidTested": false
+}

@@ -1,6 +1,6 @@
 # Fantasy Life — progresso até a etapa 1.3
 
-26/11/2026 · Versão 0.4.0. Arquitetura de escolhas implementada sobre o laboratório anterior.
+26/11/2026 · Versão 0.4.1. Arquitetura de escolhas implementada sobre o laboratório anterior.
 
 Para experimentar, abra **`etapa_1_3/Fantasy_Life_Laboratorio_1_3.html`** em um navegador com JavaScript. Ele contém uma amostra fixa aos 16 anos, com iniciativas, escolhas, rotinas, diário e save/exportação. A amostra também está online em https://sapatenis132.github.io/fantasy-life/. Um fluxo básico foi confirmado no Chrome remoto; testes de viewports, toque e Android ainda estão pendentes.
 
@@ -21,4 +21,6 @@ Para experimentar, abra **`etapa_1_3/Fantasy_Life_Laboratorio_1_3.html`** em um 
 node etapa_1_3/scripts/verificar.mjs
 ```
 
-67 testes atuais aprovados: 47 agência, 6 integração HTML em VM e 14 regressão. Os 14 originais também passaram separadamente. Há 500 percursos novos automatizados e quatro trajetórias controladas com saves. Isso não demonstra a meta de 50 horas.
+71 testes atuais aprovados: 47 agência, 10 integração HTML em VM e 14 regressão. Os 14 originais também passaram separadamente. Há 500 percursos novos automatizados e quatro trajetórias controladas com saves. Isso não demonstra a meta de 50 horas.
+
+A revisão 0.4.1 coloca a história na tela inicial e foi comparada em três dimensões mobile. Leia também `etapa_1_3/docs/REVISAO_UX_0_4_1.md`.

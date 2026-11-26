@@ -1,6 +1,6 @@
 # Plano de continuidade — Fantasy Life
 
-Versão 0.4.0 · 26/11/2026.
+Versão 0.4.1 · 26/11/2026.
 
 ## Estado atual
 
@@ -44,7 +44,7 @@ Critérios: integridade de IDs/entidades; idades coerentes; conhecimentos privad
 |---|---|
 | 1.1 Identidade/GDD | Concluída como documentação |
 | 1.2 Tempo/diversidade | Laboratório original preservado; fachada temporal revista na 1.3 |
-| 1.3 Escolhas/agência | Implementada, 67 testes atuais aprovados; validação visual pendente |
+| 1.3 Escolhas/agência | Implementada, 71 testes atuais aprovados; validação visual pendente |
 | 1.4 Estrutura de personagens | Próximo bloco funcional |
 | 1.5 Nascimento procedural | Após validar o modelo de indivíduos e família |
 | 1.6 Primeiro protótipo de vida | Integração de nascimento, vida, save e ciclo básico; o HTML 1.3 não a substitui |
@@ -53,3 +53,6 @@ Critérios: integridade de IDs/entidades; idades coerentes; conhecimentos privad
 ## Modo de trabalho
 
 Escolhas e liberdade > consequências/variedade > profundidade sistêmica > gerenciamento. Ampliar em fatias verificáveis, manter documentos vivos, registrar falhas e limites, medir variedade de trajetórias em vez de apenas IDs. Não alegar publicação ou testes inexistentes. O repositório específico foi confirmado e criado: `sapatenis132/fantasy-life`. Usá-lo para este projeto; verificar `PUBLICACAO.md` para o estado do GitHub Pages.
+
+## Revisão mobile incorporada
+A versão 0.4.1 corrigiu a hierarquia da HUD, preservando a etapa 1.3 e seus saves. Antes de outra mudança de interface, usar os critérios de `etapa_1_3/docs/REVISAO_UX_0_4_1.md`: narrativa na primeira tela, escolhas junto do texto, controles sem sobreposição e sistemas secundários sob demanda. Comparação responsiva em três dimensões foi concluída no Chrome remoto; o teste físico e o roteiro completo de navegador continuam pendentes. Próxima etapa funcional permanece 1.4.

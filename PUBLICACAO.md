@@ -28,3 +28,7 @@ node scripts/preparar-pages.mjs
 Commitar o código e a versão gerada de `docs/` juntos. Após o envio, confirmar o deployment do Pages e verificar no endereço publicado uma iniciativa, uma decisão, a pausa do tempo e a recuperação do save.
 
 O jogo é estático e não envia os saves para o GitHub: eles ficam no armazenamento do navegador usado para jogar. Exportação/importação permite transferir uma vida entre arquivo local, versão online e outro aparelho.
+
+## Interface 0.4.1
+
+Revisão da hierarquia mobile, com história em primeiro plano e opções secundárias em áreas próprias. Motor e chave dos saves continuam compatíveis. Fontes e resultados em `etapa_1_3/docs/REVISAO_UX_0_4_1.md`. A página `/ux/` é um ambiente de comparação, com saves próprios; ela não faz parte do fluxo principal do jogador.
