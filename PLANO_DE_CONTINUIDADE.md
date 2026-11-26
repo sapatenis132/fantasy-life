@@ -1,58 +1,59 @@
 # Plano de continuidade — Fantasy Life
 
-Versão 0.4.1 · 26/11/2026.
+0.5.0 · 26/11/2026.
 
-## Estado atual
+## Ponto de retomada
 
-**1.3 — Arquitetura de escolhas e agência implementada como fatia de laboratório.** O motor 1.2 foi evoluído; a base histórica permanece intacta. Veja `etapa_1_3/README.md`, o contrato e o relatório em `etapa_1_3/docs/`. O documento mestre mantém autoridade sobre GDDs antigos.
+**1.3 preservada; 1.4 implementada como fundação conectada de personagem e vida cotidiana.** A direção foi revista por solicitação do usuário: diário vivido, calendário por ações, necessidades, lugares, relações e capacidades de fantasia. Não voltar a tratar o botão anual como experiência principal. O começo atual é um jovem adulto em Ponteclara.
 
-Há contrato versionado, condições, participantes, efeitos permitidos, resultados condicionais/probabilísticos, iniciativas sem sorteio, informação por indivíduo, custos, rotina automática, fila causal, ações interrompidas, save/load, migração v1 e visão pública. A amostra possui 12 decisões e 34 opções conectadas. O HTML serve para revisar esse recorte; não é a etapa 1.6 completa.
+Ler `DOCUMENTO_MESTRE.md`, `etapa_1_4/README.md`, `etapa_1_4/docs/DESIGN_E_IMPLEMENTACAO.md` e evidências atuais. Executar `node etapa_1_4/verificar.mjs`. Publicar com `node scripts/preparar-pages.mjs`; enviar código, documentação e build juntos ao repositório **sapatenis132/fantasy-life**, branch `main`, Pages `/docs`.
 
-## O que verificar ao retomar
+## Entregue nesta fatia
 
-1. Ler `DOCUMENTO_MESTRE.md`, este plano, `etapa_1_3/README.md` e `docs/ARQUITETURA_ESCOLHAS.md`.
-2. Executar, da pasta principal: `node etapa_1_3/scripts/verificar.mjs`.
-3. Conferir os quatro percursos e estados em `etapa_1_3/evidencias/`.
-4. O fluxo básico online foi confirmado no Chrome remoto; veja `etapa_1_3/evidencias/VALIDACAO_PUBLICACAO.md`. Completar a validação de viewports, toque, exportação/importação real e Android. Os testes automatizados de integração do HTML usam VM e DOM mínimo; não verificam layout. `tests/navegador.mjs` contém os cenários preparados, mas sua execução ficou bloqueada por falta de Chromium local utilizável. Não declarar esses testes como aprovados.
-5. Preservar o histórico antes de mexer nos contratos; não reiniciar o motor nem publicar no repositório do RPG isométrico.
+- Identidade comum a jogador e moradores; origens, povos, traços, talentos e dons com usos concretos no jogador.
+- Habilidades e domínio liberando técnicas; aprendizado por tempo dedicado.
+- Necessidades com recuperação e saída viável para personagem sem comida/moedas.
+- Mapa conectado, caminhos com custo, interrupção e retomada persistida.
+- Agendas, presença, conhecimento individual, confiança direcional, amizade por iniciativa e um encontro entre NPCs sem depender do jogador.
+- Calendário, aula combinada, chegada, cancelamento com aviso e atraso.
+- Projetos e serviços sem renda durante sono/viagem; descobertas que abrem outras atividades quando compartilhadas.
+- Oportunidades contextuais com aleatoriedade salva; exame de reagente usa conhecimento sem trocar a mercadoria.
+- Diário central, abas simples, informações secundárias recolhidas, save/importação/exportação e versão anterior preservada.
 
-## Próxima etapa funcional: 1.4 — estrutura de personagens
+Não confundir isso com o modelo social/familiar completo, NPCs com personalidades acabadas ou primeira vida completa do nascimento à morte.
 
-Entregar uma estrutura mínima reutilizável para jogador e NPC, antes de geração procedural de nascimento. Aplicar os contratos de escolhas já existentes; evitar trocar toda a arquitetura por um sistema novo.
+## Próximo bloco: 1.5 — nascimento e contexto procedural
 
-- Identidade persistente: nome, nascimento, povo/raça e regras de idade, residência, estado vital. Estágios de vida devem ser dados, sem fixar duração humana para todos.
-- Separar aptidões, habilidades, condições, traços e conhecimentos. Só criar uma dimensão se ela alterar escolhas ou consequências demonstráveis. A lista de atributos do GDD 0.1 é proposta, não obrigação de implementar sete barras.
-- Relações direcionais, parentesco e memórias relevantes sem afeição automática. Registrar quem sabe o quê e a origem plausível das informações. Rumor e certeza ainda não existem na fatia 1.3.
-- Ligação dinâmica de participantes: uma oportunidade pode selecionar uma pessoa plausível, fixar seu ID na ocorrência e manter essa identidade até a resolução. Não substituir um NPC morto por outro silenciosamente.
-- Disponibilidade por residência, idade/etapa, saúde e compromisso; revalidar iniciativas, ações em curso, rotinas e consequências. Hoje as rotinas continuam durante ações breves no mesmo contexto; viagens ainda precisam de regras próprias.
-- Reaplicar parte da amostra com contextos/indivíduos distintos para verificar que origem influencia meios e relações sem impor destino.
+1. Definir dados de família, residência, situação econômica e fases de vida por povo, reutilizando identidade/tempo/conhecimento atuais.
+2. Gerar situações iniciais coerentes a partir da seed, com diferentes recursos, pessoas e pressões. Origem oferece meios, não impõe destino.
+3. Dar a cada início ao menos duas iniciativas viáveis e um caminho de recuperação; testar contra bloqueios de comida, renda, acesso e tutela.
+4. Fazer infância, dependência e passagem de tempo funcionarem sem treinos e refeições clicados centenas de vezes. Projetar rotinas opcionais/resumos antes de expandir anos.
+5. Ligar participantes por contexto, fixando a identidade da pessoa escolhida na ocorrência, inclusive depois de save/load. Os diálogos atuais têm IDs concretos; não são seleção genérica por papel.
+6. Variar primeiros conflitos e consequências, não somente nomes/raça/números iniciais. Comparar trajetórias com a mesma seed e escolhas diferentes.
 
-Critérios: integridade de IDs/entidades; idades coerentes; conhecimentos privados preservados; consequências referenciando a mesma pessoa após save; escolhas realmente diferentes por capacidade/vínculo; ausência de atributos decorativos; HUD sem expansão obrigatória. Não criar centenas de eventos nesta etapa.
+Critérios para chamar a etapa de pronta: nascimento/família coerentes, etapas etárias por povo, disponibilidade plausível, capacidades com soluções diferentes, informação privada preservada, nenhum início sem alternativas, UI simples e testes de continuidade. Manter início adulto rápido como laboratório acessível.
 
-## Pendências e limites conhecidos
+## Pendências que não devem desaparecer do roadmap
 
-- Completar testes visuais/acessibilidade e verificar abertura de HTML/armazenamento no Android real.
-- Os valores de prática, renda, custos e confiança são provisórios; não há análise de estratégia dominante ou teste humano de diversão.
-- A meta de 50 horas não foi atingida nem demonstrada. Catálogo de revisão é pequeno e se esgota.
-- Não há nascimento procedural, economia/social completos, recuperação de saúde, viagens, morte natural ou ciclo de infância a velhice.
-- Fingerprint de catálogo é a serialização completa; diário e ledgers crescem. Compactação, migrações entre catálogos e desempenho de décadas são futuros trabalhos.
-- O catálogo tem IDs concretos de participantes; semântica antirrepetição não abrange ainda contexto por entidade nem memória entre vidas.
+- Sessões humanas de diversão e balanceamento; a meta de 50h está distante e não foi demonstrada.
+- Android físico, leitor de tela, teclado, zoom e exportação/importação real em diferentes aparelhos. A integração VM não substitui esses testes.
+- Objetivos e personalidade de NPCs, vínculos familiares, rumores com origem, memória social e consequências tardias mais variadas.
+- Treino/trabalho por blocos são o recorte atual. Automatização opcional e resumo de rotinas antes de décadas de simulação.
+- Dados de habilidade/condição dos NPCs ainda precisam do mesmo aprofundamento do jogador.
+- Raridade de dons ainda não existe: a criação atual permite escolher para testar. Balancear povos/talentos e evitar escolhas dominantes.
+- Catálogo fixado por fingerprint, histórico crescente e migrações gerais; planejar migração antes de mudar o catálogo publicado.
+- Transferência do legado só sem fila/atividades/decisão/avanço. Não apagar o arquivo anterior nem descartar compromissos para facilitar migração.
 
-## Roadmap vigente
+## Roadmap
 
-| Etapa | Situação / entrega |
+| Etapa | Estado |
 |---|---|
-| 1.1 Identidade/GDD | Concluída como documentação |
-| 1.2 Tempo/diversidade | Laboratório original preservado; fachada temporal revista na 1.3 |
-| 1.3 Escolhas/agência | Implementada, 71 testes atuais aprovados; validação visual pendente |
-| 1.4 Estrutura de personagens | Próximo bloco funcional |
-| 1.5 Nascimento procedural | Após validar o modelo de indivíduos e família |
-| 1.6 Primeiro protótipo de vida | Integração de nascimento, vida, save e ciclo básico; o HTML 1.3 não a substitui |
-| 2–14 | Mundo; relações; educação; profissões/economia; magia; aventura/combate; organizações/política; justiça; legado; conteúdo; arte/UI; balanceamento; publicação Android |
+| 1.1 Identidade/GDD | Preservada e atualizada |
+| 1.2 Tempo/diversidade | Base histórica preservada; perfil em minutos acrescentado |
+| 1.3 Escolhas/agência | Implementada; 71 casos anteriores continuam passando |
+| 1.4 Personagem e fatia de rotina | Implementada na 0.5.0; expansão social/etária continua no plano |
+| 1.5 Nascimento procedural e família | Próximo bloco funcional |
+| 1.6 Primeiro ciclo de vida | Integrar fases, rotinas resumidas, morte e consequências de longo prazo |
+| 2–14 | Mundo, relações profundas, educação, profissões/economia, magia, aventura/combate, facções/política, justiça, legado, conteúdo, arte/UI, balanceamento e Android |
 
-## Modo de trabalho
-
-Escolhas e liberdade > consequências/variedade > profundidade sistêmica > gerenciamento. Ampliar em fatias verificáveis, manter documentos vivos, registrar falhas e limites, medir variedade de trajetórias em vez de apenas IDs. Não alegar publicação ou testes inexistentes. O repositório específico foi confirmado e criado: `sapatenis132/fantasy-life`. Usá-lo para este projeto; verificar `PUBLICACAO.md` para o estado do GitHub Pages.
-
-## Revisão mobile incorporada
-A versão 0.4.1 corrigiu a hierarquia da HUD, preservando a etapa 1.3 e seus saves. Antes de outra mudança de interface, usar os critérios de `etapa_1_3/docs/REVISAO_UX_0_4_1.md`: narrativa na primeira tela, escolhas junto do texto, controles sem sobreposição e sistemas secundários sob demanda. Comparação responsiva em três dimensões foi concluída no Chrome remoto; o teste físico e o roteiro completo de navegador continuam pendentes. Próxima etapa funcional permanece 1.4.
+Trabalhar por fatias jogáveis; preservar código/histórico; registrar o que foi testado e o que ainda não existe. Qualidade, criatividade e agência acima do volume de sistemas.

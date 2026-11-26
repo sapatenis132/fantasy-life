@@ -1,26 +1,14 @@
-# Fantasy Life — progresso até a etapa 1.3
+# Fantasy Life — continuidade 0.5.0
 
-26/11/2026 · Versão 0.4.1. Arquitetura de escolhas implementada sobre o laboratório anterior.
+26/11/2026. Ponteclara é a fatia atual da etapa 1.4, construída sobre a arquitetura 1.3. Não reiniciar o projeto.
 
-Para experimentar, abra **`etapa_1_3/Fantasy_Life_Laboratorio_1_3.html`** em um navegador com JavaScript. Ele contém uma amostra fixa aos 16 anos, com iniciativas, escolhas, rotinas, diário e save/exportação. A amostra também está online em https://sapatenis132.github.io/fantasy-life/. Um fluxo básico foi confirmado no Chrome remoto; testes de viewports, toque e Android ainda estão pendentes.
+Jogo: https://sapatenis132.github.io/fantasy-life/
 
-## Ordem de leitura
+1. Ler `DOCUMENTO_MESTRE.md` e `PLANO_DE_CONTINUIDADE.md`.
+2. Ler `etapa_1_4/README.md` e `docs/DESIGN_E_IMPLEMENTACAO.md` dentro da etapa.
+3. Executar `node etapa_1_4/verificar.mjs`.
+4. Conferir `etapa_1_4/evidencias/` e o estado de publicação em `PUBLICACAO.md`.
 
-1. `DOCUMENTO_MESTRE.md`: requisitos e estado vigente; prevalece sobre GDDs históricos.
-2. `PLANO_DE_CONTINUIDADE.md`: ponto atual, pendências e próximo bloco 1.4.
-3. `etapa_1_3/README.md`: uso, organização e execução.
-4. `etapa_1_3/docs/ARQUITETURA_ESCOLHAS.md`: contrato de implementação.
-5. `etapa_1_3/docs/GDD_0_4_Agencia.md`: decisões de design aplicadas.
-6. `etapa_1_3/docs/RELATORIO_ETAPA_1_3.md` e `evidencias/`: testes, trajetórias e limites.
+A direção atual é diário, ações com tempo, mapa, relações e capacidades de fantasia. O botão anual pertence à versão anterior. A versão atual começa em um contexto adulto fixo; nascimento e família procedural vêm depois. Prioridades: escolhas, variedade e interface simples.
 
-`base_original/` conserva integralmente código, testes e GDDs anteriores. `historico/` guarda os documentos da migração 0.3. `historico/HISTORICO_GIT.bundle` conserva os checkpoints locais anteriores à primeira publicação. O repositório oficial agora é `sapatenis132/fantasy-life`; consulte `PUBLICACAO.md` para o estado do site.
-
-## Verificação
-
-```sh
-node etapa_1_3/scripts/verificar.mjs
-```
-
-71 testes atuais aprovados: 47 agência, 10 integração HTML em VM e 14 regressão. Os 14 originais também passaram separadamente. Há 500 percursos novos automatizados e quatro trajetórias controladas com saves. Isso não demonstra a meta de 50 horas.
-
-A revisão 0.4.1 coloca a história na tela inicial e foi comparada em três dimensões mobile. Leia também `etapa_1_3/docs/REVISAO_UX_0_4_1.md`.
+A versão anterior está em `/legado/`; saves separados e transferência explícita. A base histórica permanece em `base_original/` e `historico/`. O repositório oficial específico é `sapatenis132/fantasy-life`.

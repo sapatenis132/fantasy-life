@@ -1,37 +1,28 @@
 <!doctype html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="color-scheme" content="light"><meta name="theme-color" content="#f6f2e8"><title>Fantasy Life · sua história</title>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#172522"><title>Fantasy Life — Ponteclara</title>
 <style>
-:root{font-family:system-ui,sans-serif;color:#29372e;background:#f6f2e8;font-size:16px;line-height:1.5;--ink:#29372e;--muted:#59665d;--green:#28553f;--line:#d9d9cc;--paper:#fffdf7}
-*{box-sizing:border-box}body{margin:0}button,input{font:inherit}button{cursor:pointer;color:var(--ink);min-height:48px;border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:10px 14px;overflow-wrap:anywhere;-webkit-tap-highlight-color:transparent}button:disabled{cursor:default;color:#60695f;background:#eeeee6}button:hover:enabled{background:#edf1e7}button:active:enabled{transform:translateY(1px)}button:focus-visible,summary:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #b77b36;outline-offset:3px}
-[hidden]{display:none!important}.app-header{max-width:680px;margin:auto;display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid var(--line)}.identity{flex:1;min-width:0}.brand{margin:0;font:600 1.15rem Georgia,serif;line-height:1.25}.identity p{font-size:.81rem;color:var(--muted);margin:4px 0 0}.header-right{display:flex;align-items:center;gap:8px}.coins{font-size:.875rem;white-space:nowrap}.menu-trigger{border:0;background:transparent;font-size:1.5rem;width:44px;min-height:44px;padding:0}
-main{max-width:680px;margin:auto;padding:18px 16px calc(10rem + env(safe-area-inset-bottom,0px))}h1,h2,h3,p{overflow-wrap:anywhere}h1,h2,h3{line-height:1.25}h1{font:600 1.55rem Georgia,serif;margin:4px 0 14px}h2{font-size:1.25rem;margin:0 0 12px}h3{font-size:1rem;margin:22px 0 10px}p{margin:10px 0}.date,.muted{color:var(--muted)}.date{font-size:.8rem;letter-spacing:.04em}.story-copy{font-size:1.065rem;line-height:1.65;margin:0 0 20px}.context-action{display:block;width:100%;text-align:left;margin:8px 0 0;color:var(--green);font-weight:600}.story-context{margin-bottom:22px}.back{border:0;background:transparent;padding:8px 0;color:var(--green);text-align:left;min-height:44px;margin:-8px 0 6px}.options{display:grid;gap:9px;margin:18px 0 10px}.option{width:100%;text-align:left;padding:12px 14px}.option strong,.option small{display:block}.option strong{font-size:1rem;font-weight:600}.option small{font-size:.85rem;line-height:1.5;margin-top:5px;color:var(--muted)}.option .reason{color:#795438}.section-note{font-size:.875rem;color:var(--muted)}
-.primary{background:var(--green);border-color:var(--green);color:#fff;font-weight:600;width:100%}.primary:hover:enabled{background:#1f4733}.dock{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(100%,680px);padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px));background:#f6f2e8;border-top:1px solid var(--line);z-index:10}.dock-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:6px}.dock-nav button{font-size:.875rem;border:0;border-radius:7px;min-height:44px;padding:8px 4px;background:transparent}.dock-nav button[aria-current=page]{background:#e3eadd;color:#214c34;font-weight:650;box-shadow:inset 0 -2px #28553f}.dock:has(#advance-row[hidden]) .dock-nav{margin-top:0}
-.action-list{display:grid;gap:10px}.action-card{text-align:left;width:100%;padding:14px}.action-card strong{display:block;font-size:1rem}.action-card small{display:block;color:var(--muted);font-size:.85rem;margin-top:4px}.summary-list{padding:0;list-style:none}.summary-list li,.commitment{padding:12px 0;border-bottom:1px solid var(--line)}.commitment{display:flex;align-items:center;justify-content:space-between;gap:10px}.commitment span{min-width:0}.commitment button{font-size:.875rem}.facts{display:flex;flex-wrap:wrap;gap:10px 24px}.facts p{margin:0}.facts strong{display:block;color:var(--muted);font-size:.8rem;font-weight:500}.older{border-top:1px solid var(--line);margin-top:24px;padding-top:8px}.older summary{cursor:pointer;font-size:.9rem;color:var(--muted);padding:12px 0;min-height:44px}.history-list{list-style:none;padding:0;margin:8px 0}.history-list li{border-left:2px solid var(--line);padding:0 0 18px 14px;margin:0 0 4px}.history-list p{margin:4px 0;font-size:.95rem}.paused{margin-top:22px;border-top:1px solid var(--line);padding-top:12px}.paused p{font-size:.9rem;color:var(--muted)}.paused button{width:100%;text-align:left}#message,.menu-message{padding:12px;background:#fff0d2;border:1px solid #d8bd84;border-radius:8px;font-size:.9rem;margin-bottom:16px}
-.dialog{width:min(94vw,500px);max-height:calc(100dvh - 32px);overflow:auto;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px}.dialog::backdrop{background:#172c2166}.dialog-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}.dialog-head h2{margin:0}.dialog-head button{min-width:48px}.dialog p{font-size:.9rem}.dialog label{display:block;margin-top:16px;margin-bottom:7px}.dialog input{max-width:100%;padding:10px;border:1px solid #aeb9ac;border-radius:7px;background:#fff}.dialog input[type=number]{width:140px}.dialog .wide{width:100%;margin:8px 0}.dialog details{margin-top:18px;border-top:1px solid var(--line);padding-top:8px}.dialog summary{min-height:44px;cursor:pointer;padding:10px 0}a{color:var(--green)}@media(min-width:700px){main{padding-top:28px}.app-header{padding-top:16px;padding-bottom:16px}h1{font-size:1.8rem}.dock{border:1px solid var(--line);border-bottom:0;border-radius:14px 14px 0 0}.story-copy{font-size:1.125rem}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
-</style>
-</head>
-<body>
-<header class="app-header"><div class="identity"><p class="brand">Fantasy Life</p><p id="identity"></p></div><div class="header-right"><span class="coins" id="coins"></span><button id="open-menu" class="menu-trigger" aria-label="Opções e arquivos" aria-haspopup="dialog">⋯</button></div></header>
-<main id="main-content">
-<div id="message" role="alert" hidden></div>
-<section id="story-panel" aria-label="História">
-<div id="diary" aria-live="polite"><div id="story-date" class="date"></div><h1 id="story-title" tabindex="-1"></h1><p id="story-copy" class="story-copy"></p><button id="context-action" class="context-action" hidden></button></div>
-<section id="decision" hidden aria-labelledby="decision-title"><button id="choice-back" class="back" hidden>← Voltar à história</button><div id="decision-date" class="date"></div><h1 id="decision-title" tabindex="-1"></h1><p id="decision-copy" class="story-copy"></p><div id="choice-options"></div></section>
-<section id="pause-controls" class="paused" hidden><p id="time-note"></p><button id="stop" hidden>Encerrar avanço e escolher o que fazer</button><button id="abandon" hidden>Abandonar a ação em andamento</button></section>
-<details id="older" class="older" hidden><summary>Acontecimentos anteriores</summary><ol id="history" class="history-list"></ol></details>
+:root{color-scheme:dark;--bg:#111b19;--panel:#1b2c27;--ink:#f5edd9;--muted:#c1cabb;--accent:#e1b96c;--border:#42574b;font:17px/1.5 system-ui,sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}button,a,input,select{touch-action:manipulation}button{cursor:pointer;min-height:46px;padding:10px 14px;border:1px solid var(--border);border-radius:12px;background:var(--panel);color:var(--ink);text-align:left}button:hover{border-color:var(--accent)}button:disabled{opacity:.55;cursor:default}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}a{color:var(--accent)}h1,h2,h3,p{margin:0 0 12px}h1{font-size:1.3rem}h2{font-size:1.18rem}h3{font-size:1rem}small,.muted{color:var(--muted);font-size:.85rem}[hidden]{display:none!important}main{max-width:720px;margin:auto;padding:14px 16px 155px}header{max-width:720px;margin:auto;padding:12px 16px 8px;border-bottom:1px solid var(--border)}.row{display:flex;align-items:center;gap:10px;justify-content:space-between}.subline{font-size:.79rem;color:var(--muted)}#header-name{font-size:1rem;font-weight:700}.menu{padding:5px 12px;min-width:46px}.card{border:1px solid var(--border);background:var(--panel);border-radius:16px;padding:16px;margin:12px 0}.stack{display:grid;gap:10px}.option small,.option span{display:block}.option strong{font-size:1rem}.primary{background:var(--accent);border-color:var(--accent);color:#211f15;font-weight:750;text-align:center}.secondary{background:transparent}.badge{font-size:.76rem;color:#ffe1a1;margin:3px 0}#dock{position:fixed;bottom:0;left:0;right:0;background:#13211ff5;border-top:1px solid var(--border);padding:8px 12px max(8px,env(safe-area-inset-bottom));z-index:10}#dock-inner{max-width:688px;margin:auto}#main-action{width:100%;margin-bottom:5px;min-height:45px}nav{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}nav button{text-align:center;min-height:42px;padding:6px;font-size:.88rem;border-color:transparent;background:transparent}nav button[aria-current="page"]{color:var(--accent);background:#263b32}.choice{display:grid;gap:10px}.label{display:grid;gap:5px;margin:12px 0}input,select{width:100%;min-width:0;padding:10px;border:1px solid var(--border);border-radius:9px;background:var(--bg);color:var(--ink);min-height:46px}summary{cursor:pointer;min-height:44px;padding:8px 0;color:var(--accent)}dialog{width:min(94vw,560px);max-height:85dvh;overflow:auto;background:var(--bg);color:var(--ink);border:1px solid var(--border);border-radius:16px;padding:18px}dialog::backdrop{background:#000a}#message:empty{display:none}#message{max-width:688px;margin:8px auto;padding:10px 16px;background:#433824;border-radius:10px;font-size:.85rem}#map-graphic{position:relative;aspect-ratio:1;margin:10px 0 22px}#map-graphic svg{width:100%;height:100%;position:absolute;inset:0}#map-graphic button{position:absolute;transform:translate(-50%,-50%);padding:7px 5px;min-height:44px;font-size:.70rem;max-width:30%;text-align:center;border-radius:10px}#map-graphic .here{background:var(--accent);color:#211f15;font-weight:700}progress{width:100%;accent-color:var(--accent)}.need{display:grid;grid-template-columns:90px 1fr 35px;align-items:center;gap:8px;font-size:.84rem}.diary-entry{border-left:2px solid var(--border);padding:0 0 14px 12px;margin-top:10px}.diary-entry p{margin:2px 0;font-size:.92rem}.back{margin-bottom:12px}#story-copy{white-space:pre-line}.facts{font-size:.87rem}#creation{padding-bottom:20px}#version{margin-top:22px;font-size:.72rem;color:var(--muted)}@media(min-width:640px){main{padding-top:22px}.card{padding:22px}#map-graphic button{font-size:.9rem}}@media(prefers-reduced-motion:no-preference){button{transition:border-color .15s}}
+</style></head><body>
+<header><div class="row"><div><div id="header-name">Fantasy Life</div><div id="header-meta" class="subline">Uma vida de escolhas em Ponteclara</div></div><button id="menu" class="menu" aria-label="Arquivos e opções">⋯</button></div><div id="warnings" class="badge"></div></header>
+<div id="message" role="status" aria-live="polite"></div>
+<main>
+<section id="creation"><h1>Quem chega a Ponteclara?</h1><p class="muted">Comece com uma história. Descubra o restante vivendo.</p>
+<form id="creator"><label class="label">Nome<input id="name" value="Ari" maxlength="32" required autocomplete="off"></label><label class="label">De onde você vem?<select id="origin"><option value="artesao">Aprendiz de artesão · Ofício 35</option><option value="ervas">Coletor de ervas · Alquimia 35</option><option value="viajante">Viajante · Exploração 35</option></select></label>
+<details><summary>Personalizar o personagem</summary><label class="label">Povo<select id="race"><option value="humano">Humano · 18 anos</option><option value="elfo">Elfo · 40 anos; enxerga no bosque à noite</option><option value="anao">Anão · 30 anos; resiste melhor ao cansaço</option></select></label><label class="label">Traço<select id="trait"><option value="observador">Observador · percebe outras soluções</option><option value="sociavel">Sociável · aproxima-se com mais facilidade</option><option value="persistente">Persistente · aprende mais com falhas</option></select></label><label class="label">Talento<select id="talent"><option value="oficio">Ofício</option><option value="alquimia">Alquimia</option><option value="arcanismo">Arcanismo</option><option value="esgrima">Esgrima</option><option value="exploracao">Exploração</option></select></label><label class="label">Dom singular<select id="gift"><option value="eco">Eco espiritual · perceber presenças</option><option value="pulso">Pulso vital · curar, gastando energia</option><option value="latente">Potencial latente · despertar ao explorar e estudar</option></select></label><label class="label">Semente do mundo<input id="seed" type="number" min="0" max="4294967295" value="2026" required></label><p class="muted">O mesmo personagem e a mesma semente repetem as condições iniciais. Suas escolhas mudam o caminho.</p></details>
+<button class="primary" type="submit" id="start">Começar esta vida</button></form>
+<div id="legacy" class="card" hidden><h2>Seu personagem anterior está guardado</h2><p class="muted">Você pode continuar a versão anterior ou transferir um personagem sem compromissos pendentes. O arquivo anterior continua intacto.</p><div class="stack"><button id="migrate">Transferir o personagem anterior</button><a href="./legado/">Continuar na versão anterior</a></div></div>
 </section>
-<section id="activities-panel" aria-labelledby="activities-title" hidden><h1 id="activities-title" tabindex="-1">O que você quer fazer?</h1><p id="activities-note" class="section-note"></p><div id="actions" class="action-list"></div></section>
-<section id="character-panel" aria-labelledby="character-title" hidden><h1 id="character-title" tabindex="-1">Seu personagem</h1><div id="stats" class="facts"></div><h3>Compromissos</h3><div id="activities"></div><h3>Habilidades e posses</h3><div id="possessions"></div></section>
+<div id="game" hidden>
+<section id="story-panel"><div id="scene"><div id="story-kicker" class="subline"></div><h1 id="story-title" tabindex="-1"></h1><p id="story-copy"></p><p id="people" class="muted"></p><div id="pending-options" class="choice"></div><div id="route-status" class="badge"></div></div><section id="composer" hidden><button id="back" class="back secondary">← Voltar ao diário</button><h2 id="composer-title"></h2><p id="composer-text" class="muted"></p><div id="composer-options" class="stack"></div></section><details id="diary-details"><summary>Folhear o diário</summary><div id="diary"></div></details></section>
+<section id="map-panel" hidden><h1>Por onde seguir?</h1><p class="muted">O caminho custa tempo. Você pode encontrar algo pelo trajeto e decidir se continua.</p><div id="map-graphic"></div><div id="map-destination" class="card" hidden></div><div id="calendar" class="card"></div></section>
+<section id="character-panel" hidden><h1 id="character-name"></h1><p id="identity" class="muted"></p><div class="card"><h2>Como você está</h2><div id="needs"></div><p id="health" class="facts"></p></div><div class="card"><h2>O que você sabe fazer</h2><div id="skills"></div><p class="muted">Aos 60 pontos, habilidades liberam técnicas e soluções. Talento melhora a prática; ânimo baixo reduz o aprendizado.</p></div><details><summary>Pessoas e vínculos</summary><div id="contacts"></div></details><details><summary>Mochila e projetos</summary><div id="inventory"></div></details></section>
+<p id="version">Fatia jogável 0.5.0 · Ponteclara · suas escolhas fazem o tempo passar</p></div>
 </main>
-<footer class="dock"><div id="advance-row"><button id="advance" class="primary">Envelhecer · +1 ano</button></div><nav class="dock-nav" aria-label="Navegação do jogo"><button id="nav-story" aria-current="page">História</button><button id="nav-activities">Atividades</button><button id="nav-character">Personagem</button></nav></footer>
-<dialog id="menu-dialog" class="dialog" aria-labelledby="menu-title"><div class="dialog-head"><h2 id="menu-title">Opções e arquivos</h2><button id="close-menu" aria-label="Fechar opções">✕</button></div><div id="menu-message" class="menu-message" role="alert" hidden></div><p>Sua vida é salva automaticamente neste navegador. Exporte uma cópia para transferir seu progresso.</p><button id="export" class="wide">Exportar vida</button><label for="import">Importar vida (.json)</label><input id="import" type="file" accept=".json,application/json"><details><summary>Começar outra vida de teste</summary><label for="seed">Semente</label><input id="seed" type="number" min="0" max="4294967295" value="2026"><p>Exporte a vida atual antes de começar outra.</p><button id="new" class="wide">Começar nova amostra</button></details><details><summary>Sobre esta versão</summary><p>Versão 0.4.1 · amostra da etapa 1.3. O começo aos 16 anos é fixo; nascimento e ciclo completo de vida vêm nas próximas etapas.</p><p>Envelhecer avança um ano e para diante de decisões. Compromissos progridem enquanto o tempo passa. A vida não avança com o jogo fechado.</p></details></dialog>
+<div id="dock" hidden><div id="dock-inner"><button id="main-action" class="primary">O que fazer aqui</button><nav aria-label="Navegação principal"><button id="nav-story" aria-current="page">Diário</button><button id="nav-map">Mapa</button><button id="nav-character">Personagem</button></nav></div></div>
+<dialog id="files"><div class="row"><h2>Arquivos e opções</h2><button id="close-files" aria-label="Fechar opções">×</button></div><div class="stack"><button id="export">Exportar personagem</button><label class="label">Importar personagem<input id="import" type="file" accept="application/json,.json"></label><button id="new-character">Criar outro personagem</button><div id="new-confirm" hidden><p>Exporte seu personagem antes de começar outro. A vida atual só será substituída ao confirmar a criação.</p><button id="confirm-new">Abrir criação de personagem</button></div><a href="./legado/">Abrir versão anterior (0.4.1)</a><p class="muted">Ponteclara é uma primeira região jogável. Nascimento, combate completo, outras regiões e mais histórias virão em etapas posteriores.</p></div></dialog>
 <script>
-(()=>{
-'use strict';
-const contrato=(()=>{
+(()=>{'use strict';
+const contract=(()=>{
 // Conteúdo declarativo: sem eval, funções ou caminhos de escrita arbitrários.
 const copy = x => JSON.parse(JSON.stringify(x));
 const integer = (x, min = 0) => Number.isSafeInteger(x) && x >= min;
@@ -56,7 +47,7 @@ function jsonData(x, depth = 0) {
 }
 function statKey(key) {
   return ['money', 'health', 'age'].includes(key) || typeof key === 'string' && (
-    /^(skill|aptitude):[a-z][a-z0-9_]*$/.test(key) && token(key.split(':')[1]) ||
+    /^(skill|aptitude|need):[a-z][a-z0-9_]*$/.test(key) && token(key.split(':')[1]) ||
     /^trust:[a-z][a-z0-9_]*:[a-z][a-z0-9_]*$/.test(key) && key.split(':').slice(1).every(token));
 }
 function condition(c) {
@@ -116,6 +107,7 @@ function compile(input) {
   jsonData(input);
   const c = copy(input);
   check(c.schemaVersion === 1 && id(c.id) && integer(c.version, 1), 'Schema de catálogo incompatível');
+  if(c.clock) check(c.clock.unit==='minute' && integer(c.clock.ticksPerDay,1) && integer(c.clock.pulseEvery,1) && Number.isFinite(c.clock.pulseChance) && c.clock.pulseChance>=0 && c.clock.pulseChance<=1, 'Relógio inválido');
   for (const key of ['decisions', 'consequences', 'activities']) {
     check(Array.isArray(c[key]), `Catálogo sem ${key}`);
     check(new Set(c[key].map(x => x.id)).size === c[key].length, `IDs duplicados em ${key}`);
@@ -131,6 +123,8 @@ function compile(input) {
     for (const o of d.options) {
       check(id(o.id) && text(o.label) && text(o.intent) && text(o.hint) && text(o.blockedReason), 'Opção incompleta');
       if (o.requires) condition(o.requires);
+      if(o.completionRequires) condition(o.completionRequires);
+      if(o.resolution) check(o.resolution==='first','Resolução inválida');
       if (o.visibleWhen) condition(o.visibleWhen);
       check(integer(o.cost?.money) && integer(o.cost?.days) && o.cost.days <= 36500, 'Custo inválido');
       effects(o.effects, refs);
@@ -160,7 +154,8 @@ function compile(input) {
 function readStat(s, key) {
   const [type, a, b] = key.split(':');
   if (type === 'money' || type === 'health') return s[type];
-  if (type === 'age') return Math.floor((s.day - s.birthDay) / 365);
+  if (type === 'age') return Math.floor((s.day - s.birthDay) / (365*(s.clock?.ticksPerDay||1)));
+  if (type === 'need') return s.life?.needs[a] ?? 0;
   if (type === 'skill') return s.skills[a] || 0;
   if (type === 'aptitude') return s.attributes[a] || 0;
   if (type === 'trust') return s.relations[`${a}:${b}`] || 0;
@@ -187,10 +182,10 @@ function eligible(s, c) {
 const availableParticipants = (s, list = []) => list.every(p => eligible(s, {person: p.id, alive: p.alive, local: p.local ? true : undefined}));
 
 return {copy,integer,check,id,jsonData,compile,eligible,readStat,person,availableParticipants};})();
-const motor=(()=>{
+const kernel=(()=>{
 // Evolução do motor da etapa 1.2: preserva relógio por marcos, fila, PRNG,
 // pausa/retomada, agenda legada e seleção ponderada. Contrato novo: save v2.
-const {copy, integer, check, id, jsonData, compile, eligible, readStat, person, availableParticipants} = contrato;
+const {copy, integer, check, id, jsonData, compile, eligible, readStat, person, availableParticipants}=contract;
 const EMPTY = {schemaVersion:1, id:'laboratorio', version:1, decisions:[], consequences:[], activities:[]};
 const order = {playerDeath:0, npcDeath:1, fact:2, consequence:2, offer:3, decision:3};
 const log = (s, type, data = {}) => s.history.push({day:s.day, type, ...data});
@@ -204,9 +199,10 @@ function weighted(s, entries, weight) {
   return entries.at(-1);
 }
 const idle = s => check(s.alive && !s.pending && s.target === null && !s.work.length, 'Ação indisponível durante avanço ou decisão');
-function createEngine(input = EMPTY) {
+function createEngine(input = EMPTY, simulation = {}) {
   // Catálogo privado: o chamador não pode alterar regras de um save em andamento.
   const {catalog, decisions, consequences, activities} = compile(input);
+  const pulseEvery=catalog.clock?.pulseEvery||7;
   const stamp = {id:catalog.id, version:catalog.version, fingerprint:JSON.stringify(catalog)};
   function validate(s) {
     jsonData(s);
@@ -214,7 +210,7 @@ function createEngine(input = EMPTY) {
     check(integer(s.seed) && s.seed <= 0xffffffff && integer(s.rng,1) && s.rng <= 0xffffffff && integer(s.day) &&
       Number.isSafeInteger(s.birthDay) && s.birthDay <= s.day && typeof s.alive === 'boolean' && integer(s.money) &&
       integer(s.health) && s.health <= 100 && id(s.location) && integer(s.nextId,1) &&
-      integer(s.nextPulse,1) && s.nextPulse >= s.day && s.nextPulse % 7 === 0 &&
+      integer(s.nextPulse,1) && s.nextPulse >= s.day && s.nextPulse % pulseEvery === 0 &&
       (s.target === null || integer(s.target) && s.target >= s.day), 'Estado vital/temporal inválido');
     for (const field of ['skills','attributes','items','relations','flags','world','knowledge','npcs','seen','families','resolved','processed'])
       check(s[field] && typeof s[field] === 'object' && !Array.isArray(s[field]), `Mapa inválido: ${field}`);
@@ -260,16 +256,18 @@ function createEngine(input = EMPTY) {
     check(new Set(modern.map(a=>a.slot)).size===modern.length && s.activities.filter(a=>!a.definition).reduce((n,a)=>n+a.hours,0)<=12, 'Atividades incompatíveis');
     check(s.alive || (!s.pending && !s.work.length && !s.activities.length && !s.queue.length && s.target === null), 'Morte não encerrada');
     check(!s.alive || s.health>0, 'Pessoa viva sem saúde');
+    if(catalog.clock) check(JSON.stringify(s.clock)===JSON.stringify(catalog.clock),'Perfil temporal incompatível');
+    simulation.validate?.(s);
     return s;
   }
   function tx(s, operation) { const draft=copy(s); operation(draft); validate(draft); Object.assign(s,draft); return s; }
   function create(seed=1, initial={}) {
     check(integer(seed) && seed <= 0xffffffff, 'Seed inválida'); jsonData(initial);
-    const allowed=['money','health','birthDay','location','skills','attributes','items','relations','flags','world','knowledge','npcs'];
+    const allowed=[...(catalog.clock?['day','life']:[]),'money','health','birthDay','location','skills','attributes','items','relations','flags','world','knowledge','npcs'];
     check(Object.keys(initial).every(k=>allowed.includes(k)), 'Campo inicial desconhecido');
     return validate({version:2,catalog:copy(stamp),seed,rng:mix(seed),day:0,birthDay:0,alive:true,money:0,health:100,
       location:'aldeia',skills:{},attributes:{},items:{},relations:{},flags:{},world:{},knowledge:{player:{}},
-      activities:[],npcs:{},queue:[],pending:null,target:null,work:[],history:[],seen:{},families:{},resolved:{},processed:{},nextId:1,nextPulse:7,...copy(initial)});
+      activities:[],npcs:{},queue:[],pending:null,target:null,work:[],history:[],seen:{},families:{},resolved:{},processed:{},nextId:1,nextPulse: (Math.floor((initial.day||0)/pulseEvery)+1)*pulseEvery,...(catalog.clock?{clock:copy(catalog.clock)}:{}),...copy(initial)});
   }
   function load(raw) {
     check(typeof raw === 'string' && raw.length < 8_000_000, 'Save ausente ou grande demais');
@@ -293,6 +291,7 @@ function createEngine(input = EMPTY) {
     check(Number.isSafeInteger(value), 'Resultado numérico inválido');
     if(type==='money') {check(value>=0,'Recursos insuficientes'); s.money=value;}
     else if(type==='health') {s.health=Math.max(0,Math.min(100,value)); if(s.health===0) dead(s);}
+    else if(type==='need') {check(s.life&&Object.hasOwn(s.life.needs,a),'Necessidade desconhecida');s.life.needs[a]=Math.max(0,Math.min(100,value));}
     else if(type==='skill') {check(value>=0,'Habilidade negativa');s.skills[a]=value;}
     else if(type==='trust') {check(person(s,a)&&person(s,b),'Relação com pessoa inexistente');s.relations[`${a}:${b}`]=Math.max(-100,Math.min(100,value));}
     else check(false,'Estatística não alterável');
@@ -326,10 +325,11 @@ function createEngine(input = EMPTY) {
   function finish(s,w) {
     const d=decisions.get(w.decision),o=d.options.find(x=>x.id===w.option);
     s.resolved[w.id]=true;
-    if(!permitted(s,d) || !eligible(s,o.requires)) {log(s,'actionInvalidated',{id:w.id,text:'A situação mudou antes da conclusão. A ação foi interrompida; o tempo e os custos já gastos foram preservados.'});return;}
+    if(!permitted(s,d) || !eligible(s,o.completionRequires||o.requires)) {log(s,'actionInvalidated',{id:w.id,text:'A situação mudou antes da conclusão. A ação foi interrompida; o tempo e os custos já gastos foram preservados.'});return;}
     const results=o.outcomes.filter(r=>eligible(s,r.when));
-    const r=weighted(s,results,x=>x.weight);
+    const r=o.resolution==='first'?results[0]:weighted(s,results,x=>x.weight);
     apply(s,o.effects); apply(s,r.effects);
+    simulation.afterChoice?.(s,{decision:d,option:o,outcome:r});
     log(s,'decision',{id:w.id,decision:d.id,choice:o.id,intent:o.intent,outcome:r.id,text:r.text});
   }
   function cleanActivities(s) {
@@ -342,7 +342,8 @@ function createEngine(input = EMPTY) {
     }
   }
   function pulse(s) {
-    s.nextPulse+=7;
+    s.nextPulse+=pulseEvery;
+    if(catalog.clock && random(s)>=catalog.clock.pulseChance)return;
     const list=[...decisions.values()].filter(d=>d.selection&&permitted(s,d)&&repetition(s,d)&&!s.queue.some(e=>e.decision===d.id));
     if(list.length) {
       const d=weighted(s,list,x=>x.selection.weight/(1+3*(s.seen[x.id]?.count||0)+2*(s.families[x.family]||0)));
@@ -351,6 +352,7 @@ function createEngine(input = EMPTY) {
   }
   function settle(s) {
     if(!s.alive || s.pending) return;
+    simulation.settle?.(s);
     const sorted=()=>s.queue.sort((a,b)=>a.day-b.day||order[a.type]-order[b.type]||a.id-b.id);
     // Mudanças causais vencem conclusões e convites na mesma data.
     sorted();
@@ -380,6 +382,7 @@ function createEngine(input = EMPTY) {
     while(s.alive && s.work.at(-1)?.remaining===0) finish(s,s.work.pop());
     cleanActivities(s);
     if(!s.alive) return;
+    simulation.settle?.(s);
     if(s.day===s.nextPulse) pulse(s);
     sorted();
     while(s.alive&&!s.pending&&s.queue[0]?.day<=s.day) {
@@ -387,6 +390,7 @@ function createEngine(input = EMPTY) {
       check(order[e.type]===3,'Fato fora de fase');
       if(e.type==='offer' ? s.npcs[e.npc].alive : permitted(s,decisions.get(e.decision))&&repetition(s,decisions.get(e.decision))) {
         s.pending=e;
+        simulation.onOffer?.(s,e,()=>random(s));
         if(e.type==='decision')expose(s,decisions.get(e.decision));
         log(s,'offer',{id:e.id,...(e.decision?{decision:e.decision}:{npc:e.npc})});
       } else {s.processed[e.id]=true;log(s,'invalidated',{id:e.id});}
@@ -405,6 +409,7 @@ function createEngine(input = EMPTY) {
         s.money+=(d.pay-d.costPerDay)*dt;s.skills[d.skill]=(s.skills[d.skill]||0)+d.rate*dt;
       } else {s.skills[a.skill]=(s.skills[a.skill]||0)+a.hours*a.rate*dt;s.money+=a.pay*dt;}
     }
+    simulation.progress?.(s,dt);
     if(s.work.length)s.work.at(-1).remaining-=dt;
   }
   function run(s,stopAfter=null) {
@@ -421,7 +426,7 @@ function createEngine(input = EMPTY) {
         }
         dailyCost=0;
       }
-      const next=Math.min(s.target,s.nextPulse,...s.queue.map(e=>e.day),...s.activities.map(a=>a.end),
+      const next=Math.min(s.target,s.nextPulse,simulation.nextBoundary?.(s)??Infinity,...s.queue.map(e=>e.day),...s.activities.map(a=>a.end),
         s.work.length?s.day+s.work.at(-1).remaining:Infinity,dailyCost?s.day+1:Infinity);
       const dt=next-s.day;check(integer(dt,1),'Relógio travado');progress(s,dt);s.day=next;
     }
@@ -449,8 +454,8 @@ function createEngine(input = EMPTY) {
     activity:(s,a)=>tx(s,t=>{idle(t);check(id(a.id)&&id(a.skill)&&integer(a.hours,1)&&a.hours<=12&&integer(a.duration,1)&&integer(a.rate??1)&&integer(a.pay??0)&&!t.activities.some(x=>x.id===a.id),'Atividade inválida');check(t.activities.filter(x=>!x.definition).reduce((n,x)=>n+x.hours,0)+a.hours<=12,'Agenda excedida');t.activities.push({...copy(a),rate:a.rate??1,pay:a.pay??0,end:t.day+a.duration});log(t,'activityStart',{id:a.id});}),
     cancel:(s,key)=>tx(s,t=>{idle(t);check(t.activities.some(a=>a.id===key),'Atividade inexistente');t.activities=t.activities.filter(a=>a.id!==key);log(t,'activityCancel',{id:key,text:'Você encerrou uma atividade.'});}),
     schedule:(s,e)=>tx(s,t=>{check(t.alive&&integer(e.day)&&e.day>t.day&&Object.hasOwn(order,e.type),'Evento inválido');push(t,e);}),
-    advance:(s,days)=>tx(s,t=>{idle(t);check(integer(days,1)&&days<=36500,'Avanço inválido');t.target=t.day+days;run(t);}),
-    age:s=>api.advance(s,365),
+    advance:(s,days)=>tx(s,t=>{idle(t);check(integer(days,1)&&days<=36500*(catalog.clock?.ticksPerDay||1),'Avanço inválido');t.target=t.day+days;run(t);}),
+    age:s=>api.advance(s,365*(catalog.clock?.ticksPerDay||1)),
     resume:s=>tx(s,t=>{check(t.alive&&!t.pending&&t.target!==null,'Não há avanço para retomar');run(t);}),
     stop:s=>tx(s,t=>{check(!t.pending&&!t.work.length,'Resolva a decisão ou conclua a ação primeiro');t.target=null;}),
     abandon:s=>tx(s,t=>{check(t.alive&&!t.pending&&t.work.length,'Não há ação para abandonar');for(const w of t.work){t.resolved[w.id]=true;log(t,'actionAbandoned',{id:w.id,text:'Você abandonou a ação em andamento. Os custos pagos e o tempo passado foram preservados.'});}t.work=[];t.target=null;settle(t);}),
@@ -487,7 +492,7 @@ function createEngine(input = EMPTY) {
 const {create,save,load,addNPC,activity,cancel,schedule,advance,resolve,resume,stop,select}=createEngine();
 
 return {createEngine};})();
-const content=(()=>{
+const legacy=(()=>{
 // Autoria em dados. Estes atalhos só constroem JSON; o motor não executa scripts de conteúdo.
 const all=(...x)=>({all:x}), not=x=>({not:x});
 const flag=(key,value=true)=>({flag:key,is:value});
@@ -655,86 +660,322 @@ function newLife(engine,seed=2026) {
 }
 
 return {catalog,newLife};})();
-const {createEngine}=motor;
-const {catalog,newLife}=content;
-const e=createEngine(catalog),key='fantasy-life-agencia-1.3';
-const $=selector=>document.querySelector(selector);
-let s=newLife(e),tab='story',selectedAction=null,lastPending=null;
-function message(text){for(const selector of ['#message','#menu-message']){const el=$(selector);el.textContent=text;el.hidden=!text;}}
-try{const raw=localStorage.getItem(key);if(raw)s=e.load(raw);}catch{message('Não foi possível carregar a vida salva. Você pode importar uma cópia nas opções. O arquivo anterior será preservado até sua próxima ação.');}
-function persist(){try{localStorage.setItem(key,e.save(s));}catch{message('Sua escolha foi aplicada, mas o navegador não conseguiu salvar. Exporte a vida nas opções para conservar o progresso.');}}
-function node(tag,text,className){const el=document.createElement(tag);if(text)el.textContent=text;if(className)el.className=className;return el;}
-function toTop(focus){window.scrollTo({top:0,behavior:'instant'});if(focus)$(focus)?.focus({preventScroll:true});}
-function command(fn){message('');try{fn();selectedAction=null;tab='story';persist();render();toTop(s.pending?'#decision-title':'#story-title');}catch(error){message(error.message);}}
-function navigate(next){tab=next;selectedAction=null;render();toTop(next==='story'?(s.pending?'#decision-title':'#story-title'):next==='activities'?'#activities-title':'#character-title');}
-function showAction(id){selectedAction=id;tab='story';render();toTop('#decision-title');}
-function options(container,choice,callback){
-  container.replaceChildren();const group=node('div',null,'options');
-  for(const o of choice.options){const button=node('button',null,'option');button.disabled=!o.enabled;button.append(node('strong',o.label),node('small',o.hint));
-    if(o.reason)button.append(node('small',o.reason,'reason'));button.addEventListener('click',()=>command(()=>callback(o.id)));group.append(button);}
-  container.append(group);
+const world=(()=>{
+const PLACES={
+ casa:{name:'Seu quarto',x:16,y:10,text:'A janela dá para os telhados de Ponteclara. Sua mochila repousa ao lado da cama.'},
+ praca:{name:'Praça da ponte',x:48,y:35,text:'A água corre sob a ponte de pedra. Recados e gente de passagem disputam o quadro de avisos.'},
+ mercado:{name:'Mercado',x:83,y:10,text:'Ervas, ferramentas e curiosidades ocupam as bancas. Nem todo vendedor conhece o valor do que tem.'},
+ taverna:{name:'Taverna',x:16,y:88,text:'Cheiro de caldo e pão quente. As mesas convidam a uma pausa e a conversas sem pressa.'},
+ oficina:{name:'Oficina de Maíra',x:16,y:62,text:'Limalha de cobre brilha no chão. Uma lanterna incompleta espera mãos pacientes.'},
+ patio:{name:'Pátio de treino',x:49,y:90,text:'Marcas de botas cercam os alvos de palha. Treinar sozinho é possível; aprender com alguém abre outros caminhos.'},
+ bosque:{name:'Bosque',x:83,y:90,text:'A trilha passa entre árvores antigas. Pequenos brilhos desaparecem quando você olha diretamente para eles.'},
+ poco:{name:'Poço antigo',x:83,y:62,text:'Runas desgastadas cercam a água escura. Uma vibração discreta sobe pela pedra.'}
+};
+const EDGES=[['casa','praca',10],['praca','mercado',10],['praca','taverna',10],['praca','oficina',15],['praca','patio',15],['praca','bosque',25],['oficina','poco',15],['bosque','poco',10]];
+const SKILLS={oficio:'Ofício',alquimia:'Alquimia',arcanismo:'Arcanismo',esgrima:'Esgrima',exploracao:'Exploração'};
+const ORIGINS={artesao:{name:'Aprendiz de artesão',text:'Ofício 35 · conhece ferramentas',skill:'oficio',value:35},ervas:{name:'Coletor de ervas',text:'Alquimia 35 · reconhece reagentes',skill:'alquimia',value:35},viajante:{name:'Viajante',text:'Exploração 35 · lê caminhos',skill:'exploracao',value:35}};
+const RACES={humano:'Humano',elfo:'Elfo',anao:'Anão'};
+const TRAITS={observador:'Observador',sociavel:'Sociável',persistente:'Persistente'};
+const GIFTS={eco:'Eco espiritual',pulso:'Pulso vital',latente:'Potencial latente'};
+function path(from,to){
+ const dist={[from]:0},routes={[from]:[]},todo=new Set(Object.keys(PLACES));
+ while(todo.size){const here=[...todo].sort((a,b)=>(dist[a]??Infinity)-(dist[b]??Infinity))[0];todo.delete(here);if(here===to)return {minutes:dist[here],legs:routes[here]};
+ for(const [a,b,n]of EDGES){const next=a===here?b:b===here?a:null;if(next&&todo.has(next)&&(dist[here]+n)<(dist[next]??Infinity)){dist[next]=dist[here]+n;routes[next]=[...routes[here],{from:here,to:next,minutes:n}];}}}throw Error('Caminho indisponível');
 }
+const weekdays=['Aurora','Brasa','Folha','Pedra','Vento','Rio','Estrela'];
+function calendar(t){const day=Math.floor(t/1440),minute=t%1440,h=Math.floor(minute/60),year=614+Math.floor(day/365),d=day%365;return {day,hour:h,minute,weekday:weekdays[day%7],date:d<360?`${d%30+1}/${Math.floor(d/30)+1}/${year}`:`Festa ${d-359}/${year}`,time:`${String(h).padStart(2,'0')}:${String(minute%60).padStart(2,'0')}`,phase:h<6?'Madrugada':h<12?'Manhã':h<18?'Tarde':'Noite'};}
+function npcPlace(id,t){const h=(t%1440)/60;if(id==='maira')return h>=8&&h<12||h>=13&&h<17?'oficina':h>=12&&h<13?'mercado':'moradia';if(id==='mercador')return h>=8&&h<18?'mercado':'taverna';if(id==='breno')return h>=9&&h<12?'patio':h>=18&&h<22?'taverna':'praca';return 'moradia';}
+
+return {PLACES,EDGES,SKILLS,ORIGINS,RACES,TRAITS,GIFTS,path,calendar,npcPlace};})();
+const content=(()=>{
+const {EDGES,PLACES,SKILLS}=world;
+const all=(...c)=>({all:c}),flag=(id,is=true)=>({flag:id,is}),stat=(key,value)=>({stat:key,op:'gte',value}),at=id=>flag(`at_${id}`),add=(stat,amount)=>({op:'add',stat,amount}),mark=(id,value=true)=>({op:'flag',id,value}),item=(id,amount)=>({op:'item',id,amount}),learn=(fact,who='player')=>({op:'learn',who,fact}),move=to=>({op:'move',who:'player',to});
+const fit=all(stat('need:food',15),stat('need:energy',15));
+const result=(id,text,effects=[],when)=>({id,text,effects,weight:1,...(when?{when}:{})});
+function option(id,label,minutes,text,effects=[],extra={}){return {id,label,intent:label,hint:minutes?`${minutes} min; o tempo passa apenas ao agir.`:'Sem passagem de tempo.',blockedReason:'Falta preparo, disposição ou alguma condição indicada.',cost:{money:0,days:minutes},effects:[],outcomes:[result('feito',text,effects)],...extra};}
+function action(id,title,text,options,requires,extra={}){return {id,version:1,kind:'action',family:id,domain:'vida',title,text,repeat:{max:100000,cooldown:0},options,...(requires?{requires}:{}),...extra};}
+const decisions=[];
+for(const[a,b,n]of EDGES)for(const[from,to]of[[a,b],[b,a]])decisions.push(action(`ir_${from}_${to}`,`Ir a ${PLACES[to].name}`,'Percorrer um trecho da vila.',[option('andar','Seguir pelo caminho',n,`Você chegou a ${PLACES[to].name}.`,[move(to)],{travel:true})],at(from)));
+decisions.push(action('rotina','Cuidar de si','Uma pausa também faz parte da aventura.',[
+ option('comer','Comer pão e caldo',20,'O pão ainda está quente. Você termina a refeição com mais disposição.',[add('need:food',65),add('need:mood',8)],{cost:{money:2,days:20},requires:{any:[at('casa'),at('taverna')]}}),
+ option('ajudar','Ajudar na taverna em troca de uma refeição',30,'Você ajuda a servir as mesas. Em troca, recebe uma refeição simples.',[add('need:food',45),add('need:energy',-3)],{requires:at('taverna'),completionRequires:at('taverna')}),
+ option('lavar','Lavar-se',20,'A água leva embora o pó da estrada.',[add('need:hygiene',70)],{requires:{any:[at('casa'),at('poco')]}}),
+ option('descansar','Descansar uma hora',60,'Você desacelera e recupera o fôlego.',[add('need:energy',22),add('need:mood',12)],{rest:true}),
+ option('dormir','Dormir oito horas',480,'Você acorda e escuta a vila retomando seu próprio ritmo.',[add('need:energy',90),add('need:mood',15)],{sleep:true,requires:at('casa'),completionRequires:at('casa')}),
+ option('esperar','Observar o lugar por meia hora',30,'Você acompanha o movimento ao redor. O mundo continua enquanto você espera.'),
+ option('lazer','Aproveitar uma hora livre',60,'Sem uma tarefa para cumprir, você encontra espaço para respirar.',[add('need:mood',30)],{requires:{any:[at('taverna'),at('bosque'),at('casa')]}})
+]));
+for(const[npc,name]of[['maira','Maíra'],['mercador','Livreiro'],['breno','Breno']]){
+ const participant=[{id:npc,alive:true,local:true}];
+ decisions.push(action(`conversar_${npc}`,`Conversar com ${name}`,'Ouvir alguém é o começo de uma relação, não uma promessa de intimidade.',[
+ option('ouvir','Ouvir e contar um pouco de si',20,`${name} compartilha um pouco de sua rotina. Vocês passam a se reconhecer melhor.`,[learn(`rotina_${npc}`),learn(`contato_${npc}`),add(`trust:player:${npc}`,5),add(`trust:${npc}:player`,5),add('need:mood',9)],{social:npc}),
+ option('amizade','Propor uma amizade',15,`${name} aceita cultivar uma amizade com você. Isso não apaga diferenças nem garante favores.`,[mark(`amizade_${npc}`),add(`trust:${npc}:player`,4)],{requires:all(stat(`trust:${npc}:player`,25),{not:flag(`amizade_${npc}`)})})
+ ],{person:npc,alive:true,local:true},{participants:participant,repeat:{max:100000,cooldown:120}}));
+}
+for(const[skill,name]of Object.entries(SKILLS)){
+ const place={oficio:'oficina',alquimia:'bosque',arcanismo:'poco',esgrima:'patio',exploracao:'bosque'}[skill];
+ decisions.push(action(`treinar_${skill}`,`Praticar ${name.toLowerCase()}`,'A prática ocupa tempo e disposição. A habilidade cresce ao concluir o exercício.',[
+ option('praticar','Praticar durante uma hora',60,`Você termina uma sessão de ${name.toLowerCase()}, percebendo melhor onde pode melhorar.`,[add('need:energy',-6)],{requires:fit,completionRequires:at(place),practice:{skill,base:6}}),
+ ...(skill==='esgrima'?[option('breno','Treinar com Breno',60,'Breno corrige sua base e põe seu controle à prova.',[add('need:energy',-9),add('trust:breno:player',2)],{requires:all(fit,{person:'breno',alive:true,local:true}),completionRequires:{person:'breno',alive:true,local:true},practice:{skill,base:9},cost:{money:2,days:60}})]:[])
+ ],at(place)));
+}
+decisions.push(action('oficina','Trabalhar e criar','Um trabalho paga pelo serviço concluído. A lanterna é um projeto que você pode retomar.',[
+ option('servico','Cumprir um serviço de duas horas',120,'Você entrega as peças revisadas e recebe seis moedas.',[add('money',6),add('need:energy',-10)],{requires:all(fit,flag('oficina_aberta')),completionRequires:at('oficina'),practice:{skill:'oficio',base:3}}),
+ option('lanterna','Trabalhar uma hora na lanterna',60,'Mais uma parte da lanterna se encaixa. A peça guarda a marca do seu trabalho.',[add('need:energy',-6)],{requires:all(fit,stat('skill:oficio',25),{not:flag('lanterna_pronta')}),completionRequires:at('oficina'),project:true,practice:{skill:'oficio',base:4}}),
+ option('vender','Vender a lanterna concluída',10,'Maíra examina sua lanterna e compra a peça por dezoito moedas.',[item('lanterna',-1),add('money',18)],{requires:all({item:'lanterna',min:1},{person:'maira',alive:true,local:true})}),
+ option('aula','Combinar uma aula amanhã às 09:00',10,'Maíra reserva um horário amanhã, às nove. Você combina encontrá-la na oficina até 09:30.',[],{requires:all({person:'maira',alive:true,local:true},{not:flag('aula_marcada')}),appointment:true})
+],at('oficina')));
+decisions.push(action('livro','O livro que veio na mochila','As páginas marcadas podem ser uma fonte de conhecimento, uma mercadoria ou um risco calculado.',[
+ option('examinar','Estudar as anotações',45,'Entre as margens você encontra uma sequência de runas incompleta. Guarda a descoberta para si.',[learn('runas_livro'),mark('livro_estudado')],{requires:all(fit,{not:flag('livro_estudado')}),completionRequires:{item:'grimorio',min:1},practice:{skill:'arcanismo',base:8}}),
+ option('consultar','Pedir a opinião do livreiro',20,'O livreiro identifica uma cópia rara. Agora ele também sabe o que você carrega.',[learn('livro_raro'),learn('livro_raro','mercador'),mark('livro_avaliado')],{requires:all({person:'mercador',alive:true,local:true},{not:flag('livro_avaliado')})}),
+ option('vender','Vender por doze moedas',10,'Você entrega o livro ao livreiro. As anotações que já aprendeu continuam com você.',[item('grimorio',-1),add('money',12)],{requires:{person:'mercador',alive:true,local:true}}),
+ option('negociar','Negociar o valor da cópia rara',15,'Você apresenta os detalhes da edição. O livreiro paga vinte e quatro moedas.',[item('grimorio',-1),add('money',24)],{requires:all({person:'mercador',alive:true,local:true},{knows:{who:'player',fact:'livro_raro'}})})
+],{item:'grimorio',min:1}));
+decisions.push(action('poco','Investigar o poço','A água responde de maneiras diferentes a quem se aproxima.',[
+ option('runa','Conduzir a vibração das runas',40,'Você estabiliza o pulso da água. Aprende um padrão que antes não reconhecia.',[learn('pulso_poco'),mark('poco_resolvido')],{requires:all(fit,stat('skill:arcanismo',30)),completionRequires:at('poco'),practice:{skill:'arcanismo',base:10}}),
+ option('eco','Ouvir com seu Eco espiritual',25,'Uma presença responde ao seu dom. Ela indica uma passagem esquecida entre as raízes.',[learn('passagem_raizes'),mark('poco_resolvido'),add('need:energy',-8)],{requires:flag('dom_eco')}),
+ option('observar','Investigar marcas na pedra',30,'Você encontra marcas de manutenção e descobre como aliviar a pressão da água sem magia.',[learn('mecanismo_poco'),mark('poco_resolvido')],{requires:{any:[flag('traco_observador'),stat('skill:oficio',30)]}})
+],all(at('poco'),{not:flag('poco_resolvido')})));
+decisions.push(action('dom','Usar seu dom','O Pulso vital restaura o corpo, mas consome sua disposição.',[option('curar','Canalizar o Pulso vital',15,'O calor percorre seus braços e fecha pequenas feridas.',[add('health',15),add('need:energy',-18)],{requires:stat('need:energy',30),completionRequires:flag('dom_pulso')})],flag('dom_pulso'),{repeat:{max:100000,cooldown:240}}));
+decisions.push(action('despertar','Investigar seu potencial latente','A experiência reunida ao explorar e estudar começa a ganhar forma.',[option('tentar','Tentar despertar o dom',60,'Seu potencial desperta como Eco espiritual. A água devolve um som que só você percebe.',[mark('dom_eco'),mark('dom_latente',false),add('need:energy',-15)],{requires:all(fit,stat('skill:arcanismo',30),stat('skill:exploracao',35)),completionRequires:at('poco')})],all(at('poco'),flag('dom_latente'))));
+const lesson=action('aula_agendada','A aula combinada','Maíra separou ferramentas e um problema real: reparar uma dobradiça sem partir o metal.',[
+ option('aprender','Participar da aula',60,'Maíra acompanha suas tentativas e explica as tensões do metal. O compromisso foi cumprido.',[add('trust:maira:player',8)],{cost:{money:3,days:60},requires:fit,completionRequires:{person:'maira',alive:true,local:true},practice:{skill:'oficio',base:14},lesson:true}),
+ option('cancelar','Explicar que não poderá ficar',0,'Você avisa Maíra antes de ir. Ela libera o horário, sem transformar isso em uma dívida.',[],{lesson:true})
+],at('oficina'),{kind:'opportunity',participants:[{id:'maira',alive:true,local:true}],repeat:{max:100000,cooldown:0}});decisions.push(lesson);
+const market=action('reagente','Uma caixa fora da banca','Uma vendedora de passagem oferece um reagente de brilho prateado. Ela pede quatro moedas e admite não conhecer sua origem.',[
+ option('comprar','Comprar sem examinar',5,'Você guarda o reagente. Seu valor real ainda precisa ser descoberto.',[item('reagente',1),mark('reagente_comprado')],{cost:{money:4,days:5},purchase:true}),
+ option('examinar','Examinar antes de decidir',15,'Você analisa o pó e o modo como ele reage à luz.',[],{resolution:'first',outcomes:[result('perito','Seu conhecimento identifica um reagente autêntico.',[mark('qualidade_conhecida'),{op:'offer',decision:'reagente_retorno'}],all(stat('skill:alquimia',30),{world:'reagente_real',is:true})),result('falso','A cor parece boa, mas a mistura é comum. Você percebe a diferença.',[mark('qualidade_conhecida'),{op:'offer',decision:'reagente_retorno'}],stat('skill:alquimia',30)),result('incerto','Você não tem certeza. Aprendeu algo ao observar, mas não o suficiente para garantir a origem.',[{op:'offer',decision:'reagente_retorno'}])],practice:{skill:'alquimia',base:2}}),
+ option('deixar','Seguir sem comprar',0,'Você agradece e segue. Uma oportunidade recusada também é uma escolha.')
+],all(at('mercado'),flag('mercado_aberto'),{not:flag('reagente_comprado')}),{kind:'opportunity',selection:{weight:1},repeat:{max:3,cooldown:2880}});decisions.push(market);
+decisions.push(action('reagente_retorno','Decidir sobre o reagente','A mesma vendedora espera sua decisão. A mercadoria continua sendo a que você examinou.',[market.options[0],market.options[2]],at('mercado'),{kind:'opportunity'}));
+decisions.push(action('usar_reagente','Preparar uma tinta rúnica','Você pode transformar o reagente em um material útil. O processo revela sua qualidade.',[option('misturar','Preparar a mistura',45,'A mistura termina.',[item('reagente',-1)],{requires:all(fit,stat('skill:alquimia',25)),completionRequires:at('casa'),resolution:'first',outcomes:[result('real','A tinta prateada conduz energia. Você criou um material valioso.',[item('tinta_runica',1)],{world:'reagente_real',is:true}),result('comum','O brilho se desfaz. Resta uma tinta comum; a experiência ensina como reconhecer a mistura.',[item('tinta',1)])],practice:{skill:'alquimia',base:8}})],all(at('casa'),{item:'reagente',min:1})));
+decisions.push(action('bosque_encontro','Um fio de luz entre raízes','Uma criatura pequena prendeu a pata em uma fivela abandonada. Ela se debate quando você se aproxima.',[
+ option('ferramenta','Soltar a fivela com cuidado',25,'Suas mãos destravam a peça. A criatura deixa uma semente luminosa antes de desaparecer.',[item('semente_luz',1)],{requires:{any:[stat('skill:oficio',25),flag('traco_observador')]}}),
+ option('eco','Acalmá-la com seu Eco espiritual',15,'Seu dom transforma o medo em uma breve aproximação. Ela entrega uma semente à sua mão.',[item('semente_luz',1),learn('espirito_bosque')],{requires:flag('dom_eco')}),
+ option('tentar','Tentar soltar a criatura',30,'Você tenta abrir a fivela.',[],{outcomes:[{...result('livre','A fivela cede. A criatura foge, deixando uma semente luminosa.',[item('semente_luz',1)]),weight:3},result('falha','A criatura se assusta e arranha sua mão antes de escapar. Você recupera a fivela e aprende com a tentativa.',[add('health',-5),item('fivela',1)])],practice:{skill:'exploracao',base:4}}),
+ option('recuar','Recuar e não interferir',0,'Você se afasta. A criatura procura outra saída entre as raízes.')
+],at('bosque'),{kind:'opportunity',selection:{weight:1},repeat:{max:2,cooldown:4320}}));
+decisions.push(action('colher','Procurar ingredientes no bosque','A luz, seu equipamento e sua experiência mudam os caminhos disponíveis.',[
+ option('ervas','Coletar ervas pela trilha',45,'Você volta com ervas úteis para misturas.',[item('ervas',2)],{requires:all(fit,{any:[flag('luz_dia'),flag('raca_elfo'),{item:'lanterna',min:1}]}),completionRequires:at('bosque'),practice:{skill:'exploracao',base:4}}),
+ option('raro','Seguir rastros de uma planta rara',45,'Sua leitura do terreno leva a uma flor de vidro, escondida acima da trilha.',[item('flor_vidro',1)],{requires:all(fit,flag('dominio_exploracao')),completionRequires:at('bosque'),practice:{skill:'exploracao',base:5}})
+],at('bosque'),{repeat:{max:100000,cooldown:180}}));
+decisions.push(action('tecnicas','Aplicar uma técnica aprendida','O domínio de uma habilidade libera usos que a prática inicial não oferecia.',[
+ option('guarda','Praticar a Guarda firme',45,'Você sustenta a base sob pressão e transforma esforço em controle.',[add('need:energy',-8)],{requires:all(at('patio'),fit,flag('dominio_esgrima')),completionRequires:at('patio'),practice:{skill:'esgrima',base:10}}),
+ option('reparo','Fazer um reparo delicado',60,'O mecanismo volta a funcionar. Você recebe oito moedas pelo reparo especializado.',[add('money',8)],{requires:all(at('oficina'),fit,flag('dominio_oficio'),flag('oficina_aberta')),completionRequires:at('oficina'),practice:{skill:'oficio',base:4}}),
+ option('tintura','Preparar uma tintura medicinal',40,'Você prepara uma tintura e trata as feridas que carregava.',[item('ervas',-2),add('health',12)],{requires:all(at('casa'),fit,flag('dominio_alquimia'),{item:'ervas',min:2}),completionRequires:at('casa'),practice:{skill:'alquimia',base:4}}),
+ option('foco','Conduzir energia sem desperdiçá-la',30,'A condução segura reduz sua tensão. Você recupera parte da disposição.',[add('need:energy',12)],{requires:all(at('poco'),flag('dominio_arcanismo')),completionRequires:at('poco')})
+],{any:[flag('dominio_esgrima'),flag('dominio_oficio'),flag('dominio_alquimia'),flag('dominio_arcanismo')]}));
+decisions.push(action('encomenda','Uma encomenda esquecida','Na mureta da praça, uma pequena encomenda traz o nome de Maíra. O lacre continua inteiro.',[
+ option('levar','Guardar para devolver',5,'Você guarda a encomenda sem romper o lacre. Entregá-la será uma escolha sua.',[item('encomenda',1),learn('encomenda_maira')]),
+ option('deixar','Deixar onde está',0,'Você deixa a encomenda sobre a mureta e segue seu caminho.')
+],at('praca'),{kind:'opportunity',selection:{weight:1},repeat:{max:1,cooldown:0}}));
+decisions.push(action('entrega','A encomenda de Maíra','O que você faz com algo que encontrou também constrói sua história.',[
+ option('devolver','Devolver a Maíra',10,'Maíra reconhece o lacre intacto. Ela agradece e passa a confiar mais em você.',[item('encomenda',-1),add('trust:maira:player',12),learn('encomenda_devolvida','maira')],{requires:{person:'maira',alive:true,local:true}}),
+ option('vender','Vender o pacote fechado no mercado',10,'Você recebe dez moedas. Maíra não sabe quem ficou com a encomenda.',[item('encomenda',-1),add('money',10)],{requires:all(at('mercado'),flag('mercado_aberto'))})
+],{item:'encomenda',min:1}));
+decisions.push(action('poco_retorno','Levar a descoberta à oficina','Maíra só saberá do que você encontrou se você decidir contar.',[
+ option('contar','Compartilhar sua descoberta',20,'Maíra relaciona sua descoberta a um selo usado na oficina. Ela propõe uma encomenda, sem exigir que você aceite.',[learn('poco_resolvido','maira'),mark('poco_compartilhado'),add('trust:maira:player',5)],{requires:{not:flag('poco_compartilhado')}}),
+ option('encomenda','Aceitar a encomenda de um selo',120,'Seu selo funciona. Maíra paga dezoito moedas pelo serviço especializado.',[add('money',18),mark('selo_entregue')],{cost:{money:4,days:120},requires:all(fit,flag('poco_compartilhado'),{not:flag('selo_entregue')},{any:[stat('skill:oficio',40),stat('skill:arcanismo',40)]}),completionRequires:{person:'maira',alive:true,local:true},practice:{skill:'oficio',base:6}})
+],all(at('oficina'),flag('poco_resolvido')),{participants:[{id:'maira',alive:true,local:true}]}));
+decisions.push(action('passagem_raizes','A passagem indicada pelo espírito','Você reconhece a direção que a presença do poço mostrou.',[
+ option('buscar','Procurar a passagem entre as raízes',45,'Entre raízes entrelaçadas, você encontra uma flor de vidro e a marca de um antigo caminho.',[item('flor_vidro',1),learn('caminho_antigo'),mark('passagem_visitada')],{requires:fit,completionRequires:at('bosque'),practice:{skill:'exploracao',base:7}})
+],all(at('bosque'),{knows:{who:'player',fact:'passagem_raizes'}},{not:flag('passagem_visitada')}),{repeat:{max:1,cooldown:0}}));
+const catalog={schemaVersion:1,id:'ponteclara',version:1,clock:{unit:'minute',ticksPerDay:1440,pulseEvery:60,pulseChance:0.25},decisions,activities:[],consequences:[]};
+
+return {catalog};})();
+const life=(()=>{
+const {createEngine}=kernel;
+const {copy,check,integer,eligible}=contract;
+const {catalog}=content;
+const {catalog : legacyCatalog}=legacy;
+const {PLACES,SKILLS,ORIGINS,RACES,TRAITS,GIFTS,path,calendar,npcPlace}=world;
+const record=x=>x&&typeof x==='object'&&!Array.isArray(x);
+const needNames={food:'Saciedade',energy:'Energia',hygiene:'Higiene',mood:'Ânimo'};
+const note=(s,type,text)=>s.history.push({day:s.day,type,text});
+const talents=Object.keys(SKILLS);
+function identity(input={}){
+ const p={name:'Ari',race:'humano',origin:'artesao',trait:'observador',talent:'oficio',gift:'eco',...input};
+ check(typeof p.name==='string'&&p.name.trim().length>0&&p.name.trim().length<=32,'Use um nome entre 1 e 32 caracteres.');
+ check(!/[<>\u0000-\u001f]/.test(p.name),'O nome contém caracteres inválidos.');
+ check(Object.hasOwn(RACES,p.race)&&Object.hasOwn(ORIGINS,p.origin)&&Object.hasOwn(TRAITS,p.trait)&&talents.includes(p.talent)&&Object.hasOwn(GIFTS,p.gift),'Características de personagem inválidas.');
+ return {id:'player',name:p.name.trim(),race:p.race,origin:p.origin,trait:p.trait,talent:p.talent,gift:p.gift};
+}
+function data(p){return {identity:p,needs:{food:80,energy:85,hygiene:75,mood:70},carry:{food:0,energy:0,hygiene:0,mood:0},route:[],appointment:null,project:0,milestones:{},socialDay:-1,revision:1};}
+function validate(s){
+ const l=s.life;check(l?.revision===1,'Dados de vida incompatíveis.');identity(l.identity);
+ for(const k of Object.keys(needNames))check(integer(l.needs?.[k])&&l.needs[k]<=100&&integer(l.carry?.[k])&&l.carry[k]<60,'Necessidades inválidas.');
+ check(record(l.milestones)&&integer(l.project)&&l.project<=180&&Number.isSafeInteger(l.socialDay)&&Array.isArray(l.route)&&l.route.length<=8,'Progresso de vida inválido.');
+ for(const[id,n]of Object.entries(s.npcs))if(n.identity){identity(n.identity);check(n.identity.id===id&&n.identity.name===n.name,'Identidade de morador inválida.');}
+ check(Object.hasOwn(PLACES,s.location),'Lugar inválido.');
+ let from=s.location;
+ // O primeiro trecho pode estar em andamento; cada destino continua ligado à origem.
+ for(const leg of l.route){check(leg.from===from&&Object.hasOwn(PLACES,leg.to)&&path(from,leg.to).minutes===leg.minutes&&path(from,leg.to).legs.length===1,'Rota inválida.');from=leg.to;}
+ if(l.appointment){const a=l.appointment;check(a.npc==='maira'&&a.place==='oficina'&&integer(a.at)&&a.until===a.at+30&&['scheduled','offered','done','cancelled','missed'].includes(a.status),'Compromisso inválido.');}
+}
+function synchronize(s){
+ const h=(s.day%1440)/60;
+ for(const p of Object.keys(PLACES))s.flags[`at_${p}`]=s.location===p;
+ s.flags.luz_dia=h>=6&&h<18;
+ s.flags.oficina_aberta=h>=8&&h<17;s.flags.mercado_aberto=h>=8&&h<18;
+ for(const[id,n]of Object.entries(s.npcs))if(n.alive&&['maira','mercador','breno'].includes(id))n.location=npcPlace(id,s.day);
+ const day=Math.floor(s.day/1440);
+ if(h>=12&&h<13&&s.life.socialDay!==day){
+  s.life.socialDay=day;
+  const a=s.npcs.maira,b=s.npcs.mercador;
+  if(a?.alive&&b?.alive&&a.location===b.location){s.relations['maira:mercador']=Math.min(100,(s.relations['maira:mercador']||0)+1);s.relations['mercador:maira']=Math.min(100,(s.relations['mercador:maira']||0)+1);if(s.location===a.location)note(s,'witness','Maíra e o livreiro conversam durante a pausa. A vila tem relações que não dependem de você.');}
+ }
+ for(const[skill,value]of Object.entries(s.skills))if(value>=60&&!s.life.milestones[skill]){s.life.milestones[skill]=true;s.flags[`dominio_${skill}`]=true;note(s,'milestone',`${SKILLS[skill]||skill}: você atingiu um novo domínio. Novas técnicas ficam disponíveis.`);}
+ const a=s.life.appointment;
+ if(a&&['scheduled','offered'].includes(a.status)){
+  if(s.day>a.until&&a.status==='scheduled'){a.status='missed';s.flags.aula_marcada=false;s.relations['maira:player']=Math.max(-100,(s.relations['maira:player']||0)-3);note(s,'appointment','O horário da aula passou. Maíra voltou ao trabalho; você poderá combinar outra ocasião.');}
+  else if(a.status==='scheduled'&&s.day>=a.at&&s.location===a.place&&s.npcs[a.npc]?.alive&&s.npcs[a.npc].location===a.place){a.status='offered';s.queue.push({id:s.nextId++,type:'decision',decision:'aula_agendada',day:s.day});}
+ }
+}
+function progress(s,dt){
+ const o=s.work.length?catalog.decisions.find(d=>d.id===s.work.at(-1).decision)?.options.find(o=>o.id===s.work.at(-1).option):null;
+ const sleeping=!!o?.sleep,resting=!!o?.rest;
+ const rates={food:sleeping?2:4,energy:sleeping||resting?0:s.life.identity.race==='anao'?1:2,hygiene:1,mood:sleeping?0:1};
+ for(const[k,rate]of Object.entries(rates)){const amount=s.life.carry[k]+dt*rate,loss=Math.floor(amount/60);s.life.carry[k]=amount%60;s.life.needs[k]=Math.max(0,s.life.needs[k]-loss);}
+}
+function afterChoice(s,{decision:d,option:o,outcome:r}){
+ if(o.practice){const {skill,base}=o.practice;let gain=base+(s.life.identity.talent===skill?2:0)+(s.life.identity.trait==='persistente'&&r.id==='falha'?3:0);if(s.life.needs.mood<20)gain=Math.max(1,Math.floor(gain/2));s.skills[skill]=(s.skills[skill]||0)+gain;note(s,'practice',`${SKILLS[skill]}: +${gain} de prática.`);}
+ if(o.social){if(s.life.identity.trait==='sociavel')s.relations[`${o.social}:player`]=Math.min(100,(s.relations[`${o.social}:player`]||0)+3);if(s.life.needs.hygiene<20){s.relations[`${o.social}:player`]=Math.max(-100,(s.relations[`${o.social}:player`]||0)-3);note(s,'social','O cheiro da estrada dificulta a aproximação. Uma pausa para se lavar pode ajudar.');}}
+ if(o.project){s.life.project=Math.min(180,s.life.project+60);if(s.life.project===180){s.items.lanterna=(s.items.lanterna||0)+1;s.flags.lanterna_pronta=true;note(s,'project','A lanterna está pronta. Você pode guardá-la, vendê-la ou levá-la ao bosque.');}else note(s,'project',`Lanterna: ${s.life.project}/180 minutos de trabalho concluídos.`);}
+ if(o.travel){const leg=s.life.route[0];if(leg?.to===s.location)s.life.route.shift();}
+ if(o.appointment){const at=(Math.floor(s.day/1440)+1)*1440+540;s.life.appointment={npc:'maira',place:'oficina',at,until:at+30,status:'scheduled'};s.flags.aula_marcada=true;}
+ if(o.lesson&&s.life.appointment){s.life.appointment.status=o.id==='cancelar'?'cancelled':'done';s.flags.aula_marcada=false;}
+ if(d.id==='despertar')s.life.identity.gift='eco';
+ if(o.purchase)s.flags.reagente_adquirido=true;
+}
+const hooks={validate,settle:synchronize,progress,afterChoice,nextBoundary:s=>{
+ const a=s.life.appointment;return a?.status==='scheduled'?(s.day<a.at?a.at:s.day<=a.until?a.until+1:Infinity):Infinity;
+},onOffer:(s,e,random)=>{if(e.decision==='reagente'){s.world.reagente_real=random()<0.6;s.flags.qualidade_conhecida=false;}}};
+const engine=createEngine(catalog,hooks);
+const legacyEngine=createEngine(legacyCatalog);
+function transact(s,op){const draft=copy(s);op(draft);engine.save(draft);Object.assign(s,draft);return s;}
+function routeRun(s){while(s.life.route.length&&!s.pending&&s.target===null){const l=s.life.route[0];engine.act(s,`ir_${l.from}_${l.to}`,'andar');}return s;}
+function createLife(seed=1,options={}){
+ const p=identity(options),age={humano:18,elfo:40,anao:30}[p.race];
+ const s=engine.create(seed,{day:480,birthDay:480-age*365*1440,life:data(p),location:'casa',money:18,items:{grimorio:1},skills:{[ORIGINS[p.origin].skill]:ORIGINS[p.origin].value},flags:{[`raca_${p.race}`]:true,[`traco_${p.trait}`]:true,[`dom_${p.gift}`]:true},npcs:{
+ maira:{name:'Maíra',alive:true,location:'oficina',identity:{id:'maira',name:'Maíra',race:'anao',origin:'artesao',trait:'persistente',talent:'oficio',gift:'latente'}},
+ mercador:{name:'Livreiro',alive:true,location:'mercado',identity:{id:'mercador',name:'Livreiro',race:'humano',origin:'viajante',trait:'observador',talent:'alquimia',gift:'latente'}},
+ breno:{name:'Breno',alive:true,location:'praca',identity:{id:'breno',name:'Breno',race:'elfo',origin:'viajante',trait:'sociavel',talent:'esgrima',gift:'pulso'}}
+ }});synchronize(s);note(s,'arrival',`${p.name}, ${ORIGINS[p.origin].name.toLowerCase()}, começa uma nova vida em Ponteclara. O livro na mochila é apenas uma das possibilidades.`);return engine.load(engine.save(s));
+}
+const act=(s,id,option)=>transact(s,t=>engine.act(t,id,option));
+const choose=(s,option)=>transact(s,t=>engine.choose(t,{instance:t.pending.id,option}));
+const travel=(s,to)=>transact(s,t=>{check(!t.pending&&t.target===null,'Conclua a situação atual antes de viajar.');t.life.route=path(t.location,to).legs;routeRun(t);});
+const resume=s=>transact(s,t=>{if(t.target!==null)engine.resume(t);if(!t.pending&&t.target===null)routeRun(t);});
+const stopRoute=s=>transact(s,t=>{check(!t.pending,'Resolva a situação atual.');if(t.work.length)t.life.route=t.life.route.slice(0,1);else{t.life.route=[];if(t.target!==null)engine.stop(t);}note(t,'travel','Você decidiu não seguir para os próximos trechos do caminho.');});
+const abandon=s=>transact(s,t=>{t.life.route=[];engine.abandon(t);});
+const wait=(s,minutes)=>transact(s,t=>engine.advance(t,minutes));
+const save=engine.save,load=engine.load;
+function migrateLegacy(raw){
+ const old=legacyEngine.load(raw);check(!old.pending&&!old.work.length&&!old.activities.length&&old.target===null&&!old.queue.length,'Conclua os compromissos na versão anterior antes de transferir este personagem.');
+ const fresh=createLife(old.seed,{name:'Viajante',gift:'latente'}),t=copy(old);
+ t.catalog=fresh.catalog;t.clock=fresh.clock;t.life=fresh.life;t.flags={...fresh.flags,...old.flags};t.day=old.day*1440+480;t.birthDay=old.birthDay*1440+480;t.nextPulse=(Math.floor(t.day/60)+1)*60;t.location='praca';
+ t.history=old.history.map(h=>({...h,day:h.day*1440+480}));t.seen={};t.families={};t.npcs={...fresh.npcs,...t.npcs};
+ for(const n of Object.values(t.npcs))if(['aldeia','vila'].includes(n.location))n.location=n.name.includes('irmã')?'casa':'praca';
+ synchronize(t);note(t,'migration','Você chegou a Ponteclara. Suas posses, habilidades, memórias e consequências anteriores foram preservadas; a rotina passa a ser vivida em minutos.');
+ return load(save(t));
+}
+function reason(s,c){
+ if(!c||eligible(s,c))return null;
+ if(c.all)return c.all.map(x=>reason(s,x)).filter(Boolean).join(' ');
+ if(c.any)return 'Alternativas: '+c.any.map(x=>reason(s,x)).filter(Boolean).join(' ou ');
+ if(c.person)return `Encontre ${s.npcs[c.person]?.name||c.person} neste lugar.`;
+ if(c.stat){const [type,key]=c.stat.split(':');return `Precisa de ${type==='skill'?SKILLS[key]||key:needNames[key]||c.stat} ${c.value} ou mais.`;}
+ if(c.item)return `Precisa de ${c.min} × ${{ervas:'ervas',lanterna:'lanterna',grimorio:'livro'}[c.item]||c.item}.`;
+ if(c.knows)return 'Descubra essa informação conversando ou investigando.';
+ if(c.flag){if(c.flag.startsWith('at_'))return `Vá a ${PLACES[c.flag.slice(3)]?.name||'outro lugar'}.`;if(c.flag.startsWith('dominio_'))return `Domine ${SKILLS[c.flag.slice(8)]} (60 pontos).`;return ({oficina_aberta:'A oficina atende entre 08:00 e 17:00.',mercado_aberto:'O mercado abre das 08:00 às 18:00.',dom_eco:'Requer o dom Eco espiritual.',luz_dia:'Espere a luz do dia.',traco_observador:'Requer o traço Observador.',raca_elfo:'Um elfo enxerga na escuridão do bosque.'})[c.flag]||'Requer outra condição do personagem.';}
+ if(c.not)return 'Você já concluiu esta possibilidade ou tem um compromisso em aberto.';
+ return 'Falta uma condição para esta ação.';
+}
+function view(s){
+ const v=engine.view(s),l=s.life,c=calendar(s.day),p=l.identity;
+ const describe=(d,o)=>{const definition=catalog.decisions.find(x=>x.id===d)?.options.find(x=>x.id===o.id);return {...o,minutes:o.cost.days,reason:definition&&!eligible(s,definition.requires)?reason(s,definition.requires):o.reason};};
+ const actions=v.actions.filter(d=>!d.id.startsWith('ir_')).map(d=>({...d,options:d.options.map(o=>describe(d.id,o))}));
+ if(v.pending&&!v.pending.legacy)v.pending.options=v.pending.options.map(o=>describe(s.pending.decision,o));
+ const people=Object.entries(s.npcs).filter(([,n])=>n.alive&&n.location===s.location).map(([id,n])=>({id,name:n.name,friend:!!s.flags[`amizade_${id}`]}));
+ const contacts=Object.entries(s.npcs).filter(([id])=>s.knowledge.player?.[`contato_${id}`]||Object.hasOwn(s.relations,`player:${id}`)||Object.hasOwn(s.relations,`${id}:player`)).map(([id,n])=>({id,name:n.name,trust:s.relations[`player:${id}`]||0,reciprocal:s.relations[`${id}:player`]||0,friend:!!s.flags[`amizade_${id}`],routine:s.knowledge.player?.[`rotina_${id}`]?{maira:'Oficina 08–12 e 13–17; mercado ao meio-dia.',mercador:'Mercado 08–18; depois na taverna.',breno:'Pátio 09–12; taverna 18–22.'}[id]:null}));
+ return {...v,actions,calendar:c,identity:copy(p),place:{id:s.location,...PLACES[s.location]},people,contacts,route:copy(l.route),appointment:copy(l.appointment),project:l.project,
+  needs:Object.entries(l.needs).map(([id,value])=>({id,label:needNames[id],value})),
+  traits:[RACES[p.race],TRAITS[p.trait],`Talento: ${SKILLS[p.talent]}`,GIFTS[p.gift]],
+  skills:Object.entries(SKILLS).map(([id,label])=>({id,label,value:s.skills[id]||0,mastered:!!l.milestones[id]})),
+  diary:v.diary.filter(h=>h.type!=='intention').map(h=>({...h,calendar:calendar(h.day)}))};
+}
+
+return {engine,legacyEngine,createLife,act,choose,travel,resume,stopRoute,abandon,wait,save,load,migrateLegacy,view};})();
+const ui=(()=>{
+const {createLife,act,choose,travel,resume,stopRoute,abandon,save,load,migrateLegacy,view}=life;
+const {PLACES,EDGES,SKILLS,path,calendar}=world;
+const KEY='fantasy-life-vida-1.4',OLD='fantasy-life-agencia-1.3';
+const $=id=>document.getElementById(id),clear=e=>e.replaceChildren(),text=(e,t)=>e.textContent=t;
+function el(tag,content,cls){const e=document.createElement(tag);if(content!==undefined)e.textContent=content;if(cls)e.className=cls;return e;}
+function button(label,fn,cls){const b=el('button',label,cls);b.type='button';b.addEventListener('click',fn);return b;}
+let state=null,tab='story',composer=null,destination=null,oldRaw=null,unreadRaw=null;
+function message(t=''){text($('message'),t);}
+function store(){try{if(unreadRaw){localStorage.setItem(`${KEY}-recuperacao`,unreadRaw);unreadRaw=null;}localStorage.setItem(KEY,save(state));}catch{message('O navegador não conseguiu salvar. Exporte o personagem para guardar seu progresso.');}}
+function run(fn){try{message();fn();composer=null;tab='story';store();render();window.scrollTo({top:0,behavior:'instant'});$('story-title').focus({preventScroll:true});}catch(e){message(e.message);}}
+function showTab(name){tab=name;composer=null;render();window.scrollTo({top:0,behavior:'instant'});}
+function duration(n){return n>=60?`${Math.floor(n/60)}h${n%60?` ${n%60}min`:''}`:`${n}min`;}
+function cost(o){return [o.cost.days?duration(o.cost.days):'sem tempo',o.cost.money?`${o.cost.money} moedas`:null].filter(Boolean).join(' · ');}
+function options(container,items,onSelect){clear(container);let locked;
+ for(const o of items){const b=button('',()=>onSelect(o.id),'option');b.append(el('strong',o.label),el('small',cost(o)));if(o.enabled){container.append(b);continue;}
+ b.append(el('small',o.reason));b.disabled=true;if(!locked){locked=el('details');locked.append(el('summary','Outras possibilidades'));container.append(locked);}locked.append(b);
+ }}
+function openAction(id){composer=id;tab='story';render();window.scrollTo({top:0,behavior:'instant'});}
 function render(){
-  const v=e.view(s);
-  if(v.pending&&v.pending.instance!==lastPending){tab='story';selectedAction=null;}
-  $('#identity').textContent=`${v.age} anos · Ponteclara`;$('#coins').textContent=`${v.money} moedas`;
-  for(const name of ['story','activities','character']){$(`#${name}-panel`).hidden=tab!==name;$(`#nav-${name}`).setAttribute('aria-current',tab===name?'page':'false');}
-  const action=v.actions.find(a=>a.id===selectedAction);if(selectedAction&&!action)selectedAction=null;
-  const choice=v.pending||action,choiceVisible=tab==='story'&&!!choice;
-  $('#decision').hidden=!choiceVisible;$('#diary').hidden=choiceVisible;
-  $('#choice-back').hidden=!!v.pending;
-  if(choice){$('#decision-title').textContent=choice.title;$('#decision-date').textContent=v.pending?'Uma escolha na sua vida':'Sua iniciativa';$('#decision-copy').textContent=choice.text;
-    options($('#choice-options'),choice,id=>v.pending?e.choose(s,{instance:v.pending.instance,option:id}):e.act(s,action.id,id));
-  }else $('#choice-options').replaceChildren();
-  // A apresentação mantém resultados; o motor conserva também as intenções para auditoria.
-  const entries=v.diary.filter(h=>h.type!=='intention'),latest=entries.at(-1);
-  $('#story-date').textContent=latest?`Dia ${latest.day}`:'Ponteclara · uma nova etapa';
-  $('#story-title').textContent=latest?(latest.type==='activityComplete'?'Uma etapa concluída':latest.type==='actionInvalidated'?'Os planos mudaram':'Sua história continua'):'Um achado inesperado';
-  $('#story-copy').textContent=latest?latest.text:'Você tem 16 anos e vive em Ponteclara. Entre materiais descartados, encontrou um livro cheio de diagramas. O destino dele ainda está nas suas mãos.';
-  const lastDecision=[...s.history].reverse().find(h=>h.type==='decision');
-  const context=v.actions.find(a=>a.id==='livro.destino');
-  const showContext=!!context&&(!entries.length||lastDecision?.decision==='livro.destino'&&latest?.type==='decision');
-  $('#context-action').hidden=!showContext;$('#context-action').textContent='Ver o livro';
-  $('#context-action').onclick=()=>showAction('livro.destino');
-  const older=entries.slice(0,-1).reverse(),history=$('#history');history.replaceChildren();
-  for(const h of older){const entry=node('li');entry.append(node('small',`Dia ${h.day}`,'date'),node('p',h.text));history.append(entry);}
-  $('#older').hidden=choiceVisible||!older.length;
-  $('#time-note').textContent=v.canResume?`Avanço pausado. Restam ${v.remaining} dias; você decide quando continuar.`:'';
-  $('#pause-controls').hidden=!!choice||(!v.canStop&&!v.canAbandon);$('#stop').hidden=!v.canStop;$('#abandon').hidden=!v.canAbandon;
-  $('#advance-row').hidden=choiceVisible;
-  $('#advance').disabled=!v.alive||choiceVisible;$('#advance').textContent=v.pending?'Voltar à escolha':v.canResume?'Retomar avanço':'Envelhecer · +1 ano';
-  const actions=$('#actions');actions.replaceChildren();
-  $('#activities-note').textContent=v.pending?'Há uma escolha esperando por você na história.':v.canResume?'Você pode encerrar o avanço para tomar outra iniciativa.':'Você pode tomar a iniciativa quando quiser.';
-  if(v.pending){const button=node('button','Voltar à escolha');button.addEventListener('click',()=>navigate('story'));actions.append(button);}
-  else if(v.canStop){const button=node('button','Encerrar avanço e ver atividades');button.addEventListener('click',()=>{command(()=>e.stop(s));navigate('activities');});actions.append(button);}
-  else if(v.canAbandon){const button=node('button','Abandonar a ação em andamento');button.addEventListener('click',()=>command(()=>e.abandon(s)));actions.append(button);}
-  for(const a of v.actions){const button=node('button',null,'action-card');button.append(node('strong',a.title));button.addEventListener('click',()=>showAction(a.id));actions.append(button);}
-  if(!actions.childElementCount)actions.append(node('p','Nenhuma iniciativa disponível neste momento.','muted'));
-  const stats=$('#stats');stats.replaceChildren();
-  for(const [label,value] of [['Idade',`${v.age} anos`],['Moedas',v.money],['Saúde',v.health]]){const p=node('p');p.append(node('strong',label),node('span',String(value)));stats.append(p);}
-  const activities=$('#activities');activities.replaceChildren();
-  for(const a of v.activities){const row=node('div',null,'commitment'),button=node('button','Encerrar');button.disabled=!v.canAge;button.setAttribute('aria-label',`Encerrar ${a.label}`);button.addEventListener('click',()=>command(()=>e.cancel(s,a.id)));row.append(node('span',a.label),button);activities.append(row);}
-  if(!v.activities.length)activities.append(node('p','Nenhum compromisso em andamento.','muted'));
-  const skillNames={oficio:'Ofício',arcanismo:'Arcanismo'},itemNames={grimorio:'Livro de diagramas',notas:'Anotações copiadas',lanterna:'Lanterna rúnica'};
-  const possessions=$('#possessions');possessions.replaceChildren();const list=node('ul',null,'summary-list');
-  for(const [id,value] of Object.entries(v.skills))list.append(node('li',`${skillNames[id]||id}: ${value}`));
-  for(const [id,value] of Object.entries(v.items).filter(([,n])=>n>0))list.append(node('li',`${itemNames[id]||id}: ${value}`));
-  possessions.append(list);if(!list.childElementCount)possessions.append(node('p','Nenhuma posse ou habilidade registrada.','muted'));
-  if(v.pending&&lastPending!==v.pending.instance)toTop('#decision-title');lastPending=v.pending?.instance||null;
+ const playing=!!state;$('creation').hidden=playing;$('game').hidden=!playing;$('dock').hidden=!playing;
+ if(!playing)return;
+ const v=view(state);text($('header-name'),`${v.identity.name} · ${v.place.name}`);text($('header-meta'),`${v.calendar.weekday}, ${v.calendar.date} · ${v.calendar.time} · ${v.money} moedas`);
+ text($('warnings'),v.needs.filter(n=>n.value<20).map(n=>`${n.label} baixa`).join(' · '));
+ for(const name of['story','map','character']){$(`${name}-panel`).hidden=tab!==name;$(`nav-${name}`).setAttribute('aria-current',tab===name?'page':'false');}
+ const last=v.diary.filter(h=>['decision','arrival','migration','actionInvalidated','appointment','death'].includes(h.type)).at(-1);
+ text($('story-kicker'),`${v.calendar.phase} em ${v.place.name}`);text($('story-title'),v.pending?.title||v.place.name);
+ text($('story-copy'),v.pending?.text||last?.text||v.place.text);
+ text($('people'),v.pending?'':`${v.place.text}\n${v.people.length?`Por aqui: ${v.people.map(p=>p.name).join(', ')}.`:''}`);
+ options($('pending-options'),v.pending?.options||[],o=>run(()=>choose(state,o)));
+ text($('route-status'),v.route.length?`Caminho para ${PLACES[v.route.at(-1).to].name} · ${v.route.reduce((n,l)=>n+l.minutes,0)} min em trechos previstos.`:v.canResume?`Uma ação está em andamento. Restam até ${duration(v.remaining)}.`:'');
+ clear($('route-status'));if(v.canResume)$('route-status').append(el('p',`Ação em andamento · ${duration(v.remaining)} até o destino planejado.`));if(v.route.length){$('route-status').append(el('p',`Caminho para ${PLACES[v.route.at(-1).to].name}.`));if(!v.pending)$('route-status').append(button('Parar após este trecho',()=>run(()=>stopRoute(state))));}
+ if(v.canAbandon)$('route-status').append(button('Abandonar a ação atual',()=>run(()=>abandon(state))));
+ const main=$('main-action');main.disabled=!!v.pending||!v.alive;text(main,v.pending?'Há uma decisão no diário':v.canResume?'Retomar ação':v.route.length?'Continuar caminho':'O que fazer aqui');
+ $('scene').hidden=!!composer;$('composer').hidden=!composer;
+ if(composer){clear($('composer-options'));if(composer==='list'){text($('composer-title'),`O que fazer em ${v.place.name}?`);text($('composer-text'),'Escolha uma atividade para ver os caminhos possíveis. Abrir opções não passa o tempo.');for(const a of v.actions)$('composer-options').append(button(a.title,()=>openAction(a.id)));}
+ else{const a=v.actions.find(a=>a.id===composer);if(a){text($('composer-title'),a.title);text($('composer-text'),a.text);options($('composer-options'),a.options,o=>run(()=>act(state,a.id,o)));}else composer=null;}}
+ clear($('diary'));for(const h of v.diary.slice(-16).reverse()){const a=el('article',undefined,'diary-entry');a.append(el('small',`${h.calendar.weekday} · ${h.calendar.date} · ${h.calendar.time}`),el('p',h.text));$('diary').append(a);}
+ renderMap(v);renderCharacter(v);
 }
-$('#nav-story').addEventListener('click',()=>navigate('story'));
-$('#nav-activities').addEventListener('click',()=>navigate('activities'));
-$('#nav-character').addEventListener('click',()=>navigate('character'));
-$('#choice-back').addEventListener('click',()=>{selectedAction=null;render();toTop('#story-title');});
-$('#advance').addEventListener('click',()=>{if(s.pending){navigate('story');return;}command(()=>e.view(s).canResume?e.resume(s):e.age(s));});
-$('#stop').addEventListener('click',()=>command(()=>e.stop(s)));
-$('#abandon').addEventListener('click',()=>command(()=>e.abandon(s)));
-$('#open-menu').addEventListener('click',()=>$('#menu-dialog').showModal());
-$('#close-menu').addEventListener('click',()=>$('#menu-dialog').close());
-$('#new').addEventListener('click',()=>command(()=>{const next=newLife(e,Number($('#seed').value));s=next;lastPending=null;$('#menu-dialog').close();}));
-$('#export').addEventListener('click',()=>{const url=URL.createObjectURL(new Blob([e.save(s)],{type:'application/json'}));const link=node('a');link.href=url;link.download=`Fantasy_Life_vida_dia_${s.day}.json`;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
-$('#import').addEventListener('change',async event=>{const file=event.target.files[0];if(!file)return;try{const next=e.load(await file.text());s=next;selectedAction=null;tab='story';lastPending=null;message('');persist();$('#menu-dialog').close();render();toTop(s.pending?'#decision-title':'#story-title');}catch{message('A vida não foi importada: arquivo inválido ou de outra versão. Seu progresso atual foi preservado.');}event.target.value='';});
+function renderMap(v){
+ clear($('map-graphic'));const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 100 100');svg.setAttribute('preserveAspectRatio','none');svg.setAttribute('aria-hidden','true');
+ for(const[a,b]of EDGES){const l=document.createElementNS('http://www.w3.org/2000/svg','line');for(const[k,val]of Object.entries({x1:PLACES[a].x,y1:PLACES[a].y,x2:PLACES[b].x,y2:PLACES[b].y,stroke:'#536b56','stroke-width':1}))l.setAttribute(k,String(val));svg.append(l);}$('map-graphic').append(svg);
+ for(const[id,p]of Object.entries(PLACES)){const b=button(p.name,()=>{destination=id;renderMap(view(state));},id===v.location?'here':'');b.style.left=`${p.x}%`;b.style.top=`${p.y}%`;if(id===v.location)b.setAttribute('aria-label',`${p.name}, você está aqui`);$('map-graphic').append(b);}
+ const box=$('map-destination');clear(box);box.hidden=!destination;
+ if(destination){const p=PLACES[destination],route=path(v.location,destination);box.append(el('h2',p.name),el('p',p.text,'muted'));if(destination===v.location)box.append(el('p','Você está aqui.'));else{box.append(el('p',`${route.minutes} min · ${route.legs.length} trecho(s)`));const b=button('Ir até lá',()=>run(()=>travel(state,destination)),'primary');b.disabled=!!v.pending||v.canResume||v.route.length>0;box.append(b);if(b.disabled)box.append(el('p','Resolva ou encerre a ação atual para escolher outro caminho.','muted'));}}
+ clear($('calendar'));$('calendar').append(el('h2','Seu calendário'),el('p',`${v.calendar.weekday} · ${v.calendar.date} · ${v.calendar.time}`));
+ const a=v.appointment;if(a){const c=calendar(a.at),status={scheduled:'Combinada',offered:'Sua aula está disponível',done:'Concluída',cancelled:'Cancelada com aviso',missed:'Horário perdido'}[a.status];$('calendar').append(el('p',`${status}: aula com Maíra, ${c.weekday} ${c.date}, 09:00–09:30, na oficina.`));}else $('calendar').append(el('p','Sem compromisso marcado. Horários conhecidos dos moradores aparecem em Personagem.','muted'));
+}
+const itemNames={grimorio:'Livro anotado',lanterna:'Lanterna',reagente:'Reagente prateado',tinta_runica:'Tinta rúnica',tinta:'Tinta comum',semente_luz:'Semente luminosa',fivela:'Fivela',ervas:'Ervas',flor_vidro:'Flor de vidro',encomenda:'Encomenda de Maíra'};
+function renderCharacter(v){text($('character-name'),`${v.identity.name} · ${v.age} anos`);text($('identity'),v.traits.join(' · '));clear($('needs'));
+ for(const n of v.needs){const row=el('div',undefined,'need'),bar=el('progress');bar.max=100;bar.value=n.value;bar.setAttribute('aria-label',n.label);row.append(el('span',n.label),bar,el('span',String(n.value)));$('needs').append(row);}
+ text($('health'),`Saúde: ${v.health}/100. Alimentar-se, descansar, lavar-se e ter tempo livre ajudam a manter a rotina.`);clear($('skills'));for(const s of v.skills)$('skills').append(el('p',`${s.label}: ${s.value}${s.mastered?' · domínio alcançado':''}`,'facts'));
+ clear($('contacts'));if(!v.contacts.length)$('contacts').append(el('p','Converse com alguém para conhecer seus hábitos.','muted'));for(const c of v.contacts){const box=el('div',undefined,'card');box.append(el('h3',`${c.name}${c.friend?' · amizade':''}`),el('p',`Sua confiança: ${c.trust}. Confiança em você: ${c.reciprocal}.`),el('p',c.routine||'Rotina ainda desconhecida.','muted'));$('contacts').append(box);}
+ clear($('inventory'));for(const[id,n]of Object.entries(v.items))if(n)$('inventory').append(el('p',`${itemNames[id]||id}: ${n}`,'facts'));if(v.project)$('inventory').append(el('p',`Lanterna: ${v.project}/180 min de trabalho.`,'facts'));
+}
+$('creator').addEventListener('submit',e=>{e.preventDefault();try{const seed=Number($('seed').value);const next=createLife(seed,Object.fromEntries(['name','origin','race','trait','talent','gift'].map(k=>[k,$(k).value])));if(state)localStorage.setItem(`${KEY}-backup`,save(state));state=next;message();tab='story';store();render();window.scrollTo({top:0,behavior:'instant'});}catch(e){message(e.message);}});
+$('main-action').addEventListener('click',()=>{const v=view(state);if(v.canResume||v.route.length)run(()=>resume(state));else openAction('list');});
+$('back').addEventListener('click',()=>{composer=composer==='list'?null:'list';render();});
+for(const n of['story','map','character'])$(`nav-${n}`).addEventListener('click',()=>showTab(n));
+$('menu').addEventListener('click',()=>$('files').showModal());$('close-files').addEventListener('click',()=>$('files').close());
+$('new-character').addEventListener('click',()=>{$('new-confirm').hidden=false;});
+$('confirm-new').addEventListener('click',()=>{$('files').close();$('creation').hidden=false;$('game').hidden=true;$('dock').hidden=true;$('new-confirm').hidden=true;window.scrollTo({top:0,behavior:'instant'});});
+$('export').addEventListener('click',()=>{if(!state){message('Crie ou importe um personagem primeiro.');return;}const a=el('a');const url=URL.createObjectURL(new Blob([save(state)],{type:'application/json'}));a.href=url;a.download='fantasy-life-personagem.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+$('import').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;try{if(file.size>8000000)throw Error('Arquivo grande demais.');const raw=await file.text();let next;try{next=load(raw);}catch{next=migrateLegacy(raw);}if(state)localStorage.setItem(`${KEY}-backup`,save(state));state=next;tab='story';composer=null;message('Personagem importado.');store();$('files').close();render();}catch(e){message(`O personagem não foi importado. ${e.message}`);}finally{e.target.value='';}});
+$('migrate').addEventListener('click',()=>{try{state=migrateLegacy(oldRaw);store();message('Personagem transferido. O progresso anterior continua guardado.');render();}catch(e){message(e.message);}});
+try{const raw=localStorage.getItem(KEY);unreadRaw=raw;if(raw)state=load(raw);unreadRaw=null;oldRaw=localStorage.getItem(OLD);$('legacy').hidden=!oldRaw;}catch(e){message(`Não foi possível abrir o personagem salvo. O arquivo foi preservado. ${e.message}`);}
 render();
 
+return {};})();
 })();
-</script></body></html>
+</script>
+</body></html>

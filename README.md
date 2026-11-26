@@ -1,30 +1,20 @@
 # Fantasy Life
 
-Simulador de vida medieval fantástico textual, com liberdade de trajetória, escolhas significativas e consequências persistentes. Projeto em português, inspirado na acessibilidade de BitLife e nas possibilidades narrativas de Life in Adventure e 1 in 8 Billion.
+RPG de vida medieval fantástico textual, em português, com escolhas, consequências e liberdade de trajetória.
 
-Estado atual: **etapa 1.3 — arquitetura de escolhas**, versão 0.4.1. A amostra começa em uma situação fixa aos 16 anos. Há 12 decisões, 34 opções conectadas e rotinas automáticas. O ciclo completo de vida e a geração de nascimento são etapas futuras.
+**[Jogar Fantasy Life](https://sapatenis132.github.io/fantasy-life/)**
 
-## Testar
+Versão **0.5.0 — Ponteclara**, etapa 1.4. Crie um personagem, acompanhe o diário, circule pela vila e decida como aprender, trabalhar, construir relações e investigar o que encontrar. Ações movem um calendário; capacidades e informações abrem soluções diferentes. O jogo começa com um jovem adulto; nascimento procedural e ciclo completo de vida são próximos blocos.
 
-**[Abrir Fantasy Life no navegador](https://sapatenis132.github.io/fantasy-life/)**
+A história aparece primeiro. Use **O que fazer aqui**, **Mapa** e **Personagem**. O menu superior contém exportação/importação. Saves ficam no navegador; exporte para transferir entre aparelhos. A [versão anterior](https://sapatenis132.github.io/fantasy-life/legado/) e sua chave de save foram preservadas.
 
-A amostra está publicada no GitHub Pages a partir de `docs/index.html`. O mesmo arquivo funciona como HTML autocontido, em um navegador com JavaScript. Não exige servidor de jogo ou API externa.
+## Desenvolver
 
-A história é a tela inicial. Use Atividades para tomar iniciativas, Personagem para consultar condições e compromissos e o menu superior para arquivos. O botão de envelhecer fica na parte inferior.
-
-O jogo tenta salvar no próprio navegador. A seção de arquivos permite exportar/importar a vida. O save do endereço online é separado do save de um arquivo baixado; use a exportação/importação para transferir progresso.
-
-## Desenvolvimento
-
-Leia `DOCUMENTO_MESTRE.md` e `PLANO_DE_CONTINUIDADE.md`. Código e documentação da versão atual estão em `etapa_1_3/`; a base original e o histórico documental permanecem preservados.
+Leia `DOCUMENTO_MESTRE.md`, `PLANO_DE_CONTINUIDADE.md` e `etapa_1_4/README.md`. O kernel 1.3 foi estendido sem reiniciar a arquitetura. `base_original/` e os registros anteriores continuam preservados.
 
 ```sh
-node etapa_1_3/scripts/verificar.mjs
+node etapa_1_4/verificar.mjs
 node scripts/preparar-pages.mjs
 ```
 
-A verificação cobre 71 testes atuais, incluindo 500 percursos novos e quatro trajetórias controladas. Testes visuais e no Android físico devem ser registrados separadamente. A amostra não demonstra cinquenta horas de variedade.
-
-Para atualizar a versão online, reconstrua `docs/`, envie a alteração à branch publicada e aguarde o GitHub Pages concluir. Os detalhes estão em `PUBLICACAO.md`.
-
-A revisão mobile está documentada em `etapa_1_3/docs/REVISAO_UX_0_4_1.md`, com fontes e comparação medida em 320, 360 e 412 px.
+126 casos atuais e 14 históricos separados; inspeção mobile documentada em `etapa_1_4/evidencias/VALIDACAO_MOBILE.md`. Isso não comprova 50 horas de variedade nem substitui teste Android físico.

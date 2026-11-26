@@ -32,3 +32,15 @@ O jogo é estático e não envia os saves para o GitHub: eles ficam no armazenam
 ## Interface 0.4.1
 
 Revisão da hierarquia mobile, com história em primeiro plano e opções secundárias em áreas próprias. Motor e chave dos saves continuam compatíveis. Fontes e resultados em `etapa_1_3/docs/REVISAO_UX_0_4_1.md`. A página `/ux/` é um ambiente de comparação, com saves próprios; ela não faz parte do fluxo principal do jogador.
+
+## Ponteclara 0.5.0
+
+A entrada principal passa à etapa 1.4, com tempo por ações em minutos, criação, diário, mapa, necessidades, relações e habilidades. O HTML 0.4.1 anterior foi preservado em `docs/legado/index.html`, usando sua chave original.
+
+```sh
+node etapa_1_4/verificar.mjs
+node scripts/preparar-pages.mjs
+node scripts/preparar-revisao-vida.mjs
+```
+
+A revisão isolada fica em `/vida-preview/`; seus personagens não afetam o jogo principal. Resultados e limites em `etapa_1_4/evidencias/VALIDACAO_MOBILE.md`. A bateria atual tem 126 casos aprovados e os 14 históricos verificados separadamente. O registro de confirmação do deployment 0.5.0 será acrescentado depois de observar o site publicado.

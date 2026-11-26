@@ -14,9 +14,10 @@ function weighted(s, entries, weight) {
   return entries.at(-1);
 }
 const idle = s => check(s.alive && !s.pending && s.target === null && !s.work.length, 'Ação indisponível durante avanço ou decisão');
-export function createEngine(input = EMPTY) {
+export function createEngine(input = EMPTY, simulation = {}) {
   // Catálogo privado: o chamador não pode alterar regras de um save em andamento.
   const {catalog, decisions, consequences, activities} = compile(input);
+  const pulseEvery=catalog.clock?.pulseEvery||7;
   const stamp = {id:catalog.id, version:catalog.version, fingerprint:JSON.stringify(catalog)};
   function validate(s) {
     jsonData(s);
@@ -24,7 +25,7 @@ export function createEngine(input = EMPTY) {
     check(integer(s.seed) && s.seed <= 0xffffffff && integer(s.rng,1) && s.rng <= 0xffffffff && integer(s.day) &&
       Number.isSafeInteger(s.birthDay) && s.birthDay <= s.day && typeof s.alive === 'boolean' && integer(s.money) &&
       integer(s.health) && s.health <= 100 && id(s.location) && integer(s.nextId,1) &&
-      integer(s.nextPulse,1) && s.nextPulse >= s.day && s.nextPulse % 7 === 0 &&
+      integer(s.nextPulse,1) && s.nextPulse >= s.day && s.nextPulse % pulseEvery === 0 &&
       (s.target === null || integer(s.target) && s.target >= s.day), 'Estado vital/temporal inválido');
     for (const field of ['skills','attributes','items','relations','flags','world','knowledge','npcs','seen','families','resolved','processed'])
       check(s[field] && typeof s[field] === 'object' && !Array.isArray(s[field]), `Mapa inválido: ${field}`);
@@ -70,16 +71,18 @@ export function createEngine(input = EMPTY) {
     check(new Set(modern.map(a=>a.slot)).size===modern.length && s.activities.filter(a=>!a.definition).reduce((n,a)=>n+a.hours,0)<=12, 'Atividades incompatíveis');
     check(s.alive || (!s.pending && !s.work.length && !s.activities.length && !s.queue.length && s.target === null), 'Morte não encerrada');
     check(!s.alive || s.health>0, 'Pessoa viva sem saúde');
+    if(catalog.clock) check(JSON.stringify(s.clock)===JSON.stringify(catalog.clock),'Perfil temporal incompatível');
+    simulation.validate?.(s);
     return s;
   }
   function tx(s, operation) { const draft=copy(s); operation(draft); validate(draft); Object.assign(s,draft); return s; }
   function create(seed=1, initial={}) {
     check(integer(seed) && seed <= 0xffffffff, 'Seed inválida'); jsonData(initial);
-    const allowed=['money','health','birthDay','location','skills','attributes','items','relations','flags','world','knowledge','npcs'];
+    const allowed=[...(catalog.clock?['day','life']:[]),'money','health','birthDay','location','skills','attributes','items','relations','flags','world','knowledge','npcs'];
     check(Object.keys(initial).every(k=>allowed.includes(k)), 'Campo inicial desconhecido');
     return validate({version:2,catalog:copy(stamp),seed,rng:mix(seed),day:0,birthDay:0,alive:true,money:0,health:100,
       location:'aldeia',skills:{},attributes:{},items:{},relations:{},flags:{},world:{},knowledge:{player:{}},
-      activities:[],npcs:{},queue:[],pending:null,target:null,work:[],history:[],seen:{},families:{},resolved:{},processed:{},nextId:1,nextPulse:7,...copy(initial)});
+      activities:[],npcs:{},queue:[],pending:null,target:null,work:[],history:[],seen:{},families:{},resolved:{},processed:{},nextId:1,nextPulse: (Math.floor((initial.day||0)/pulseEvery)+1)*pulseEvery,...(catalog.clock?{clock:copy(catalog.clock)}:{}),...copy(initial)});
   }
   function load(raw) {
     check(typeof raw === 'string' && raw.length < 8_000_000, 'Save ausente ou grande demais');
@@ -103,6 +106,7 @@ export function createEngine(input = EMPTY) {
     check(Number.isSafeInteger(value), 'Resultado numérico inválido');
     if(type==='money') {check(value>=0,'Recursos insuficientes'); s.money=value;}
     else if(type==='health') {s.health=Math.max(0,Math.min(100,value)); if(s.health===0) dead(s);}
+    else if(type==='need') {check(s.life&&Object.hasOwn(s.life.needs,a),'Necessidade desconhecida');s.life.needs[a]=Math.max(0,Math.min(100,value));}
     else if(type==='skill') {check(value>=0,'Habilidade negativa');s.skills[a]=value;}
     else if(type==='trust') {check(person(s,a)&&person(s,b),'Relação com pessoa inexistente');s.relations[`${a}:${b}`]=Math.max(-100,Math.min(100,value));}
     else check(false,'Estatística não alterável');
@@ -136,10 +140,11 @@ export function createEngine(input = EMPTY) {
   function finish(s,w) {
     const d=decisions.get(w.decision),o=d.options.find(x=>x.id===w.option);
     s.resolved[w.id]=true;
-    if(!permitted(s,d) || !eligible(s,o.requires)) {log(s,'actionInvalidated',{id:w.id,text:'A situação mudou antes da conclusão. A ação foi interrompida; o tempo e os custos já gastos foram preservados.'});return;}
+    if(!permitted(s,d) || !eligible(s,o.completionRequires||o.requires)) {log(s,'actionInvalidated',{id:w.id,text:'A situação mudou antes da conclusão. A ação foi interrompida; o tempo e os custos já gastos foram preservados.'});return;}
     const results=o.outcomes.filter(r=>eligible(s,r.when));
-    const r=weighted(s,results,x=>x.weight);
+    const r=o.resolution==='first'?results[0]:weighted(s,results,x=>x.weight);
     apply(s,o.effects); apply(s,r.effects);
+    simulation.afterChoice?.(s,{decision:d,option:o,outcome:r});
     log(s,'decision',{id:w.id,decision:d.id,choice:o.id,intent:o.intent,outcome:r.id,text:r.text});
   }
   function cleanActivities(s) {
@@ -152,7 +157,8 @@ export function createEngine(input = EMPTY) {
     }
   }
   function pulse(s) {
-    s.nextPulse+=7;
+    s.nextPulse+=pulseEvery;
+    if(catalog.clock && random(s)>=catalog.clock.pulseChance)return;
     const list=[...decisions.values()].filter(d=>d.selection&&permitted(s,d)&&repetition(s,d)&&!s.queue.some(e=>e.decision===d.id));
     if(list.length) {
       const d=weighted(s,list,x=>x.selection.weight/(1+3*(s.seen[x.id]?.count||0)+2*(s.families[x.family]||0)));
@@ -161,6 +167,7 @@ export function createEngine(input = EMPTY) {
   }
   function settle(s) {
     if(!s.alive || s.pending) return;
+    simulation.settle?.(s);
     const sorted=()=>s.queue.sort((a,b)=>a.day-b.day||order[a.type]-order[b.type]||a.id-b.id);
     // Mudanças causais vencem conclusões e convites na mesma data.
     sorted();
@@ -190,6 +197,7 @@ export function createEngine(input = EMPTY) {
     while(s.alive && s.work.at(-1)?.remaining===0) finish(s,s.work.pop());
     cleanActivities(s);
     if(!s.alive) return;
+    simulation.settle?.(s);
     if(s.day===s.nextPulse) pulse(s);
     sorted();
     while(s.alive&&!s.pending&&s.queue[0]?.day<=s.day) {
@@ -197,6 +205,7 @@ export function createEngine(input = EMPTY) {
       check(order[e.type]===3,'Fato fora de fase');
       if(e.type==='offer' ? s.npcs[e.npc].alive : permitted(s,decisions.get(e.decision))&&repetition(s,decisions.get(e.decision))) {
         s.pending=e;
+        simulation.onOffer?.(s,e,()=>random(s));
         if(e.type==='decision')expose(s,decisions.get(e.decision));
         log(s,'offer',{id:e.id,...(e.decision?{decision:e.decision}:{npc:e.npc})});
       } else {s.processed[e.id]=true;log(s,'invalidated',{id:e.id});}
@@ -215,6 +224,7 @@ export function createEngine(input = EMPTY) {
         s.money+=(d.pay-d.costPerDay)*dt;s.skills[d.skill]=(s.skills[d.skill]||0)+d.rate*dt;
       } else {s.skills[a.skill]=(s.skills[a.skill]||0)+a.hours*a.rate*dt;s.money+=a.pay*dt;}
     }
+    simulation.progress?.(s,dt);
     if(s.work.length)s.work.at(-1).remaining-=dt;
   }
   function run(s,stopAfter=null) {
@@ -231,7 +241,7 @@ export function createEngine(input = EMPTY) {
         }
         dailyCost=0;
       }
-      const next=Math.min(s.target,s.nextPulse,...s.queue.map(e=>e.day),...s.activities.map(a=>a.end),
+      const next=Math.min(s.target,s.nextPulse,simulation.nextBoundary?.(s)??Infinity,...s.queue.map(e=>e.day),...s.activities.map(a=>a.end),
         s.work.length?s.day+s.work.at(-1).remaining:Infinity,dailyCost?s.day+1:Infinity);
       const dt=next-s.day;check(integer(dt,1),'Relógio travado');progress(s,dt);s.day=next;
     }
@@ -259,8 +269,8 @@ export function createEngine(input = EMPTY) {
     activity:(s,a)=>tx(s,t=>{idle(t);check(id(a.id)&&id(a.skill)&&integer(a.hours,1)&&a.hours<=12&&integer(a.duration,1)&&integer(a.rate??1)&&integer(a.pay??0)&&!t.activities.some(x=>x.id===a.id),'Atividade inválida');check(t.activities.filter(x=>!x.definition).reduce((n,x)=>n+x.hours,0)+a.hours<=12,'Agenda excedida');t.activities.push({...copy(a),rate:a.rate??1,pay:a.pay??0,end:t.day+a.duration});log(t,'activityStart',{id:a.id});}),
     cancel:(s,key)=>tx(s,t=>{idle(t);check(t.activities.some(a=>a.id===key),'Atividade inexistente');t.activities=t.activities.filter(a=>a.id!==key);log(t,'activityCancel',{id:key,text:'Você encerrou uma atividade.'});}),
     schedule:(s,e)=>tx(s,t=>{check(t.alive&&integer(e.day)&&e.day>t.day&&Object.hasOwn(order,e.type),'Evento inválido');push(t,e);}),
-    advance:(s,days)=>tx(s,t=>{idle(t);check(integer(days,1)&&days<=36500,'Avanço inválido');t.target=t.day+days;run(t);}),
-    age:s=>api.advance(s,365),
+    advance:(s,days)=>tx(s,t=>{idle(t);check(integer(days,1)&&days<=36500*(catalog.clock?.ticksPerDay||1),'Avanço inválido');t.target=t.day+days;run(t);}),
+    age:s=>api.advance(s,365*(catalog.clock?.ticksPerDay||1)),
     resume:s=>tx(s,t=>{check(t.alive&&!t.pending&&t.target!==null,'Não há avanço para retomar');run(t);}),
     stop:s=>tx(s,t=>{check(!t.pending&&!t.work.length,'Resolva a decisão ou conclua a ação primeiro');t.target=null;}),
     abandon:s=>tx(s,t=>{check(t.alive&&!t.pending&&t.work.length,'Não há ação para abandonar');for(const w of t.work){t.resolved[w.id]=true;log(t,'actionAbandoned',{id:w.id,text:'Você abandonou a ação em andamento. Os custos pagos e o tempo passado foram preservados.'});}t.work=[];t.target=null;settle(t);}),

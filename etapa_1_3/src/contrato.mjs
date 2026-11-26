@@ -22,7 +22,7 @@ export function jsonData(x, depth = 0) {
 }
 export function statKey(key) {
   return ['money', 'health', 'age'].includes(key) || typeof key === 'string' && (
-    /^(skill|aptitude):[a-z][a-z0-9_]*$/.test(key) && token(key.split(':')[1]) ||
+    /^(skill|aptitude|need):[a-z][a-z0-9_]*$/.test(key) && token(key.split(':')[1]) ||
     /^trust:[a-z][a-z0-9_]*:[a-z][a-z0-9_]*$/.test(key) && key.split(':').slice(1).every(token));
 }
 export function condition(c) {
@@ -82,6 +82,7 @@ export function compile(input) {
   jsonData(input);
   const c = copy(input);
   check(c.schemaVersion === 1 && id(c.id) && integer(c.version, 1), 'Schema de catálogo incompatível');
+  if(c.clock) check(c.clock.unit==='minute' && integer(c.clock.ticksPerDay,1) && integer(c.clock.pulseEvery,1) && Number.isFinite(c.clock.pulseChance) && c.clock.pulseChance>=0 && c.clock.pulseChance<=1, 'Relógio inválido');
   for (const key of ['decisions', 'consequences', 'activities']) {
     check(Array.isArray(c[key]), `Catálogo sem ${key}`);
     check(new Set(c[key].map(x => x.id)).size === c[key].length, `IDs duplicados em ${key}`);
@@ -97,6 +98,8 @@ export function compile(input) {
     for (const o of d.options) {
       check(id(o.id) && text(o.label) && text(o.intent) && text(o.hint) && text(o.blockedReason), 'Opção incompleta');
       if (o.requires) condition(o.requires);
+      if(o.completionRequires) condition(o.completionRequires);
+      if(o.resolution) check(o.resolution==='first','Resolução inválida');
       if (o.visibleWhen) condition(o.visibleWhen);
       check(integer(o.cost?.money) && integer(o.cost?.days) && o.cost.days <= 36500, 'Custo inválido');
       effects(o.effects, refs);
@@ -126,7 +129,8 @@ export function compile(input) {
 export function readStat(s, key) {
   const [type, a, b] = key.split(':');
   if (type === 'money' || type === 'health') return s[type];
-  if (type === 'age') return Math.floor((s.day - s.birthDay) / 365);
+  if (type === 'age') return Math.floor((s.day - s.birthDay) / (365*(s.clock?.ticksPerDay||1)));
+  if (type === 'need') return s.life?.needs[a] ?? 0;
   if (type === 'skill') return s.skills[a] || 0;
   if (type === 'aptitude') return s.attributes[a] || 0;
   if (type === 'trust') return s.relations[`${a}:${b}`] || 0;

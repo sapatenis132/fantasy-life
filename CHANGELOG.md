@@ -1,5 +1,17 @@
 # Histórico de desenvolvimento
 
+## 0.5.0 — 26/11/2026 — Ponteclara / etapa 1.4
+
+- Evolução do motor 1.3, com perfil temporal opcional em minutos e compatibilidade anterior verificada.
+- Criação de personagem, origens, povos, traços, talentos e dons com usos nas escolhas.
+- Diário, mapa de oito lugares, agendas, necessidades, relações direcionais e habilidades com técnicas.
+- Trabalho/projeto por tempo dedicado; aula marcada e consequências de presença/atraso.
+- Oportunidades com PRNG salvo, exame de informação e cadeias de descobertas compartilhadas.
+- Opções contextuais, bloqueios recolhidos e requisitos explicados; ajustes do mapa após medição em 320 px.
+- Versão anterior em `/legado/`, chave separada e transferência sem descartar compromissos ativos.
+- 126 casos atuais aprovados e 14 da base original separados; 100 percursos integrados novos. Meta de 50h e Android físico continuam pendentes.
+
+
 ## 0.4.1 — 26/11/2026 — revisão mobile
 
 - História e resultado atual na primeira tela, próximos das decisões.
