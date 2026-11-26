@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light"><title>Fantasy Life · escolhas</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#28352e;background:#f5f2e9;font-size:17px;line-height:1.5}
+*{box-sizing:border-box}body{margin:0}main{max-width:740px;margin:auto;padding:24px 18px 60px}
+header{border-bottom:1px solid #cfcfc2;margin-bottom:20px;padding-bottom:18px}.eyebrow{font-size:.75rem;letter-spacing:.12em;color:#536659;text-transform:uppercase}
+h1{font-family:Georgia,serif;font-size:2.1rem;margin:3px 0 4px;line-height:1.2}h2{font-size:1.1rem;margin:0 0 10px}h3{font-size:1rem;margin:0}
+p{margin:8px 0}small,.muted{color:#59675e}small{font-size:.83rem}.stats{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:12px;font-size:.92rem}
+section,details.panel{margin:20px 0}.card{background:#fffdf7;border:1px solid #d8d9cc;border-radius:12px;padding:18px}
+.decision{border-color:#638875;box-shadow:0 3px 10px #1d4e3410}button,.file{font:inherit;border:1px solid #b9c6ba;border-radius:8px;background:#fffdf7;color:#244b37;padding:11px 15px;min-height:48px;cursor:pointer;white-space:normal;overflow-wrap:anywhere}
+button:hover:enabled,.file:hover{background:#edf4eb}button:disabled{cursor:default;color:#627065;background:#eeeee7;border-color:#d8d9d1}
+button:focus-visible,summary:focus-visible,a:focus-visible,input:focus-visible,.file:focus-within{outline:3px solid #c07830;outline-offset:3px}
+.primary{width:100%;background:#28553f;color:#fff;border:0;font-weight:650}.primary:hover:enabled{background:#1b412e}.controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.controls button{flex:1}
+.options{display:grid;gap:10px;margin-top:14px}.option{text-align:left;width:100%}.option strong,.option small{display:block}.option small{margin-top:5px}.reason{color:#78533c}
+details{border-top:1px solid #d8d9cc;padding-top:12px}summary{cursor:pointer;min-height:44px;font-weight:600;padding:8px 0}.initiative{margin:8px 0;padding:10px 14px;background:#fffdf7;border:1px solid #d8d9cc;border-radius:9px}
+ol{list-style:none;padding:0;margin:0}li.entry{border-left:2px solid #c3cebf;padding:0 0 20px 15px;margin-left:3px}li.entry:last-child{padding-bottom:0}.entry p{margin:3px 0}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}input[type=number]{font:inherit;width:100%;max-width:160px;padding:10px;border:1px solid #aab8ab;border-radius:6px;background:white}input[type=file]{max-width:100%;font:inherit}
+#message{padding:12px;background:#fff4d9;border:1px solid #d7b875;border-radius:8px;margin:10px 0}footer{font-size:.82rem;color:#59675e;margin-top:32px}a{color:#28553f}button,summary{-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}@media(min-width:600px){main{padding-top:40px}.stats{gap:32px}.card{padding:24px}}
+</style>
+</head>
+<body><main>
+<header><div class="eyebrow">Uma vida em Ponteclara</div><h1>Fantasy Life</h1><div class="muted">Uma pequena amostra de escolhas e consequências.</div><div class="stats" id="stats"></div></header>
+<div id="message" role="status" hidden></div>
+<section id="decision" class="card decision" hidden aria-labelledby="decision-title"></section>
+<section aria-label="Passagem do tempo"><button id="advance" class="primary">Envelhecer</button><p id="time-note" class="muted"></p><div class="controls"><button id="stop" hidden>Encerrar avanço</button><button id="abandon" hidden>Abandonar ação</button></div></section>
+<section id="intro" class="card"><h2>Você escolhe por onde começar</h2><p>Aos 16 anos, você encontrou um livro de diagramas. Na vila há trabalho, gente para conhecer e uma casa precisando de cuidado. Você pode investigar o achado, buscar uma ocupação ou seguir uma vida tranquila.</p><small>Esta amostra começa em uma situação fixa. O nascimento e o ciclo completo de vida vêm nas próximas etapas.</small></section>
+<details class="panel" id="initiatives" open><summary>Atividades e iniciativas</summary><div id="actions"></div></details>
+<details class="panel" id="commitments"><summary>Seus compromissos</summary><div id="activities"></div></details>
+<details class="panel"><summary>Habilidades e posses</summary><div id="possessions"></div></details>
+<section aria-labelledby="diary-title"><h2 id="diary-title">Sua história</h2><ol id="diary"></ol></section>
+<details class="panel"><summary>Salvar e experimentar outra vida</summary><p><small>O jogo tenta salvar neste navegador após cada decisão. Você também pode exportar sua vida e importá-la depois.</small></p><div class="controls"><button id="export">Exportar vida</button></div><p><label for="import">Importar vida (.json)</label></p><input id="import" type="file" accept=".json,application/json"><p><label for="seed">Semente para uma nova amostra</label></p><input id="seed" type="number" min="0" max="4294967295" value="2026"><p><small>Para conservar a vida atual, exporte antes de iniciar outra.</small></p><button id="new">Começar nova amostra</button></details>
+<footer>Etapa 1.3 · Protótipo de agência. O conteúdo é limitado e serve para experimentar caminhos diferentes. Sem simulação enquanto o jogo estiver fechado.</footer>
+</main><!--APP_SCRIPT--></body></html>

@@ -1,0 +1,17 @@
+OK — Salto anual interrompe no dia 90
+OK — Escolha e retomada mantêm destino
+OK — Save durante decisão é reproduzível
+OK — Morte no mesmo dia invalida convite
+OK — Morte do jogador encerra relógio
+OK — Agenda impede exceder 12 horas
+OK — Cancelar atividade impede progresso futuro
+OK — Parar salto preserva dia e efeitos
+OK — Avanço em partes tem mesmo resultado
+OK — Sem eventos elegíveis não inventa conteúdo
+OK — Contexto e limite por evento respeitados
+OK — Cooldown impede repetição imediata
+OK — Ofertas simultâneas não somem
+Sequências distintas de IDs em seis seleções: 498/500 (não mede diversão)
+OK — 500 trajetórias de laboratório sem inconsistência
+
+14 testes aprovados.

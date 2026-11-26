@@ -1,0 +1,11 @@
+import {execFileSync} from 'node:child_process';
+import {mkdir,copyFile,writeFile,readFile} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+const root=new URL('../',import.meta.url);
+execFileSync(process.execPath,['etapa_1_3/scripts/build-demo.mjs'],{cwd:fileURLToPath(root),stdio:'inherit'});
+await mkdir(new URL('docs/',root),{recursive:true});
+await copyFile(new URL('etapa_1_3/Fantasy_Life_Laboratorio_1_3.html',root),new URL('docs/index.html',root));
+await writeFile(new URL('docs/.nojekyll',root),'');
+const html=await readFile(new URL('docs/index.html',root),'utf8');
+if(!html.includes('<title>Fantasy Life')||!html.includes('function createEngine'))throw new Error('Publicação incompleta');
+console.log('GitHub Pages preparado em docs/: mesma amostra autocontida, sem dependências de rede.');

@@ -1,0 +1,168 @@
+Fantasy Life — verificação da etapa 1.3
+Data: 2026-11-26T20:13:26.267Z
+Node: v24.22.3
+
+== Base original (14 testes históricos) ==
+OK — Salto anual interrompe no dia 90
+OK — Escolha e retomada mantêm destino
+OK — Save durante decisão é reproduzível
+OK — Morte no mesmo dia invalida convite
+OK — Morte do jogador encerra relógio
+OK — Agenda impede exceder 12 horas
+OK — Cancelar atividade impede progresso futuro
+OK — Parar salto preserva dia e efeitos
+OK — Avanço em partes tem mesmo resultado
+OK — Sem eventos elegíveis não inventa conteúdo
+OK — Contexto e limite por evento respeitados
+OK — Cooldown impede repetição imediata
+OK — Ofertas simultâneas não somem
+Sequências distintas de IDs em seis seleções: 498/500 (não mede diversão)
+OK — 500 trajetórias de laboratório sem inconsistência
+
+14 testes aprovados.
+
+== Regressão no motor evoluído (mesmos 14 testes) ==
+OK — Salto anual interrompe no dia 90
+OK — Escolha e retomada mantêm destino
+OK — Save durante decisão é reproduzível
+OK — Morte no mesmo dia invalida convite
+OK — Morte do jogador encerra relógio
+OK — Agenda impede exceder 12 horas
+OK — Cancelar atividade impede progresso futuro
+OK — Parar salto preserva dia e efeitos
+OK — Avanço em partes tem mesmo resultado
+OK — Sem eventos elegíveis não inventa conteúdo
+OK — Contexto e limite por evento respeitados
+OK — Cooldown impede repetição imediata
+OK — Ofertas simultâneas não somem
+Sequências distintas de IDs em seis seleções: 500/500 (não mede diversão)
+OK — 500 trajetórias de laboratório sem inconsistência
+
+14 testes aprovados.
+
+== Empacotamento do HTML ==
+Gerado: Fantasy_Life_Laboratorio_1_3.html (sem dependências externas).
+
+== Agência e integração HTML (47 + 6 testes) ==
+✔ catálogo possui 12 decisões, 34 opções e operações declarativas (4.204425ms)
+✔ iniciativa não depende de evento sorteado (4.26864ms)
+✔ trabalho e estudo combinam rotinas sem agenda de horas (4.422919ms)
+✔ examinar antes de vender conserva conhecimento e notas (3.102158ms)
+✔ vender primeiro fecha o estudo do livro, mas abre contato depois (1.959671ms)
+✔ conhecimento do mentor não é conhecimento do jogador nem da irmã (2.016735ms)
+✔ recusa de aprendizagem não inicia profissão nem elimina iniciativa (2.7737ms)
+✔ requisito de recursos tem motivo público e bloqueio atômico (2.008263ms)
+✔ efeito que falha reverte dinheiro, diário, IDs e PRNG (0.522265ms)
+✔ decisão pendente bloqueia envelhecer e nova iniciativa (2.411031ms)
+✔ token da decisão impede clique duplo e decisão errada (2.210964ms)
+✔ opções com projeto incompatível são bloqueadas sem gastar (2.418643ms)
+✔ pagar, reparar e recusar mudam recursos, habilidade e moradia (5.141187ms)
+✔ adiar volta em dez dias e sobrevive ao save (1.755037ms)
+✔ consequência tardia ocorre uma vez após carregar (2.111606ms)
+✔ morte no mesmo dia invalida convite antes de apresentá-lo (1.149808ms)
+✔ mudança de local invalida consequência presencial (1.288294ms)
+✔ morte durante consulta preserva custo e tempo, sem resultado impossível (1.129988ms)
+✔ atividade deixa de produzir depois da morte do mentor (1.164299ms)
+✔ ação de sete dias é interrompida no segundo dia sem recompensa antecipada (0.451751ms)
+✔ reação demorada pausa a ação anterior e conta seu próprio tempo (0.256892ms)
+✔ resposta com duração não retoma automaticamente o resto do ano (0.315599ms)
+✔ ação interrompida pode ser abandonada sem reembolso ou recompensa (0.263251ms)
+✔ morte do jogador durante ação não concede recompensa posterior (0.198515ms)
+✔ consultas de UI não sorteiam nem registram exposição (1.830619ms)
+✔ marcos semanais têm o mesmo resultado em salto e cliques diários (45.569367ms)
+✔ salvar e retomar repetidamente não duplica a seleção do marco (5.832583ms)
+✔ consequência privada não vaza no diário público ou na visão (1.078071ms)
+✔ projeto próprio exige combinação de conhecimentos e conserva notas vendidas (2.466463ms)
+✔ estudo sem dinheiro é interrompido, sem renda ou dívida fantasma (1.150308ms)
+✔ cancelar estudo preserva aprendizado e cessa custos futuros (1.233993ms)
+✔ retomar o telhado permite trocar uma lanterna construída mais tarde (2.40328ms)
+✔ adiar o poço permite iniciativa posterior e abre uma encomenda real (2.393616ms)
+✔ opção de atributo avalia resultado condicional sem excluir fallback (2.39643ms)
+✔ sementes iguais e escolhas iguais reproduzem resultados incertos (3.302656ms)
+✔ resultados incertos incluem sucesso e ferimento em múltiplas seeds (75.547124ms)
+✔ save v1 migra relógio, dinheiro, ofertas pendentes e agenda (0.858005ms)
+✔ catálogo alterado não reutiliza silenciosamente save antigo (1.640497ms)
+✔ saves malformados, negativos e com instâncias duplicadas são rejeitados (2.013961ms)
+✔ proteção contra propriedades de protótipo e scripts no conteúdo (1.80419ms)
+✔ referências, custos, versões e fallback são validados na autoria (2.58535ms)
+✔ conteúdo externo não altera um motor já compilado (0.947578ms)
+✔ 500 percursos válidos atravessam pausas, saves e abandono sem violar invariantes (1155.865362ms)
+✔ arquivos históricos continuam presentes sem serem sobrescritos (0.451551ms)
+✔ conclusão que cancela outro projeto impede recompensa fantasma no mesmo dia (1.383114ms)
+✔ erros de digitação em condições e operações são rejeitados (0.852457ms)
+✔ saves que reintroduzem saúde zero numa pessoa viva são rejeitados (0.870142ms)
+✔ HTML autocontido empacota sem imports e inicializa a apresentação (10.876936ms)
+✔ HTML executa escolha e recarrega progresso salvo sem repetir efeitos (11.355598ms)
+✔ HTML apresenta decisão, bloqueia avanço e retoma só por comando (6.821833ms)
+✔ HTML preserva vida anterior após importar arquivo inválido (5.243849ms)
+✔ HTML importa uma decisão pendente e mantém a pausa (7.894536ms)
+✔ HTML comunica falha ao salvar sem perder a decisão na memória (2.950532ms)
+ℹ tests 53
+ℹ suites 0
+ℹ pass 53
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1446.238269
+
+== Quatro trajetórias estruturais e seus saves ==
+# Quatro trajetórias a partir do mesmo começo
+
+Seed 2026; 365 dias simulados; mesma pessoa, recursos, família e mundo inicial. Números são de laboratório, sem balanceamento de produção.
+
+| Caminho | Moedas | Ofício | Arcanismo | Livro / notas | Confiança de Maíra | Banca | Poço / encomenda |
+|---|---:|---:|---:|---|---:|---|---|
+| Cuidar de casa | 12 | 7 | 0 | 1 / 0 | 0 | Não | Não / Não |
+| Trabalho e comércio | 71 | 60 | 0 | 0 / 0 | 1 | Conhecida | Não / Não |
+| Aprendizagem acompanhada | 12 | 187 | 12 | 0 / 0 | 3 | Não | Não / Não |
+| Conhecimento, criação e retorno | 60 | 88 | 28 | 0 / 1 | 1 | Não | Estável / Concluída |
+
+Todas as quatro casas terminam reparadas, por meios e custos diferentes. A convergência na moradia conserva as diferenças em conhecimento, recursos, relações e acesso.
+
+## Cuidar de casa
+
+Consertar o telhado com trabalho próprio; conservar o livro e o dinheiro. Nenhuma aventura imposta.
+
+- Dia 14: familia.telhado → reparar
+
+## Trabalho e comércio
+
+Vender o livro sem estudá-lo, trabalhar, pagar o conserto e pedir apresentação à banca.
+
+- Dia 0: livro.destino → vender
+- Dia 1: oficina.iniciativa → trabalhar
+- Dia 14: familia.telhado → pagar
+- Dia 14: comercio.iniciativa → visitar
+
+## Aprendizagem acompanhada
+
+Entregar o volume, aceitar três meses de aprendizagem sem salário e fazer o conserto.
+
+- Dia 0: livro.destino → entregar
+- Dia 3: mentor.proposta → aceitar
+- Dia 14: familia.telhado → reparar
+
+## Conhecimento, criação e retorno
+
+Copiar antes de vender; trabalhar e estudar; adiar o poço; voltar ao telhado com uma lanterna e assumir uma encomenda após demonstrar a técnica.
+
+- Dia 0: livro.destino → examinar
+- Dia 2: oficina.iniciativa → trabalhar
+- Dia 2: oficina.iniciativa → estudar
+- Dia 7: magia.poco → adiar
+- Dia 14: familia.telhado → recusar
+- Dia 42: livro.destino → vender
+- Dia 43: projeto.lanterna → construir
+- Dia 57: familia.iniciativa → lanterna
+- Dia 57: magia.investigar → estabilizar
+- Dia 71: oficina.encomenda → assumir
+
+## Alcance da evidência
+
+Quatro perfis controlados comprovam divergência de estado na fatia; não medem diversão, balanceamento, ausência de estratégia dominante ou cinquenta horas de novidade. Os saves em `vidas/` podem ser importados no HTML desta versão.
+
+
+Total do motor evoluído e HTML: 67 testes aprovados. Base original: 14, verificada separadamente.
+500 percursos novos + 500 casos da regressão; números não medem cinquenta horas de variedade.
+Smoke HTML em VM/DOM mínimo. Testes visuais de Chromium e Android físico pendentes.

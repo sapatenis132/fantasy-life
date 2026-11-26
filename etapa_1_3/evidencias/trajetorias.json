@@ -1,0 +1,183 @@
+{
+  "seed": 2026,
+  "days": 365,
+  "structurallyDifferent": 4,
+  "rows": [
+    {
+      "key": "tranquila",
+      "name": "Cuidar de casa",
+      "description": "Consertar o telhado com trabalho próprio; conservar o livro e o dinheiro. Nenhuma aventura imposta.",
+      "day": 365,
+      "money": 12,
+      "oficio": 7,
+      "arcanismo": 0,
+      "casaReparada": true,
+      "livro": 1,
+      "anotacoes": 0,
+      "confiancaMaira": 0,
+      "banca": false,
+      "pocoEstavel": false,
+      "encomenda": false,
+      "opportunities": [
+        "livro.destino",
+        "oficina.iniciativa"
+      ],
+      "intentions": [
+        {
+          "day": 14,
+          "decision": "familia.telhado",
+          "choice": "reparar"
+        }
+      ]
+    },
+    {
+      "key": "comercio",
+      "name": "Trabalho e comércio",
+      "description": "Vender o livro sem estudá-lo, trabalhar, pagar o conserto e pedir apresentação à banca.",
+      "day": 365,
+      "money": 71,
+      "oficio": 60,
+      "arcanismo": 0,
+      "casaReparada": true,
+      "livro": 0,
+      "anotacoes": 0,
+      "confiancaMaira": 1,
+      "banca": true,
+      "pocoEstavel": false,
+      "encomenda": false,
+      "opportunities": [
+        "oficina.iniciativa"
+      ],
+      "intentions": [
+        {
+          "day": 0,
+          "decision": "livro.destino",
+          "choice": "vender"
+        },
+        {
+          "day": 1,
+          "decision": "oficina.iniciativa",
+          "choice": "trabalhar"
+        },
+        {
+          "day": 14,
+          "decision": "familia.telhado",
+          "choice": "pagar"
+        },
+        {
+          "day": 14,
+          "decision": "comercio.iniciativa",
+          "choice": "visitar"
+        }
+      ]
+    },
+    {
+      "key": "aprendiz",
+      "name": "Aprendizagem acompanhada",
+      "description": "Entregar o volume, aceitar três meses de aprendizagem sem salário e fazer o conserto.",
+      "day": 365,
+      "money": 12,
+      "oficio": 187,
+      "arcanismo": 12,
+      "casaReparada": true,
+      "livro": 0,
+      "anotacoes": 0,
+      "confiancaMaira": 3,
+      "banca": false,
+      "pocoEstavel": false,
+      "encomenda": false,
+      "opportunities": [
+        "oficina.iniciativa"
+      ],
+      "intentions": [
+        {
+          "day": 0,
+          "decision": "livro.destino",
+          "choice": "entregar"
+        },
+        {
+          "day": 3,
+          "decision": "mentor.proposta",
+          "choice": "aceitar"
+        },
+        {
+          "day": 14,
+          "decision": "familia.telhado",
+          "choice": "reparar"
+        }
+      ]
+    },
+    {
+      "key": "criacao",
+      "name": "Conhecimento, criação e retorno",
+      "description": "Copiar antes de vender; trabalhar e estudar; adiar o poço; voltar ao telhado com uma lanterna e assumir uma encomenda após demonstrar a técnica.",
+      "day": 365,
+      "money": 60,
+      "oficio": 88,
+      "arcanismo": 28,
+      "casaReparada": true,
+      "livro": 0,
+      "anotacoes": 1,
+      "confiancaMaira": 1,
+      "banca": false,
+      "pocoEstavel": true,
+      "encomenda": true,
+      "opportunities": [
+        "oficina.iniciativa",
+        "comercio.iniciativa"
+      ],
+      "intentions": [
+        {
+          "day": 0,
+          "decision": "livro.destino",
+          "choice": "examinar"
+        },
+        {
+          "day": 2,
+          "decision": "oficina.iniciativa",
+          "choice": "trabalhar"
+        },
+        {
+          "day": 2,
+          "decision": "oficina.iniciativa",
+          "choice": "estudar"
+        },
+        {
+          "day": 7,
+          "decision": "magia.poco",
+          "choice": "adiar"
+        },
+        {
+          "day": 14,
+          "decision": "familia.telhado",
+          "choice": "recusar"
+        },
+        {
+          "day": 42,
+          "decision": "livro.destino",
+          "choice": "vender"
+        },
+        {
+          "day": 43,
+          "decision": "projeto.lanterna",
+          "choice": "construir"
+        },
+        {
+          "day": 57,
+          "decision": "familia.iniciativa",
+          "choice": "lanterna"
+        },
+        {
+          "day": 57,
+          "decision": "magia.investigar",
+          "choice": "estabilizar"
+        },
+        {
+          "day": 71,
+          "decision": "oficina.encomenda",
+          "choice": "assumir"
+        }
+      ]
+    }
+  ]
+}

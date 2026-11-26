@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light"><title>Fantasy Life · escolhas</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#28352e;background:#f5f2e9;font-size:17px;line-height:1.5}
+*{box-sizing:border-box}body{margin:0}main{max-width:740px;margin:auto;padding:24px 18px 60px}
+header{border-bottom:1px solid #cfcfc2;margin-bottom:20px;padding-bottom:18px}.eyebrow{font-size:.75rem;letter-spacing:.12em;color:#536659;text-transform:uppercase}
+h1{font-family:Georgia,serif;font-size:2.1rem;margin:3px 0 4px;line-height:1.2}h2{font-size:1.1rem;margin:0 0 10px}h3{font-size:1rem;margin:0}
+p{margin:8px 0}small,.muted{color:#59675e}small{font-size:.83rem}.stats{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:12px;font-size:.92rem}
+section,details.panel{margin:20px 0}.card{background:#fffdf7;border:1px solid #d8d9cc;border-radius:12px;padding:18px}
+.decision{border-color:#638875;box-shadow:0 3px 10px #1d4e3410}button,.file{font:inherit;border:1px solid #b9c6ba;border-radius:8px;background:#fffdf7;color:#244b37;padding:11px 15px;min-height:48px;cursor:pointer;white-space:normal;overflow-wrap:anywhere}
+button:hover:enabled,.file:hover{background:#edf4eb}button:disabled{cursor:default;color:#627065;background:#eeeee7;border-color:#d8d9d1}
+button:focus-visible,summary:focus-visible,a:focus-visible,input:focus-visible,.file:focus-within{outline:3px solid #c07830;outline-offset:3px}
+.primary{width:100%;background:#28553f;color:#fff;border:0;font-weight:650}.primary:hover:enabled{background:#1b412e}.controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.controls button{flex:1}
+.options{display:grid;gap:10px;margin-top:14px}.option{text-align:left;width:100%}.option strong,.option small{display:block}.option small{margin-top:5px}.reason{color:#78533c}
+details{border-top:1px solid #d8d9cc;padding-top:12px}summary{cursor:pointer;min-height:44px;font-weight:600;padding:8px 0}.initiative{margin:8px 0;padding:10px 14px;background:#fffdf7;border:1px solid #d8d9cc;border-radius:9px}
+ol{list-style:none;padding:0;margin:0}li.entry{border-left:2px solid #c3cebf;padding:0 0 20px 15px;margin-left:3px}li.entry:last-child{padding-bottom:0}.entry p{margin:3px 0}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}input[type=number]{font:inherit;width:100%;max-width:160px;padding:10px;border:1px solid #aab8ab;border-radius:6px;background:white}input[type=file]{max-width:100%;font:inherit}
+#message{padding:12px;background:#fff4d9;border:1px solid #d7b875;border-radius:8px;margin:10px 0}footer{font-size:.82rem;color:#59675e;margin-top:32px}a{color:#28553f}button,summary{-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}@media(min-width:600px){main{padding-top:40px}.stats{gap:32px}.card{padding:24px}}
+</style>
+</head>
+<body><main>
+<header><div class="eyebrow">Uma vida em Ponteclara</div><h1>Fantasy Life</h1><div class="muted">Uma pequena amostra de escolhas e consequências.</div><div class="stats" id="stats"></div></header>
+<div id="message" role="status" hidden></div>
+<section id="decision" class="card decision" hidden aria-labelledby="decision-title"></section>
+<section aria-label="Passagem do tempo"><button id="advance" class="primary">Envelhecer</button><p id="time-note" class="muted"></p><div class="controls"><button id="stop" hidden>Encerrar avanço</button><button id="abandon" hidden>Abandonar ação</button></div></section>
+<section id="intro" class="card"><h2>Você escolhe por onde começar</h2><p>Aos 16 anos, você encontrou um livro de diagramas. Na vila há trabalho, gente para conhecer e uma casa precisando de cuidado. Você pode investigar o achado, buscar uma ocupação ou seguir uma vida tranquila.</p><small>Esta amostra começa em uma situação fixa. O nascimento e o ciclo completo de vida vêm nas próximas etapas.</small></section>
+<details class="panel" id="initiatives" open><summary>Atividades e iniciativas</summary><div id="actions"></div></details>
+<details class="panel" id="commitments"><summary>Seus compromissos</summary><div id="activities"></div></details>
+<details class="panel"><summary>Habilidades e posses</summary><div id="possessions"></div></details>
+<section aria-labelledby="diary-title"><h2 id="diary-title">Sua história</h2><ol id="diary"></ol></section>
+<details class="panel"><summary>Salvar e experimentar outra vida</summary><p><small>O jogo tenta salvar neste navegador após cada decisão. Você também pode exportar sua vida e importá-la depois.</small></p><div class="controls"><button id="export">Exportar vida</button></div><p><label for="import">Importar vida (.json)</label></p><input id="import" type="file" accept=".json,application/json"><p><label for="seed">Semente para uma nova amostra</label></p><input id="seed" type="number" min="0" max="4294967295" value="2026"><p><small>Para conservar a vida atual, exporte antes de iniciar outra.</small></p><button id="new">Começar nova amostra</button></details>
+<footer>Etapa 1.3 · Protótipo de agência. O conteúdo é limitado e serve para experimentar caminhos diferentes. Sem simulação enquanto o jogo estiver fechado.</footer>
+</main><script>
+(()=>{
+'use strict';
+const contrato=(()=>{
+// Conteúdo declarativo: sem eval, funções ou caminhos de escrita arbitrários.
+const copy = x => JSON.parse(JSON.stringify(x));
+const integer = (x, min = 0) => Number.isSafeInteger(x) && x >= min;
+const check = (condition, message) => { if (!condition) throw new Error(message); };
+const id = x => typeof x === 'string' && /^[a-z][a-z0-9_.-]{0,95}$/.test(x)
+  && !['__proto__', 'prototype', 'constructor'].includes(x);
+const token = x => typeof x === 'string' && /^[a-z][a-z0-9_]{0,63}$/.test(x)
+  && !['__proto__', 'prototype', 'constructor'].includes(x);
+const text = x => typeof x === 'string' && x.trim().length > 0;
+const record = x => x && typeof x === 'object' && !Array.isArray(x);
+const scalar = x => typeof x === 'string' || typeof x === 'boolean' || Number.isSafeInteger(x);
+const only=(object,keys)=>check(Object.keys(object).every(k=>keys.includes(k)), 'Campo desconhecido no contrato');
+function jsonData(x, depth = 0) {
+  check(depth < 40, 'Dados excessivamente profundos');
+  if (x === null || ['string', 'boolean'].includes(typeof x)) return;
+  if (typeof x === 'number') { check(Number.isFinite(x), 'Número inválido'); return; }
+  check(typeof x === 'object' && x !== undefined, 'Somente dados JSON são aceitos');
+  for (const [key, value] of Object.entries(x)) {
+    check(!['__proto__', 'prototype', 'constructor'].includes(key), 'Chave reservada');
+    jsonData(value, depth + 1);
+  }
+}
+function statKey(key) {
+  return ['money', 'health', 'age'].includes(key) || typeof key === 'string' && (
+    /^(skill|aptitude):[a-z][a-z0-9_]*$/.test(key) && token(key.split(':')[1]) ||
+    /^trust:[a-z][a-z0-9_]*:[a-z][a-z0-9_]*$/.test(key) && key.split(':').slice(1).every(token));
+}
+function condition(c) {
+  check(record(c), 'Condição inválida');
+  const types = ['all', 'any', 'not', 'stat', 'flag', 'world', 'item', 'knows', 'person', 'freeSlot'];
+  check(types.filter(k => Object.hasOwn(c, k)).length === 1, 'Condição deve ter um operador');
+  const operator=types.find(k=>Object.hasOwn(c,k));
+  only(c,{stat:['stat','op','value'],flag:['flag','is'],world:['world','is'],item:['item','min'],person:['person','alive','local']}[operator]||[operator]);
+  if (c.all || c.any) {
+    const list = c.all || c.any;
+    check(Array.isArray(list) && list.length > 0, 'Grupo de condições vazio'); list.forEach(condition);
+  } else if (c.not) condition(c.not);
+  else if (c.stat) check(statKey(c.stat) && ['eq', 'gte', 'lte'].includes(c.op) && Number.isSafeInteger(c.value), 'Comparação inválida');
+  else if (c.flag) check(token(c.flag) && typeof c.is === 'boolean', 'Flag inválida');
+  else if (c.world) check(token(c.world) && scalar(c.is), 'Fato de mundo inválido');
+  else if (c.item) check(token(c.item) && integer(c.min, 1), 'Requisito de item inválido');
+  else if (c.knows) check(token(c.knows.who) && token(c.knows.fact), 'Conhecimento inválido');
+  else if (c.freeSlot) check(['occupation','project'].includes(c.freeSlot), 'Categoria de compromisso inválida');
+  else if (c.person) check(token(c.person) && (c.alive === undefined || typeof c.alive === 'boolean') &&
+    (c.local === undefined || typeof c.local === 'boolean'), 'Pessoa inválida');
+  else check(false, 'Operador de condição inválido');
+}
+function effects(list, refs) {
+  check(Array.isArray(list), 'Efeitos devem ser uma lista');
+  for (const e of list) {
+    check(record(e), 'Efeito inválido');
+    const fields={add:['stat','amount'],flag:['id','value'],world:['id','value'],item:['id','amount'],learn:['who','fact'],move:['who','to'],kill:['who'],schedule:['consequence','after'],offer:['decision'],startActivity:['activity'],cancelActivity:['activity']}[e.op];
+    check(!!fields, `Operação de efeito desconhecida: ${e.op}`);only(e,['op',...fields]);
+    switch (e.op) {
+      case 'add': check(statKey(e.stat) && !['age'].includes(e.stat) && !e.stat.startsWith('aptitude:') && Number.isSafeInteger(e.amount), 'Alteração numérica inválida'); break;
+      case 'flag': check(token(e.id) && typeof e.value === 'boolean', 'Efeito flag inválido'); break;
+      case 'world': check(token(e.id) && scalar(e.value), 'Efeito mundo inválido'); break;
+      case 'item': check(token(e.id) && Number.isSafeInteger(e.amount), 'Efeito item inválido'); break;
+      case 'learn': check(token(e.who) && token(e.fact), 'Aprendizado inválido'); break;
+      case 'move': check(token(e.who) && token(e.to), 'Deslocamento inválido'); break;
+      case 'kill': check(token(e.who), 'Morte inválida'); break;
+      case 'schedule': check(refs.consequences.has(e.consequence) && integer(e.after, 1), 'Consequência desconhecida ou prazo inválido'); break;
+      case 'offer': check(refs.decisions.get(e.decision)?.kind === 'opportunity', 'Decisão futura desconhecida'); break;
+      case 'startActivity': case 'cancelActivity': check(refs.activities.has(e.activity), 'Atividade desconhecida'); break;
+      default: check(false, `Operação de efeito desconhecida: ${e.op}`);
+    }
+  }
+}
+function participants(list = []) {
+  check(Array.isArray(list), 'Participantes inválidos');
+  for (const p of list) {
+    check(token(p.id) && typeof p.alive === 'boolean' && typeof p.local === 'boolean', 'Contrato de participante inválido');
+  }
+  check(new Set(list.map(p => p.id)).size === list.length, 'Participante duplicado');
+}
+function base(x) {
+  check(id(x.id) && integer(x.version, 1), 'ID ou versão de conteúdo inválidos');
+  if (x.requires) condition(x.requires);
+  participants(x.participants);
+}
+function compile(input) {
+  jsonData(input);
+  const c = copy(input);
+  check(c.schemaVersion === 1 && id(c.id) && integer(c.version, 1), 'Schema de catálogo incompatível');
+  for (const key of ['decisions', 'consequences', 'activities']) {
+    check(Array.isArray(c[key]), `Catálogo sem ${key}`);
+    check(new Set(c[key].map(x => x.id)).size === c[key].length, `IDs duplicados em ${key}`);
+  }
+  const refs = Object.fromEntries(['decisions', 'consequences', 'activities'].map(k => [k, new Map(c[k].map(x => [x.id, x]))]));
+  for (const d of c.decisions) {
+    base(d);
+    check(['action', 'opportunity'].includes(d.kind) && id(d.family) && text(d.domain) && text(d.title) && text(d.text), 'Decisão incompleta');
+    check(integer(d.repeat?.max, 1) && integer(d.repeat?.cooldown), 'Repetição sem limite explícito');
+    if (d.selection) check(d.kind === 'opportunity' && Number.isFinite(d.selection.weight) && d.selection.weight > 0, 'Seleção inválida');
+    check(Array.isArray(d.options) && d.options.length > 0, 'Decisão sem opções');
+    check(new Set(d.options.map(x => x.id)).size === d.options.length, 'Opção duplicada');
+    for (const o of d.options) {
+      check(id(o.id) && text(o.label) && text(o.intent) && text(o.hint) && text(o.blockedReason), 'Opção incompleta');
+      if (o.requires) condition(o.requires);
+      if (o.visibleWhen) condition(o.visibleWhen);
+      check(integer(o.cost?.money) && integer(o.cost?.days) && o.cost.days <= 36500, 'Custo inválido');
+      effects(o.effects, refs);
+      check(Array.isArray(o.outcomes) && o.outcomes.length > 0, 'Opção sem resultados');
+      check(new Set(o.outcomes.map(x => x.id)).size === o.outcomes.length, 'Resultado duplicado');
+      // Um fallback evita sorteio sem resultados após mudança de contexto.
+      check(o.outcomes.some(r => !r.when && Number.isFinite(r.weight) && r.weight > 0), 'Resultado sem fallback');
+      for (const r of o.outcomes) {
+        check(id(r.id) && text(r.text) && Number.isFinite(r.weight) && r.weight > 0, 'Resultado inválido');
+        if (r.when) condition(r.when);
+        effects(r.effects, refs);
+      }
+    }
+  }
+  for (const e of c.consequences) {
+    base(e); effects(e.effects, refs);
+    check(['observed', 'private'].includes(e.visibility) && (e.visibility === 'private' || text(e.text)), 'Visibilidade de consequência inválida');
+  }
+  for (const a of c.activities) {
+    base(a);
+    check(text(a.label) && ['occupation', 'project'].includes(a.slot) && integer(a.duration, 1) &&
+      token(a.skill) && integer(a.rate) && integer(a.pay) && integer(a.costPerDay), 'Atividade inválida');
+    effects(a.onComplete, refs); check(text(a.completionText), 'Conclusão sem texto');
+  }
+  return { catalog: c, ...refs };
+}
+function readStat(s, key) {
+  const [type, a, b] = key.split(':');
+  if (type === 'money' || type === 'health') return s[type];
+  if (type === 'age') return Math.floor((s.day - s.birthDay) / 365);
+  if (type === 'skill') return s.skills[a] || 0;
+  if (type === 'aptitude') return s.attributes[a] || 0;
+  if (type === 'trust') return s.relations[`${a}:${b}`] || 0;
+  throw new Error('Estatística desconhecida');
+}
+const person = (s, who) => who === 'player' ? { alive: s.alive, location: s.location } : s.npcs[who];
+function eligible(s, c) {
+  if (!c) return true;
+  if (c.all) return c.all.every(x => eligible(s, x));
+  if (c.any) return c.any.some(x => eligible(s, x));
+  if (c.not) return !eligible(s, c.not);
+  if (c.stat) { const v = readStat(s, c.stat); return c.op === 'eq' ? v === c.value : c.op === 'gte' ? v >= c.value : v <= c.value; }
+  if (c.flag) return (s.flags[c.flag] || false) === c.is;
+  if (c.world) return s.world[c.world] === c.is;
+  if (c.item) return (s.items[c.item] || 0) >= c.min;
+  if (c.knows) return !!s.knowledge[c.knows.who]?.[c.knows.fact];
+  if (c.freeSlot) return !s.activities.some(a=>a.slot===c.freeSlot);
+  if (c.person) {
+    const p = person(s, c.person);
+    return !!p && (c.alive === undefined || p.alive === c.alive) && (c.local === undefined || (p.location === s.location) === c.local);
+  }
+  return false;
+}
+const availableParticipants = (s, list = []) => list.every(p => eligible(s, {person: p.id, alive: p.alive, local: p.local ? true : undefined}));
+
+return {copy,integer,check,id,jsonData,compile,eligible,readStat,person,availableParticipants};})();
+const motor=(()=>{
+// Evolução do motor da etapa 1.2: preserva relógio por marcos, fila, PRNG,
+// pausa/retomada, agenda legada e seleção ponderada. Contrato novo: save v2.
+const {copy, integer, check, id, jsonData, compile, eligible, readStat, person, availableParticipants} = contrato;
+const EMPTY = {schemaVersion:1, id:'laboratorio', version:1, decisions:[], consequences:[], activities:[]};
+const order = {playerDeath:0, npcDeath:1, fact:2, consequence:2, offer:3, decision:3};
+const log = (s, type, data = {}) => s.history.push({day:s.day, type, ...data});
+function mix(seed) { let n = seed ^ 0x9e3779b9; n = Math.imul(n ^ n >>> 16, 0x21f0aaad); n = Math.imul(n ^ n >>> 15, 0x735a2d97); return (n ^ n >>> 15) >>> 0 || 1; }
+function random(s) { let x=s.rng; x^=x<<13; x^=x>>>17; x^=x<<5; s.rng=x>>>0; return s.rng/4294967296; }
+function weighted(s, entries, weight) {
+  if (entries.length === 1) return entries[0];
+  const scale=Math.max(...entries.map(weight));check(Number.isFinite(scale)&&scale>0,'Pesos inválidos');
+  let draw = random(s) * entries.reduce((sum, e) => sum + weight(e)/scale, 0);
+  for (const e of entries) { draw -= weight(e)/scale; if (draw < 0) return e; }
+  return entries.at(-1);
+}
+const idle = s => check(s.alive && !s.pending && s.target === null && !s.work.length, 'Ação indisponível durante avanço ou decisão');
+function createEngine(input = EMPTY) {
+  // Catálogo privado: o chamador não pode alterar regras de um save em andamento.
+  const {catalog, decisions, consequences, activities} = compile(input);
+  const stamp = {id:catalog.id, version:catalog.version, fingerprint:JSON.stringify(catalog)};
+  function validate(s) {
+    jsonData(s);
+    check(s.version === 2 && s.catalog?.id === stamp.id && s.catalog.version === stamp.version && s.catalog.fingerprint === stamp.fingerprint, 'Save/catálogo incompatível');
+    check(integer(s.seed) && s.seed <= 0xffffffff && integer(s.rng,1) && s.rng <= 0xffffffff && integer(s.day) &&
+      Number.isSafeInteger(s.birthDay) && s.birthDay <= s.day && typeof s.alive === 'boolean' && integer(s.money) &&
+      integer(s.health) && s.health <= 100 && id(s.location) && integer(s.nextId,1) &&
+      integer(s.nextPulse,1) && s.nextPulse >= s.day && s.nextPulse % 7 === 0 &&
+      (s.target === null || integer(s.target) && s.target >= s.day), 'Estado vital/temporal inválido');
+    for (const field of ['skills','attributes','items','relations','flags','world','knowledge','npcs','seen','families','resolved','processed'])
+      check(s[field] && typeof s[field] === 'object' && !Array.isArray(s[field]), `Mapa inválido: ${field}`);
+    for (const field of ['skills','attributes','items']) for (const [key,value] of Object.entries(s[field])) check(id(key) && integer(value), `Valor inválido: ${field}`);
+    for (const [key,value] of Object.entries(s.relations)) check(key.split(':').length === 2 && key.split(':').every(who => !!person(s,who)) && Number.isSafeInteger(value) && value >= -100 && value <= 100, 'Relação inválida');
+    for (const [key,value] of Object.entries(s.flags)) check(id(key) && typeof value === 'boolean', 'Flag de save inválida');
+    for (const [key,value] of Object.entries(s.world)) check(id(key) && ['boolean','string','number'].includes(typeof value) && (typeof value !== 'number' || Number.isSafeInteger(value)), 'Fato de save inválido');
+    for (const [who,facts] of Object.entries(s.knowledge)) {
+      check(!!person(s,who) && facts && typeof facts === 'object' && !Array.isArray(facts), 'Conhecedor inexistente');
+      for (const [fact,value] of Object.entries(facts)) check(id(fact) && value === true, 'Conhecimento de save inválido');
+    }
+    for (const [key,n] of Object.entries(s.npcs)) check(id(key) && key !== 'player' && typeof n.alive === 'boolean' && id(n.location) && typeof n.name === 'string', 'NPC de save inválido');
+    for (const [key,value] of Object.entries(s.seen)) check(id(key) && integer(value.count,1) && integer(value.last) && value.last <= s.day, 'Exposição inválida');
+    for (const [key,value] of Object.entries(s.families)) check(id(key) && integer(value,1), 'Família inválida');
+    for (const field of ['resolved','processed']) for (const [key,value] of Object.entries(s[field])) check(integer(Number(key),1) && Number(key)<s.nextId && value === true, 'Registro de execução inválido');
+    check(Array.isArray(s.history) && Array.isArray(s.queue) && Array.isArray(s.activities) && Array.isArray(s.work), 'Coleções inválidas');
+    let previous = 0;
+    for (const h of s.history) { check(integer(h.day) && h.day >= previous && h.day <= s.day && typeof h.type === 'string', 'Diário inválido'); previous=h.day; }
+    const runningIds = new Set();
+    const instance = e => { check(integer(e.id,1) && e.id < s.nextId && !runningIds.has(e.id) && !s.processed[e.id] && !s.resolved[e.id], 'Instância duplicada ou reaplicada'); runningIds.add(e.id); };
+    function event(e, pending = false) {
+      check(e && Object.hasOwn(order,e.type) && integer(e.day) && (pending ? e.day <= s.day : e.day >= s.day), 'Evento de save inválido'); instance(e);
+      if (['npcDeath','offer'].includes(e.type)) check(!!s.npcs[e.npc], 'NPC de evento desconhecido');
+      if (e.type === 'offer') check(typeof e.title === 'string' && integer(e.reward), 'Oferta legada inválida');
+      if (e.type === 'fact') check(typeof e.title === 'string', 'Fato legado inválido');
+      if (e.type === 'decision') check(decisions.get(e.decision)?.kind === 'opportunity', 'Decisão de save desconhecida');
+      if (e.type === 'consequence') check(consequences.has(e.consequence), 'Consequência de save desconhecida');
+      check(!pending || ['offer','decision'].includes(e.type), 'Pendência inválida');
+    }
+    s.queue.forEach(e => event(e)); if (s.pending !== null) event(s.pending,true);
+    for (const w of s.work) {
+      instance(w); const d = decisions.get(w.decision), o=d?.options.find(x => x.id===w.option);
+      check(!!o && integer(w.remaining) && w.remaining <= o.cost.days && integer(w.started) && w.started <= s.day, 'Ação em curso inválida');
+    }
+    check(!s.work.length || s.target !== null, 'Ação em curso sem destino');
+    check(new Set(s.activities.map(a => a.id)).size === s.activities.length, 'Atividade duplicada');
+    for (const a of s.activities) {
+      check(id(a.id) && integer(a.end) && a.end >= s.day, 'Atividade de save inválida');
+      if (a.definition) check(activities.has(a.definition) && a.definition === a.id && ['occupation','project'].includes(a.slot), 'Definição de atividade inválida');
+      else check(integer(a.hours,1) && a.hours <= 12 && id(a.skill) && integer(a.rate) && integer(a.pay), 'Atividade legada inválida');
+    }
+    const modern = s.activities.filter(a=>a.definition);
+    check(new Set(modern.map(a=>a.slot)).size===modern.length && s.activities.filter(a=>!a.definition).reduce((n,a)=>n+a.hours,0)<=12, 'Atividades incompatíveis');
+    check(s.alive || (!s.pending && !s.work.length && !s.activities.length && !s.queue.length && s.target === null), 'Morte não encerrada');
+    check(!s.alive || s.health>0, 'Pessoa viva sem saúde');
+    return s;
+  }
+  function tx(s, operation) { const draft=copy(s); operation(draft); validate(draft); Object.assign(s,draft); return s; }
+  function create(seed=1, initial={}) {
+    check(integer(seed) && seed <= 0xffffffff, 'Seed inválida'); jsonData(initial);
+    const allowed=['money','health','birthDay','location','skills','attributes','items','relations','flags','world','knowledge','npcs'];
+    check(Object.keys(initial).every(k=>allowed.includes(k)), 'Campo inicial desconhecido');
+    return validate({version:2,catalog:copy(stamp),seed,rng:mix(seed),day:0,birthDay:0,alive:true,money:0,health:100,
+      location:'aldeia',skills:{},attributes:{},items:{},relations:{},flags:{},world:{},knowledge:{player:{}},
+      activities:[],npcs:{},queue:[],pending:null,target:null,work:[],history:[],seen:{},families:{},resolved:{},processed:{},nextId:1,nextPulse:7,...copy(initial)});
+  }
+  function load(raw) {
+    check(typeof raw === 'string' && raw.length < 8_000_000, 'Save ausente ou grande demais');
+    let s=JSON.parse(raw); jsonData(s);
+    if (s.version === 1) {
+      // A base 1.2 só continha agenda, fatos e ofertas legadas. Não inventar pessoas/posses.
+      const defaults=create(s.seed);
+      s={...defaults,...s,version:2,catalog:copy(stamp),nextPulse:(Math.floor(s.day/7)+1)*7,
+        npcs:Object.fromEntries(Object.entries(s.npcs || {}).map(([key,n])=>[key,{name:key,location:'aldeia',...n}]))};
+    }
+    return validate(s);
+  }
+  const save = s => JSON.stringify(validate(s));
+  const permitted = (s,d) => !!d && s.alive && eligible(s,d.requires) && availableParticipants(s,d.participants);
+  const repetition = (s,d) => (s.seen[d.id]?.count || 0) < d.repeat.max && s.day-(s.seen[d.id]?.last ?? -Infinity) >= d.repeat.cooldown;
+  function expose(s,d) { s.seen[d.id]={count:(s.seen[d.id]?.count||0)+1,last:s.day}; s.families[d.family]=(s.families[d.family]||0)+1; }
+  function push(s,event) { s.queue.push({...copy(event),id:s.nextId++}); }
+  function dead(s) { s.alive=false; s.activities=[]; s.queue=[]; s.pending=null; s.work=[]; s.target=null; log(s,'death',{text:'Sua vida chegou ao fim.'}); }
+  function change(s,key,amount) {
+    const [type,a,b]=key.split(':'); const value=readStat(s,key)+amount;
+    check(Number.isSafeInteger(value), 'Resultado numérico inválido');
+    if(type==='money') {check(value>=0,'Recursos insuficientes'); s.money=value;}
+    else if(type==='health') {s.health=Math.max(0,Math.min(100,value)); if(s.health===0) dead(s);}
+    else if(type==='skill') {check(value>=0,'Habilidade negativa');s.skills[a]=value;}
+    else if(type==='trust') {check(person(s,a)&&person(s,b),'Relação com pessoa inexistente');s.relations[`${a}:${b}`]=Math.max(-100,Math.min(100,value));}
+    else check(false,'Estatística não alterável');
+  }
+  function start(s,key) {
+    const a=activities.get(key); check(!!a && eligible(s,a.requires) && availableParticipants(s,a.participants),'Requisitos da atividade não atendidos');
+    check(!s.activities.some(x=>x.id===key || x.slot===a.slot),'Já existe um compromisso nessa categoria');
+    check(s.money>=a.costPerDay,'Recursos insuficientes para iniciar');
+    s.activities.push({id:a.id,definition:a.id,slot:a.slot,end:s.day+a.duration});
+    log(s,'activityStart',{id:a.id,text:`Você começou: ${a.label}.`});
+  }
+  function apply(s,list) {
+    for (const e of list) {
+      if (!s.alive) break;
+      switch(e.op) {
+        case 'add': change(s,e.stat,e.amount); break;
+        case 'flag': s.flags[e.id]=e.value; break;
+        case 'world': s.world[e.id]=e.value; break;
+        case 'item': {const n=(s.items[e.id]||0)+e.amount;check(integer(n),'Item insuficiente');s.items[e.id]=n;break;}
+        case 'learn': check(person(s,e.who)?.alive,'Conhecedor indisponível');(s.knowledge[e.who]??={})[e.fact]=true;break;
+        case 'move': check(person(s,e.who)?.alive,'Pessoa indisponível');if(e.who==='player')s.location=e.to;else s.npcs[e.who].location=e.to;break;
+        case 'kill': check(!!person(s,e.who),'Pessoa desconhecida');if(e.who==='player')dead(s);else if(s.npcs[e.who].alive){s.npcs[e.who].alive=false;log(s,'npcDeath',{npc:e.who});}break;
+        case 'schedule': push(s,{type:'consequence',consequence:e.consequence,day:s.day+e.after});break;
+        case 'offer': push(s,{type:'decision',decision:e.decision,day:s.day});break;
+        case 'startActivity': start(s,e.activity);break;
+        case 'cancelActivity': s.activities=s.activities.filter(a=>a.id!==e.activity);log(s,'activityCancel',{id:e.activity});break;
+        default: throw new Error('Operação não suportada');
+      }
+    }
+  }
+  function finish(s,w) {
+    const d=decisions.get(w.decision),o=d.options.find(x=>x.id===w.option);
+    s.resolved[w.id]=true;
+    if(!permitted(s,d) || !eligible(s,o.requires)) {log(s,'actionInvalidated',{id:w.id,text:'A situação mudou antes da conclusão. A ação foi interrompida; o tempo e os custos já gastos foram preservados.'});return;}
+    const results=o.outcomes.filter(r=>eligible(s,r.when));
+    const r=weighted(s,results,x=>x.weight);
+    apply(s,o.effects); apply(s,r.effects);
+    log(s,'decision',{id:w.id,decision:d.id,choice:o.id,intent:o.intent,outcome:r.id,text:r.text});
+  }
+  function cleanActivities(s) {
+    for (const a of [...s.activities]) {
+      if(!a.definition) continue;
+      const d=activities.get(a.definition);
+      if(!eligible(s,d.requires)||!availableParticipants(s,d.participants)) {
+        s.activities=s.activities.filter(x=>x.id!==a.id); log(s,'activityInterrupted',{id:a.id,text:`${d.label}: o compromisso terminou porque as condições mudaram.`});
+      }
+    }
+  }
+  function pulse(s) {
+    s.nextPulse+=7;
+    const list=[...decisions.values()].filter(d=>d.selection&&permitted(s,d)&&repetition(s,d)&&!s.queue.some(e=>e.decision===d.id));
+    if(list.length) {
+      const d=weighted(s,list,x=>x.selection.weight/(1+3*(s.seen[x.id]?.count||0)+2*(s.families[x.family]||0)));
+      push(s,{type:'decision',decision:d.id,day:s.day});
+    }
+  }
+  function settle(s) {
+    if(!s.alive || s.pending) return;
+    const sorted=()=>s.queue.sort((a,b)=>a.day-b.day||order[a.type]-order[b.type]||a.id-b.id);
+    // Mudanças causais vencem conclusões e convites na mesma data.
+    sorted();
+    while(s.alive && s.queue[0]?.day<=s.day && order[s.queue[0].type]<3) {
+      const e=s.queue.shift();s.processed[e.id]=true;
+      if(e.type==='playerDeath') dead(s);
+      else if(e.type==='npcDeath') {if(s.npcs[e.npc].alive){s.npcs[e.npc].alive=false;log(s,'npcDeath',{npc:e.npc});}}
+      else if(e.type==='fact') log(s,'fact',{title:e.title,text:e.title});
+      else {
+        const c=consequences.get(e.consequence);
+        if(eligible(s,c.requires)&&availableParticipants(s,c.participants)) {apply(s,c.effects);if(c.visibility==='observed')log(s,'consequence',{id:e.id,consequence:c.id,text:c.text});}
+        else log(s,'invalidated',{id:e.id});
+      }
+      sorted();
+    }
+    if(!s.alive) return;
+    cleanActivities(s);
+    for(const a of [...s.activities].filter(a=>a.end===s.day)) {
+      if(!s.alive)break;
+      if(!s.activities.some(x=>x.id===a.id))continue;
+      s.activities=s.activities.filter(x=>x.id!==a.id);
+      if(a.definition) {const d=activities.get(a.definition);
+        if(!eligible(s,d.requires)||!availableParticipants(s,d.participants)){log(s,'activityInterrupted',{id:a.id,text:`${d.label}: as condições mudaram antes da conclusão.`});continue;}
+        apply(s,d.onComplete);log(s,'activityComplete',{id:a.id,text:d.completionText});}
+      else log(s,'activityComplete',{id:a.id});
+    }
+    while(s.alive && s.work.at(-1)?.remaining===0) finish(s,s.work.pop());
+    cleanActivities(s);
+    if(!s.alive) return;
+    if(s.day===s.nextPulse) pulse(s);
+    sorted();
+    while(s.alive&&!s.pending&&s.queue[0]?.day<=s.day) {
+      const e=s.queue.shift();
+      check(order[e.type]===3,'Fato fora de fase');
+      if(e.type==='offer' ? s.npcs[e.npc].alive : permitted(s,decisions.get(e.decision))&&repetition(s,decisions.get(e.decision))) {
+        s.pending=e;
+        if(e.type==='decision')expose(s,decisions.get(e.decision));
+        log(s,'offer',{id:e.id,...(e.decision?{decision:e.decision}:{npc:e.npc})});
+      } else {s.processed[e.id]=true;log(s,'invalidated',{id:e.id});}
+    }
+    if(!s.pending&&!s.work.length&&s.day===s.target)s.target=null;
+  }
+  function progress(s,dt) {
+    cleanActivities(s);
+    // Categorias simples substituem a distribuição de horas no conteúdo novo.
+    for(const a of [...s.activities]) {
+      const d=a.definition?activities.get(a.definition):null;
+      if(d) {
+        if(s.money < d.costPerDay*dt) { // O relógio inclui um marco antes de faltar dinheiro.
+          throw new Error('Marco financeiro ausente');
+        }
+        s.money+=(d.pay-d.costPerDay)*dt;s.skills[d.skill]=(s.skills[d.skill]||0)+d.rate*dt;
+      } else {s.skills[a.skill]=(s.skills[a.skill]||0)+a.hours*a.rate*dt;s.money+=a.pay*dt;}
+    }
+    if(s.work.length)s.work.at(-1).remaining-=dt;
+  }
+  function run(s,stopAfter=null) {
+    while(s.alive&&!s.pending&&s.target!==null) {
+      settle(s); if(!s.alive||s.pending||s.target===null)break;
+      // Cumprir a duração da resposta não autoriza retomar o resto do salto.
+      if(stopAfter!==null&&!s.work.some(w=>w.id===stopAfter))break;
+      if(s.day===s.target) {s.target=null;break;}
+      // Custos de rotina são reservados por dia, antes de contar renda futura.
+      let dailyCost=s.activities.reduce((sum,a)=>sum+(a.definition?activities.get(a.definition).costPerDay:0),0);
+      if(dailyCost>s.money) {
+        for(const a of [...s.activities].filter(a=>a.definition&&activities.get(a.definition).costPerDay>0)) {
+          s.activities=s.activities.filter(x=>x.id!==a.id);log(s,'activityInterrupted',{id:a.id,text:'A atividade foi interrompida por falta de recursos.'});
+        }
+        dailyCost=0;
+      }
+      const next=Math.min(s.target,s.nextPulse,...s.queue.map(e=>e.day),...s.activities.map(a=>a.end),
+        s.work.length?s.day+s.work.at(-1).remaining:Infinity,dailyCost?s.day+1:Infinity);
+      const dt=next-s.day;check(integer(dt,1),'Relógio travado');progress(s,dt);s.day=next;
+    }
+  }
+  function options(s,d) {
+    return d.options.filter(o=>eligible(s,o.visibleWhen)).map(o=>({id:o.id,label:o.label,intent:o.intent,hint:o.hint,cost:copy(o.cost),
+      enabled:eligible(s,o.requires)&&s.money>=o.cost.money,
+      reason:!eligible(s,o.requires)?o.blockedReason:s.money<o.cost.money?'Moedas insuficientes.':null}));
+  }
+  function begin(s,d,o,instance) {
+    check(eligible(s,o.visibleWhen)&&eligible(s,o.requires)&&s.money>=o.cost.money,'Escolha indisponível');
+    s.money-=o.cost.money;
+    log(s,'intention',{id:instance,decision:d.id,choice:o.id,intent:o.intent,text:o.intent,cost:copy(o.cost)});
+    const w={id:instance,decision:d.id,option:o.id,remaining:o.cost.days,started:s.day};
+    if(o.cost.days) {
+      s.work.push(w);
+      s.target=Math.max(s.target??s.day,s.day+s.work.reduce((n,a)=>n+a.remaining,0));
+      run(s,w.id);
+    } else {finish(s,w);settle(s);}
+  }
+  const api = {
+    create,save,load,
+    addNPC:(s,key,details={})=>tx(s,t=>{check(id(key)&&key!=='player'&&!Object.hasOwn(t.npcs,key),'NPC inválido');t.npcs[key]={alive:true,name:key,location:t.location,...copy(details)};}),
+    // API de compatibilidade do laboratório 1.2; horas não são expostas à UI nova.
+    activity:(s,a)=>tx(s,t=>{idle(t);check(id(a.id)&&id(a.skill)&&integer(a.hours,1)&&a.hours<=12&&integer(a.duration,1)&&integer(a.rate??1)&&integer(a.pay??0)&&!t.activities.some(x=>x.id===a.id),'Atividade inválida');check(t.activities.filter(x=>!x.definition).reduce((n,x)=>n+x.hours,0)+a.hours<=12,'Agenda excedida');t.activities.push({...copy(a),rate:a.rate??1,pay:a.pay??0,end:t.day+a.duration});log(t,'activityStart',{id:a.id});}),
+    cancel:(s,key)=>tx(s,t=>{idle(t);check(t.activities.some(a=>a.id===key),'Atividade inexistente');t.activities=t.activities.filter(a=>a.id!==key);log(t,'activityCancel',{id:key,text:'Você encerrou uma atividade.'});}),
+    schedule:(s,e)=>tx(s,t=>{check(t.alive&&integer(e.day)&&e.day>t.day&&Object.hasOwn(order,e.type),'Evento inválido');push(t,e);}),
+    advance:(s,days)=>tx(s,t=>{idle(t);check(integer(days,1)&&days<=36500,'Avanço inválido');t.target=t.day+days;run(t);}),
+    age:s=>api.advance(s,365),
+    resume:s=>tx(s,t=>{check(t.alive&&!t.pending&&t.target!==null,'Não há avanço para retomar');run(t);}),
+    stop:s=>tx(s,t=>{check(!t.pending&&!t.work.length,'Resolva a decisão ou conclua a ação primeiro');t.target=null;}),
+    abandon:s=>tx(s,t=>{check(t.alive&&!t.pending&&t.work.length,'Não há ação para abandonar');for(const w of t.work){t.resolved[w.id]=true;log(t,'actionAbandoned',{id:w.id,text:'Você abandonou a ação em andamento. Os custos pagos e o tempo passado foram preservados.'});}t.work=[];t.target=null;settle(t);}),
+    act:(s,key,option)=>tx(s,t=>{idle(t);const d=decisions.get(key);check(d?.kind==='action'&&permitted(t,d)&&repetition(t,d),'Iniciativa indisponível');const o=d.options.find(x=>x.id===option);check(!!o,'Opção desconhecida');const instance=t.nextId++;expose(t,d);begin(t,d,o,instance);}),
+    choose:(s,{instance,option})=>tx(s,t=>{
+      check(t.alive&&t.pending?.type==='decision'&&t.pending.id===instance,'Decisão expirada ou já resolvida');
+      const e=t.pending,d=decisions.get(e.decision);
+      check(permitted(t,d),'Participantes ou situação indisponíveis');const o=d.options.find(x=>x.id===option);check(!!o,'Opção desconhecida');
+      t.pending=null;begin(t,d,o,e.id);
+    }),
+    dismiss:s=>tx(s,t=>{ // Usado apenas se uma integração externa mudou participantes enquanto a UI estava aberta.
+      check(t.pending?.type==='decision'&&!permitted(t,decisions.get(t.pending.decision)),'A decisão continua válida');
+      t.processed[t.pending.id]=true;log(t,'invalidated',{id:t.pending.id});t.pending=null;settle(t);
+    }),
+    resolve:(s,choice)=>tx(s,t=>{check(t.alive&&t.pending?.type==='offer'&&['accept','decline'].includes(choice),'Escolha legada inválida');const e=t.pending;t.pending=null;t.resolved[e.id]=true;if(choice==='accept')t.money+=e.reward;log(t,'decision',{id:e.id,choice});settle(t);}),
+    view:s=>{
+      const p=s.pending,d=p?.type==='decision'?decisions.get(p.decision):null;
+      return {day:s.day,age:readStat(s,'age'),alive:s.alive,money:s.money,health:s.health,location:s.location,
+        skills:copy(s.skills),items:copy(s.items),
+        activities:s.activities.map(a=>({id:a.id,label:activities.get(a.definition)?.label||a.id})),
+        pending:d?{instance:p.id,title:d.title,text:d.text,options:options(s,d)}:p?{instance:p.id,title:p.title,legacy:true}:null,
+        canAge:s.alive&&!p&&s.target===null&&!s.work.length,canResume:s.alive&&!p&&s.target!==null,
+        canStop:s.target!==null&&!p&&!s.work.length,
+        canAbandon:s.alive&&!p&&s.work.length>0,
+        remaining:s.target===null?0:s.target-s.day,
+        actions:s.alive&&!p&&s.target===null&&!s.work.length?[...decisions.values()].filter(d=>d.kind==='action'&&permitted(s,d)&&repetition(s,d)).map(d=>({id:d.id,title:d.title,text:d.text,options:options(s,d)})):[],
+        diary:s.history.filter(h=>h.text).map(h=>({day:h.day,type:h.type,text:h.text})).slice(-80)};
+    },
+    select:(s,list,context)=>{let chosen=null;tx(s,t=>{if(!t.alive||t.pending)return;const candidates=list.filter(e=>e.context===context&&e.weight>0&&(!e.npc||t.npcs[e.npc]?.alive)&&(t.seen[e.id]?.count||0)<(e.max||1)&&t.day-(t.seen[e.id]?.last??-Infinity)>=(e.cooldown||0));if(!candidates.length)return;const e=weighted(t,candidates,x=>x.weight/(1+3*(t.seen[x.id]?.count||0)+2*(t.families[x.family]||0)));t.seen[e.id]={count:(t.seen[e.id]?.count||0)+1,last:t.day};t.families[e.family]=(t.families[e.family]||0)+1;log(t,'storylet',{id:e.id,family:e.family});chosen=e.id;});return chosen;},
+  };
+  return Object.freeze(api);
+}
+// Os testes originais podem usar o mesmo conjunto de funções sem catálogo narrativo.
+const {create,save,load,addNPC,activity,cancel,schedule,advance,resolve,resume,stop,select}=createEngine();
+
+return {createEngine};})();
+const content=(()=>{
+// Autoria em dados. Estes atalhos só constroem JSON; o motor não executa scripts de conteúdo.
+const all=(...x)=>({all:x}), not=x=>({not:x});
+const flag=(key,value=true)=>({flag:key,is:value});
+const knows=fact=>({knows:{who:'player',fact}});
+const stat=(key,value)=>({stat:key,op:'gte',value});
+const item=id=>({item:id,min:1});
+const local=id=>({id,alive:true,local:true});
+const set=(id,value=true)=>({op:'flag',id,value});
+const add=(stat,amount)=>({op:'add',stat,amount});
+const learn=(who,fact)=>({op:'learn',who,fact});
+const later=(consequence,after)=>({op:'schedule',consequence,after});
+const result=(id,text,effects=[],weight=1,when)=>({id,text,effects,weight,...(when?{when}:{})});
+const option=(id,label,intent,hint,{days=0,money=0,requires,visibleWhen,effects=[],outcomes,blockedReason='As condições para esta abordagem ainda não foram atendidas.'}={})=>({
+  id,label,intent,hint,cost:{days,money},effects,outcomes:outcomes||[result('feito',intent)],blockedReason,...(requires?{requires}:{}),...(visibleWhen?{visibleWhen}:{})});
+const decision=(id,kind,family,domain,title,text,options,extra={})=>({id,version:1,kind,family,domain,title,text,repeat:{max:1,cooldown:0},options,...extra});
+const consequence=(id,text,effects,extra={})=>({id,version:1,visibility:'observed',text,effects,...extra});
+const activity=(id,label,slot,duration,skill,rate,pay,costPerDay,onComplete,completionText,extra={})=>({id,version:1,label,slot,duration,skill,rate,pay,costPerDay,onComplete,completionText,...extra});
+const sellEffects=[{op:'item',id:'grimorio',amount:-1},add('money',8),set('livro_vendido'),learn('mercador','comprou_livro'),later('comercio.retorno',10)];
+const repairHome=[set('casa_reparada'),{op:'world',id:'quarto_interditado',value:false}];
+
+const catalog={schemaVersion:1,id:'fantasy_life.agencia',version:1,
+  activities:[
+    activity('oficina','Trabalho na oficina','occupation',60,'oficio',1,1,0,[add('trust:maira:player',1)],'Você encerrou a temporada na oficina com prática e algum dinheiro.',{participants:[local('maira')]}),
+    activity('estudo','Estudo com materiais emprestados','project',28,'arcanismo',1,0,1,[learn('player','conducao_segura')],'Você aprendeu a conduzir luz sem aquecer o suporte.'),
+    activity('bolsa','Aprendizagem com Maíra','occupation',90,'oficio',2,0,0,[learn('player','conducao_segura'),add('skill:arcanismo',12)],'A aprendizagem terminou. Você domina uma técnica de selos e conserva seu ofício.',{participants:[local('maira')]}),
+    activity('telhado','Conserto do telhado','project',7,'oficio',1,0,0,repairHome,'O telhado está vedado. Sua família pode voltar a usar o quarto.'),
+    activity('lanterna','Construção de uma lanterna rúnica','project',14,'oficio',1,0,0,[{op:'item',id:'lanterna',amount:1},set('lanterna_feita')],'A lanterna acende sem óleo. Você pode usá-la no conserto ou vender seu trabalho.'),
+    activity('encomenda','Selos para iluminar a oficina','project',14,'oficio',1,0,0,[add('money',18)],'A oficina aceita seus selos e paga 18 moedas.',{participants:[local('maira')]})
+  ],
+  consequences:[
+    consequence('mentor.convite','Maíra pede que você volte à oficina; ela tem uma proposta de aprendizagem.',[{op:'offer',decision:'mentor.proposta'}],{
+      participants:[local('maira')],requires:{knows:{who:'maira',fact:'viu_grimorio'}}}),
+    consequence('comercio.retorno','O comprador do livro oferece apresentar você a uma banca de artefatos.',[set('contato_comercial')],{
+      participants:[local('mercador')],requires:all(flag('livro_vendido'),{knows:{who:'mercador',fact:'comprou_livro'}})}),
+    consequence('familia.retorno','Sua irmã volta a perguntar sobre o conserto.',[{op:'offer',decision:'familia.retorno'}],{participants:[local('irma')],requires:not(flag('casa_reparada'))}),
+    consequence('familia.chuva','A chuva encontrou as goteiras. Um quarto ficará inutilizável até alguém fazer o conserto.',[{op:'world',id:'quarto_interditado',value:true}],{
+      requires:not(flag('casa_reparada'))}),
+    consequence('magia.eco','', [{op:'world',id:'eco_no_poco',value:true}],{visibility:'private'}),
+    consequence('magia.oficina','Com a luz do poço estabilizada, a oficina recebeu uma encomenda de selos. Maíra lembra do seu trabalho.',[set('encomenda_aberta')],{participants:[local('maira')],requires:flag('poco_estavel')})
+  ],
+  decisions:[
+    decision('livro.destino','action','objeto_ambiguo','conhecimento','O livro sem título',
+      'Você encontrou um livro de diagramas entre materiais descartados. Pode investigar, consultar alguém ou escolher outro destino para o volume.',[
+      option('examinar','Examinar e copiar os diagramas','Estudar o livro antes de decidir seu destino.','2 dias. Você conserva o livro e suas anotações.',{
+        days:2,requires:not(knows('diagramas')),blockedReason:'Você já copiou os diagramas que consegue entender.',
+        effects:[learn('player','diagramas'),{op:'item',id:'notas',amount:1},later('magia.eco',5)],
+        outcomes:[result('anotacoes','Você copia um circuito de luz. O selo da capa continua sem tradução.')]}),
+      option('consultar','Mostrar o livro a Maíra','Pedir a opinião de uma gravadora de selos.','2 dias e 3 moedas. Maíra saberá que você possui o livro.',{
+        days:2,money:3,requires:all({person:'maira',alive:true,local:true},not(knows('selo_proibido'))),blockedReason:'Maíra precisa estar disponível na vila; uma consulta já concluída não precisa ser repetida.',
+        effects:[learn('player','selo_proibido'),learn('maira','viu_grimorio'),add('trust:maira:player',2),later('mentor.convite',7)],
+        outcomes:[result('identificado','Maíra reconhece um selo de uma escola banida. Ela conhece os diagramas de luz, mas aconselha cuidado com as outras páginas.')]}),
+      option('vender','Vender como livro antigo','Transformar o achado em dinheiro imediato.','1 dia. Receba 8 moedas e entregue o livro. Suas anotações ficam com você.',{
+        days:1,effects:sellEffects,outcomes:[result('venda','O livreiro compra o volume. Ele sabe da venda; ninguém mais é informado por ela.')]}),
+      option('revelar','Negociar explicando o selo','Vender o livro revelando o que aprendeu sobre sua origem.','3 dias. Receba 12 moedas; o comprador conhecerá o selo.',{
+        days:3,visibleWhen:knows('selo_proibido'),requires:stat('trust:mercador:player',2),blockedReason:'O comprador só aceita a negociação longa de alguém em quem confia.',
+        effects:[...sellEffects,add('money',4),learn('mercador','selo_proibido')],outcomes:[result('venda_informada','O comprador paga pela procedência e pelo risco que aceitou assumir.')]}),
+      option('entregar','Confiar o livro a Maíra','Entregar o livro para conservação na oficina.','Você perde o livro e ganha a confiança de Maíra.',{
+        requires:{person:'maira',alive:true,local:true},blockedReason:'Maíra precisa estar viva e na vila.',
+        effects:[{op:'item',id:'grimorio',amount:-1},learn('maira','viu_grimorio'),add('trust:maira:player',3),set('livro_entregue'),later('mentor.convite',3)],
+        outcomes:[result('arquivo','Maíra guarda o livro no armário seco da oficina. Ela não exige que você siga uma carreira mágica.')]}),
+      option('experimentar','Testar um circuito nas anotações','Tentar produzir uma luz antes de dominar a técnica.','3 dias e 1 moeda. Pode funcionar ou causar uma queimadura.',{
+        days:3,money:1,visibleWhen:knows('diagramas'),requires:not(flag('circuito_testado')),blockedReason:'Você já tentou este circuito; outro teste igual não trará aprendizado novo.',
+        effects:[set('circuito_testado')],outcomes:[
+          result('luz','Uma luz fraca se mantém. Você registra o que conseguiu reproduzir.',[add('skill:arcanismo',4)],3),
+          result('queimadura','O suporte esquenta e queima seus dedos. As notas sobrevivem; você ainda pode procurar ensino.',[add('health',-8)],2)]})
+    ],{repeat:{max:8,cooldown:0},requires:item('grimorio')}),
+    decision('oficina.iniciativa','action','trabalho_aprendizado','ocupacao','Procurar a oficina',
+      'Maíra grava placas e pequenos selos. Você pode pedir trabalho sem esperar por um convite.',[
+      option('trabalhar','Pedir uma temporada de trabalho','Trabalhar por pagamento e aprender o ofício na prática.','60 dias de rotina automática: 1 moeda e prática por dia.',{
+        requires:{freeSlot:'occupation'},blockedReason:'Encerre sua ocupação atual para assumir outra.',effects:[{op:'startActivity',activity:'oficina'}],
+        outcomes:[result('contratado','Maíra precisa de ajuda com placas. Vocês combinam uma temporada paga, sem compromisso permanente.')]}),
+      option('estudar','Pedir materiais de estudo','Aprender arcanismo por um projeto de estudo.','28 dias de rotina. Custa 1 moeda por dia; pode ser combinado com trabalho.',{
+        requires:all({freeSlot:'project'},stat('money',1)),blockedReason:'Você precisa de um projeto livre e ao menos 1 moeda para os materiais.',effects:[{op:'startActivity',activity:'estudo'}],
+        outcomes:[result('material','Maíra empresta exercícios simples. A compra de papel será descontada enquanto você estudar.')]})
+    ],{repeat:{max:10,cooldown:0},participants:[local('maira')]}),
+    decision('mentor.proposta','opportunity','trabalho_aprendizado','relacoes','Uma vaga, sem salário',
+      'Maíra oferece três meses de aprendizagem. A oficina fornece materiais, mas a vaga não paga salário.',[
+      option('aceitar','Aceitar a aprendizagem','Trocar renda imediata por ensino acompanhado.','90 dias de ocupação. Materiais incluídos.',{
+        requires:{freeSlot:'occupation'},blockedReason:'Sua ocupação atual precisa terminar antes de aceitar.',effects:[{op:'startActivity',activity:'bolsa'}],
+        outcomes:[result('aprendiz','Você aceita a vaga. O livro abriu uma relação; a decisão de seguir o ofício foi sua.')]}),
+      option('negociar','Propor um estudo independente','Usar a experiência de oficina para estudar mantendo o trabalho.','Requer prática de ofício. Projeto de 28 dias, 1 moeda por dia.',{
+        requires:all(stat('skill:oficio',7),{freeSlot:'project'},stat('money',1)),blockedReason:'Você precisa de sete dias de prática, um projeto livre e dinheiro para materiais.',effects:[{op:'startActivity',activity:'estudo'}],
+        outcomes:[result('acordo','Maíra aceita emprestar os exercícios. Você mantém liberdade para continuar trabalhando.')]}),
+      option('recusar','Recusar por enquanto','Manter seus compromissos e procurar outra formação quando quiser.','A recusa encerra esta oferta, preservando o contato.',{
+        effects:[set('bolsa_recusada')],outcomes:[result('recusa','Maíra chama outro aprendiz. Você ainda pode procurar trabalho e materiais na oficina.')]})
+    ],{participants:[local('maira')]}),
+    ...['familia.telhado','familia.retorno'].map((key,index)=>decision(key,'opportunity','cuidado_compromisso','familia',
+      index?'O conserto ficou para depois':'A chuva está chegando',
+      'Sua irmã mostra as goteiras do quarto. O carpinteiro cobra 9 moedas; você também pode fazer o serviço.',[
+      option('pagar','Pagar o carpinteiro','Usar suas economias para resolver o conserto.','9 moedas. Você conserva seu tempo de projeto.',{
+        money:9,effects:repairHome,outcomes:[result('contratado','O carpinteiro troca as peças soltas. Você conservou seus outros compromissos.')]}),
+      option('reparar','Fazer o conserto','Assumir o trabalho para poupar dinheiro.','Projeto automático de 7 dias. Usa o espaço de seu outro projeto.',{
+        requires:{freeSlot:'project'},blockedReason:'Encerre seu outro projeto se quiser assumir este trabalho.',effects:[{op:'startActivity',activity:'telhado'}],outcomes:[result('assumido','Você separa ferramentas. O conserto tomará parte dos próximos dias.')]}),
+      option('lanterna','Trocar a lanterna pelo serviço','Oferecer seu trabalho mágico ao carpinteiro.','Entrega uma lanterna rúnica e conserva seu dinheiro e projeto.',{
+        visibleWhen:flag('lanterna_feita'),requires:item('lanterna'),blockedReason:'Você já não possui a lanterna.',effects:[{op:'item',id:'lanterna',amount:-1},...repairHome],
+        outcomes:[result('troca','O carpinteiro aceita a lanterna para trabalhar à noite e assume o conserto.')]}),
+      ...(index?[]:[option('adiar','Combinar uma resposta mais tarde','Pedir dez dias para organizar seus planos.','A conversa voltará em 10 dias. A chuva não vai esperar indefinidamente.',{
+        effects:[later('familia.retorno',10)],outcomes:[result('prazo','Sua irmã concorda em esperar dez dias por sua resposta.')]})]),
+      option('recusar','Não assumir o conserto','Deixar sua família buscar outra solução.','Você conserva os recursos; as goteiras continuam se ninguém agir.',{
+        effects:[set('conserto_recusado')],outcomes:[result('recusa','Sua irmã diz que tentará encontrar ajuda. Você não assumiu o compromisso.')]})
+    ],{participants:[local('irma')],requires:not(flag('casa_reparada'))})),
+    decision('projeto.lanterna','action','criacao_utilidade','projeto','Criar uma lanterna rúnica',
+      'Você pode reunir seus diagramas, prática manual e condução segura em um objeto útil.',[
+      option('construir','Começar a construção','Transformar conhecimentos combinados em um projeto próprio.','4 moedas em materiais e 14 dias de projeto automático.',{
+        money:4,requires:{freeSlot:'project'},blockedReason:'Encerre seu projeto atual para iniciar este.',effects:[{op:'startActivity',activity:'lanterna'}],
+        outcomes:[result('iniciado','Você compra cobre e vidro e prepara sua bancada. A lanterna ficará pronta enquanto o tempo avança.')]})
+    ],{requires:all(knows('diagramas'),knows('conducao_segura'),stat('skill:oficio',7),not(flag('lanterna_feita')))}),
+    decision('lanterna.destino','action','troca_uso','posses','O destino da lanterna',
+      'A luz está pronta. Uma ferramenta pode ser uma fonte de renda ou uma moeda de troca.',[
+      option('vender','Vender sua criação','Receber dinheiro pelo projeto concluído.','1 dia. Receba 12 moedas e entregue a lanterna.',{
+        days:1,effects:[{op:'item',id:'lanterna',amount:-1},add('money',12)],outcomes:[result('vendida','Uma costureira compra a lanterna para trabalhar depois do pôr do sol.')]})
+    ],{requires:item('lanterna')}),
+    decision('magia.poco','opportunity','risco_conhecimento','magia','Luz sob a água',
+      'Um circuito de luz aparece nas pedras do poço. Você reconhece o desenho de suas anotações; não sabe quem o gravou.',[
+      option('estabilizar','Aplicar a condução segura','Estabilizar o circuito com o que aprendeu.','Exige condução segura. A oficina pode encontrar utilidade no seu trabalho.',{
+        requires:knows('conducao_segura'),blockedReason:'Você ainda não domina a condução segura.',effects:[set('poco_estavel'),set('poco_resolvido'),learn('maira','viu_reparo_poco'),later('magia.oficina',14)],
+        outcomes:[result('estavel','Você ajusta o circuito diante de Maíra. O poço fica iluminado sem aquecer a água.')]}),
+      option('conter','Conter com o suporte de cobre','Tentar apagar o circuito com uma ferramenta improvisada.','2 moedas. Risco de queimadura; a tentativa pode conter a luz.',{
+        money:2,effects:[set('poco_resolvido')],outcomes:[
+          result('contido','A luz se apaga. Sua ferramenta fica inutilizada.',[],2),
+          result('ferido','A descarga queima sua mão antes de apagar. Você precisará se recuperar.',[add('health',-12)],1)]}),
+      option('deixar','Continuar sua vida','Deixar o estudo do poço para outras pessoas.','Nenhum compromisso novo.',{
+        effects:[set('poco_resolvido')],outcomes:[result('ignorado','Você segue seu caminho. A luz não obriga você a se tornar aventureiro.')]})
+    ],{requires:all({world:'eco_no_poco',is:true},knows('diagramas'),not(flag('poco_resolvido'))),participants:[local('maira')],selection:{weight:1}}),
+    decision('comercio.iniciativa','action','contato_oportunidade','comercio','Conhecer a banca de artefatos',
+      'O livreiro pode apresentar você a compradores de pequenos objetos mágicos.',[
+      option('visitar','Pedir a apresentação','Usar o contato criado pela venda do livro.','2 dias. Abre um contato comercial, sem obrigar você a mudar de profissão.',{
+        days:2,effects:[set('banca_conhecida'),add('trust:mercador:player',2)],outcomes:[result('apresentado','Você conhece a banca e seus compradores. Eles passam a aceitar conversar sobre a procedência dos objetos.')]})
+    ],{requires:all(flag('contato_comercial'),not(flag('banca_conhecida'))),participants:[local('mercador')]})
+  ]
+};
+
+// Retomar situações por iniciativa própria evita que o sorteio seja o único portão.
+const well=catalog.decisions.find(d=>d.id==='magia.poco');
+catalog.decisions.push(decision('magia.investigar','action','risco_conhecimento','magia','Voltar ao poço',
+  'Você deixou o circuito para depois. Agora pode voltar com outra preparação.',JSON.parse(JSON.stringify(well.options)),
+  {participants:[local('maira')],requires:all(flag('poco_adiado'),not(flag('poco_resolvido')))}));
+well.options.splice(2,0,option('adiar','Voltar quando estiver preparado','Reservar a investigação para outra ocasião.',
+  'A investigação fica disponível nas suas iniciativas. Não é preciso esperar outro sorteio.',{
+    effects:[set('poco_adiado')],outcomes:[result('reservado','Você anota o local do circuito e decide voltar quando tiver meios melhores.')]}));
+catalog.decisions.push(decision('oficina.encomenda','action','criacao_utilidade','ocupacao','Assumir a encomenda de selos',
+  'Depois do conserto no poço, Maíra quer iluminar a oficina com a mesma técnica.',[
+    option('assumir','Preparar os selos','Usar o conhecimento demonstrado no poço para obter trabalho especializado.',
+      '6 moedas de materiais. Projeto de 14 dias; pagamento de 18 moedas na entrega.',{
+        money:6,requires:{freeSlot:'project'},blockedReason:'Seu projeto atual precisa terminar primeiro.',
+        effects:[set('encomenda_assumida'),{op:'startActivity',activity:'encomenda'}],outcomes:[result('contrato','Vocês combinam o preço e o prazo. Agora o trabalho ocupa seu espaço de projeto.')]
+      })
+  ],{participants:[local('maira')],requires:all(flag('encomenda_aberta'),not(flag('encomenda_assumida')))}));
+const home=catalog.decisions.find(d=>d.id==='familia.retorno');
+catalog.decisions.push(decision('familia.iniciativa','action','cuidado_compromisso','familia','Retomar o conserto de casa',
+  'O conserto continua necessário. Você pode propor outra solução mesmo depois de ter recusado.',
+  JSON.parse(JSON.stringify(home.options.filter(o=>o.id!=='recusar'))),
+  {participants:[local('irma')],requires:all(not(flag('casa_reparada')),{any:[flag('conserto_recusado'),{world:'quarto_interditado',is:true}]})}));
+
+function newLife(engine,seed=2026) {
+  const s=engine.create(seed,{
+    birthDay:-16*365,money:12,location:'vila',items:{grimorio:1},attributes:{intelecto:2},
+    npcs:{maira:{alive:true,name:'Maíra',location:'vila'},mercador:{alive:true,name:'Livreiro',location:'vila'},irma:{alive:true,name:'Lia, sua irmã',location:'vila'}},
+    relations:{'maira:player':0,'mercador:player':0},
+    world:{origem_livro:'escola_banida'},knowledge:{player:{},maira:{selo_proibido:true},mercador:{},irma:{}}
+  });
+  engine.schedule(s,{type:'decision',decision:'familia.telhado',day:14});
+  engine.schedule(s,{type:'consequence',consequence:'familia.chuva',day:30});
+  return s;
+}
+
+return {catalog,newLife};})();
+const {createEngine}=motor;
+const {catalog,newLife}=content;
+const e=createEngine(catalog),key='fantasy-life-agencia-1.3';
+const $=selector=>document.querySelector(selector);
+let s=newLife(e),lastPending=null;
+const message=text=>{const el=$('#message');el.textContent=text;el.hidden=!text;};
+try {const raw=localStorage.getItem(key);if(raw)s=e.load(raw);} catch {message('Não foi possível carregar a vida salva. Você pode importar uma cópia; a versão anterior não será substituída até sua próxima ação.');}
+function persist(){try{localStorage.setItem(key,e.save(s));}catch{message('Sua escolha foi aplicada, mas o navegador não conseguiu salvar. Exporte a vida para conservar este progresso.');}}
+function command(fn){message('');try{fn();persist();render();}catch(error){message(error.message);}}
+function node(tag,text,className){const el=document.createElement(tag);if(text)el.textContent=text;if(className)el.className=className;return el;}
+function options(container,choice,callback){
+  const group=node('div',null,'options');
+  for(const o of choice.options){const button=node('button',null,'option');button.disabled=!o.enabled;button.append(node('strong',o.label),node('small',o.hint));
+    if(o.reason)button.append(node('small',o.reason,'reason'));button.addEventListener('click',()=>command(()=>callback(o.id)));group.append(button);}
+  container.append(group);
+}
+function render(){
+  const v=e.view(s);
+  $('#stats').replaceChildren(node('span',`${v.age} anos · Ponteclara`),node('span',`${v.money} moedas`),node('span',`Saúde ${v.health}`));
+  $('#advance').disabled=!!v.pending||!v.alive;
+  $('#advance').textContent=v.canResume?'Retomar avanço':'Envelhecer';
+  $('#time-note').textContent=v.pending?'Uma decisão pede sua atenção.':v.canResume?`O avanço foi pausado. Restam ${v.remaining} dias; você pode retomar ou encerrar.`:'Avance um ano. O tempo para quando uma escolha importante aparece.';
+  $('#stop').hidden=!v.canStop;$('#abandon').hidden=!v.canAbandon;
+  $('#intro').hidden=s.history.some(h=>h.type==='intention')||s.day>0;
+  const pending=$('#decision');pending.replaceChildren();pending.hidden=!v.pending;
+  if(v.pending){pending.append(node('h2',v.pending.title));pending.firstChild.id='decision-title';pending.firstChild.tabIndex=-1;pending.append(node('p',v.pending.text));
+    options(pending,v.pending,option=>e.choose(s,{instance:v.pending.instance,option}));}
+  const actions=$('#actions');actions.replaceChildren();
+  for(const action of v.actions){const detail=node('details',null,'initiative');detail.append(node('summary',action.title),node('p',action.text));options(detail,action,option=>e.act(s,action.id,option));actions.append(detail);}
+  if(!v.actions.length)actions.append(node('p',v.pending?'Resolva a decisão para retomar suas iniciativas.':v.canResume?'Encerre o avanço para escolher outra atividade.':'Nenhuma iniciativa disponível neste momento.'));
+  const activities=$('#activities');activities.replaceChildren();
+  for(const a of v.activities){const row=node('div',null,'row'),button=node('button','Encerrar');button.disabled=!v.canAge;button.setAttribute('aria-label',`Encerrar ${a.label}`);button.addEventListener('click',()=>command(()=>e.cancel(s,a.id)));row.append(node('span',a.label),button);activities.append(row);}
+  if(!v.activities.length)activities.append(node('p','Nenhum compromisso em andamento.'));
+  const skillNames={oficio:'Ofício',arcanismo:'Arcanismo'},itemNames={grimorio:'Livro de diagramas',notas:'Anotações copiadas',lanterna:'Lanterna rúnica'};
+  const possessions=$('#possessions');possessions.replaceChildren();
+  for(const [id,value] of Object.entries(v.skills))possessions.append(node('p',`${skillNames[id]||id}: ${value}`));
+  for(const [id,value] of Object.entries(v.items).filter(([,n])=>n>0))possessions.append(node('p',`${itemNames[id]||id}: ${value}`));
+  if(!possessions.childElementCount)possessions.append(node('p','Nenhuma posse ou habilidade registrada.'));
+  const diary=$('#diary');diary.replaceChildren();
+  for(const h of [...v.diary].reverse()){const entry=node('li',null,'entry');entry.append(node('small',`Dia ${h.day}`),node('p',h.text));diary.append(entry);}
+  if(!v.diary.length)diary.append(node('li','Sua história começa com a próxima escolha.','muted'));
+  if(v.pending&&lastPending!==v.pending.instance){pending.firstChild.focus({preventScroll:true});pending.scrollIntoView({block:'nearest'});}
+  lastPending=v.pending?.instance||null;
+}
+$('#advance').addEventListener('click',()=>command(()=>e.view(s).canResume?e.resume(s):e.age(s)));
+$('#stop').addEventListener('click',()=>command(()=>e.stop(s)));
+$('#abandon').addEventListener('click',()=>command(()=>e.abandon(s)));
+$('#new').addEventListener('click',()=>command(()=>{const seed=Number($('#seed').value);const next=newLife(e,seed);s=next;lastPending=null;}));
+$('#export').addEventListener('click',()=>{
+  const url=URL.createObjectURL(new Blob([e.save(s)],{type:'application/json'}));const link=node('a');link.href=url;link.download=`Fantasy_Life_vida_dia_${s.day}.json`;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+$('#import').addEventListener('change',async event=>{
+  const file=event.target.files[0];if(!file)return;
+  try{const next=e.load(await file.text());s=next;message('');persist();render();}catch{message('A vida não foi importada: arquivo inválido ou de outra versão. Seu progresso atual foi preservado.');}
+  event.target.value='';
+});
+render();
+
+})();
+</script></body></html>
