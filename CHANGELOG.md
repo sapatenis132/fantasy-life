@@ -1,5 +1,11 @@
 # Histórico de desenvolvimento
 
+## Roteiro de criação do autor — 27/11/2026
+
+- Definidos blocos curtos para o autor apresentar a base e o assistente expandir depois.
+- Tom, possibilidades de vida, povos e magia passam à frente do aprofundamento de lendas.
+- Preparação narrativa e instruções de retomada alinhadas; protótipo 0.6.0 preservado.
+
 ## Lenda da Guerra dos 3 — 27/11/2026
 
 - Registrada a versão do autor: Sol, Lua e Rei, poderosos quase como forças da natureza, lutaram; a Tempestade venceu.

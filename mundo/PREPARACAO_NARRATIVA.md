@@ -4,12 +4,15 @@
 
 ## Ordem de desenvolvimento
 
-1. Consolidar o contexto histórico e as fontes que dão sentido ao presente: lenda da Guerra dos 3, ascensão de Lorick, sucessão em InverséeMonte e situação atual dos outros países. Distinguir relato lendário de fato verificável. Fixar cronologia relativa antes de inventar datas exatas. Esses acontecimentos podem ter origens independentes.
-2. Definir o tom da experiência e o espaço do protagonista: possibilidades de origem, vínculos, desejos, condições de vida e liberdade para perseguir objetivos próprios. Nenhuma nacionalidade ou condição inicial está escolhida como obrigatória.
-3. Estabelecer geografia funcional: posição dos países, regiões e rotas; biomas em que aventuras e modos de vida diferentes façam sentido. O continente comporta novos reinos, mas quantidade não substitui identidade.
-4. Escolher e aprofundar a primeira região: vida comum, instituições, conflitos, pessoas com interesses próprios, lugares e fontes de informação. Conciliar ou revisar Ponteclara a partir dessa escolha.
-5. Preparar situações abertas: o que já está acontecendo, quem deseja o quê, o que cada pessoa sabe, o que muda com o tempo e como escolhas diferentes deixam marcas.
-6. Revisar a aventura do moinho contra essa base e só então retomar a implementação da 1.6. Preservar código, versão jogável e saves durante toda a revisão.
+O roteiro para o autor está em `ROTEIRO_DO_AUTOR.md`. O autor fornece os pilares e o assistente expande a partir deles. A ordem prioriza a vida presente e o espaço do personagem; lendas e respostas secretas podem continuar abertas.
+
+1. Definir o tom e as possibilidades de vida que o jogador pode construir.
+2. Apresentar povos e convivência; depois magia, habilidades, talentos e dons.
+3. Aprofundar a vida atual dos reinos, crenças e geografia funcional, um país por vez.
+4. Estabelecer a natureza fantástica, as possibilidades de aventura e os perigos.
+5. Escolher a primeira região e desenvolver pessoas, vínculos e situações abertas.
+6. Ampliar passado, lendas e segredos conforme o interesse do autor e sua relevância para o presente. A verdade da Guerra dos 3 não é pré-requisito para os demais blocos.
+7. Revisar Ponteclara e a aventura do moinho contra essa base e então retomar a implementação da 1.6. Preservar código, versão jogável e saves durante toda a revisão.
 
 A história deve preparar relações e acontecimentos sobre os quais o jogador age. Objetivos pessoais, relações, trabalho, descoberta e aventura precisam ter valor dentro do mundo. O protagonista não foi definido como escolhido, salvador do continente ou participante obrigatório de uma guerra.
 
@@ -48,7 +51,7 @@ O nível de detalhe deve ajudar a construir cenas e escolhas. Completar todos os
 
 A versão lendária da Guerra dos 3 agora está definida: Sol, Lua e Rei, poderosos quase como forças da natureza, lutaram; a Tempestade venceu. O relato é muito antigo e não revela a verdade histórica. Permanecem abertas as identidades, o motivo da disputa, o significado da vitória e a relação exata da Tempestade com Lorick. Não é necessário responder a todos esses mistérios para preparar a vida atual dos reinos. A guerra não foi estabelecida como causa comum do frio, do fechamento das fronteiras, da queda anã ou de RegalisFundios.
 
-Em seguida: natureza da ligação Shasmoe–RegalisFundios; contexto da sucessão dos Rumnaheim; alcance da sorte de Ralph; posição dos países e tom da região inicial. Causas secretas e reviravoltas permanecem abertas enquanto o autor estiver apresentando sua base.
+O trabalho imediato segue o roteiro do autor: tom, vidas possíveis, povos e magia. A ligação Shasmoe–RegalisFundios, a sucessão dos Rumnaheim, o alcance da sorte de Ralph e outras questões podem ser aprofundados quando o autor chegar a esses temas. Causas secretas e reviravoltas permanecem abertas enquanto ele estiver apresentando sua base.
 
 ## Estado desta entrega
 

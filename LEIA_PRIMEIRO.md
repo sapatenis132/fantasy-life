@@ -4,7 +4,7 @@
 
 Jogo: https://sapatenis132.github.io/fantasy-life/
 
-1. Ler `DOCUMENTO_MESTRE.md`, `PLANO_DE_CONTINUIDADE.md`, `mundo/TERASTERA.md` e `mundo/PREPARACAO_NARRATIVA.md`.
+1. Ler `DOCUMENTO_MESTRE.md`, `PLANO_DE_CONTINUIDADE.md`, `mundo/TERASTERA.md`, `mundo/ROTEIRO_DO_AUTOR.md` e `mundo/PREPARACAO_NARRATIVA.md`.
 2. Ler `etapa_1_5/README.md` e `docs/DESIGN_E_IMPLEMENTACAO.md` dentro da etapa.
 3. Executar `node etapa_1_5/verificar.mjs`.
 4. Ler `etapa_1_4/docs/REVISAO_HUD_0_5_1.md`: cena e diário são apresentações separadas.

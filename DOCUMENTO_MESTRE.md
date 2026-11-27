@@ -16,7 +16,7 @@ Escolhas e liberdade > consequências/variedade > profundidade sistêmica > gere
 
 ## Fundação narrativa vigente — Terastera
 
-O cenário passa a ter como base **Terastera**, o grande continente apresentado pelo autor, com regiões frias, desérticas e tropicais. Os cinco países-reinos fornecidos são Shasmoe, Lorick, InverséeMonte, Utopía de Ralph e RegalisFundios; outros podem ser desenvolvidos depois. Ler `mundo/TERASTERA.md` para os fatos estabelecidos, rumores e questões abertas, e `mundo/PREPARACAO_NARRATIVA.md` para a ordem do trabalho e possibilidades ainda não aprovadas.
+O cenário passa a ter como base **Terastera**, o grande continente apresentado pelo autor, com regiões frias, desérticas e tropicais. Os cinco países-reinos fornecidos são Shasmoe, Lorick, InverséeMonte, Utopía de Ralph e RegalisFundios; outros podem ser desenvolvidos depois. Ler `mundo/TERASTERA.md` para os fatos estabelecidos, rumores e questões abertas, `mundo/ROTEIRO_DO_AUTOR.md` para os blocos que o autor pode apresentar, e `mundo/PREPARACAO_NARRATIVA.md` para o trabalho de expansão. O autor fornece os pilares; o assistente desenvolve os detalhes depois. Priorizar tom, vidas possíveis, povos e magia antes de aprofundar lendas.
 
 **Prioridade atual: preparar a história e a região antes da próxima expansão mecânica.** A etapa 1.6 continua no planejamento, depois dessa preparação. O protótipo 0.6.0 permanece preservado. Ponteclara, o Moinho Afogado, seus parâmetros de calendário e as regras de personagem ainda precisam ser conciliados com Terastera; a localização da vila não está definida. Os reinos não estão implementados no jogo.
 
