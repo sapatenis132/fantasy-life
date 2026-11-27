@@ -1,5 +1,15 @@
 # Histórico de desenvolvimento
 
+## 0.5.1 — 26/11/2026 — HUD por lugar e cena
+
+- Histórico deixa de preencher a descrição atual; diário em janela própria.
+- Painel lateral em telas largas e recolhível no celular, inspirado na organização visual pesquisada de Course of Temptation.
+- Lugar, ações, pessoas presentes e saídas próximas na área central; viagem direta pelos locais vizinhos.
+- Personagem, habilidades, mochila, pessoas, mapa, agenda e arquivos em janelas; abas com teclado e foco restaurado ao fechar.
+- Resultado do comando aparece como passagem breve; Continuar retorna ao local sem tempo adicional.
+- Catálogo, regras e save 0.5.0 preservados; nenhum reinício exigido.
+- 135 testes atuais aprovados, 14 históricos separados; medidas em três viewports CSS e conferência desktop.
+
 ## Direção revista após 0.5.0 — 26/11/2026
 
 - RPG de fantasia como identidade central; BitLife deixa de orientar novas decisões.

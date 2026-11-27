@@ -2,6 +2,8 @@
 
 26/11/2026. Este documento descreve a entrega 0.5.0. Direção revisada após a entrega: o projeto é um RPG de fantasia com as mecânicas de relações, calendário, necessidades, treino e lugares de Course of Temptation. BitLife deixa de ser referência ativa. O documento mestre e o plano de continuidade registram a nova prioridade de exploração, progressão e aventuras; as regras anuais antigas permanecem somente no histórico e no laboratório legado.
 
+A apresentação descrita abaixo é a entrega original 0.5.0. A HUD vigente foi revista na 0.5.1: leia `REVISAO_HUD_0_5_1.md`. A arquitetura e os sistemas deste documento continuam preservados.
+
 ## Experiência entregue
 
 Criação resumida por nome e origem, com povo, traço, talento, dom e seed em personalização opcional. O começo é fixo em Ponteclara, às 08:00, com um jovem adulto. Origens e contextos poderão variar para ampliar os caminhos do RPG; nascimento e infância jogáveis não são requisitos. Humano começa aos 18 anos, elfo aos 40 e anão aos 30. Essas idades são parâmetros iniciais do mundo, não uma simulação completa de estágios ou longevidade.

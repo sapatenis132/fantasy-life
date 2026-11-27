@@ -1,6 +1,6 @@
 # Plano de continuidade — Fantasy Life
 
-Versão jogável 0.5.0 · Direção revista em 26/11/2026.
+Versão jogável 0.5.1 · Direção revista em 26/11/2026.
 
 ## Ponto de retomada
 
@@ -18,9 +18,11 @@ Ler `DOCUMENTO_MESTRE.md`, `etapa_1_4/README.md`, `etapa_1_4/docs/DESIGN_E_IMPLE
 - Calendário, aula combinada, chegada, cancelamento com aviso e atraso.
 - Projetos e serviços sem renda durante sono/viagem; descobertas que abrem outras atividades quando compartilhadas.
 - Oportunidades contextuais com aleatoriedade salva; exame de reagente usa conhecimento sem trocar a mercadoria.
-- Diário central, abas simples, informações secundárias recolhidas, save/importação/exportação e versão anterior preservada.
+- HUD 0.5.1: lugar e ações no centro, painel lateral/recolhível, diário separado e janelas de consulta. Save/importação/exportação e versão anterior preservados.
 
 Ainda faltam aventuras e conflitos mais profundos, combate, equipamento, magia variada e NPCs com objetivos e personalidade reativa. A entrega atual é uma fundação conectada; o roadmap deve avançar sobre ela.
+
+A crítica ao log foi tratada na HUD 0.5.1. Ler `etapa_1_4/docs/REVISAO_HUD_0_5_1.md` antes de alterar a apresentação: não preencher a sala com a última entrada do histórico.
 
 ## Próximo bloco: 1.5 — consolidar o ciclo de RPG e variar contextos
 
@@ -54,7 +56,7 @@ Nascimento, infância, ciclo completo até a morte e sucessão deixam de ser a s
 | 1.1 Identidade/GDD | Preservada e atualizada |
 | 1.2 Tempo/diversidade | Base histórica preservada; perfil em minutos acrescentado |
 | 1.3 Escolhas/agência | Implementada; 71 casos anteriores continuam passando |
-| 1.4 Personagem e fatia de rotina | Implementada na 0.5.0; aprofundamento social e das capacidades de fantasia continua no plano |
+| 1.4 Personagem e fatia de rotina | Implementada na 0.5.0, HUD revista na 0.5.1; aprofundamento social e das capacidades de fantasia continua no plano |
 | 1.5 Ciclo de RPG e variedade de contextos | Próximo bloco funcional; objetivos, exploração, capacidades e relações conectadas |
 | 1.6 Primeira região aprofundada | Consolidar aventura, risco/combate, equipamentos, magia e retornos com consequências |
 | Blocos posteriores | Mundo, relações profundas, ofícios/economia, magia, aventura/combate, facções, justiça, conteúdo, arte/UI, balanceamento e Android; reavaliar etapas antigas segundo a identidade de RPG |

@@ -44,3 +44,9 @@ node scripts/preparar-revisao-vida.mjs
 ```
 
 A revisão isolada fica em `/vida-preview/`; seus personagens não afetam o jogo principal. Resultados e limites em `etapa_1_4/evidencias/VALIDACAO_MOBILE.md`. A bateria atual tem 126 casos aprovados e os 14 históricos verificados separadamente. A publicação 0.5.0 foi observada no endereço principal, com título “Fantasy Life — Ponteclara”, depois do commit `520dfee527871778324babd8ab20ce8d5db15417`. A criação e o aviso de personagem anterior estavam disponíveis. A revisão isolada confirmou criação, deslocamento, conversa, prática/projeto e recuperação do save após reload; o legado também abriu com sua interface anterior. Medidas finais: narrativa acima do dock, sem rolagem horizontal e oito botões de mapa sem sobreposição nas três dimensões verificadas.
+
+## HUD 0.5.1
+
+Revisão da apresentação por solicitação do usuário: cena/lugar e ações no centro, painel lateral em telas largas, painel recolhível no celular e diário em janela própria. O resultado do comando ocupa uma passagem breve; o histórico não preenche mais a descrição do lugar.
+
+Mesma entrada `docs/index.html` e mesma chave de save 0.5.0. Catálogo e regras não foram alterados; não exige criar outro personagem. Testes: 135 casos atuais aprovados e os 14 históricos separados. Verificação de layout e interação no Chrome remoto em preview gerenciado, incluindo três viewports CSS. Evidências em `etapa_1_4/docs/REVISAO_HUD_0_5_1.md` e `etapa_1_4/evidencias/HUD_0_5_1_MEDIDAS.json`.

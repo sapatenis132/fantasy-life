@@ -1,10 +1,10 @@
 # Fantasy Life — documento mestre de design
 
-Versão jogável 0.5.0 · Direção revista em 26/11/2026. Nome de trabalho. Estado e decisões atuais prevalecem sobre GDDs históricos.
+Versão jogável 0.5.1 · Direção revista em 26/11/2026. Nome de trabalho. Estado e decisões atuais prevalecem sobre GDDs históricos.
 
 ## Identidade e prioridades
 
-RPG de fantasia medieval textual, com exploração, evolução do personagem, relações e liberdade de trajetória. O jogador acompanha as experiências de uma pessoa por seu diário e decide quais objetivos perseguir. Há espaço para aventura, magia, ofícios, vínculos e vida cotidiana, sem classe definitiva ou herói obrigatório.
+RPG de fantasia medieval textual, com exploração, evolução do personagem, relações e liberdade de trajetória. O jogador acompanha as experiências de uma pessoa por situações e escolhas, decide quais objetivos perseguir e pode consultar suas lembranças no diário. Há espaço para aventura, magia, ofícios, vínculos e vida cotidiana, sem classe definitiva ou herói obrigatório.
 
 **BitLife deixa de ser referência ativa de design.** Menções anteriores pertencem ao histórico do projeto. Course of Temptation passa a ser a referência estrutural principal para calendário, agendas, relações, necessidades, treino e deslocamento entre lugares, adaptados ao RPG de fantasia. Life in Adventure e 1 in 8 Billion podem continuar como referências secundárias de escolhas e diversidade de personagens.
 
@@ -34,16 +34,17 @@ NPCs têm identidades estáveis, conhecimento individual e relações direcionai
 
 ## Interface e tempo vigentes
 
-- **Diário / Mapa / Personagem**; resultado e decisão juntos, cabeçalho compacto e um botão principal contextual.
+- **Cena central e painel do personagem.** Lugar, pessoas, ações e saídas ficam na área de jogo. Hora, condições e atalhos ficam na lateral em telas largas e em um painel recolhível no celular.
 - Criar nome e origem primeiro; personalização adicional recolhida.
-- “O que fazer aqui” revela iniciativas locais. Opções bloqueadas ficam em “Outras possibilidades”, com requisitos explicados.
-- Necessidades completas e habilidades ficam em Personagem; HUD sinaliza somente condições baixas.
+- Iniciativas locais e saídas aparecem junto da descrição. Pessoas presentes abrem a interação correspondente. Opções bloqueadas ficam em “Outras possibilidades”, com requisitos explicados.
+- O painel reúne barras compactas de necessidades; Ficha/Habilidades/Mochila, Pessoas, Mapa, Agenda, Diário e Arquivos abrem janelas próprias. O painel recolhido preserva a leitura no celular.
+- A sala mostra a situação atual; o resultado do último comando ocupa uma passagem breve. O diário reúne lembranças em janela separada e nunca substitui automaticamente a descrição do lugar.
 - O mapa mostra lugares conectados e duração do caminho antes de viajar. Uma decisão interrompe o trecho e preserva sua duração restante.
 - Retomar ou abandonar exige iniciativa. Nunca simular offline por padrão ou escolher pelo jogador.
 - O kernel suporta perfis temporais. O legado permanece em dias; Ponteclara opera em minutos. O botão anual e as rotinas passivas antigas não definem a direção atual.
 - Rotinas repetidas e períodos longos precisarão de automação opcional e resumos. Não expandir o jogo como uma lista infinita de tarefas de manutenção.
 
-## Estado implementado — 0.5.0
+## Estado implementado — 0.5.1
 
 A arquitetura 1.3 foi preservada e estendida. A fatia 1.4 entrega criação de jovem adulto, identidade reutilizável, oito lugares em Ponteclara, calendário, três moradores com agendas, necessidades com recuperação, relações direcionais e amizade, cinco habilidades com técnicas aos 60 pontos, três traços, talentos por habilidade, três povos, dois dons despertos e um potencial latente que pode despertar.
 
@@ -51,7 +52,7 @@ Treino, trabalho e projetos ocupam tempo dedicado. Uma aula marcada tem horário
 
 O jogo está em [sapatenis132.github.io/fantasy-life](https://sapatenis132.github.io/fantasy-life/), no repositório separado [sapatenis132/fantasy-life](https://github.com/sapatenis132/fantasy-life). `docs/index.html` é o build autocontido atual. A versão 0.4.1 permanece em `/legado/`. A chave de save nova é separada; transferência é explícita e recusa compromissos ainda ativos. A base original não foi alterada.
 
-Verificação automatizada: **126 casos atuais** — 71 anteriores + 43 de vida + 12 da nova UI — e 14 testes da base histórica executados separadamente. Inclui 100 percursos integrados novos e 500 de agência da etapa anterior. Isso verifica consistência, não diversão ou 50 horas de conteúdo. Evidências e limites da verificação visual em `etapa_1_4/evidencias/VALIDACAO_MOBILE.md`.
+Verificação automatizada: **135 casos atuais** — 71 anteriores + 43 de vida + 21 da nova UI — e 14 testes da base histórica executados separadamente. Inclui 100 percursos integrados novos e 500 de agência da etapa anterior. Isso verifica consistência, não diversão ou 50 horas de conteúdo. Evidências e limites da revisão atual em `etapa_1_4/docs/REVISAO_HUD_0_5_1.md` e `etapa_1_4/evidencias/HUD_0_5_1_MEDIDAS.json`; a validação anterior permanece em `etapa_1_4/evidencias/VALIDACAO_MOBILE.md`.
 
 ## Limites e próximos blocos
 

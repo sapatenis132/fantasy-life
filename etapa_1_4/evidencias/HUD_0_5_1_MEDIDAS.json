@@ -1,0 +1,14 @@
+{
+  "version": "0.5.1",
+  "method": "Chrome remoto, preview gerenciado e iframe de dimensões CSS; não é Android físico",
+  "room": "Seu quarto",
+  "measurements": [
+    {"viewport": [320,568], "scrollWidth":305, "titleTop":127.328125, "storyBottom":259.015625, "actionsBottom":436.078125, "diaryInsideScene":false, "sidebarVisible":false, "mapOverlaps":[], "mapMinTargetHeight":44},
+    {"viewport": [360,640], "scrollWidth":345, "titleTop":140.4375, "storyBottom":272.125, "actionsBottom":449.1875, "diaryInsideScene":false, "sidebarVisible":false, "mapOverlaps":[], "mapMinTargetHeight":44},
+    {"viewport": [412,915], "scrollWidth":412, "titleTop":140.4375, "storyBottom":272.125, "actionsBottom":449.1875, "diaryInsideScene":false, "sidebarVisible":false, "mapOverlaps":[], "mapMinTargetHeight":44}
+  ],
+  "mobilePanel": {"viewport":[320,568], "lastMenuBottom":534.328125,"closeTop":23,"clientHeight":566,"scrollHeight":566},
+  "desktop": {"viewportWidth":1363,"sidebarWidth":268,"sidebarRight":268,"sceneLeft":407.5,"overlap":false},
+  "keyboard": {"escapeClosesDiary":true,"desktopFocusReturnedTo":"desktop-nav-diary","rightArrowFromSkillsSelects":"Mochila"},
+  "flows": ["criação", "ação e Continuar", "diário separado", "mapa modal", "saída próxima", "teclado nas abas", "recarregar no lugar atual"]
+}
