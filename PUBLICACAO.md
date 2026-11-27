@@ -56,3 +56,5 @@ Publicação 0.5.1 confirmada no endereço principal após o commit `4b4c0717f2e
 ## HUD 0.5.2
 
 Necessidades sempre presentes na gameplay móvel, em faixa compacta, e atalhos para os cuidados disponíveis no lugar. Mesmo endereço, catálogo e chave de save. Verificação: 142 casos atuais e 14 históricos separados; medidas em `etapa_1_4/evidencias/HUD_0_5_2_MEDIDAS.json` e relatório em `etapa_1_4/docs/REVISAO_HUD_0_5_2.md`.
+
+Publicação 0.5.2 confirmada: commit `d67b8edd1fbadfa48c8206c579f2774fc34a8cc2`, [Pages concluído com sucesso](https://github.com/sapatenis132/fantasy-life/actions/runs/45923794019). A versão foi conferida na entrada principal e no ambiente público isolado: tocar em Energia, escolher descanso e continuar manteve a faixa visível e atualizou o estado às 09:00.

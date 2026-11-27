@@ -30,3 +30,7 @@ Medidas em `../evidencias/HUD_0_5_2_MEDIDAS.json`. Android físico, zoom e leito
 ## Preservação
 
 Revisão de apresentação: motor, catálogo, necessidades, probabilidades e chave `fantasy-life-vida-1.4` não foram alterados. Saves 0.5.0 e 0.5.1 continuam compatíveis. Os atalhos apenas apresentam comandos existentes; não alteram o balanceamento do RPG.
+
+## Publicação confirmada
+
+Código no commit `d67b8edd1fbadfa48c8206c579f2774fc34a8cc2`. [Execução Pages 45923794019: sucesso](https://github.com/sapatenis132/fantasy-life/actions/runs/45923794019). Entrada principal conferida como 0.5.2; personagem principal não foi substituído. No ambiente público com chave isolada, tocar em Energia e confirmar descanso levou o relógio a 09:00, mantendo 18 moedas e exibindo saciedade 76, energia 100, higiene 74 e ânimo 81 na faixa. Continuar voltou à descrição do quarto.
