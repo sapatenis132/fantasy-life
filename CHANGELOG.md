@@ -1,5 +1,14 @@
 # Histórico de desenvolvimento
 
+## 0.5.2 — 26/11/2026 — necessidades contidas e presentes
+
+- Quatro medidores persistentes no cabeçalho móvel: comida, energia, higiene e ânimo.
+- Consulta e cuidados do lugar por toque, com custo real e bloqueio durante decisões/ações em andamento.
+- Barras laterais também acessam cuidados; avisos baixos com marcador e texto acessível.
+- Lugar em destaque no cabeçalho, barras mais legíveis e espaçamento mais compacto entre ações e saídas.
+- 142 casos atuais aprovados e 14 históricos separados; medição de três viewports CSS, rolagem e foco.
+- Motor, catálogo, balanceamento e save preservados.
+
 ## 0.5.1 — 26/11/2026 — HUD por lugar e cena
 
 - Histórico deixa de preencher a descrição atual; diário em janela própria.

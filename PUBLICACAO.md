@@ -52,3 +52,7 @@ Revisão da apresentação por solicitação do usuário: cena/lugar e ações n
 Mesma entrada `docs/index.html` e mesma chave de save 0.5.0. Catálogo e regras não foram alterados; não exige criar outro personagem. Testes: 135 casos atuais aprovados e os 14 históricos separados. Verificação de layout e interação no Chrome remoto em preview gerenciado, incluindo três viewports CSS. Evidências em `etapa_1_4/docs/REVISAO_HUD_0_5_1.md` e `etapa_1_4/evidencias/HUD_0_5_1_MEDIDAS.json`.
 
 Publicação 0.5.1 confirmada no endereço principal após o commit `4b4c0717f2e3ac70d6fc1380150a50b7cd8bf1a6`. [Execução do Pages concluída com sucesso](https://github.com/sapatenis132/fantasy-life/actions/runs/45921614893). O fluxo público isolado de estudo → Continuar → Diário confirmou a separação entre a descrição do lugar e a lembrança da ação. Na primeira abertura havia conteúdo anterior em cache; recarregar a entrada principal carregou a nova HUD.
+
+## HUD 0.5.2
+
+Necessidades sempre presentes na gameplay móvel, em faixa compacta, e atalhos para os cuidados disponíveis no lugar. Mesmo endereço, catálogo e chave de save. Verificação: 142 casos atuais e 14 históricos separados; medidas em `etapa_1_4/evidencias/HUD_0_5_2_MEDIDAS.json` e relatório em `etapa_1_4/docs/REVISAO_HUD_0_5_2.md`.

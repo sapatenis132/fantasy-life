@@ -1,0 +1,14 @@
+{
+  "version":"0.5.2",
+  "method":"Chrome remoto, preview gerenciado, iframe em dimensões CSS",
+  "scenario":"Seu quarto após refeição: 08:20, 16 moedas, saciedade 100, energia 85, higiene 75, ânimo 78",
+  "measurements":[
+    {"viewport":[320,568],"scrollWidth":305,"headerBottom":108.03125,"stripHeight":45,"stripTop":55.03125,"storyTop":220.453125,"storyBottom":302.015625,"actionsBottom":467.078125,"exitBottom":557.140625,"targetHeight":44,"targetWidth":64.25},
+    {"viewport":[360,640],"scrollWidth":345,"headerBottom":109.140625,"stripHeight":45,"stripTop":56.140625,"storyTop":239.5625,"storyBottom":321.125,"actionsBottom":486.1875,"exitBottom":576.25,"targetHeight":44,"targetWidth":74.25},
+    {"viewport":[412,915],"scrollWidth":412,"headerBottom":109.140625,"stripHeight":45,"stripTop":56.140625,"storyTop":239.5625,"storyBottom":321.125,"actionsBottom":486.1875,"exitBottom":576.25,"targetHeight":44,"targetWidth":91}
+  ],
+  "statusPanel320":{"lastMenuBottom":547.046875,"clientHeight":566,"scrollHeight":566},
+  "scroll320":{"scrollY":16,"headerTop":0,"headerBottom":108.03125,"stripTop":55.03125,"stripBottom":100.03125,"stripVisible":true},
+  "keyboard":{"escapeClosesNeeds":true,"focusReturnedTo":"quick-need-hygiene"},
+  "flows":["cuidado rápido com custo", "continuar para o lugar", "consulta bloqueada por localização", "faixa durante a cena", "visibilidade após rolagem"]
+}

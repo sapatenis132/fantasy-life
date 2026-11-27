@@ -16,4 +16,4 @@ script+='})();';if(/^(import|export) /m.test(script))throw Error('Módulo não e
 const html=(await read('etapa_1_4/template.html')).replace('<!--APP_SCRIPT-->',()=>`<script>\n${script.replace(/<\/script/gi,'<\\/script')}\n</script>`);
 await writeFile(new URL('etapa_1_4/Fantasy_Life_Ponteclara.html',root),html);
 await mkdir(new URL('docs/legado/',root),{recursive:true});try{await access(new URL('docs/legado/index.html',root));}catch{await copyFile(new URL('docs/index.html',root),new URL('docs/legado/index.html',root));}
-await writeFile(new URL('docs/index.html',root),html);console.log('Ponteclara 0.5.1: HTML autocontido e versão anterior preservada.');
+await writeFile(new URL('docs/index.html',root),html);console.log('Ponteclara 0.5.2: HTML autocontido e versão anterior preservada.');

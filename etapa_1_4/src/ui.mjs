@@ -4,11 +4,11 @@ const KEY='fantasy-life-vida-1.4',OLD='fantasy-life-agencia-1.3';
 const $=id=>document.getElementById(id),clear=e=>e.replaceChildren(),text=(e,t)=>e.textContent=t;
 function el(tag,content,cls){const e=document.createElement(tag);if(content!==undefined)e.textContent=content;if(cls)e.className=cls;return e;}
 function button(label,fn,cls='link-button'){const b=el('button',label,cls);b.type='button';b.addEventListener('click',fn);return b;}
-let state=null,composer=null,destination=null,oldRaw=null,unreadRaw=null,passage=null,characterTab='summary';
-const dialogs=['status','map','character','people','calendar','diary','files'];
+let state=null,composer=null,destination=null,oldRaw=null,unreadRaw=null,passage=null,characterTab='summary',selectedNeed='food';
+const dialogs=['needs','status','map','character','people','calendar','diary','files'];
 const dialog=id=>$(id==='files'?'files':`${id}-panel`);
 function closePanels(){for(const id of dialogs)if(dialog(id).open)dialog(id).close();}
-function showPanel(id){closePanels();if(state&&id==='character')renderCharacter(view(state));dialog(id).showModal();}
+function showPanel(id){closePanels();if(state&&id==='character')renderCharacter(view(state));if(state&&id==='needs')renderNeed(view(state));dialog(id).showModal();}
 function message(t=''){text($('message'),t);}
 function store(){try{if(unreadRaw){localStorage.setItem(`${KEY}-recuperacao`,unreadRaw);unreadRaw=null;}localStorage.setItem(KEY,save(state));}catch{message('O navegador não conseguiu salvar. Exporte o personagem para guardar seu progresso.');}}
 function focusScene(){window.scrollTo({top:0,behavior:'instant'});$(composer?'composer-title':'story-title').focus({preventScroll:true});}
@@ -40,7 +40,7 @@ function renderHud(container,prefix,v){
  if(!v){container.append(el('p','Ponteclara','muted'),button('Arquivos e opções',()=>showPanel('files')));return;}
  container.append(el('p',v.identity.name,'hud-date'),el('div',v.place.name,'hud-place'),el('div',v.calendar.time,'hud-clock'),el('p',`${v.calendar.weekday} · ${v.calendar.date}`,'hud-date'),el('p',`${v.money} moedas`,'hud-money'));
  const bars=el('div',undefined,'hud-needs');
- for(const n of v.needs){const row=el('div',undefined,`hud-need${n.value<20?' low':''}`),label=el('label');label.append(el('span',n.label),el('span',String(n.value)));const bar=el('progress');bar.max=100;bar.value=n.value;bar.setAttribute('aria-label',`${n.label}: ${n.value} de 100`);row.append(label,bar);bars.append(row);}container.append(bars);
+ for(const n of v.needs){const row=button('',()=>openNeed(n.id),`hud-need${n.value<20?' low':''}`),label=el('span',undefined,'need-label');row.setAttribute('aria-label',`${n.label}: ${n.value} de 100. Ver cuidados.`);label.append(el('span',n.label),el('span',String(n.value)));const bar=el('progress');bar.max=100;bar.value=n.value;bar.setAttribute('aria-hidden','true');row.append(label,bar);bars.append(row);}container.append(bars);
  const low=v.needs.filter(n=>n.value<20);if(low.length)container.append(el('p',low.map(n=>`${n.label} baixa`).join(' · '),'hud-alert'));
  const a=v.appointment;if(a&&['scheduled','offered'].includes(a.status)){const c=calendar(a.at);container.append(button(`Aula com Maíra · ${c.weekday} 09:00`,()=>showPanel('calendar')));}
  const controls=el('nav',undefined,'hud-nav');controls.setAttribute('aria-label','Menu do personagem');
@@ -52,22 +52,38 @@ function renderHud(container,prefix,v){
   ['map','Mapa',()=>showPanel('map')],['calendar','Agenda',()=>showPanel('calendar')],
   ['diary','Diário',()=>showPanel('diary')],['files','Arquivos',()=>showPanel('files')]
  ])controls.append(nav(label,fn,`${prefix}-nav-${key}`));
- container.append(controls,el('p','Ponteclara · 0.5.1','hud-footer'));
+ container.append(controls,el('p','Ponteclara · 0.5.2','hud-footer'));
+}
+const compactNames={food:'Comida',energy:'Energia',hygiene:'Higiene',mood:'Ânimo'};
+const careOptions={food:['comer','ajudar'],energy:['descansar','dormir'],hygiene:['lavar'],mood:['lazer','descansar']};
+function openNeed(id){selectedNeed=id;showPanel('needs');}
+function renderCompactNeeds(v){
+ const box=$('quick-needs');clear(box);box.hidden=!v;if(!v)return;
+ for(const n of v.needs){const b=button('',()=>openNeed(n.id),`compact-need${n.value<20?' low':''}`);b.id=`quick-need-${n.id}`;b.setAttribute('aria-label',`${n.label}: ${n.value} de 100${n.value<20?'. Baixa':''}. Ver cuidados.`);b.title=`${n.label}: ${n.value}/100`;
+  const label=el('span',compactNames[n.id],'compact-label');if(n.value<20){const warning=el('span','!','need-warning');warning.setAttribute('aria-hidden','true');label.append(warning);}const bar=el('progress');bar.max=100;bar.value=n.value;bar.setAttribute('aria-hidden','true');b.append(label,bar);box.append(b);
+ }
+}
+function renderNeed(v){
+ const n=v.needs.find(n=>n.id===selectedNeed);if(!n)return;
+ text($('need-title'),n.label);clear($('need-summary'));$('need-summary').append(el('p',`${n.value}/100${n.value<20?' · baixa':''}`,'need-reading'));const bar=el('progress');bar.max=100;bar.value=n.value;bar.setAttribute('aria-label',`${n.label}: ${n.value} de 100`);$('need-summary').append(bar);
+ const hints={food:'Uma refeição recupera a saciedade. Você pode comer em casa ou na taverna; na taverna também pode ajudar em troca de comida.',energy:'Uma pausa recupera energia. No seu quarto, você também pode dormir.',hygiene:'Você pode se lavar no seu quarto ou no poço antigo.',mood:'Tempo livre e descanso ajudam a recuperar o ânimo. Conversar com as pessoas também pode fazer bem.'};
+ const routine=v.actions.find(a=>a.id==='rotina');text($('need-hint'),!v.alive?'Sua jornada chegou ao fim.':v.pending?'Resolva a decisão atual antes de fazer uma pausa.':v.canResume||v.route.length?'Você pode consultar suas condições agora. Retome ou encerre a ação em andamento antes de escolher outra pausa.':hints[n.id]);
+ const list=(routine?.options||[]).filter(o=>careOptions[n.id].includes(o.id));options($('need-options'),list,id=>run(()=>act(state,'rotina',id),'Uma pausa'));
 }
 function render(){
  $('creation').hidden=!!state;$('game').hidden=!state;
  const v=state?view(state):null;renderHud($('desktop-hud'),'desktop',v);renderHud($('mobile-hud'),'mobile',v);
- $('quick-map').disabled=!v;
+ $('quick-map').disabled=!v;renderCompactNeeds(v);
  if(!v)return;
- text($('header-name'),`${v.identity.name} · ${v.place.name}`);text($('header-meta'),`${v.calendar.time} · ${v.calendar.weekday} · ${v.money} moedas`);
+ text($('header-name'),v.place.name);text($('header-meta'),`${v.calendar.time} · ${v.calendar.weekday} · ${v.money} moedas`);
  $('scene').hidden=!!composer;$('composer').hidden=!composer;
- renderScene(v);renderMap(v);renderCharacter(v);renderPeople(v);renderCalendar(v);renderDiary(v);
+ renderScene(v);renderMap(v);renderCharacter(v);renderPeople(v);renderCalendar(v);renderDiary(v);renderNeed(v);
  if(composer){const a=v.actions.find(a=>a.id===composer);if(!a){composer=null;$('scene').hidden=false;$('composer').hidden=true;return;}
   text($('composer-title'),a.title);text($('composer-text'),a.text);options($('composer-options'),a.options,o=>run(()=>act(state,a.id,o),a.title));}
 }
 function renderScene(v){
  const pending=v.pending,room=!pending&&!passage&&!v.canResume&&!v.route.length;
- text($('story-kicker'),`${v.place.name} · ${v.calendar.phase.toLowerCase()}`);
+ text($('story-kicker'),`Ponteclara · ${v.calendar.phase.toLowerCase()}`);
  text($('story-title'),pending?.title||passage?.title||v.place.name);
  text($('story-copy'),pending?.text||passage?.text||v.place.text);
  $('people-area').hidden=!room;$('room-actions').hidden=!room;$('room-exits').hidden=!room;

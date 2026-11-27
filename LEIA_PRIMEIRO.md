@@ -1,6 +1,6 @@
-# Fantasy Life — continuidade 0.5.1
+# Fantasy Life — continuidade 0.5.2
 
-26/11/2026. Ponteclara 0.5.1 é a fatia atual da etapa 1.4, construída sobre a arquitetura 1.3. Não reiniciar o projeto.
+26/11/2026. Ponteclara 0.5.2 é a fatia atual da etapa 1.4, construída sobre a arquitetura 1.3. Não reiniciar o projeto.
 
 Jogo: https://sapatenis132.github.io/fantasy-life/
 
