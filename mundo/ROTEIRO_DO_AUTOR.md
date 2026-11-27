@@ -12,6 +12,8 @@ Uma ideia pode ser definitiva, uma possibilidade ou uma lenda do mundo. Quando e
 
 ## 1. Tom e possibilidades de vida
 
+**Base recebida em 27/11/2026:** tom orientado pelas escolhas, com espaço para campanha slasher e vida mais tranquila; aventura como foco e liberdade de outras trajetórias. O tempo de aprendizado deve favorecer a diversão, evitando duração realista excessiva e sensação de obrigação. Ver `TOM_POSSIBILIDADES_E_TEMPO.md`. As perguntas abaixo ficam como apoio ao aprofundamento, sem exigir uma nova resposta deste bloco.
+
 **O que trazer:** como é viver em Terastera e quais experiências mais deseja permitir. Quanto espaço há para perigo, humor, afeto, mistério, maravilhamento e tranquilidade? Que vidas o personagem deveria conseguir construir além da aventura? Dê exemplos do que gostaria de ver e, se houver, do que não combina com o cenário.
 
 **O que já temos:** RPG de fantasia com agência, relações, calendário, necessidades, evolução e variedade. Não é necessário repetir essas prioridades.
@@ -62,7 +64,7 @@ Ponteclara, seus moradores e o moinho ficam preservados como protótipo. Sua int
 
 ## Ponto de partida sugerido
 
-Começar pelo bloco 1, em uma mensagem curta: como gostaria que fosse viver em Terastera e que tipos de vida o personagem deveria poder construir. Depois, povos e magia ajudam a definir quem pode viver essas experiências e de que formas.
+A base do bloco 1 foi recebida. O próximo bloco sugerido é **2. Povos e convivência**: quais povos deseja no mundo, suas particularidades e como vivem juntos. Depois, magia e capacidades ajudam a definir as maneiras de agir dessas pessoas. A ordem permanece flexível.
 
 Um formato opcional para qualquer tema:
 

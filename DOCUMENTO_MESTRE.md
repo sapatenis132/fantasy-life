@@ -1,6 +1,6 @@
 # Fantasy Life — documento mestre de design
 
-Versão jogável 0.6.0 · Direção revista em 26/11/2026. Nome de trabalho. Estado e decisões atuais prevalecem sobre GDDs históricos.
+Versão jogável 0.6.0 · Diretrizes narrativas atualizadas em 27/11/2026. Nome de trabalho. Estado e decisões atuais prevalecem sobre GDDs históricos.
 
 ## Identidade e prioridades
 
@@ -13,6 +13,12 @@ RPG de fantasia medieval textual, com exploração, evolução do personagem, re
 3. **Interface simples no celular.** A história deve aparecer primeiro. Complexidade no motor, sistemas secundários sob demanda e nenhuma lista enorme de obrigações no primeiro instante.
 
 Escolhas e liberdade > consequências/variedade > profundidade sistêmica > gerenciamento. Qualidade, criatividade e profundidade têm prioridade sobre volume ou velocidade.
+
+## Tom, trajetórias e ritmo — base recebida em 27/11/2026
+
+O tom acompanha as escolhas e a trajetória do jogador: o mundo deve comportar experiências como uma campanha slasher e uma vida mais tranquila na Utopía de Ralph. A aventura é o foco, com liberdade para construir outras formas de viver. As pessoas e os lugares preservam coerência e reações plausíveis às ações do personagem.
+
+**O tempo deve favorecer diversão e escolhas.** Aprender uma língua, por exemplo, não deve exigir consumir um ano inteiro de calendário por imitação da vida real. Durações e curvas de aprendizado precisam oferecer utilidade perceptível e evitar sensação de obrigação. Valores exatos e soluções ainda serão projetados; a diretriz não foi implementada como um novo sistema na 0.6.0. Ler `mundo/TOM_POSSIBILIDADES_E_TEMPO.md`, que distingue a base do autor das aplicações propostas.
 
 ## Fundação narrativa vigente — Terastera
 

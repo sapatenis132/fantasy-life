@@ -1,5 +1,11 @@
 # Histórico de desenvolvimento
 
+## Tom, possibilidades e tempo — 27/11/2026
+
+- Registrada a base do autor: tom pelas escolhas, aventura como foco e liberdade de outras trajetórias.
+- Tempo de aprendizado orientado à diversão, com utilidade perceptível e sem duração realista excessiva ou sensação de obrigação.
+- Bloco 1 recebido; próximo tema sugerido: povos e convivência. Aplicações propostas separadas das diretrizes estabelecidas; código, build e saves continuam 0.6.0.
+
 ## Roteiro de criação do autor — 27/11/2026
 
 - Definidos blocos curtos para o autor apresentar a base e o assistente expandir depois.

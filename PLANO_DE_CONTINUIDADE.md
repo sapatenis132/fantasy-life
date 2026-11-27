@@ -1,6 +1,6 @@
 # Plano de continuidade — Fantasy Life
 
-Versão jogável 0.6.0 · Direção revista em 26/11/2026.
+Versão jogável 0.6.0 · Diretrizes narrativas atualizadas em 27/11/2026.
 
 ## Ponto de retomada
 
@@ -14,8 +14,8 @@ O trabalho imediato é preparar mundo, história e região inicial antes de ampl
 
 O autor define a base e o assistente desenvolve os detalhes a partir dela. Seguir `mundo/ROTEIRO_DO_AUTOR.md`, com entrega gradual e ordem flexível:
 
-1. Tom e possibilidades de vida do personagem.
-2. Povos, convivência e bases de magia, habilidades, talentos e dons.
+1. Base de tom e possibilidades recebida: escolhas orientam o tom; aventura é o foco com liberdade de outras vidas. Aprendizado precisa ser divertido e ter duração adequada ao jogo. Ler `mundo/TOM_POSSIBILIDADES_E_TEMPO.md`; valores exatos ainda não definidos.
+2. Próximo bloco sugerido ao autor: povos e convivência. Depois, bases de magia, habilidades, talentos e dons.
 3. Vida presente dos reinos, crenças, geografia, natureza fantástica e aventura.
 4. Primeira região, pessoas, vínculos e situações abertas; revisão de Ponteclara e do moinho.
 5. Passado, lendas e segredos conforme relevância e interesse do autor, preservando a incerteza da Guerra dos 3. Sua resolução não condiciona o trabalho anterior.
