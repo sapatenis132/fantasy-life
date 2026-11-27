@@ -41,3 +41,9 @@ Mudança de apresentação: catálogo, perfil temporal, kernel, regras e chave `
 135 casos atuais aprovados: 71 da arquitetura anterior, 43 de vida e 21 da interface atual. Base histórica: outros 14 casos, executados separadamente. Fluxos novos incluem separação de diário/cena, consulta sem passagem de tempo, saída direta, interlocutor fixo, restauração de save, decisão pendente, retomada de viagem e teclado nas abas.
 
 A validação visual usa Chrome remoto e viewports CSS. Android físico, zoom, leitor de tela e teste prolongado continuam pendentes. Nenhuma mudança na quantidade de conteúdo ou alegação de 50 horas de variedade foi feita nesta revisão.
+
+## Publicação verificada
+
+Commit de implementação: `4b4c0717f2e3ac70d6fc1380150a50b7cd8bf1a6`. [GitHub Pages: sucesso, execução 45921614893](https://github.com/sapatenis132/fantasy-life/actions/runs/45921614893).
+
+O endereço principal apresentou o novo painel lateral e a criação após recarregar. No aplicativo de revisão público com chave separada (`/vida-preview/jogo.html`), criar Liora, estudar o livro, continuar e abrir/fechar o diário manteve a descrição do quarto na sala e o estudo na janela de lembranças. O harness usa query de versão no iframe para não reutilizar o HTML anterior em cache. O produto continua no mesmo endereço principal e com o mesmo save.
