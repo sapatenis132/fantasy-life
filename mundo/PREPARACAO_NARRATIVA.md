@@ -1,10 +1,10 @@
 # Preparação narrativa — trabalho atual
 
-26/11/2026. O autor pediu preparação da história antes de novas etapas mecânicas e apresentou Terastera com cinco países-reinos. `TERASTERA.md` registra a base estabelecida. Este documento organiza possibilidades e questões de design; não define respostas secretas ou novos fatos do mundo.
+26/11/2026. O autor pediu preparação da história antes de novas etapas mecânicas e apresentou Terastera com cinco países-reinos. `TERASTERA.md` registra a base estabelecida; `LENDAS_E_MEMORIAS.md` conserva a versão lendária da Guerra dos 3 fornecida em 27/11/2026. Este documento organiza possibilidades e questões de design; não define respostas secretas ou novos fatos do mundo.
 
 ## Ordem de desenvolvimento
 
-1. Consolidar o contexto histórico que dá sentido ao presente: Guerra dos 3, ascensão de Lorick, sucessão em InverséeMonte e situação atual dos outros países. Fixar cronologia relativa antes de inventar datas exatas. Esses acontecimentos podem ter origens independentes.
+1. Consolidar o contexto histórico e as fontes que dão sentido ao presente: lenda da Guerra dos 3, ascensão de Lorick, sucessão em InverséeMonte e situação atual dos outros países. Distinguir relato lendário de fato verificável. Fixar cronologia relativa antes de inventar datas exatas. Esses acontecimentos podem ter origens independentes.
 2. Definir o tom da experiência e o espaço do protagonista: possibilidades de origem, vínculos, desejos, condições de vida e liberdade para perseguir objetivos próprios. Nenhuma nacionalidade ou condição inicial está escolhida como obrigatória.
 3. Estabelecer geografia funcional: posição dos países, regiões e rotas; biomas em que aventuras e modos de vida diferentes façam sentido. O continente comporta novos reinos, mas quantidade não substitui identidade.
 4. Escolher e aprofundar a primeira região: vida comum, instituições, conflitos, pessoas com interesses próprios, lugares e fontes de informação. Conciliar ou revisar Ponteclara a partir dessa escolha.
@@ -46,7 +46,7 @@ O nível de detalhe deve ajudar a construir cenas e escolhas. Completar todos os
 
 ## Questões prioritárias ainda sem resposta
 
-A Guerra dos 3 é o primeiro ponto histórico a esclarecer: quais eram os três participantes, o que estava em disputa, como terminou e o que Lorick realizou. Isso pode orientar relações atuais sem presumir que a guerra explique o frio, o fechamento das fronteiras, a queda anã e RegalisFundios ao mesmo tempo.
+A versão lendária da Guerra dos 3 agora está definida: Sol, Lua e Rei, poderosos quase como forças da natureza, lutaram; a Tempestade venceu. O relato é muito antigo e não revela a verdade histórica. Permanecem abertas as identidades, o motivo da disputa, o significado da vitória e a relação exata da Tempestade com Lorick. Não é necessário responder a todos esses mistérios para preparar a vida atual dos reinos. A guerra não foi estabelecida como causa comum do frio, do fechamento das fronteiras, da queda anã ou de RegalisFundios.
 
 Em seguida: natureza da ligação Shasmoe–RegalisFundios; contexto da sucessão dos Rumnaheim; alcance da sorte de Ralph; posição dos países e tom da região inicial. Causas secretas e reviravoltas permanecem abertas enquanto o autor estiver apresentando sua base.
 

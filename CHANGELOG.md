@@ -1,5 +1,11 @@
 # Histórico de desenvolvimento
 
+## Lenda da Guerra dos 3 — 27/11/2026
+
+- Registrada a versão do autor: Sol, Lua e Rei, poderosos quase como forças da natureza, lutaram; a Tempestade venceu.
+- Mantidas em aberto a verdade histórica, as identidades, a relação exata da Tempestade com Lorick e o significado da vitória.
+- Preparação e continuidade atualizadas; código, build e saves da 0.6.0 preservados.
+
 ## Preparação narrativa — 26/11/2026 — Terastera
 
 - Registrada a base do autor para Terastera e seus cinco países-reinos, preservando fatos, rumores e questões em aberto.

@@ -1,10 +1,10 @@
 # Terastera — base de mundo
 
-Registro inicial de 26/11/2026. Fonte: descrição fornecida pelo autor do Fantasy Life nesta conversa. Esta base orienta a preparação narrativa antes da próxima expansão de mecânicas. A versão jogável permanece 0.6.0.
+Registro inicial de 26/11/2026; lenda da Guerra dos 3 acrescentada em 27/11/2026. Fonte: descrição fornecida pelo autor do Fantasy Life nesta conversa. Esta base orienta a preparação narrativa antes da próxima expansão de mecânicas. A versão jogável permanece 0.6.0.
 
 ## Como ler este documento
 
-**Estabelecido pelo autor** registra fatos do cenário. **Relato ou rumor** registra o que se diz, sem confirmar a verdade da afirmação. **Em aberto** identifica decisões ainda não tomadas. Possibilidades de desenvolvimento estão em `PREPARACAO_NARRATIVA.md` e não são acrescentadas ao cânone por estarem documentadas.
+**Estabelecido pelo autor** registra fatos do cenário. **Relato ou rumor** registra o que se diz, sem confirmar a verdade da afirmação. **Em aberto** identifica decisões ainda não tomadas. A formulação da Guerra dos 3 está em `LENDAS_E_MEMORIAS.md`. Possibilidades de desenvolvimento estão em `PREPARACAO_NARRATIVA.md` e não são acrescentadas ao cânone por estarem documentadas.
 
 As descrições dos países não são conhecimento automático de todo personagem. Informação disponível depende de origem, convivência, viagem, fonte e época. A composição dominante de um governo ou população não determina a personalidade de todos os membros de um povo.
 
@@ -39,10 +39,14 @@ País dos elfos, liderado pelo feiticeiro elfo **Lorick, o Tempestuoso**, reconh
 
 Sob seu comando, o país conheceu prosperidade contínua e exponencial. Há algum tempo suas fronteiras foram fechadas de repente. Ninguém entra ou sai, seja elfo ou não.
 
+### Lenda da Guerra dos 3
+
+Segundo a versão fornecida pelo autor, foi uma guerra muito antiga entre três poderosos quase comparáveis a forças da natureza: **o Sol, a Lua e o Rei**. Eles lutaram, **mas a Tempestade venceu** — ao menos é o que as lendas contam. A versão lendária está estabelecida; as identidades reais e os acontecimentos por trás dela continuam abertos. Ver `LENDAS_E_MEMORIAS.md`.
+
 ### Em aberto
 
-- Participantes, época, causas e consequências da Guerra dos 3; o nome não basta para identificar seus três participantes.
-- O que Lorick realizou nessa guerra e como sua liderança se estabeleceu.
+- Identidades reais do Sol, da Lua, do Rei e da Tempestade; época exata, causas e consequências verificáveis da Guerra dos 3.
+- O que Lorick realizou nessa guerra, a identificação exata da Tempestade e como sua liderança se estabeleceu.
 - Antigo nome do país, caso venha a ser relevante.
 - Motivo e data do fechamento; situação interna atual.
 - Como o bloqueio é mantido e como chega informação ao exterior.
@@ -114,7 +118,8 @@ O pouco conhecimento externo não equivale a afirmar que nenhum habitante conhe�
 | Elemento | Estado |
 |---|---|
 | Shasmoe e RegalisFundios | Ligação existente; sua natureza está em aberto |
-| Lorick e Guerra dos 3 | Contribuição que lhe rendeu reconhecimento; detalhes em aberto |
+| Lorick e Guerra dos 3 | Contribuição que lhe rendeu reconhecimento; relação exata com a Tempestade em aberto |
+| Guerra dos 3 nas lendas | Sol, Lua e Rei lutaram; a Tempestade venceu. Verdade histórica não revelada |
 | Alberich → Robert | Sucessão do pai pelo único filho; queda do país nesse contexto |
 | Utopía de Ralph | Proposta de convivência pacífica e festiva, com líder de sorte inata |
 | Alianças, rivalidades e fronteiras entre os demais países | Ainda não definidas |

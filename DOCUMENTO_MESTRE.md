@@ -20,7 +20,7 @@ O cenário passa a ter como base **Terastera**, o grande continente apresentado 
 
 **Prioridade atual: preparar a história e a região antes da próxima expansão mecânica.** A etapa 1.6 continua no planejamento, depois dessa preparação. O protótipo 0.6.0 permanece preservado. Ponteclara, o Moinho Afogado, seus parâmetros de calendário e as regras de personagem ainda precisam ser conciliados com Terastera; a localização da vila não está definida. Os reinos não estão implementados no jogo.
 
-Fatos fornecidos pelo autor prevalecem sobre propostas do assistente. Rumores sobre demônios em RegalisFundios não confirmam sua presença. A Guerra dos 3 e as causas dos mistérios permanecem abertas. Documentar uma possibilidade não a torna cânone, nem autoriza expor informação secreta ao personagem.
+Fatos fornecidos pelo autor prevalecem sobre propostas do assistente. Rumores sobre demônios em RegalisFundios não confirmam sua presença. A versão lendária da Guerra dos 3 foi definida em 27/11/2026: Sol, Lua e Rei lutaram; a Tempestade venceu. A verdade histórica, as identidades e as causas dos demais mistérios permanecem abertas. Ler `mundo/LENDAS_E_MEMORIAS.md`. Documentar uma possibilidade não a torna cânone, nem autoriza expor informação secreta ao personagem.
 
 ## Direção atual: viver um RPG pelo diário
 

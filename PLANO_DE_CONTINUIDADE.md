@@ -12,7 +12,7 @@ Ler `DOCUMENTO_MESTRE.md`, `etapa_1_5/README.md`, `etapa_1_5/docs/DESIGN_E_IMPLE
 
 O trabalho imediato é preparar mundo, história e região inicial antes de ampliar as mecânicas, conforme a direção estabelecida pelo autor. A base fornecida pelo autor está em `mundo/TERASTERA.md`; a ordem de trabalho, em `mundo/PREPARACAO_NARRATIVA.md`. Os cinco países são a base atual, com expansão aberta. Separar fatos, relatos e propostas; preservar as questões ainda sem resposta.
 
-1. Esclarecer a Guerra dos 3 e estabelecer relações históricas e contexto presente.
+1. Preparar as fontes da história e o contexto presente. A lenda da Guerra dos 3 já nomeia Sol, Lua e Rei em conflito e a Tempestade como vencedora; preservar a incerteza histórica registrada em `mundo/LENDAS_E_MEMORIAS.md`. Desenvolver a vida atual sem exigir uma revelação imediata de todos os mistérios.
 2. Desenvolver geografia, tom, origens e vínculos possíveis do protagonista.
 3. Escolher a primeira região, aprofundar pessoas e situações e revisar a integração de Ponteclara e do moinho.
 4. Retomar a implementação da 1.6 a partir das necessidades narrativas e escolhas dessa região.

@@ -16,4 +16,4 @@ A versão anterior está em `/legado/`; saves separados e transferência explíc
 
 A primeira expedição está em `etapa_1_5/`. Trabalho atual: preparar Terastera e a região inicial antes de retomar a 1.6. Saves 0.5 são migrados automaticamente com backup e cópia anterior em `/legado-0-5/`; o legado 0.4 continua separado.
 
-A base de Terastera foi fornecida pelo autor. Preservar os nomes e distinguir fatos, rumores e propostas. Não escolher a localização de Ponteclara nem resolver a Guerra dos 3 ou os mistérios como se o autor já tivesse definido suas respostas.
+A base de Terastera foi fornecida pelo autor. Preservar os nomes e distinguir fatos, rumores e propostas. A lenda da Guerra dos 3 está em `mundo/LENDAS_E_MEMORIAS.md`: Sol, Lua e Rei lutaram; a Tempestade venceu. Sua verdade histórica e suas identidades permanecem abertas, assim como a localização de Ponteclara e as causas dos demais mistérios.
