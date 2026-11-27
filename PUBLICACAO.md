@@ -21,7 +21,7 @@ Primeira publicação concluída em 26/11/2026: [execução do GitHub Pages](htt
 ## Atualizar
 
 ```sh
-node etapa_1_4/verificar.mjs
+node etapa_1_5/verificar.mjs
 node scripts/preparar-pages.mjs
 ```
 
@@ -58,3 +58,9 @@ Publicação 0.5.1 confirmada no endereço principal após o commit `4b4c0717f2e
 Necessidades sempre presentes na gameplay móvel, em faixa compacta, e atalhos para os cuidados disponíveis no lugar. Mesmo endereço, catálogo e chave de save. Verificação: 142 casos atuais e 14 históricos separados; medidas em `etapa_1_4/evidencias/HUD_0_5_2_MEDIDAS.json` e relatório em `etapa_1_4/docs/REVISAO_HUD_0_5_2.md`.
 
 Publicação 0.5.2 confirmada: commit `d67b8edd1fbadfa48c8206c579f2774fc34a8cc2`, [Pages concluído com sucesso](https://github.com/sapatenis132/fantasy-life/actions/runs/45923794019). A versão foi conferida na entrada principal e no ambiente público isolado: tocar em Energia, escolher descanso e continuar manteve a faixa visível e atualizou o estado às 09:00.
+
+## O Moinho Afogado 0.6.0
+
+Etapa 1.5 em `etapa_1_5/`; entrada principal gerada pelo mesmo comando `node scripts/preparar-pages.mjs`. Verificar com `node etapa_1_5/verificar.mjs`. Revisão isolada em `/vida-preview/`, chave `fantasy-life-preview-1.5-moinho`.
+
+Catálogo 2: migração automática da chave principal, backup antes de gravar em `fantasy-life-vida-1.4-antes-0.6`, cópia 0.5.2 em `/legado-0-5/` usando apenas esse backup. Não criar novo personagem para receber o capítulo. O legado 0.4.1 permanece independente. Evidência local e limites em `etapa_1_5/docs/VALIDACAO_INTERFACE.md`. A confirmação pública é registrada após observar o deployment.

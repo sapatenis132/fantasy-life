@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-26",
+  "method": "Chrome remoto, molduras CSS, controles reais, chave isolada",
+  "frames": [{"width":320,"height":568,"clientWidth":305,"scrollWidth":305},{"width":360,"height":640,"clientWidth":345,"scrollWidth":345},{"width":412,"height":915,"clientWidth":397,"scrollWidth":397}],
+  "map": {"region":"arredores","targets":4,"overlaps":0,"minHeight":45.4375},
+  "smallScreen": {"headerHeight":108.03125,"storyTop":220.453125,"storyBottom":329.203125,"needTargetHeight":44},
+  "flow": ["criar","rumores/presença","mirante/cuidado","guardião/galeria","câmara/libertar","diário/objetivos","reload"],
+  "reloadObserved": {"time":"11:10","money":18,"ending":"espirito_livre","food":68,"energy":79,"hygiene":72,"mood":67},
+  "physicalAndroid": false,
+  "screenReader": false,
+  "fiftyHoursProven": false
+}

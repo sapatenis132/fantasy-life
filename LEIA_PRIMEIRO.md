@@ -1,15 +1,17 @@
-# Fantasy Life — continuidade 0.5.2
+# Fantasy Life — continuidade 0.6.0
 
-26/11/2026. Ponteclara 0.5.2 é a fatia atual da etapa 1.4, construída sobre a arquitetura 1.3. Não reiniciar o projeto.
+26/11/2026. Ponteclara 0.6.0 é a fatia atual da etapa 1.5, construída sobre a arquitetura 1.3. Não reiniciar o projeto.
 
 Jogo: https://sapatenis132.github.io/fantasy-life/
 
 1. Ler `DOCUMENTO_MESTRE.md` e `PLANO_DE_CONTINUIDADE.md`.
-2. Ler `etapa_1_4/README.md` e `docs/DESIGN_E_IMPLEMENTACAO.md` dentro da etapa.
-3. Executar `node etapa_1_4/verificar.mjs`.
+2. Ler `etapa_1_5/README.md` e `docs/DESIGN_E_IMPLEMENTACAO.md` dentro da etapa.
+3. Executar `node etapa_1_5/verificar.mjs`.
 4. Ler `etapa_1_4/docs/REVISAO_HUD_0_5_1.md`: cena e diário são apresentações separadas.
 5. Conferir `etapa_1_4/evidencias/` e o estado de publicação em `PUBLICACAO.md`.
 
 A direção atual é **RPG de fantasia**, com diário, exploração, evolução do personagem, mapa, relações, calendário e necessidades. Course of Temptation é a referência estrutural para as mecânicas destacadas pelo usuário; seu cenário e conteúdo adulto não fazem parte do projeto. **BitLife deixou de ser referência ativa.** A versão atual começa em um contexto adulto fixo; a continuidade aprofunda o ciclo de RPG. Nascimento, infância e simulação geracional não são entregas obrigatórias. Prioridades: escolhas, variedade e interface simples.
 
 A versão anterior está em `/legado/`; saves separados e transferência explícita. A base histórica permanece em `base_original/` e `historico/`. O repositório oficial específico é `sapatenis132/fantasy-life`.
+
+A primeira expedição está em `etapa_1_5/`. Próximo bloco: 1.6. Saves 0.5 são migrados automaticamente com backup e cópia anterior em `/legado-0-5/`; o legado 0.4 continua separado.

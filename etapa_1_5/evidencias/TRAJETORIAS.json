@@ -1,0 +1,188 @@
+[
+  {
+    "choice": "reparar",
+    "seed": 42,
+    "identity": {
+      "id": "player",
+      "name": "Ari",
+      "race": "humano",
+      "origin": "artesao",
+      "trait": "observador",
+      "talent": "oficio",
+      "gift": "eco"
+    },
+    "ending": "moinho_reparado",
+    "calendar": {
+      "day": 0,
+      "hour": 13,
+      "minute": 830,
+      "weekday": "Aurora",
+      "date": "1/1/614",
+      "time": "13:50",
+      "phase": "Tarde"
+    },
+    "money": 26,
+    "health": 100,
+    "skills": {
+      "oficio": 45,
+      "exploracao": 13,
+      "arcanismo": 5
+    },
+    "items": {
+      "grimorio": 1,
+      "kit_ferramentas": 1,
+      "ferramentas_perdidas": 0
+    },
+    "mairaTrust": 14,
+    "mairaKnows": {
+      "ferramentas_devolvidas": true,
+      "decisao_moinho": true,
+      "moinho_reparado": true
+    },
+    "merchantKnows": {},
+    "riverShortcut": false,
+    "millWork": true,
+    "riverHealing": false,
+    "riverRest": false
+  },
+  {
+    "choice": "libertar",
+    "seed": 42,
+    "identity": {
+      "id": "player",
+      "name": "Ari",
+      "race": "humano",
+      "origin": "artesao",
+      "trait": "observador",
+      "talent": "oficio",
+      "gift": "eco"
+    },
+    "ending": "espirito_livre",
+    "calendar": {
+      "day": 0,
+      "hour": 13,
+      "minute": 805,
+      "weekday": "Aurora",
+      "date": "1/1/614",
+      "time": "13:25",
+      "phase": "Tarde"
+    },
+    "money": 26,
+    "health": 100,
+    "skills": {
+      "oficio": 35,
+      "exploracao": 13,
+      "arcanismo": 5
+    },
+    "items": {
+      "grimorio": 1,
+      "kit_ferramentas": 1,
+      "ferramentas_perdidas": 0
+    },
+    "mairaTrust": 11,
+    "mairaKnows": {
+      "ferramentas_devolvidas": true,
+      "decisao_moinho": true,
+      "espirito_livre": true
+    },
+    "merchantKnows": {},
+    "riverShortcut": true,
+    "millWork": false,
+    "riverHealing": true,
+    "riverRest": false
+  },
+  {
+    "choice": "extrair",
+    "seed": 42,
+    "identity": {
+      "id": "player",
+      "name": "Ari",
+      "race": "humano",
+      "origin": "artesao",
+      "trait": "observador",
+      "talent": "oficio",
+      "gift": "eco"
+    },
+    "ending": "nucleo_retirado",
+    "calendar": {
+      "day": 0,
+      "hour": 13,
+      "minute": 810,
+      "weekday": "Aurora",
+      "date": "1/1/614",
+      "time": "13:30",
+      "phase": "Tarde"
+    },
+    "money": 26,
+    "health": 100,
+    "skills": {
+      "oficio": 45,
+      "exploracao": 7,
+      "arcanismo": 5
+    },
+    "items": {
+      "grimorio": 1,
+      "kit_ferramentas": 1,
+      "ferramentas_perdidas": 0,
+      "nucleo_moinho": 1
+    },
+    "mairaTrust": 7,
+    "mairaKnows": {
+      "ferramentas_devolvidas": true,
+      "decisao_moinho": true,
+      "nucleo_retirado": true
+    },
+    "merchantKnows": {},
+    "riverShortcut": false,
+    "millWork": false,
+    "riverHealing": false,
+    "riverRest": false
+  },
+  {
+    "choice": "renovar",
+    "seed": 42,
+    "identity": {
+      "id": "player",
+      "name": "Ari",
+      "race": "humano",
+      "origin": "artesao",
+      "trait": "observador",
+      "talent": "oficio",
+      "gift": "eco"
+    },
+    "ending": "pacto_renovado",
+    "calendar": {
+      "day": 0,
+      "hour": 16,
+      "minute": 965,
+      "weekday": "Aurora",
+      "date": "1/1/614",
+      "time": "16:05",
+      "phase": "Tarde"
+    },
+    "money": 26,
+    "health": 100,
+    "skills": {
+      "oficio": 35,
+      "exploracao": 20,
+      "arcanismo": 5
+    },
+    "items": {
+      "grimorio": 1,
+      "kit_ferramentas": 1,
+      "flor_vidro": 0,
+      "ferramentas_perdidas": 0
+    },
+    "mairaTrust": 16,
+    "mairaKnows": {
+      "ferramentas_devolvidas": true,
+      "decisao_moinho": true,
+      "pacto_renovado": true
+    },
+    "merchantKnows": {},
+    "riverShortcut": true,
+    "millWork": true,
+    "riverHealing": false,
+    "riverRest": true
+  }
+]

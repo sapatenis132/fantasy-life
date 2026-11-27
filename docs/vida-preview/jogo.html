@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#151922"><title>Fantasy Life — Ponteclara</title>
 <style>
-:root{color-scheme:dark;--bg:#191d25;--panel:#11151c;--sidebar:#141820;--ink:#e9e8e3;--muted:#aeb7c0;--accent:#8ac4e0;--gold:#d4b580;--border:#333e4c;--green:#90bb92;--danger:#e5a179;font:17px/1.6 system-ui,sans-serif}*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}button,input,select,a{touch-action:manipulation}button{cursor:pointer;min-height:44px;padding:9px 12px;border:1px solid var(--border);border-radius:5px;background:var(--panel);color:var(--ink);text-align:left}button:hover{border-color:var(--accent)}button:disabled{opacity:.55;cursor:default}a{color:var(--accent)}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}h1,h2,h3,p{margin:0 0 14px}h1,h2{line-height:1.25}h1{font:600 1.7rem/1.25 Georgia,serif}h2{font-size:1.2rem}h3{font-size:1rem}small,.muted{color:var(--muted);font-size:.85rem}.eyebrow{font-size:.82rem;color:var(--gold);letter-spacing:.06em}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.stack{display:grid;gap:10px}.primary{color:var(--panel);background:var(--gold);border-color:var(--gold);font-weight:700;text-align:center}.link-button{color:var(--accent);background:transparent;border:0;border-radius:0;padding:8px 0;text-align:left}.link-button:hover{color:#c2e9f7;text-decoration:underline}.action-link{display:flex;align-items:baseline;justify-content:space-between;gap:12px;width:100%;line-height:1.4}.action-link small{white-space:nowrap}.option{width:100%;display:block;color:var(--accent);background:transparent;border:0;border-left:2px solid var(--border);padding:9px 13px}.option strong,.option small{display:block}.option:hover{border-left-color:var(--accent);background:#202b37}.option:disabled{color:var(--muted)}.card{border:1px solid var(--border);padding:16px;border-radius:7px;margin:16px 0}.label{display:grid;gap:5px;margin:12px 0}input,select{width:100%;min-width:0;min-height:44px;padding:9px 10px;border:1px solid var(--border);border-radius:5px;background:var(--panel);color:var(--ink)}summary{cursor:pointer;min-height:44px;padding:8px 0;color:var(--accent)}#mobile-header{position:sticky;top:0;z-index:5;background:var(--sidebar);border-bottom:1px solid var(--border);padding:7px 12px;display:grid;grid-template-columns:44px minmax(0,1fr) auto;align-items:center;gap:4px 12px}#menu{font-size:1.25rem;min-width:44px;padding:4px 10px;text-align:center}#mobile-context{min-width:0}#header-name{font-size:.9rem;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}#header-meta{font-size:.76rem;color:var(--muted)}#quick-map{font-size:.85rem}#quick-needs{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding-top:1px}#quick-needs button{background:transparent;border:0;padding:3px 0 5px;min-width:0;min-height:44px;color:var(--muted);border-radius:3px;text-align:left}#quick-needs .compact-label{display:flex;align-items:center;gap:3px;font-size:.82rem;line-height:1.35;white-space:nowrap}#quick-needs progress{display:block;width:100%;height:5px;margin-top:5px;accent-color:var(--green)}#quick-needs .low{color:var(--danger)}#quick-needs .low progress{accent-color:var(--danger)}#quick-needs .need-warning{font-weight:700}.need-reading{font-size:1.1rem;margin-bottom:6px}#need-summary progress{width:100%;height:8px}#need-hint{margin-top:12px}#need-options{margin-top:16px}#sidebar{display:none;position:fixed;inset:0 auto 0 0;width:268px;overflow:auto;background:var(--sidebar);border-right:1px solid var(--border);padding:26px 20px}.brand{font:1.6rem/1.15 Georgia,serif;color:var(--gold);margin-bottom:6px}.hud-place{font-size:1rem;color:var(--ink);margin:22px 0 6px}.hud-clock{font-size:1.6rem;line-height:1.2;margin-bottom:6px;font-variant-numeric:tabular-nums}.hud-date,.hud-money{overflow-wrap:anywhere;font-size:.85rem;color:var(--muted);margin:5px 0}.hud-needs{display:grid;gap:10px;margin:20px 0 14px}.hud-need{min-width:0;background:transparent;border:0;padding:4px 0;text-align:left}.hud-need:hover{background:#202b37}.hud-need .need-label{display:flex;justify-content:space-between;font-size:.82rem;line-height:1.3}.hud-need progress{display:block;width:100%;height:7px;margin-top:5px;accent-color:var(--green)}.hud-need.low progress{accent-color:var(--danger)}.hud-alert{font-size:.82rem;color:var(--danger)}.hud-nav{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding-top:18px;margin-top:18px;border-top:1px solid var(--border)}.hud-nav button{font-size:.85rem;padding:7px 8px;background:transparent}.hud-footer{font-size:.72rem;color:var(--muted);margin:24px 0 0}html{scroll-padding-top:116px}main{max-width:920px;margin:auto;padding:26px 18px 48px}#creation{max-width:500px;margin:auto}#game{background:var(--panel);padding:22px 18px;border-radius:7px}#story-kicker{margin-bottom:10px}#story-copy{white-space:pre-line}#people{color:var(--muted);font-size:.87rem;margin-bottom:4px}#nearby-people{display:flex;flex-wrap:wrap;gap:4px 18px;margin-bottom:16px}#room-actions h2,#room-exits h2{font-size:.85rem;color:var(--muted);font-weight:500;border-top:1px solid var(--border);padding-top:12px;margin:12px 0 3px}#local-actions,#exit-actions{display:grid;gap:1px}#passage-controls{display:grid;gap:8px;margin-top:22px}#back{margin-bottom:18px}#composer-text{font-size:1rem}#route-status{color:var(--muted);font-size:.85rem;margin-top:14px}#message:empty{display:none}#message{font-size:.85rem;background:#443824;color:#f3e5c6;padding:10px 18px}dialog{color:var(--ink);background:var(--panel);border:1px solid var(--border);border-radius:7px;padding:20px;width:min(94vw,760px);max-height:90dvh;overflow:auto}dialog::backdrop{background:#000b}dialog h2{margin:0;overflow-wrap:anywhere}.dialog-heading{margin-bottom:20px;position:sticky;top:-20px;z-index:1;background:var(--panel);padding:6px 0;border-bottom:1px solid var(--border)}.dialog-close{border:0;min-width:44px;font-size:1.3rem;padding:4px 10px;text-align:center}#status-panel .brand{display:none}#status-panel .dialog-heading{margin-bottom:8px}#status-panel .hud-place{margin:6px 0 4px}#status-panel .hud-clock{font-size:1.2rem;margin-bottom:4px}#status-panel .hud-date,#status-panel .hud-money{margin:1px 0}#status-panel .hud-needs{grid-template-columns:1fr 1fr;gap:10px 12px;margin:12px 0 10px}#status-panel .hud-nav{margin-top:12px;padding-top:12px}#status-panel .hud-footer{display:none}#status-panel{width:min(88vw,340px);max-height:94dvh;margin:0 auto 0 0;min-height:100dvh;border-radius:0}.tabs{display:flex;flex-wrap:wrap;gap:5px;border-bottom:1px solid var(--border);padding-bottom:12px;margin-bottom:18px}.tabs button{font-size:.85rem;background:transparent}.tabs button[aria-selected="true"]{color:var(--accent);border-color:var(--accent)}.need{display:grid;grid-template-columns:90px 1fr 35px;align-items:center;gap:8px;font-size:.85rem}progress{max-width:100%;accent-color:var(--green);appearance:none;border:0;border-radius:8px;overflow:hidden;background:#35404e}progress::-webkit-progress-bar{background:#35404e;border-radius:8px}progress::-webkit-progress-value{background:var(--need-fill,var(--green));border-radius:8px}progress::-moz-progress-bar{background:var(--need-fill,var(--green));border-radius:8px}.low{--need-fill:var(--danger)}.diary-entry{margin:18px 0;padding:0 0 14px;border-bottom:1px solid var(--border)}.diary-entry p{margin:5px 0}.facts{font-size:.9rem}#map-graphic{position:relative;aspect-ratio:1;margin:12px 0 24px}#map-graphic svg{position:absolute;inset:0;width:100%;height:100%}#map-graphic button{position:absolute;transform:translate(-50%,-50%);padding:5px;max-width:29%;min-height:44px;font-size:.82rem;line-height:1.2;text-align:center}#map-graphic .here{background:var(--gold);color:var(--panel);font-weight:700}#map-destination{border-top:1px solid var(--border);padding-top:18px}#map-destination h3{font-size:1.1rem}#map-destination .muted{font-size:.85rem}#calendar p{margin-top:14px}.contact{border-bottom:1px solid var(--border);padding:14px 0}.contact p{font-size:.85rem}.contact h3{margin-bottom:5px}.empty{color:var(--muted);font-size:.9rem}@media(min-width:900px){#mobile-header{display:none}#sidebar{display:block}body{padding-left:268px}main{padding:44px 36px 60px;max-width:960px}#game{padding:34px 36px}#message{margin-left:0}h1{font-size:2rem}dialog{width:min(80vw,820px)}}@media(max-width:359px){main{padding:14px 12px 38px}#game{padding:16px 14px}#header-meta{font-size:.72rem}#map-graphic button{font-size:.82rem}dialog{padding:16px}.dialog-heading{top:-16px}#map-graphic{margin-bottom:28px}}@media(prefers-reduced-motion:no-preference){button{transition:color .12s,background-color .12s}}
+:root{color-scheme:dark;--bg:#191d25;--panel:#11151c;--sidebar:#141820;--ink:#e9e8e3;--muted:#aeb7c0;--accent:#8ac4e0;--gold:#d4b580;--border:#333e4c;--green:#90bb92;--danger:#e5a179;font:17px/1.6 system-ui,sans-serif}*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}button,input,select,a{touch-action:manipulation}button{cursor:pointer;min-height:44px;padding:9px 12px;border:1px solid var(--border);border-radius:5px;background:var(--panel);color:var(--ink);text-align:left}button:hover{border-color:var(--accent)}button:disabled{opacity:.55;cursor:default}a{color:var(--accent)}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}h1,h2,h3,p{margin:0 0 14px}h1,h2{line-height:1.25}h1{font:600 1.7rem/1.25 Georgia,serif}h2{font-size:1.2rem}h3{font-size:1rem}small,.muted{color:var(--muted);font-size:.85rem}.eyebrow{font-size:.82rem;color:var(--gold);letter-spacing:.06em}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.stack{display:grid;gap:10px}.primary{color:var(--panel);background:var(--gold);border-color:var(--gold);font-weight:700;text-align:center}.link-button{color:var(--accent);background:transparent;border:0;border-radius:0;padding:8px 0;text-align:left}.link-button:hover{color:#c2e9f7;text-decoration:underline}.action-link{display:flex;align-items:baseline;justify-content:space-between;gap:12px;width:100%;line-height:1.4}.action-link small{white-space:nowrap}.option{width:100%;display:block;color:var(--accent);background:transparent;border:0;border-left:2px solid var(--border);padding:9px 13px}.option strong,.option small{display:block}.option:hover{border-left-color:var(--accent);background:#202b37}.option:disabled{color:var(--muted)}.card{border:1px solid var(--border);padding:16px;border-radius:7px;margin:16px 0}.label{display:grid;gap:5px;margin:12px 0}input,select{width:100%;min-width:0;min-height:44px;padding:9px 10px;border:1px solid var(--border);border-radius:5px;background:var(--panel);color:var(--ink)}summary{cursor:pointer;min-height:44px;padding:8px 0;color:var(--accent)}#mobile-header{position:sticky;top:0;z-index:5;background:var(--sidebar);border-bottom:1px solid var(--border);padding:7px 12px;display:grid;grid-template-columns:44px minmax(0,1fr) auto;align-items:center;gap:4px 12px}#menu{font-size:1.25rem;min-width:44px;padding:4px 10px;text-align:center}#mobile-context{min-width:0}#header-name{font-size:.9rem;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}#header-meta{font-size:.76rem;color:var(--muted)}#quick-map{font-size:.85rem}#quick-needs{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding-top:1px}#quick-needs button{background:transparent;border:0;padding:3px 0 5px;min-width:0;min-height:44px;color:var(--muted);border-radius:3px;text-align:left}#quick-needs .compact-label{display:flex;align-items:center;gap:3px;font-size:.82rem;line-height:1.35;white-space:nowrap}#quick-needs progress{display:block;width:100%;height:5px;margin-top:5px;accent-color:var(--green)}#quick-needs .low{color:var(--danger)}#quick-needs .low progress{accent-color:var(--danger)}#quick-needs .need-warning{font-weight:700}.need-reading{font-size:1.1rem;margin-bottom:6px}#need-summary progress{width:100%;height:8px}#need-hint{margin-top:12px}#need-options{margin-top:16px}#sidebar{display:none;position:fixed;inset:0 auto 0 0;width:268px;overflow:auto;background:var(--sidebar);border-right:1px solid var(--border);padding:26px 20px}.brand{font:1.6rem/1.15 Georgia,serif;color:var(--gold);margin-bottom:6px}.hud-place{font-size:1rem;color:var(--ink);margin:22px 0 6px}.hud-clock{font-size:1.6rem;line-height:1.2;margin-bottom:6px;font-variant-numeric:tabular-nums}.hud-date,.hud-money{overflow-wrap:anywhere;font-size:.85rem;color:var(--muted);margin:5px 0}.hud-needs{display:grid;gap:10px;margin:20px 0 14px}.hud-need{min-width:0;background:transparent;border:0;padding:4px 0;text-align:left}.hud-need:hover{background:#202b37}.hud-need .need-label{display:flex;justify-content:space-between;font-size:.82rem;line-height:1.3}.hud-need progress{display:block;width:100%;height:7px;margin-top:5px;accent-color:var(--green)}.hud-need.low progress{accent-color:var(--danger)}.hud-alert{font-size:.82rem;color:var(--danger)}.hud-nav{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding-top:18px;margin-top:18px;border-top:1px solid var(--border)}.hud-nav button{font-size:.85rem;padding:7px 8px;background:transparent}.hud-goal{color:var(--gold);font-size:.85rem;margin:8px 0;line-height:1.4}.choice-detail{margin-top:5px;white-space:normal}.hud-footer{font-size:.72rem;color:var(--muted);margin:24px 0 0}html{scroll-padding-top:116px}main{max-width:920px;margin:auto;padding:26px 18px 48px}#creation{max-width:500px;margin:auto}#game{background:var(--panel);padding:22px 18px;border-radius:7px}#story-kicker{margin-bottom:10px}#story-copy{white-space:pre-line}#people{color:var(--muted);font-size:.87rem;margin-bottom:4px}#nearby-people{display:flex;flex-wrap:wrap;gap:4px 18px;margin-bottom:16px}#room-actions h2,#room-exits h2{font-size:.85rem;color:var(--muted);font-weight:500;border-top:1px solid var(--border);padding-top:12px;margin:12px 0 3px}#local-actions,#exit-actions{display:grid;gap:1px}#passage-controls{display:grid;gap:8px;margin-top:22px}#back{margin-bottom:18px}#composer-text{font-size:1rem}#route-status{color:var(--muted);font-size:.85rem;margin-top:14px}#message:empty{display:none}#message{font-size:.85rem;background:#443824;color:#f3e5c6;padding:10px 18px}dialog{color:var(--ink);background:var(--panel);border:1px solid var(--border);border-radius:7px;padding:20px;width:min(94vw,760px);max-height:90dvh;overflow:auto}dialog::backdrop{background:#000b}dialog h2{margin:0;overflow-wrap:anywhere}.dialog-heading{margin-bottom:20px;position:sticky;top:-20px;z-index:1;background:var(--panel);padding:6px 0;border-bottom:1px solid var(--border)}.dialog-close{border:0;min-width:44px;font-size:1.3rem;padding:4px 10px;text-align:center}#status-panel .brand{display:none}#status-panel .dialog-heading{margin-bottom:8px}#status-panel .hud-place{margin:6px 0 4px}#status-panel .hud-clock{font-size:1.2rem;margin-bottom:4px}#status-panel .hud-date,#status-panel .hud-money{margin:1px 0}#status-panel .hud-needs{grid-template-columns:1fr 1fr;gap:10px 12px;margin:12px 0 10px}#status-panel .hud-nav{margin-top:12px;padding-top:12px}#status-panel .hud-footer{display:none}#status-panel{width:min(88vw,340px);max-height:94dvh;margin:0 auto 0 0;min-height:100dvh;border-radius:0}.tabs{display:flex;flex-wrap:wrap;gap:5px;border-bottom:1px solid var(--border);padding-bottom:12px;margin-bottom:18px}.tabs button{font-size:.85rem;background:transparent}.tabs button[aria-selected="true"]{color:var(--accent);border-color:var(--accent)}.need{display:grid;grid-template-columns:90px 1fr 35px;align-items:center;gap:8px;font-size:.85rem}progress{max-width:100%;accent-color:var(--green);appearance:none;border:0;border-radius:8px;overflow:hidden;background:#35404e}progress::-webkit-progress-bar{background:#35404e;border-radius:8px}progress::-webkit-progress-value{background:var(--need-fill,var(--green));border-radius:8px}progress::-moz-progress-bar{background:var(--need-fill,var(--green));border-radius:8px}.low{--need-fill:var(--danger)}.diary-entry{margin:18px 0;padding:0 0 14px;border-bottom:1px solid var(--border)}.diary-entry p{margin:5px 0}.facts{font-size:.9rem}#map-graphic{position:relative;aspect-ratio:1;margin:12px 0 24px}#map-graphic svg{position:absolute;inset:0;width:100%;height:100%}#map-graphic button{position:absolute;transform:translate(-50%,-50%);padding:5px;max-width:29%;min-height:44px;font-size:.82rem;line-height:1.2;text-align:center}#map-graphic .here{background:var(--gold);color:var(--panel);font-weight:700}#map-destination{border-top:1px solid var(--border);padding-top:18px}#map-destination h3{font-size:1.1rem}#map-destination .muted{font-size:.85rem}#calendar p{margin-top:14px}.contact{border-bottom:1px solid var(--border);padding:14px 0}.contact p{font-size:.85rem}.contact h3{margin-bottom:5px}.empty{color:var(--muted);font-size:.9rem}@media(min-width:900px){#mobile-header{display:none}#sidebar{display:block}body{padding-left:268px}main{padding:44px 36px 60px;max-width:960px}#game{padding:34px 36px}#message{margin-left:0}h1{font-size:2rem}dialog{width:min(80vw,820px)}}@media(max-width:359px){main{padding:14px 12px 38px}#game{padding:16px 14px}#header-meta{font-size:.72rem}#map-graphic button{font-size:.82rem}dialog{padding:16px}.dialog-heading{top:-16px}#map-graphic{margin-bottom:28px}}@media(prefers-reduced-motion:no-preference){button{transition:color .12s,background-color .12s}}
 </style></head><body>
 <header id="mobile-header"><button id="menu" aria-label="Abrir painel do personagem">☰</button><div id="mobile-context"><div id="header-name">Fantasy Life</div><div id="header-meta">Ponteclara</div></div><button id="quick-map" class="link-button">Mapa</button><div id="quick-needs" aria-label="Necessidades" hidden></div></header>
 <aside id="sidebar" aria-label="Painel do personagem"><div id="desktop-hud"></div></aside>
 <div id="message" role="status" aria-live="polite"></div>
 <main>
 <section id="creation"><h1>Quem chega a Ponteclara?</h1><p class="muted">Comece com uma história. Descubra o restante vivendo.</p>
-<form id="creator"><label class="label">Nome<input id="name" value="Ari" maxlength="32" required autocomplete="off"></label><label class="label">De onde você vem?<select id="origin"><option value="artesao">Aprendiz de artesão · Ofício 35</option><option value="ervas">Coletor de ervas · Alquimia 35</option><option value="viajante">Viajante · Exploração 35</option></select></label>
+<form id="creator"><label class="label">Nome<input id="name" value="Ari" maxlength="32" required autocomplete="off"></label><label class="label">De onde você vem?<select id="origin"><option value="artesao">Aprendiz de artesão · Ofício 35 e kit</option><option value="ervas">Coletor de ervas · Alquimia 35 e provisões</option><option value="viajante">Viajante · Exploração 35 e corda</option></select></label>
 <details><summary>Personalizar o personagem</summary><label class="label">Povo<select id="race"><option value="humano">Humano · 18 anos</option><option value="elfo">Elfo · 40 anos; enxerga no bosque à noite</option><option value="anao">Anão · 30 anos; resiste melhor ao cansaço</option></select></label><label class="label">Traço<select id="trait"><option value="observador">Observador · percebe outras soluções</option><option value="sociavel">Sociável · aproxima-se com mais facilidade</option><option value="persistente">Persistente · aprende mais com falhas</option></select></label><label class="label">Talento<select id="talent"><option value="oficio">Ofício</option><option value="alquimia">Alquimia</option><option value="arcanismo">Arcanismo</option><option value="esgrima">Esgrima</option><option value="exploracao">Exploração</option></select></label><label class="label">Dom singular<select id="gift"><option value="eco">Eco espiritual · perceber presenças</option><option value="pulso">Pulso vital · curar, gastando energia</option><option value="latente">Potencial latente · despertar ao explorar e estudar</option></select></label><label class="label">Semente do mundo<input id="seed" type="number" min="0" max="4294967295" value="2026" required></label><p class="muted">O mesmo personagem e a mesma semente repetem as condições iniciais. Suas escolhas mudam o caminho.</p></details>
 <button class="primary" type="submit" id="start">Começar aventura</button></form>
 <div id="legacy" class="card" hidden><h2>Seu personagem anterior está guardado</h2><p class="muted">Você pode continuar a versão anterior ou transferir um personagem sem compromissos pendentes. O arquivo anterior continua intacto.</p><div class="stack"><button id="migrate">Transferir o personagem anterior</button><a href="../legado/">Continuar na versão anterior</a></div></div>
@@ -17,12 +17,12 @@
 </main>
 <dialog id="needs-panel" aria-labelledby="need-title"><div class="row dialog-heading"><h2 id="need-title">Necessidades</h2><button id="close-needs" class="dialog-close" aria-label="Fechar necessidade">×</button></div><div id="need-summary"></div><p id="need-hint" class="muted"></p><div id="need-options" class="stack"></div></dialog>
 <dialog id="status-panel" aria-labelledby="status-title"><div class="row dialog-heading"><h2 id="status-title">Fantasy Life</h2><button id="close-status" class="dialog-close" aria-label="Fechar painel">×</button></div><div id="mobile-hud"></div></dialog>
-<dialog id="map-panel" aria-labelledby="map-title"><div class="row dialog-heading"><h2 id="map-title">Ponteclara</h2><button id="close-map" class="dialog-close" aria-label="Fechar mapa">×</button></div><p class="muted">Escolha um lugar para consultar o caminho.</p><div id="map-graphic"></div><div id="map-destination" hidden></div></dialog>
+<dialog id="map-panel" aria-labelledby="map-title"><div class="row dialog-heading"><h2 id="map-title">Vila e arredores</h2><button id="close-map" class="dialog-close" aria-label="Fechar mapa">×</button></div><div class="tabs" aria-label="Região do mapa"><button id="map-vila" aria-pressed="true">Vila</button><button id="map-arredores" aria-pressed="false">Arredores</button></div><p class="muted">Escolha um lugar para consultar o caminho. Novas passagens dependem do que você descobrir.</p><div id="map-graphic"></div><div id="map-destination" hidden></div></dialog>
 <dialog id="character-panel" aria-labelledby="character-name"><div class="row dialog-heading"><h2 id="character-name"></h2><button id="close-character" class="dialog-close" aria-label="Fechar personagem">×</button></div><div class="tabs" role="tablist" aria-label="Personagem"><button id="tab-summary" role="tab" aria-selected="true">Ficha</button><button id="tab-skills" role="tab" aria-selected="false">Habilidades</button><button id="tab-inventory" role="tab" aria-selected="false">Mochila</button></div><section id="character-summary" role="tabpanel" aria-labelledby="tab-summary"><p id="identity"></p><h3>Condições</h3><div id="needs"></div><p id="health" class="facts"></p></section><section id="character-skills" role="tabpanel" aria-labelledby="tab-skills" hidden><div id="skills"></div><p class="muted">A prática e seu talento abrem novas técnicas. Ânimo baixo dificulta o aprendizado.</p></section><section id="character-inventory" role="tabpanel" aria-labelledby="tab-inventory" hidden><div id="inventory"></div></section></dialog>
 <dialog id="people-panel" aria-labelledby="people-title"><div class="row dialog-heading"><h2 id="people-title">Pessoas</h2><button id="close-people" class="dialog-close" aria-label="Fechar pessoas">×</button></div><h3>Por aqui</h3><div id="people-here"></div><h3>Seus vínculos</h3><div id="contacts"></div></dialog>
 <dialog id="calendar-panel" aria-labelledby="calendar-title"><div class="row dialog-heading"><h2 id="calendar-title">Agenda</h2><button id="close-calendar" class="dialog-close" aria-label="Fechar agenda">×</button></div><div id="calendar"></div></dialog>
-<dialog id="diary-panel" aria-labelledby="diary-title"><div class="row dialog-heading"><h2 id="diary-title">Diário</h2><button id="close-diary" class="dialog-close" aria-label="Fechar diário">×</button></div><p class="muted">Lembranças da sua jornada.</p><div id="diary"></div></dialog>
-<dialog id="files" aria-labelledby="files-title"><div class="row dialog-heading"><h2 id="files-title">Arquivos e opções</h2><button id="close-files" class="dialog-close" aria-label="Fechar opções">×</button></div><div class="stack"><button id="export">Exportar personagem</button><label class="label">Importar personagem<input id="import" type="file" accept="application/json,.json"></label><button id="new-character">Criar outro personagem</button><div id="new-confirm" hidden><p>Exporte seu personagem antes de começar outro. O personagem atual só será substituído ao confirmar a criação.</p><button id="confirm-new">Abrir criação de personagem</button></div><a href="../legado/">Abrir versão anterior (0.4.1)</a><p class="muted">Fantasy Life 0.5.2 · Ponteclara. As próximas etapas aprofundam exploração, progressão, relações e aventura.</p></div></dialog>
+<dialog id="diary-panel" aria-labelledby="diary-title"><div class="row dialog-heading"><h2 id="diary-title">Diário</h2><button id="close-diary" class="dialog-close" aria-label="Fechar diário">×</button></div><div class="tabs" aria-label="Diário"><button id="journal-memories-tab" aria-pressed="true">Lembranças</button><button id="journal-goals-tab" aria-pressed="false">Objetivos</button></div><div id="journal-memories"><p class="muted">Lembranças da sua jornada.</p><div id="diary"></div></div><div id="journal-goals" hidden></div></dialog>
+<dialog id="files" aria-labelledby="files-title"><div class="row dialog-heading"><h2 id="files-title">Arquivos e opções</h2><button id="close-files" class="dialog-close" aria-label="Fechar opções">×</button></div><div class="stack"><button id="export">Exportar personagem</button><label class="label">Importar personagem<input id="import" type="file" accept="application/json,.json"></label><button id="new-character">Criar outro personagem</button><div id="new-confirm" hidden><p>Exporte seu personagem antes de começar outro. O personagem atual só será substituído ao confirmar a criação.</p><button id="confirm-new">Abrir criação de personagem</button></div><a href="../legado-0-5/">Abrir cópia anterior ao capítulo do moinho (0.5.2)</a><a href="../legado/">Abrir laboratório anterior (0.4.1)</a><p class="muted">Fantasy Life 0.6.0 · Ponteclara. O Moinho Afogado conecta objetivos, preparo, exploração e decisões com consequências. O combate completo continua em desenvolvimento.</p></div></dialog>
 <script>
 (()=>{'use strict';
 const contract=(()=>{
@@ -663,7 +663,7 @@ function newLife(engine,seed=2026) {
 }
 
 return {catalog,newLife};})();
-const world=(()=>{
+const world14=(()=>{
 const PLACES={
  casa:{name:'Seu quarto',x:16,y:10,text:'A janela dá para os telhados de Ponteclara. Sua mochila repousa ao lado da cama.'},
  praca:{name:'Praça da ponte',x:48,y:35,text:'A água corre sob a ponte de pedra. Recados e gente de passagem disputam o quadro de avisos.'},
@@ -690,8 +690,8 @@ function calendar(t){const day=Math.floor(t/1440),minute=t%1440,h=Math.floor(min
 function npcPlace(id,t){const h=(t%1440)/60;if(id==='maira')return h>=8&&h<12||h>=13&&h<17?'oficina':h>=12&&h<13?'mercado':'moradia';if(id==='mercador')return h>=8&&h<18?'mercado':'taverna';if(id==='breno')return h>=9&&h<12?'patio':h>=18&&h<22?'taverna':'praca';return 'moradia';}
 
 return {PLACES,EDGES,SKILLS,ORIGINS,RACES,TRAITS,GIFTS,path,calendar,npcPlace};})();
-const content=(()=>{
-const {EDGES,PLACES,SKILLS}=world;
+const content14=(()=>{
+const {EDGES,PLACES,SKILLS}=world14;
 const all=(...c)=>({all:c}),flag=(id,is=true)=>({flag:id,is}),stat=(key,value)=>({stat:key,op:'gte',value}),at=id=>flag(`at_${id}`),add=(stat,amount)=>({op:'add',stat,amount}),mark=(id,value=true)=>({op:'flag',id,value}),item=(id,amount)=>({op:'item',id,amount}),learn=(fact,who='player')=>({op:'learn',who,fact}),move=to=>({op:'move',who:'player',to});
 const fit=all(stat('need:food',15),stat('need:energy',15));
 const result=(id,text,effects=[],when)=>({id,text,effects,weight:1,...(when?{when}:{})});
@@ -786,12 +786,12 @@ decisions.push(action('passagem_raizes','A passagem indicada pelo espírito','Vo
 const catalog={schemaVersion:1,id:'ponteclara',version:1,clock:{unit:'minute',ticksPerDay:1440,pulseEvery:60,pulseChance:0.25},decisions,activities:[],consequences:[]};
 
 return {catalog};})();
-const life=(()=>{
+const life14=(()=>{
 const {createEngine}=kernel;
 const {copy,check,integer,eligible}=contract;
-const {catalog}=content;
+const {catalog}=content14;
 const {catalog : legacyCatalog}=legacy;
-const {PLACES,SKILLS,ORIGINS,RACES,TRAITS,GIFTS,path,calendar,npcPlace}=world;
+const {PLACES,SKILLS,ORIGINS,RACES,TRAITS,GIFTS,path,calendar,npcPlace}=world14;
 const record=x=>x&&typeof x==='object'&&!Array.isArray(x);
 const needNames={food:'Saciedade',energy:'Energia',hygiene:'Higiene',mood:'Ânimo'};
 const note=(s,type,text)=>s.history.push({day:s.day,type,text});
@@ -908,19 +908,321 @@ function view(s){
   diary:v.diary.filter(h=>h.type!=='intention').map(h=>({...h,calendar:calendar(h.day)}))};
 }
 
-return {engine,legacyEngine,createLife,act,choose,travel,resume,stopRoute,abandon,wait,save,load,migrateLegacy,view};})();
+return {engine,load};})();
+const world=(()=>{
+const {PLACES : basePlaces,EDGES : baseEdges,SKILLS,ORIGINS,RACES,TRAITS,GIFTS,calendar,npcPlace}=world14;
+
+const PLACES={...basePlaces,
+ margem:{name:'Margem do rio',x:18,y:22,region:'arredores',text:'Uma passarela cedeu sobre o rio. Acima da corrente, a roda do moinho continua batendo sem ninguém para movê-la.'},
+ mirante:{name:'Mirante das raízes',x:78,y:22,region:'arredores',text:'Raízes cobrem uma antiga galeria de manutenção. Deste ponto você vê os caminhos e o moinho inteiro.'},
+ moinho:{name:'Moinho Afogado',x:25,y:75,region:'arredores',text:'Um caranguejo de cobre patrulha a porta: pás no lugar das pinças, um sino rachado dentro do casco. A cada passo, dentes de engrenagem raspam na pedra.'},
+ camara:{name:'Câmara da roda',x:80,y:75,region:'arredores',text:'Um núcleo luminoso força a roda a girar. Presa às runas, uma presença arrasta a voz junto da água: “Ainda não terminou meu turno?”'}
+};
+const EDGES=[...baseEdges,['bosque','margem',20],['margem','mirante',15],['margem','moinho',15],['mirante','moinho',10],['moinho','camara',5],['praca','margem',15]];
+function edgeOpen(s,a,b){
+ if(!s)return true;const key=[a,b].sort().join(':');
+ if(key==='bosque:margem')return !!s.flags.moinho_conhecido;
+ if(key==='margem:moinho')return !!s.flags.travessia_segura;
+ if(key==='mirante:moinho')return !!s.flags.rota_alta;
+ if(key==='camara:moinho')return !!s.flags.guardiao_superado;
+ if(key==='margem:praca')return !!s.flags.rota_rio_aberta;
+ return true;
+}
+function path(from,to,s){
+ if(!Object.hasOwn(PLACES,from)||!Object.hasOwn(PLACES,to))throw Error('Lugar desconhecido.');
+ const dist={[from]:0},routes={[from]:[]},todo=new Set(Object.keys(PLACES));
+ while(todo.size){const here=[...todo].sort((a,b)=>(dist[a]??Infinity)-(dist[b]??Infinity))[0];if(dist[here]===undefined)break;todo.delete(here);if(here===to)return {minutes:dist[here],legs:routes[here]};
+  for(const[a,b,n]of EDGES){const next=a===here?b:b===here?a:null;if(next&&todo.has(next)&&edgeOpen(s,here,next)&&dist[here]+n<(dist[next]??Infinity)){dist[next]=dist[here]+n;routes[next]=[...routes[here],{from:here,to:next,minutes:n}];}}
+ }return null;
+}
+const ACTORS={iria:{name:'Iria',race:'humano',text:'Iria vigia a margem para impedir que alguém se perca nas galerias. Ela quer um caminho seguro, mas não aceita promessas vagas.'},nilo:{name:'Nilo',race:'anao',text:'Nilo conhece a antiga equipe do moinho. Ele quer recuperar o caminho e as ferramentas; não vai arriscar a própria vida para proteger uma relíquia.'}};
+function contextFor(seed){const n=Math.imul(seed^0x45d9f3b,2654435761)>>>0;return {weather:['cheia','nevoa','calmaria'][n%3],actor:n%2?'iria':'nilo'};}
+
+return {PLACES,EDGES,SKILLS,ORIGINS,RACES,TRAITS,GIFTS,path,calendar,npcPlace,ACTORS,contextFor,edgeOpen};})();
+const content=(()=>{
+const {catalog : baseCatalog}=content14;
+const {PLACES,EDGES,ACTORS}=world;
+const clone=x=>JSON.parse(JSON.stringify(x));
+const all=(...c)=>({all:c}),any=(...c)=>({any:c}),not=c=>({not:c}),f=(flag,is=true)=>({flag,is}),at=p=>f(`at_${p}`),stat=(key,value)=>({stat:key,op:'gte',value}),has=(item,min=1)=>({item,min}),knows=fact=>({knows:{who:'player',fact}}),who=id=>({person:id,alive:true,local:true});
+const add=(stat,amount)=>({op:'add',stat,amount}),mark=(id,value=true)=>({op:'flag',id,value}),item=(id,amount)=>({op:'item',id,amount}),learn=(fact,who='player')=>({op:'learn',who,fact});
+const fit=all(stat('need:food',10),stat('need:energy',12));
+const result=(id,text,effects=[],when,weight=1)=>({id,text,effects,weight,...(when?{when}:{})});
+function option(id,label,minutes,text,effects=[],extra={}){return {id,label,intent:label,hint:'Escolha como agir.',blockedReason:'Falta uma condição de preparo ou informação.',cost:{money:0,days:minutes},effects:extra.outcomes?effects:[],outcomes:[result('feito',text,effects)],...extra};}
+function action(id,title,text,options,requires,extra={}){return {id,version:1,kind:'action',family:id,domain:'aventura',title,text,repeat:{max:100000,cooldown:0},options,...(requires?{requires}:{}),...extra};}
+const c=clone(baseCatalog);c.version=2;
+const push=(...d)=>c.decisions.push(...d);
+for(const[a,b,n]of EDGES.filter(([a,b])=>!baseCatalog.decisions.some(d=>d.id===`ir_${a}_${b}`)))for(const[from,to]of[[a,b],[b,a]]){
+ const gate=[from,to].sort().join(':');const open=gate==='bosque:margem'?f('moinho_conhecido'):gate==='margem:moinho'?f('travessia_segura'):gate==='mirante:moinho'?f('rota_alta'):gate==='camara:moinho'?f('guardiao_superado'):gate==='margem:praca'?f('rota_rio_aberta'):null;
+ push(action(`ir_${from}_${to}`,`Ir a ${PLACES[to].name}`,'Seguir um trecho do caminho.',[option('andar','Seguir pelo caminho',n,`Você chegou a ${PLACES[to].name}.`,[{op:'move',who:'player',to}],{travel:true})],open?all(at(from),open):at(from)));
+}
+push(action('rumos','Rumores e pedidos','No quadro da praça, três recados falam do velho moinho. Você pode seguir um interesse, mudar de ideia ou ignorar os recados.',[
+ option('ferramentas','Procurar as ferramentas de Maíra',5,'O estojo perdido traz o selo da oficina. Você anota o caminho do moinho.',[mark('moinho_conhecido'),learn('ferramentas_moinho')],{objective:'ferramentas'}),
+ option('presenca','Investigar a voz na água',5,'Há relatos de uma voz presa à roda do moinho. Você decide investigar por conta própria.',[mark('moinho_conhecido'),learn('voz_moinho')],{objective:'presenca'}),
+ option('travessia','Procurar um caminho pela margem',5,'Uma rota curta ligava a margem à praça. Você anota onde começar a procurar.',[mark('moinho_conhecido'),learn('rota_moinho')],{objective:'travessia'})
+],at('praca')));
+push(action('trilha_moinho','A trilha que acompanha o rio','Uma placa quase coberta aponta para um moinho antigo.',[option('seguir','Examinar a placa e marcar o caminho',10,'Você reconhece uma trilha até a margem. Pode explorá-la quando quiser.',[mark('moinho_conhecido'),learn('rota_moinho')])],all(at('bosque'),not(f('moinho_conhecido')))));
+push(action('preparo','Preparar a mochila','Equipamento abre possibilidades, mas você pode explorar sem comprar tudo.',[
+ ...[['corda','Corda',4],['kit_ferramentas','Kit de ferramentas',8],['lamina_curta','Lâmina curta',9]].map(([id,label,money])=>option(id,`Comprar ${label.toLowerCase()}`,5,`Você guarda ${label.toLowerCase()} na mochila.`,[item(id,1)],{cost:{money,days:5},requires:not(has(id))})),
+ option('racao','Comprar uma provisão',5,'Pão seco e fruta, embrulhados para a viagem.',[item('racao',1)],{cost:{money:2,days:5}}),
+ option('curativo','Comprar um curativo',5,'Você guarda tiras de tecido e uma pomada simples.',[item('curativo',1)],{cost:{money:3,days:5}})
+],all(at('mercado'),f('mercado_aberto'))));
+c.decisions.find(d=>d.id==='rotina').options.push(option('provisao','Comer uma provisão da mochila',15,'Você faz uma pausa e come o que trouxe para a viagem.',[item('racao',-1),add('need:food',50)],{requires:has('racao'),completionRequires:has('racao')}));
+push(action('curativo','Tratar ferimentos','Um curativo recupera saúde e é consumido no tratamento.',[option('tratar','Usar um curativo',20,'Você limpa e protege os ferimentos. A dor diminui.',[item('curativo',-1),add('health',20)],{requires:has('curativo'),completionRequires:has('curativo')})],all(has('curativo'),{stat:'health',op:'lte',value:99})));
+for(const d of c.decisions.filter(d=>d.id.startsWith('treinar_'))){const o=clone(d.options[0]);o.id='bloco';o.label='Dedicar duas horas à prática';o.intent=o.label;o.cost.days=120;o.practice.base*=2;o.practice.sessions=2;for(const r of o.outcomes)for(const e of r.effects)if(e.op==='add'&&e.stat==='need:energy')e.amount*=2;o.detail='Um bloco mais longo. Encontros importantes ainda podem interromper sua prática.';d.options.push(o);}
+for(const[id,n]of Object.entries(ACTORS)){
+ push(action(`conversar_${id}`,`Conversar com ${n.name}`,n.text,[
+  option('riscos','Perguntar pelos caminhos e perigos',15,`${n.name} descreve a passagem alta e o ruído das engrenagens. “Olhe antes de meter a mão”, recomenda.`,[learn(`contato_${id}`),learn(`rotina_${id}`),learn('junta_guardiao'),learn('rota_moinho'),add(`trust:${id}:player`,3)],{social:id,requires:not(knows(`rotina_${id}`))}),
+  option('corda','Pedir uma corda emprestada',10,`${n.name} entrega uma corda velha. Você combina devolvê-la ou ajudar a reabrir o caminho.`,[item('corda',1),mark('corda_emprestada'),learn(`contato_${id}`)],{requires:all(not(f('corda_emprestada')),any(f('traco_sociavel'),stat(`trust:${id}:player`,3),knows('apoio_breno')))}),
+  option('devolver','Devolver a corda emprestada',10,`${n.name} recolhe a corda e lembra que você cumpriu o combinado.`,[item('corda',-1),mark('corda_devolvida'),learn('corda_devolvida',id),add(`trust:${id}:player`,4)],{requires:all(f('corda_emprestada'),not(f('corda_devolvida')),has('corda')),completionRequires:has('corda')}),
+  option('retorno','Contar que o caminho está aberto',10,`${n.name} confere a passagem antes de agradecer. Vocês agora têm uma história em comum.`,[learn('caminho_reaberto',id),add(`trust:${id}:player`,8),mark(`retorno_${id}`)],{requires:all(f('rota_rio_aberta'),not(f(`retorno_${id}`)))})
+ ],all(who(id),f(`contato_ativo_${id}`)),{participants:[{id,alive:true,local:true}]}));
+}
+push(action('preparo_breno','Pedir conselho a Breno','Breno prefere que você volte inteiro. Ele conhece a patrulha da margem e não confunde coragem com pressa.',[
+ option('orientacao','Pedir uma apresentação à patrulha',15,'Breno empresta seu nome como referência e ensina a reconhecer um bote anunciado pelo sino.',[learn('apoio_breno'),learn('junta_guardiao'),add('trust:breno:player',2)])
+],all(who('breno'),f('moinho_conhecido'),not(knows('apoio_breno'))),{participants:[{id:'breno',alive:true,local:true}]}));
+push(action('margem','Encontrar uma travessia','O caminho direto até o moinho está rompido. O mirante oferece uma alternativa demorada, mesmo sem equipamento.',[
+ option('leito','Marcar um caminho pelas pedras',20,'Com o rio baixo, você encontra apoios firmes até a porta do moinho.',[mark('travessia_segura')],{requires:all(fit,not(f('rio_alto'))),completionRequires:at('margem')}),
+ option('corda','Fixar uma corda para a passagem',15,'Você ancora a corda. Ela fica no lugar, oferecendo uma passagem segura de ida e volta.',[item('corda',-1),mark('travessia_segura')],{requires:all(fit,has('corda')),completionRequires:all(at('margem'),has('corda'))}),
+ option('ponte','Reparar a passarela até a praça',45,'Você prende os apoios e firma as tábuas. A margem volta a ter um caminho curto até a vila.',[item('corda',-1),mark('rota_rio_aberta'),mark('ponte_reparada')],{requires:all(fit,has('corda'),stat('skill:oficio',25),not(f('rota_rio_aberta'))),completionRequires:all(at('margem'),has('corda')),practice:{skill:'oficio',base:8}})
+],all(at('margem'),any(not(f('travessia_segura')),not(f('rota_rio_aberta'))))));
+push(action('mirante','Ler o terreno','Uma rota de manutenção passa por cima do canal. É possível segui-la com cuidado.',[
+ option('cuidado','Procurar uma passagem com calma',40,'Você localiza apoios entre as raízes e uma galeria que contorna a porta do moinho.',[mark('rota_alta'),learn('galeria_moinho'),learn('junta_guardiao')],{requires:fit,completionRequires:at('mirante'),practice:{skill:'exploracao',base:7}}),
+ option('rastrear','Ler as marcas da antiga equipe',20,'As marcas levam à galeria alta. Você encontra também uma anotação sobre a alimentação do selo.',[mark('rota_alta'),learn('galeria_moinho'),learn('junta_guardiao'),learn('pacto_alternativo')],{requires:all(fit,any(stat('skill:exploracao',25),f('traco_observador'))),completionRequires:at('mirante'),practice:{skill:'exploracao',base:7}})
+],all(at('mirante'),not(f('rota_alta')))));
+const victory=[mark('guardiao_superado'),mark('guardiao_quebrado'),item('cobre_guardiao',1)];
+const trained=stat('skill:esgrima',25),blade=has('lamina_curta');
+push(action('guardiao','O caranguejo de cobre','O sino estala antes de cada investida. Ele protege a passagem da câmara, sem impedir sua retirada para a margem.',[
+ option('observar','Estudar as articulações a distância',15,'Uma junta frouxa perde pressão entre dois botes. Você aprende a reconhecer a abertura.',[learn('junta_guardiao')],{requires:not(knows('junta_guardiao'))}),
+ option('lutar','Enfrentar o guardião',20,'Você enfrenta as pás de cobre.',[add('need:energy',-8)],{requires:fit,completionRequires:at('moinho'),detail:'Pode causar ferimentos e ser fatal com pouca saúde. Treino e uma lâmina aumentam sua chance; a cheia piora o risco.',practice:{skill:'esgrima',base:7},outcomes:[
+  result('equipado','Você lê o bote, corta a correia e derruba o guardião.',victory,all(trained,blade),8),
+  result('armado','Sua lâmina alcança a correia. O sino finalmente se cala.',victory,all(not(trained),blade),5),
+  result('treinado','Você usa os apoios para derrubar o corpo de cobre no vão.',victory,all(trained,not(blade)),3),
+  result('improviso','Você improvisa uma alavanca e rompe a engrenagem.',victory,all(not(trained),not(blade)),1),
+  result('corrente','A corrente muda seu apoio. Uma pá abre um corte antes de você recuar.',[add('health',-16)],f('rio_alto'),2),
+  result('falha','O sino anuncia o bote, mas você reage tarde. Ferido, recua; o guardião continua na porta.',[add('health',-10)],undefined,4)
+ ]}),
+ option('consertar','Despressurizar a junta defeituosa',25,'Seu kit permite abrir a válvula certa. O guardião se recolhe, ainda inteiro.',[mark('guardiao_superado'),mark('guardiao_pacificado'),add('need:energy',-6)],{requires:all(fit,has('kit_ferramentas'),stat('skill:oficio',25),knows('junta_guardiao')),completionRequires:all(at('moinho'),has('kit_ferramentas')),practice:{skill:'oficio',base:8}}),
+ option('selo','Sintonizar o selo do guardião',25,'Você repete o sinal de manutenção. As pás baixam e deixam você passar.',[mark('guardiao_superado'),mark('guardiao_pacificado'),add('need:energy',-10)],{requires:all(fit,any(stat('skill:arcanismo',30),all(f('dom_eco'),knows('runas_livro')))),completionRequires:at('moinho'),practice:{skill:'arcanismo',base:8}}),
+ option('galeria','Contornar pela galeria alta',30,'Você passa acima do guardião e abre o acesso interno. Ele continua patrulhando a porta externa.',[mark('guardiao_superado'),mark('guardiao_contornado')],{requires:all(fit,knows('galeria_moinho')),completionRequires:at('moinho'),practice:{skill:'exploracao',base:6}}),
+ option('guarda','Sustentar a Guarda firme até ele perder pressão',20,'Sua base não cede. Você redireciona os botes até as pás pararem de se mover.',[mark('guardiao_superado'),mark('guardiao_pacificado'),add('need:energy',-10)],{requires:all(fit,f('dominio_esgrima')),completionRequires:at('moinho'),practice:{skill:'esgrima',base:8}})
+],all(at('moinho'),not(f('guardiao_superado')))));
+push(action('achados','O que a equipe deixou para trás','Entre correias e madeira encharcada, um estojo de ferramentas traz a marca da oficina.',[
+ option('ferramentas','Recuperar o estojo de Maíra',20,'Você recupera o estojo. Maíra ainda não sabe que você o encontrou.',[item('ferramentas_perdidas',1),mark('ferramentas_recuperadas')],{requires:not(f('ferramentas_recuperadas'))}),
+ option('notas','Copiar as anotações da equipe',25,'As anotações descrevem a promessa imposta à presença e uma possível troca de fonte mágica.',[learn('pacto_alternativo'),learn('historia_moinho'),mark('notas_moinho')],{requires:not(f('notas_moinho')),practice:{skill:'arcanismo',base:5}})
+],all(at('moinho'),f('guardiao_superado'),any(not(f('ferramentas_recuperadas')),not(f('notas_moinho'))))));
+const fuel=any(has('tinta_runica'),has('semente_luz'),has('flor_vidro'));
+push(action('destino_moinho','O destino da roda','A presença foi obrigada a manter a roda girando. Você pode resolver o problema de modos diferentes. A escolha altera o que ficará disponível na margem.',[
+ option('reparar','Reparar o mecanismo e manter o vínculo',45,'A roda volta a alimentar o canal. A presença continua ligada ao moinho; o trabalho da antiga equipe poderá ser retomado.',[mark('moinho_resolvido'),mark('fluxo_estavel'),mark('moinho_reparado')],{requires:fit,completionRequires:at('camara'),practice:{skill:'oficio',base:8},detail:'Restaura o moinho e abre serviços de manutenção. A presença permanece vinculada.'}),
+ option('libertar','Abrir a comporta e libertar a presença',30,'A voz se transforma em água livre. O moinho para, mas o canal antigo revela um caminho até a praça e plantas antes submersas.',[mark('moinho_resolvido'),mark('espirito_livre'),mark('rota_rio_aberta')],{requires:fit,completionRequires:at('camara'),detail:'A presença parte. O moinho deixa de trabalhar; a margem oferece outra rota e ingredientes de cura.'}),
+ option('extrair','Retirar o núcleo para si',30,'Você corta a ligação e guarda o núcleo. A roda para de vez. O núcleo ainda carrega energia que você poderá usar ou negociar.',[mark('moinho_resolvido'),mark('nucleo_retirado'),item('nucleo_moinho',1)],{requires:fit,completionRequires:at('camara'),detail:'Você leva uma fonte de energia valiosa. O moinho para; a oficina só saberá sua decisão se você contar.'}),
+ option('renovar','Negociar outro pacto e substituir a fonte',60,'Você oferece uma fonte de luz no lugar do vínculo. A presença aceita manter a água por vontade própria e abre o caminho da margem.',[mark('moinho_resolvido'),mark('fluxo_estavel'),mark('pacto_renovado'),mark('rota_rio_aberta')],{requires:all(fit,knows('pacto_alternativo'),fuel,any(stat('skill:oficio',35),stat('skill:alquimia',35),stat('skill:arcanismo',30))),completionRequires:all(at('camara'),fuel),consumeOneOf:['tinta_runica','semente_luz','flor_vidro'],detail:'Consome tinta rúnica, semente luminosa ou flor de vidro, nessa ordem de preferência. Mantém o moinho e estabelece um vínculo voluntário.'})
+],all(at('camara'),not(f('moinho_resolvido')))));
+push(action('retorno_maira','O retorno à oficina','Maíra examina o que você traz e escuta aquilo que você decide contar.',[
+ option('devolver','Entregar as ferramentas recuperadas',10,'Maíra limpa as peças antes de falar. “Agora posso terminar o serviço que ficou parado.” Ela paga oito moedas e guarda sua ajuda na memória.',[item('ferramentas_perdidas',-1),add('money',8),add('trust:maira:player',10),mark('ferramentas_devolvidas'),learn('ferramentas_devolvidas','maira')],{requires:has('ferramentas_perdidas')}),
+ option('relatar','Contar o que fez na câmara',15,'Maíra escuta os detalhes do mecanismo e pensa no que a decisão significa para a oficina.',[mark('moinho_relato_maira'),learn('decisao_moinho','maira')],{requires:all(f('moinho_resolvido'),not(f('moinho_relato_maira'))),reportTo:'maira',resolution:'first',outcomes:[
+ result('pacto','Maíra escuta o acordo e volta aos seus desenhos. “Talvez a gente possa trabalhar com a água, sem prender ninguém a uma roda.”',[add('trust:maira:player',6)],f('pacto_renovado')),
+ result('reparo','Maíra olha na direção do rio. “A roda voltou. Agora ainda falta decidir o que devemos a quem a move.”',[add('trust:maira:player',4)],f('moinho_reparado')),
+ result('livre','Maíra demora a responder. “Vou ter que adaptar meu trabalho. Mas consigo entender por que você abriu a comporta.”',[add('trust:maira:player',1)],f('espirito_livre')),
+ result('nucleo','Maíra fecha o estojo. “Você levou a fonte de energia. Agora alguém terá que encontrar outro jeito de mover aquela roda.”',[add('trust:maira:player',-3)])
+ ]})
+],all(who('maira'),any(has('ferramentas_perdidas'),all(f('moinho_resolvido'),not(f('moinho_relato_maira'))))),{participants:[{id:'maira',alive:true,local:true}]}));
+push(action('retorno_livreiro','O interesse do livreiro','O livreiro quer conhecer a história da roda. Um relato e um artefato não têm o mesmo valor para ele.',[
+ option('notas','Compartilhar a história e suas anotações',15,'O livreiro compara suas anotações com uma edição antiga. Paga dez moedas pelo trabalho de pesquisa e passa a conhecer sua descoberta.',[add('money',10),mark('notas_entregues'),learn('historia_moinho','mercador'),add('trust:mercador:player',4)],{requires:all(f('notas_moinho'),not(f('notas_entregues')))}),
+ option('nucleo','Vender o núcleo',15,'O livreiro paga trinta moedas e guarda o núcleo em uma caixa opaca. Agora sabe o que você retirou do moinho.',[item('nucleo_moinho',-1),add('money',30),learn('nucleo_retirado','mercador'),mark('nucleo_vendido')],{requires:has('nucleo_moinho')})
+],all(who('mercador'),any(all(f('notas_moinho'),not(f('notas_entregues'))),has('nucleo_moinho'))),{participants:[{id:'mercador',alive:true,local:true}]}));
+push(action('manutencao_moinho','Trabalhar no moinho recuperado','A roda precisa de manutenção. Seu ofício agora tem utilidade longe da vila.',[option('servico','Fazer uma manutenção de duas horas',120,'Você entrega a manutenção do turno e recebe nove moedas.',[add('money',9),add('need:energy',-10)],{requires:all(fit,stat('skill:oficio',25)),completionRequires:at('moinho'),practice:{skill:'oficio',base:4}})],all(at('moinho'),f('fluxo_estavel'))));
+push(action('ervas_rio','As plantas do canal aberto','A água livre deixou brotos de folhas azuladas ao alcance da margem.',[option('coletar','Preparar um emplastro com os brotos',45,'Você identifica as folhas, prepara um emplastro e trata seus ferimentos.',[add('health',18)],{requires:fit,completionRequires:at('margem'),practice:{skill:'alquimia',base:5}})],all(at('margem'),f('espirito_livre')),{repeat:{max:100000,cooldown:180}}));
+push(action('meditar_rio','A presença reconhece você','A água se aquieta quando você chega. Há espaço para descansar sem perder a sintonia.',[option('descansar','Descansar junto do rio',30,'A presença acompanha sua respiração. Você volta a se sentir inteiro.',[add('need:energy',18),add('need:mood',14)],{rest:true,completionRequires:at('margem')})],all(at('margem'),f('pacto_renovado')),{repeat:{max:100000,cooldown:120}}));
+push(action('usar_nucleo','A energia do núcleo','Você pode recorrer ao núcleo, sabendo que sua energia força o corpo.',[option('canalizar','Canalizar a energia',20,'O núcleo aquece sua mão e devolve energia. A pressão deixa uma dor breve nos braços.',[add('need:energy',22),add('health',-2)],{requires:stat('health',3),completionRequires:has('nucleo_moinho'),detail:'Recupera energia, custa saúde. Você conserva o núcleo.'})],has('nucleo_moinho'),{repeat:{max:100000,cooldown:240}}));
+const catalog=c;
+
+return {catalog};})();
+const life=(()=>{
+const {createEngine}=kernel;
+const {copy,check,integer,eligible}=contract;
+const {catalog}=content;
+const {load : loadPrevious}=life14;
+const {catalog : legacyCatalog}=legacy;
+const {PLACES,SKILLS,ORIGINS,RACES,TRAITS,GIFTS,path,calendar,npcPlace,ACTORS,contextFor,EDGES,edgeOpen}=world;
+const record=x=>x&&typeof x==='object'&&!Array.isArray(x);
+const needNames={food:'Saciedade',energy:'Energia',hygiene:'Higiene',mood:'Ânimo'};
+const note=(s,type,text)=>s.history.push({day:s.day,type,text});
+const talents=Object.keys(SKILLS);
+function identity(input={}){
+ const p={name:'Ari',race:'humano',origin:'artesao',trait:'observador',talent:'oficio',gift:'eco',...input};
+ check(typeof p.name==='string'&&p.name.trim().length>0&&p.name.trim().length<=32,'Use um nome entre 1 e 32 caracteres.');
+ check(!/[<>\u0000-\u001f]/.test(p.name),'O nome contém caracteres inválidos.');
+ check(Object.hasOwn(RACES,p.race)&&Object.hasOwn(ORIGINS,p.origin)&&Object.hasOwn(TRAITS,p.trait)&&talents.includes(p.talent)&&Object.hasOwn(GIFTS,p.gift),'Características de personagem inválidas.');
+ return {id:'player',name:p.name.trim(),race:p.race,origin:p.origin,trait:p.trait,talent:p.talent,gift:p.gift};
+}
+function data(p){return {identity:p,needs:{food:80,energy:85,hygiene:75,mood:70},carry:{food:0,energy:0,hygiene:0,mood:0},route:[],appointment:null,project:0,milestones:{},socialDay:-1,revision:2,chapter:{...contextFor(0),objective:null}};}
+function validate(s){
+ const l=s.life;check(l?.revision===2,'Dados de vida incompatíveis.');identity(l.identity);
+ check(l.chapter&&['cheia','nevoa','calmaria'].includes(l.chapter.weather)&&Object.hasOwn(ACTORS,l.chapter.actor)&&[null,'ferramentas','presenca','travessia'].includes(l.chapter.objective),'Capítulo inválido.');
+ const endings=['moinho_reparado','espirito_livre','nucleo_retirado','pacto_renovado'].filter(k=>s.flags[k]);check(endings.length<=1&&!!s.flags.moinho_resolvido===(endings.length===1),'Desfecho de moinho inconsistente.');
+ for(const k of Object.keys(needNames))check(integer(l.needs?.[k])&&l.needs[k]<=100&&integer(l.carry?.[k])&&l.carry[k]<60,'Necessidades inválidas.');
+ check(record(l.milestones)&&integer(l.project)&&l.project<=180&&Number.isSafeInteger(l.socialDay)&&Array.isArray(l.route)&&l.route.length<=8,'Progresso de vida inválido.');
+ for(const[id,n]of Object.entries(s.npcs))if(n.identity){identity(n.identity);check(n.identity.id===id&&n.identity.name===n.name,'Identidade de morador inválida.');}
+ check(Object.hasOwn(PLACES,s.location),'Lugar inválido.');
+ let from=s.location;
+ // O primeiro trecho pode estar em andamento; cada destino continua ligado à origem.
+ for(const leg of l.route){check(leg.from===from&&Object.hasOwn(PLACES,leg.to)&&path(from,leg.to).minutes===leg.minutes&&path(from,leg.to).legs.length===1,'Rota inválida.');from=leg.to;}
+ if(l.appointment){const a=l.appointment;check(a.npc==='maira'&&a.place==='oficina'&&integer(a.at)&&a.until===a.at+30&&['scheduled','offered','done','cancelled','missed'].includes(a.status),'Compromisso inválido.');}
+}
+function synchronize(s){
+ const h=(s.day%1440)/60;
+ for(const p of Object.keys(PLACES))s.flags[`at_${p}`]=s.location===p;
+ s.flags.luz_dia=h>=6&&h<18;
+ s.flags.oficina_aberta=h>=8&&h<17;s.flags.mercado_aberto=h>=8&&h<18;
+ for(const id of Object.keys(ACTORS)){s.flags[`contato_ativo_${id}`]=s.life.chapter.actor===id;if(s.npcs[id]?.alive)s.npcs[id].location=s.flags[`contato_ativo_${id}`]&&h>=8&&h<19?'margem':'moradia';}
+ for(const[id,n]of Object.entries(s.npcs))if(n.alive&&['maira','mercador','breno'].includes(id))n.location=npcPlace(id,s.day);
+ const day=Math.floor(s.day/1440);
+ if(h>=12&&h<13&&s.life.socialDay!==day){
+  s.life.socialDay=day;
+  const a=s.npcs.maira,b=s.npcs.mercador;
+  if(a?.alive&&b?.alive&&a.location===b.location){s.relations['maira:mercador']=Math.min(100,(s.relations['maira:mercador']||0)+1);s.relations['mercador:maira']=Math.min(100,(s.relations['mercador:maira']||0)+1);if(s.location===a.location)note(s,'witness','Maíra e o livreiro conversam durante a pausa. A vila tem relações que não dependem de você.');}
+ }
+ for(const[skill,value]of Object.entries(s.skills))if(value>=60&&!s.life.milestones[skill]){s.life.milestones[skill]=true;s.flags[`dominio_${skill}`]=true;note(s,'milestone',`${SKILLS[skill]||skill}: você atingiu um novo domínio. Novas técnicas ficam disponíveis.`);}
+ const a=s.life.appointment;
+ if(a&&['scheduled','offered'].includes(a.status)){
+  if(s.day>a.until&&a.status==='scheduled'){a.status='missed';s.flags.aula_marcada=false;s.relations['maira:player']=Math.max(-100,(s.relations['maira:player']||0)-3);note(s,'appointment','O horário da aula passou. Maíra voltou ao trabalho; você poderá combinar outra ocasião.');}
+  else if(a.status==='scheduled'&&s.day>=a.at&&s.location===a.place&&s.npcs[a.npc]?.alive&&s.npcs[a.npc].location===a.place){a.status='offered';s.queue.push({id:s.nextId++,type:'decision',decision:'aula_agendada',day:s.day});}
+ }
+}
+function progress(s,dt){
+ const o=s.work.length?catalog.decisions.find(d=>d.id===s.work.at(-1).decision)?.options.find(o=>o.id===s.work.at(-1).option):null;
+ const sleeping=!!o?.sleep,resting=!!o?.rest;
+ const rates={food:sleeping?2:4,energy:sleeping||resting?0:s.life.identity.race==='anao'?1:2,hygiene:1,mood:sleeping?0:1};
+ for(const[k,rate]of Object.entries(rates)){const amount=s.life.carry[k]+dt*rate,loss=Math.floor(amount/60);s.life.carry[k]=amount%60;s.life.needs[k]=Math.max(0,s.life.needs[k]-loss);}
+}
+function afterChoice(s,{decision:d,option:o,outcome:r}){
+ if(!s.alive)return;
+ if(o.practice){const {skill,base}=o.practice;let gain=base+(s.life.identity.talent===skill?2*(o.practice.sessions||1):0)+(s.life.identity.trait==='persistente'&&r.id==='falha'?3:0);if(s.life.needs.mood<20)gain=Math.max(1,Math.floor(gain/2));s.skills[skill]=(s.skills[skill]||0)+gain;note(s,'practice',`${SKILLS[skill]}: +${gain} de prática.`);}
+ if(o.social){if(s.life.identity.trait==='sociavel')s.relations[`${o.social}:player`]=Math.min(100,(s.relations[`${o.social}:player`]||0)+3);if(s.life.needs.hygiene<20){s.relations[`${o.social}:player`]=Math.max(-100,(s.relations[`${o.social}:player`]||0)-3);note(s,'social','O cheiro da estrada dificulta a aproximação. Uma pausa para se lavar pode ajudar.');}}
+ if(o.project){s.life.project=Math.min(180,s.life.project+60);if(s.life.project===180){s.items.lanterna=(s.items.lanterna||0)+1;s.flags.lanterna_pronta=true;note(s,'project','A lanterna está pronta. Você pode guardá-la, vendê-la ou levá-la ao bosque.');}else note(s,'project',`Lanterna: ${s.life.project}/180 minutos de trabalho concluídos.`);}
+ if(o.travel){const leg=s.life.route[0];if(leg?.to===s.location)s.life.route.shift();}
+ if(o.appointment){const at=(Math.floor(s.day/1440)+1)*1440+540;s.life.appointment={npc:'maira',place:'oficina',at,until:at+30,status:'scheduled'};s.flags.aula_marcada=true;}
+ if(o.lesson&&s.life.appointment){s.life.appointment.status=o.id==='cancelar'?'cancelled':'done';s.flags.aula_marcada=false;}
+ if(d.id==='despertar')s.life.identity.gift='eco';
+ if(o.purchase)s.flags.reagente_adquirido=true;
+ if(o.objective)s.life.chapter.objective=o.objective;
+ if(o.consumeOneOf){const fuel=o.consumeOneOf.find(k=>s.items[k]>0);check(fuel,'A fonte mágica já não está disponível.');s.items[fuel]--;}
+ if(o.reportTo){const ending=['moinho_reparado','espirito_livre','nucleo_retirado','pacto_renovado'].find(k=>s.flags[k]);(s.knowledge[o.reportTo]??={})[ending]=true;}
+
+}
+const hooks={validate,settle:synchronize,progress,afterChoice,nextBoundary:s=>{
+ const a=s.life.appointment;return a?.status==='scheduled'?(s.day<a.at?a.at:s.day<=a.until?a.until+1:Infinity):Infinity;
+},onOffer:(s,e,random)=>{if(e.decision==='reagente'){s.world.reagente_real=random()<0.6;s.flags.qualidade_conhecida=false;}}};
+function chapterNPCs(seed){return Object.fromEntries(Object.entries(ACTORS).map(([id,n])=>[id,{name:n.name,alive:true,location:'moradia',identity:{id,name:n.name,race:n.race,origin:'viajante',trait:'observador',talent:'exploracao',gift:'latente'}}]));}
+function placeText(s){
+ const base=PLACES[s.location].text;
+ if(s.location==='praca')return base+' '+({cheia:'O rio está alto; espuma se acumula nos pilares.',nevoa:'A névoa cobre a margem e engole o som dos sinos.',calmaria:'Com o rio baixo, antigas marcas aparecem junto da margem.'})[s.life.chapter.weather];
+ if(s.location==='moinho'&&s.flags.guardiao_superado)return s.flags.guardiao_quebrado?'O sino do guardião repousa entre peças de cobre. O caminho para a câmara está livre.':'A passagem interna está aberta. Você reconhece o caminho que encontrou para passar pelo guardião.';
+ if(['camara','margem'].includes(s.location)&&s.flags.moinho_resolvido)return ({moinho_reparado:'A roda gira com regularidade. O canal volta a alimentar a vila; a voz ainda acompanha o trabalho.',espirito_livre:'A roda parou. Água livre corre pelo canal aberto, revelando uma trilha e plantas de folhas azuis.',nucleo_retirado:'O moinho está quieto. Sem seu núcleo, a roda não vai voltar a trabalhar por conta própria.',pacto_renovado:'A água corre com regularidade. Uma voz canta entre os apoios, agora por escolha própria.'})[['moinho_reparado','espirito_livre','nucleo_retirado','pacto_renovado'].find(k=>s.flags[k])];
+ return base;
+}
+const goalNames={ferramentas:'Recuperar as ferramentas',presenca:'Investigar a voz na água',travessia:'Reabrir a travessia'};
+function journeyView(s){
+ const done={ferramentas:!!s.flags.ferramentas_devolvidas,presenca:!!s.flags.moinho_resolvido,travessia:!!s.flags.rota_rio_aberta};
+ const hints={ferramentas:s.items.ferramentas_perdidas?'Entregar o estojo a Maíra na oficina.':s.flags.guardiao_superado?'Examinar o que a equipe deixou no moinho.':'Encontrar uma passagem até o interior do moinho.',presenca:s.flags.moinho_resolvido?'Você decidiu o destino da roda.':s.flags.guardiao_superado?'Entrar na câmara e decidir como lidar com a presença.':'Observar a margem e buscar um modo de passar pelo guardião.',travessia:done.travessia?'O caminho curto até a praça está disponível.':'Uma corda e ofício ajudam na passarela; a câmara também pode revelar outro caminho.'};
+ return {selected:s.life.chapter.objective,known:!!s.flags.moinho_conhecido,weather:s.life.chapter.weather,goals:Object.entries(goalNames).map(([id,title])=>({id,title,done:done[id],hint:hints[id]})),ending:['moinho_reparado','espirito_livre','nucleo_retirado','pacto_renovado'].find(k=>s.flags[k])||null};
+}
+function publicMemories(s,id){
+ const known=s.knowledge[id]||{},out=[];
+ if(known.corda_devolvida)out.push('Lembra que você devolveu a corda emprestada.');
+ if(known.ferramentas_devolvidas)out.push('Lembra que você devolveu as ferramentas.');
+ if(known.historia_moinho)out.push('Conhece as anotações que você compartilhou sobre o moinho.');
+ if(known.decisao_moinho)out.push('Você contou a esta pessoa o que decidiu na câmara.');
+ if(known.nucleo_retirado)out.push('Sabe que você retirou o núcleo.');
+ if(known.caminho_reaberto)out.push('Conferiu o caminho que você ajudou a reabrir.');
+ return out;
+}
+const engine=createEngine(catalog,hooks);
+const legacyEngine=createEngine(legacyCatalog);
+function transact(s,op){const draft=copy(s);op(draft);engine.save(draft);Object.assign(s,draft);return s;}
+function routeRun(s){while(s.life.route.length&&!s.pending&&s.target===null){const l=s.life.route[0];engine.act(s,`ir_${l.from}_${l.to}`,'andar');}return s;}
+function createLife(seed=1,options={}){
+ const p=identity(options),age={humano:18,elfo:40,anao:30}[p.race];
+ const s=engine.create(seed,{day:480,birthDay:480-age*365*1440,life:{...data(p),chapter:{...contextFor(seed),objective:null}},location:'casa',money:18,items:{grimorio:1},skills:{[ORIGINS[p.origin].skill]:ORIGINS[p.origin].value},world:{tempo_margem:contextFor(seed).weather},flags:{[`raca_${p.race}`]:true,[`traco_${p.trait}`]:true,[`dom_${p.gift}`]:true,rio_alto:contextFor(seed).weather==='cheia'},npcs:{...chapterNPCs(seed),
+ maira:{name:'Maíra',alive:true,location:'oficina',identity:{id:'maira',name:'Maíra',race:'anao',origin:'artesao',trait:'persistente',talent:'oficio',gift:'latente'}},
+ mercador:{name:'Livreiro',alive:true,location:'mercado',identity:{id:'mercador',name:'Livreiro',race:'humano',origin:'viajante',trait:'observador',talent:'alquimia',gift:'latente'}},
+ breno:{name:'Breno',alive:true,location:'praca',identity:{id:'breno',name:'Breno',race:'elfo',origin:'viajante',trait:'sociavel',talent:'esgrima',gift:'pulso'}}
+ }});
+ const gear={artesao:{kit_ferramentas:1},ervas:{racao:2,ervas:2},viajante:{corda:1,racao:1}}[p.origin];Object.assign(s.items,gear);
+ synchronize(s);note(s,'arrival',`${p.name}, ${ORIGINS[p.origin].name.toLowerCase()}, começa uma nova vida em Ponteclara. O livro na mochila é apenas uma das possibilidades.`);return engine.load(engine.save(s));
+}
+const act=(s,id,option)=>transact(s,t=>engine.act(t,id,option));
+const choose=(s,option)=>transact(s,t=>engine.choose(t,{instance:t.pending.id,option}));
+const travel=(s,to)=>transact(s,t=>{check(!t.pending&&t.target===null,'Conclua a situação atual antes de viajar.');const route=path(t.location,to,t);check(route,'O caminho ainda não está disponível.');t.life.route=route.legs;routeRun(t);});
+const resume=s=>transact(s,t=>{if(t.target!==null)engine.resume(t);if(!t.pending&&t.target===null)routeRun(t);});
+const stopRoute=s=>transact(s,t=>{check(!t.pending,'Resolva a situação atual.');if(t.work.length)t.life.route=t.life.route.slice(0,1);else{t.life.route=[];if(t.target!==null)engine.stop(t);}note(t,'travel','Você decidiu não seguir para os próximos trechos do caminho.');});
+const abandon=s=>transact(s,t=>{t.life.route=[];engine.abandon(t);});
+const wait=(s,minutes)=>transact(s,t=>engine.advance(t,minutes));
+const trackGoal=(s,id)=>transact(s,t=>{check(t.flags.moinho_conhecido&&['ferramentas','presenca','travessia'].includes(id),'Objetivo ainda desconhecido.');t.life.chapter.objective=id;});
+const save=engine.save;
+function load(raw){
+ try{return engine.load(raw);}catch(error){
+  const parsed=JSON.parse(raw);if(parsed.catalog?.version!==1||parsed.catalog?.id!=='ponteclara')throw error;
+  const t=copy(loadPrevious(raw)),stamp=createLife(t.seed).catalog;
+  t.catalog=stamp;t.life.revision=2;t.life.chapter={...contextFor(t.seed),objective:null};
+  t.npcs={...chapterNPCs(t.seed),...t.npcs};t.world.tempo_margem=t.life.chapter.weather;t.flags.rio_alto=t.life.chapter.weather==='cheia';
+  for(const id of Object.keys(ACTORS))t.flags[`contato_ativo_${id}`]=t.life.chapter.actor===id;
+  note(t,'migration','Novos recados sobre o moinho apareceram na praça. Seu personagem, memórias e compromissos continuam preservados.');
+  return engine.load(engine.save(t));
+ }
+}
+
+function migrateLegacy(raw){
+ const old=legacyEngine.load(raw);check(!old.pending&&!old.work.length&&!old.activities.length&&old.target===null&&!old.queue.length,'Conclua os compromissos na versão anterior antes de transferir este personagem.');
+ const fresh=createLife(old.seed,{name:'Viajante',gift:'latente'}),t=copy(old);
+ t.catalog=fresh.catalog;t.clock=fresh.clock;t.life=fresh.life;t.flags={...fresh.flags,...old.flags};t.world={...fresh.world,...old.world};t.day=old.day*1440+480;t.birthDay=old.birthDay*1440+480;t.nextPulse=(Math.floor(t.day/60)+1)*60;t.location='praca';
+ t.history=old.history.map(h=>({...h,day:h.day*1440+480}));t.seen={};t.families={};t.npcs={...fresh.npcs,...t.npcs};
+ for(const n of Object.values(t.npcs))if(['aldeia','vila'].includes(n.location))n.location=n.name.includes('irmã')?'casa':'praca';
+ synchronize(t);note(t,'migration','Você chegou a Ponteclara. Suas posses, habilidades, memórias e consequências anteriores foram preservadas; a rotina passa a ser vivida em minutos.');
+ return load(save(t));
+}
+function reason(s,c){
+ if(!c||eligible(s,c))return null;
+ if(c.all)return c.all.map(x=>reason(s,x)).filter(Boolean).join(' ');
+ if(c.any)return 'Alternativas: '+c.any.map(x=>reason(s,x)).filter(Boolean).join(' ou ');
+ if(c.person)return `Encontre ${s.npcs[c.person]?.name||c.person} neste lugar.`;
+ if(c.stat){const [type,key]=c.stat.split(':');return `Precisa de ${type==='skill'?SKILLS[key]||key:needNames[key]||c.stat} ${c.value} ou mais.`;}
+ if(c.item)return `Precisa de ${c.min} × ${{ervas:'ervas',lanterna:'lanterna',grimorio:'livro',corda:'corda',kit_ferramentas:'kit de ferramentas',lamina_curta:'lâmina curta',racao:'provisão',tinta_runica:'tinta rúnica',semente_luz:'semente luminosa',flor_vidro:'flor de vidro',ferramentas_perdidas:'estojo de Maíra'}[c.item]||c.item}.`;
+ if(c.knows)return 'Descubra essa informação conversando ou investigando.';
+ if(c.flag){if(c.flag.startsWith('at_'))return `Vá a ${PLACES[c.flag.slice(3)]?.name||'outro lugar'}.`;if(c.flag.startsWith('dominio_'))return `Domine ${SKILLS[c.flag.slice(8)]} (60 pontos).`;return ({oficina_aberta:'A oficina atende entre 08:00 e 17:00.',mercado_aberto:'O mercado abre das 08:00 às 18:00.',travessia_segura:'Fixe uma corda ou encontre pedras firmes para atravessar.',rota_alta:'Examine a passagem no mirante.',guardiao_superado:'Encontre uma forma de passar pelo guardião.',dom_eco:'Requer o dom Eco espiritual.',luz_dia:'Espere a luz do dia.',traco_observador:'Requer o traço Observador.',raca_elfo:'Um elfo enxerga na escuridão do bosque.'})[c.flag]||'Requer outra condição do personagem.';}
+ if(c.not)return 'Você já concluiu esta possibilidade ou tem um compromisso em aberto.';
+ return 'Falta uma condição para esta ação.';
+}
+function view(s){
+ const v=engine.view(s),l=s.life,c=calendar(s.day),p=l.identity;
+ const describe=(d,o)=>{const definition=catalog.decisions.find(x=>x.id===d)?.options.find(x=>x.id===o.id);return {...o,detail:definition?.detail||null,minutes:o.cost.days,reason:definition&&!eligible(s,definition.requires)?reason(s,definition.requires):o.reason};};
+ const actions=v.actions.filter(d=>!d.id.startsWith('ir_')).map(d=>({...d,options:d.options.map(o=>describe(d.id,o))}));
+ if(v.pending&&!v.pending.legacy)v.pending.options=v.pending.options.map(o=>describe(s.pending.decision,o));
+ const people=Object.entries(s.npcs).filter(([,n])=>n.alive&&n.location===s.location).map(([id,n])=>({id,name:n.name,friend:!!s.flags[`amizade_${id}`]}));
+ const contacts=Object.entries(s.npcs).filter(([id])=>s.knowledge.player?.[`contato_${id}`]||Object.hasOwn(s.relations,`player:${id}`)||Object.hasOwn(s.relations,`${id}:player`)).map(([id,n])=>({id,name:n.name,trust:s.relations[`player:${id}`]||0,reciprocal:s.relations[`${id}:player`]||0,friend:!!s.flags[`amizade_${id}`],routine:s.knowledge.player?.[`rotina_${id}`]?{maira:'Oficina 08–12 e 13–17; mercado ao meio-dia.',mercador:'Mercado 08–18; depois na taverna.',breno:'Pátio 09–12; taverna 18–22.',iria:'Margem do rio 08–19.',nilo:'Margem do rio 08–19.'}[id]:null}));
+ const exits=EDGES.flatMap(([a,b,minutes])=>{const to=a===s.location?b:b===s.location?a:null;return to&&edgeOpen(s,s.location,to)?[{id:to,name:PLACES[to].name,minutes}]:[];});
+ const journey=journeyView(s);
+ for(const contact of contacts)contact.memories=publicMemories(s,contact.id);
+ return {...v,actions,exits,journey,calendar:c,identity:copy(p),place:{id:s.location,...PLACES[s.location],text:placeText(s)},people,contacts,route:copy(l.route),appointment:copy(l.appointment),project:l.project,
+  needs:Object.entries(l.needs).map(([id,value])=>({id,label:needNames[id],value})),
+  traits:[RACES[p.race],TRAITS[p.trait],`Talento: ${SKILLS[p.talent]}`,GIFTS[p.gift]],
+  skills:Object.entries(SKILLS).map(([id,label])=>({id,label,value:s.skills[id]||0,mastered:!!l.milestones[id]})),
+  diary:v.diary.filter(h=>h.type!=='intention').map(h=>({...h,calendar:calendar(h.day)}))};
+}
+
+return {engine,legacyEngine,createLife,act,choose,travel,resume,stopRoute,abandon,wait,save,load,migrateLegacy,view,trackGoal};})();
 const ui=(()=>{
-const {createLife,act,choose,travel,resume,stopRoute,abandon,save,load,migrateLegacy,view}=life;
+const {createLife,act,choose,travel,resume,stopRoute,abandon,save,load,migrateLegacy,view,trackGoal}=life;
 const {PLACES,EDGES,SKILLS,path,calendar}=world;
-const KEY='fantasy-life-preview-1.4-hud2',OLD='fantasy-life-preview-legado-1.3';
+const KEY='fantasy-life-preview-1.5-moinho',OLD='fantasy-life-preview-legado-1.3';
 const $=id=>document.getElementById(id),clear=e=>e.replaceChildren(),text=(e,t)=>e.textContent=t;
 function el(tag,content,cls){const e=document.createElement(tag);if(content!==undefined)e.textContent=content;if(cls)e.className=cls;return e;}
 function button(label,fn,cls='link-button'){const b=el('button',label,cls);b.type='button';b.addEventListener('click',fn);return b;}
-let state=null,composer=null,destination=null,oldRaw=null,unreadRaw=null,passage=null,characterTab='summary',selectedNeed='food';
+let state=null,composer=null,destination=null,oldRaw=null,unreadRaw=null,passage=null,characterTab='summary',selectedNeed='food',journalTab='memories',mapRegion='vila';
 const dialogs=['needs','status','map','character','people','calendar','diary','files'];
 const dialog=id=>$(id==='files'?'files':`${id}-panel`);
 function closePanels(){for(const id of dialogs)if(dialog(id).open)dialog(id).close();}
-function showPanel(id){closePanels();if(state&&id==='character')renderCharacter(view(state));if(state&&id==='needs')renderNeed(view(state));dialog(id).showModal();}
+function showPanel(id){closePanels();if(state&&id==='map')renderMap(view(state));if(state&&id==='diary')renderDiary(view(state));if(state&&id==='character')renderCharacter(view(state));if(state&&id==='needs')renderNeed(view(state));dialog(id).showModal();}
 function message(t=''){text($('message'),t);}
 function store(){try{if(unreadRaw){localStorage.setItem(`${KEY}-recuperacao`,unreadRaw);unreadRaw=null;}localStorage.setItem(KEY,save(state));}catch{message('O navegador não conseguiu salvar. Exporte o personagem para guardar seu progresso.');}}
 function focusScene(){window.scrollTo({top:0,behavior:'instant'});$(composer?'composer-title':'story-title').focus({preventScroll:true});}
@@ -938,7 +1240,7 @@ function cost(o){return [o.cost.days?duration(o.cost.days):'sem tempo',o.cost.mo
 function options(container,items,onSelect){
  clear(container);const unavailable=[];
  for(const o of items){const b=button('',()=>onSelect(o.id),'option');b.append(el('strong',o.label),el('small',cost(o)));
-  if(o.enabled)container.append(b);else{b.append(el('small',o.reason));b.disabled=true;unavailable.push(b);}}
+  if(o.detail)b.append(el('small',o.detail,'choice-detail'));if(o.enabled)container.append(b);else{b.append(el('small',o.reason));b.disabled=true;unavailable.push(b);}}
  if(unavailable.length){const details=el('details');details.append(el('summary',`Outras possibilidades (${unavailable.length})`),...unavailable);container.append(details);}
 }
 function openAction(id){
@@ -954,6 +1256,7 @@ function renderHud(container,prefix,v){
  const bars=el('div',undefined,'hud-needs');
  for(const n of v.needs){const row=button('',()=>openNeed(n.id),`hud-need${n.value<20?' low':''}`),label=el('span',undefined,'need-label');row.setAttribute('aria-label',`${n.label}: ${n.value} de 100. Ver cuidados.`);label.append(el('span',n.label),el('span',String(n.value)));const bar=el('progress');bar.max=100;bar.value=n.value;bar.setAttribute('aria-hidden','true');row.append(label,bar);bars.append(row);}container.append(bars);
  const low=v.needs.filter(n=>n.value<20);if(low.length)container.append(el('p',low.map(n=>`${n.label} baixa`).join(' · '),'hud-alert'));
+ if(v.journey.selected){const goal=v.journey.goals.find(g=>g.id===v.journey.selected);container.append(button(`${goal.done?'Concluído:':'Objetivo:'} ${goal.title}`,()=>{journalTab='goals';showPanel('diary');},'hud-goal'));}
  const a=v.appointment;if(a&&['scheduled','offered'].includes(a.status)){const c=calendar(a.at);container.append(button(`Aula com Maíra · ${c.weekday} 09:00`,()=>showPanel('calendar')));}
  const controls=el('nav',undefined,'hud-nav');controls.setAttribute('aria-label','Menu do personagem');
  for(const [key,label,fn]of[
@@ -961,13 +1264,13 @@ function renderHud(container,prefix,v){
   ['skills','Habilidades',()=>{characterTab='skills';showPanel('character');}],
   ['people','Pessoas',()=>showPanel('people')],
   ['inventory','Mochila',()=>{characterTab='inventory';showPanel('character');}],
-  ['map','Mapa',()=>showPanel('map')],['calendar','Agenda',()=>showPanel('calendar')],
-  ['diary','Diário',()=>showPanel('diary')],['files','Arquivos',()=>showPanel('files')]
+  ['map','Mapa',()=>{mapRegion=PLACES[state.location].region||'vila';showPanel('map');}],['calendar','Agenda',()=>showPanel('calendar')],
+  ['diary','Diário',()=>{journalTab='memories';showPanel('diary');}],['files','Arquivos',()=>showPanel('files')]
  ])controls.append(nav(label,fn,`${prefix}-nav-${key}`));
- container.append(controls,el('p','Ponteclara · 0.5.2','hud-footer'));
+ container.append(controls,el('p','Ponteclara · 0.6.0','hud-footer'));
 }
 const compactNames={food:'Comida',energy:'Energia',hygiene:'Higiene',mood:'Ânimo'};
-const careOptions={food:['comer','ajudar'],energy:['descansar','dormir'],hygiene:['lavar'],mood:['lazer','descansar']};
+const careOptions={food:['comer','ajudar','provisao'],energy:['descansar','dormir'],hygiene:['lavar'],mood:['lazer','descansar']};
 function openNeed(id){selectedNeed=id;showPanel('needs');}
 function renderCompactNeeds(v){
  const box=$('quick-needs');clear(box);box.hidden=!v;if(!v)return;
@@ -1004,7 +1307,7 @@ function renderScene(v){
  for(const p of v.people)$('nearby-people').append(button(p.name,()=>{const a=v.actions.find(a=>a.id===`conversar_${p.id}`);if(a)openAction(a.id);else showPanel('people');}));
  clear($('local-actions'));for(const a of v.actions.filter(a=>!a.id.startsWith('conversar_')))$('local-actions').append(button(a.title,()=>openAction(a.id),'link-button action-link'));
  if(room&&!v.actions.length)$('local-actions').append(el('p','Você pode seguir para outro lugar.','empty'));
- clear($('exit-actions'));for(const[a,b,n]of EDGES){const to=a===v.location?b:b===v.location?a:null;if(!to)continue;const link=button('',()=>run(()=>travel(state,to)),'link-button action-link');link.append(el('span',PLACES[to].name),el('small',duration(n)));$('exit-actions').append(link);}
+ clear($('exit-actions'));for(const exit of v.exits){const to=exit.id,n=exit.minutes;const link=button('',()=>run(()=>travel(state,to)),'link-button action-link');link.append(el('span',PLACES[to].name),el('small',duration(n)));$('exit-actions').append(link);}
  clear($('passage-controls'));clear($('route-status'));
  if(!pending){
   if(v.canResume||v.route.length){$('passage-controls').append(button(v.canResume?'Retomar ação':'Continuar caminho',()=>run(()=>resume(state))));}
@@ -1016,18 +1319,21 @@ function renderScene(v){
  if(!v.alive){$('room-actions').hidden=true;$('room-exits').hidden=true;text($('story-title'),'O fim da jornada');text($('story-copy'),'Sua jornada chegou ao fim. As lembranças continuam guardadas no diário.');}
 }
 function renderMap(v){
- clear($('map-graphic'));const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 100 100');svg.setAttribute('preserveAspectRatio','none');svg.setAttribute('aria-hidden','true');
- for(const[a,b]of EDGES){const line=document.createElementNS('http://www.w3.org/2000/svg','line');for(const[k,val]of Object.entries({x1:PLACES[a].x,y1:PLACES[a].y,x2:PLACES[b].x,y2:PLACES[b].y,stroke:'#44566b','stroke-width':.7}))line.setAttribute(k,String(val));svg.append(line);}$('map-graphic').append(svg);
- for(const[id,p]of Object.entries(PLACES)){const b=button(p.name,()=>{destination=id;renderMap(view(state));},id===v.location?'here':'');b.style.left=`${p.x}%`;b.style.top=`${p.y}%`;if(id===v.location)b.setAttribute('aria-label',`${p.name}, você está aqui`);$('map-graphic').append(b);}
+ clear($('map-graphic'));const members=Object.entries(PLACES).filter(([,p])=>(p.region||'vila')===mapRegion),ids=new Set(members.map(([id])=>id));
+ for(const id of ['vila','arredores'])$(`map-${id}`).setAttribute('aria-pressed',String(mapRegion===id));
+ const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 100 100');svg.setAttribute('preserveAspectRatio','none');svg.setAttribute('aria-hidden','true');
+ for(const[a,b]of EDGES.filter(([a,b])=>ids.has(a)&&ids.has(b))){const line=document.createElementNS('http://www.w3.org/2000/svg','line');for(const[k,val]of Object.entries({x1:PLACES[a].x,y1:PLACES[a].y,x2:PLACES[b].x,y2:PLACES[b].y,stroke:'#44566b','stroke-width':.7}))line.setAttribute(k,String(val));svg.append(line);}$('map-graphic').append(svg);
+ for(const[id,p]of members){const b=button(p.name,()=>{destination=id;renderMap(view(state));},id===v.location?'here':'');b.style.left=`${p.x}%`;b.style.top=`${p.y}%`;if(id===v.location)b.setAttribute('aria-label',`${p.name}, você está aqui`);$('map-graphic').append(b);}
  const box=$('map-destination');clear(box);box.hidden=!destination;
- if(destination){const p=PLACES[destination],route=path(v.location,destination);box.append(el('h3',p.name),el('p',p.text,'muted'));
-  if(destination===v.location)box.append(el('p','Você está aqui.'));else{box.append(el('p',`${duration(route.minutes)} · ${route.legs.length} trecho(s)`));const b=button('Ir até lá',()=>run(()=>travel(state,destination)));b.disabled=!!v.pending||v.canResume||v.route.length>0;box.append(b);if(b.disabled)box.append(el('p','Resolva ou encerre a ação atual para escolher outro caminho.','muted'));}}
+ if(destination){const p=PLACES[destination],route=path(v.location,destination,state);box.append(el('h3',p.name));
+  if(destination===v.location)box.append(el('p','Você está aqui.'));else if(!route)box.append(el('p',v.journey.known?'Ainda falta descobrir ou abrir um caminho para este lugar.':'Procure os recados da praça ou a trilha do bosque para conhecer os arredores.','muted'));
+  else{box.append(el('p',`${duration(route.minutes)} · ${route.legs.length} trecho(s)`));const b=button('Ir até lá',()=>run(()=>travel(state,destination)));b.disabled=!!v.pending||v.canResume||v.route.length>0;box.append(b);if(b.disabled)box.append(el('p','Resolva ou encerre a ação atual para escolher outro caminho.','muted'));}}
 }
 function renderCalendar(v){
  clear($('calendar'));$('calendar').append(el('p',`${v.calendar.weekday} · ${v.calendar.date} · ${v.calendar.time}`));
  const a=v.appointment;if(a){const c=calendar(a.at),status={scheduled:'Combinada',offered:'Sua aula está disponível',done:'Concluída',cancelled:'Cancelada com aviso',missed:'Horário perdido'}[a.status];$('calendar').append(el('p',`${status}: aula com Maíra, ${c.weekday} ${c.date}, 09:00–09:30, na oficina.`));}else $('calendar').append(el('p','Sem compromisso marcado. Converse com as pessoas para conhecer seus hábitos e combinar encontros.','muted'));
 }
-const itemNames={grimorio:'Livro anotado',lanterna:'Lanterna',reagente:'Reagente prateado',tinta_runica:'Tinta rúnica',tinta:'Tinta comum',semente_luz:'Semente luminosa',fivela:'Fivela',ervas:'Ervas',flor_vidro:'Flor de vidro',encomenda:'Encomenda de Maíra'};
+const itemNames={grimorio:'Livro anotado',lanterna:'Lanterna',reagente:'Reagente prateado',tinta_runica:'Tinta rúnica',tinta:'Tinta comum',semente_luz:'Semente luminosa',fivela:'Fivela',ervas:'Ervas',flor_vidro:'Flor de vidro',encomenda:'Encomenda de Maíra',corda:'Corda',kit_ferramentas:'Kit de ferramentas',lamina_curta:'Lâmina curta',racao:'Provisão',curativo:'Curativo',ferramentas_perdidas:'Estojo de Maíra',nucleo_moinho:'Núcleo do moinho',cobre_guardiao:'Peça de cobre do guardião'};
 function renderCharacter(v){
  text($('character-name'),`${v.identity.name} · ${v.age} anos`);text($('identity'),v.traits.join(' · '));clear($('needs'));
  for(const n of v.needs){const row=el('div',undefined,'need'),bar=el('progress');bar.max=100;bar.value=n.value;bar.setAttribute('aria-label',n.label);row.append(el('span',n.label),bar,el('span',String(n.value)));$('needs').append(row);}
@@ -1039,9 +1345,12 @@ function renderPeople(v){
  clear($('people-here'));if(!v.people.length)$('people-here').append(el('p','Ninguém por perto agora.','empty'));
  for(const p of v.people){const a=v.actions.find(a=>a.id===`conversar_${p.id}`);$('people-here').append(a?button(`Conversar com ${p.name}`,()=>openAction(a.id)):el('p',p.name,'facts'));}
  clear($('contacts'));if(!v.contacts.length)$('contacts').append(el('p','Você ainda está conhecendo as pessoas de Ponteclara.','empty'));
- for(const c of v.contacts){const box=el('article',undefined,'contact');box.append(el('h3',`${c.name}${c.friend?' · amizade':''}`),el('p',`Sua confiança: ${c.trust}. Confiança em você: ${c.reciprocal}.`),el('p',c.routine||'Rotina ainda desconhecida.','muted'));$('contacts').append(box);}
+ for(const c of v.contacts){const box=el('article',undefined,'contact');box.append(el('h3',`${c.name}${c.friend?' · amizade':''}`),el('p',`Sua confiança: ${c.trust}. Confiança em você: ${c.reciprocal}.`),el('p',c.routine||'Rotina ainda desconhecida.','muted'));for(const memory of c.memories||[])box.append(el('p',memory,'muted'));$('contacts').append(box);}
 }
 function renderDiary(v){
+ $('journal-memories').hidden=journalTab!=='memories';$('journal-goals').hidden=journalTab!=='goals';$('journal-memories-tab').setAttribute('aria-pressed',String(journalTab==='memories'));$('journal-goals-tab').setAttribute('aria-pressed',String(journalTab==='goals'));
+ clear($('journal-goals'));if(!v.journey.known)$('journal-goals').append(el('p','Os recados da praça e a trilha no bosque oferecem os primeiros caminhos. Você pode escolher o que deseja perseguir.','muted'));
+ else for(const goal of v.journey.goals){const card=el('article',undefined,'contact');card.append(el('h3',goal.title),el('p',goal.done?'Concluído.':goal.hint,'muted'));const b=button(v.journey.selected===goal.id?'Acompanhando':'Acompanhar este objetivo',()=>{try{trackGoal(state,goal.id);store();render();$('journal-goals-tab').focus();}catch(e){message(e.message);}});card.append(b);$('journal-goals').append(card);}
  clear($('diary'));
  const memory=v.diary.filter(h=>['decision','arrival','migration','witness','consequence','appointment','milestone'].includes(h.type)&&!h.text.startsWith('Você chegou a '));
  for(const h of memory.slice(-24).reverse()){const a=el('article',undefined,'diary-entry');a.append(el('small',`${h.calendar.weekday} · ${h.calendar.date}`),el('p',h.text));$('diary').append(a);}
@@ -1051,7 +1360,9 @@ $('creator').addEventListener('submit',e=>{
 });
 $('back').addEventListener('click',returnToPlace);
 $('menu').addEventListener('click',()=>showPanel('status'));
-$('quick-map').addEventListener('click',()=>showPanel('map'));
+$('quick-map').addEventListener('click',()=>{mapRegion=PLACES[state.location].region||'vila';showPanel('map');});
+for(const id of ['vila','arredores'])$(`map-${id}`).addEventListener('click',()=>{mapRegion=id;destination=null;renderMap(view(state));});
+for(const id of ['memories','goals'])$(`journal-${id}-tab`).addEventListener('click',()=>{journalTab=id;renderDiary(view(state));});
 for(const id of dialogs)$(`close-${id==='files'?'files':id}`).addEventListener('click',()=>dialog(id).close());
 const characterTabs=['summary','skills','inventory'];
 for(const [index,id]of characterTabs.entries()){
@@ -1066,7 +1377,7 @@ $('import').addEventListener('change',async e=>{
  const file=e.target.files?.[0];if(!file)return;try{if(file.size>8000000)throw Error('Arquivo grande demais.');const raw=await file.text();let next;try{next=load(raw);}catch{next=migrateLegacy(raw);}if(state)localStorage.setItem(`${KEY}-backup`,save(state));state=next;composer=null;passage=null;message('Personagem importado.');store();closePanels();render();focusScene();}catch(e){message(`O personagem não foi importado. ${e.message}`);}finally{e.target.value='';}
 });
 $('migrate').addEventListener('click',()=>{try{state=migrateLegacy(oldRaw);composer=null;passage=null;store();message('Personagem transferido. O progresso anterior continua guardado.');render();}catch(e){message(e.message);}});
-try{const raw=localStorage.getItem(KEY);unreadRaw=raw;if(raw)state=load(raw);unreadRaw=null;oldRaw=localStorage.getItem(OLD);$('legacy').hidden=!oldRaw;}catch(e){message(`Não foi possível abrir o personagem salvo. O arquivo foi preservado. ${e.message}`);}
+try{const raw=localStorage.getItem(KEY);unreadRaw=raw;if(raw){state=load(raw);if(JSON.parse(raw).catalog.fingerprint!==state.catalog.fingerprint){try{if(!localStorage.getItem(`${KEY}-antes-0.6`))localStorage.setItem(`${KEY}-antes-0.6`,raw);localStorage.setItem(KEY,save(state));message('Seu progresso foi atualizado para o novo capítulo. Uma cópia anterior ficou guardada em Arquivos.');}catch{message('Personagem atualizado em memória. Exporte para guardar seu progresso; o arquivo anterior foi preservado.');}}}unreadRaw=null;oldRaw=localStorage.getItem(OLD);$('legacy').hidden=!oldRaw;}catch(e){message(`Não foi possível abrir o personagem salvo. O arquivo foi preservado. ${e.message}`);}
 render();
 
 return {};})();

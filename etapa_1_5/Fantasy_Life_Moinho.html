@@ -1,0 +1,1386 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#151922"><title>Fantasy Life — Ponteclara</title>
+<style>
+:root{color-scheme:dark;--bg:#191d25;--panel:#11151c;--sidebar:#141820;--ink:#e9e8e3;--muted:#aeb7c0;--accent:#8ac4e0;--gold:#d4b580;--border:#333e4c;--green:#90bb92;--danger:#e5a179;font:17px/1.6 system-ui,sans-serif}*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}button,input,select,a{touch-action:manipulation}button{cursor:pointer;min-height:44px;padding:9px 12px;border:1px solid var(--border);border-radius:5px;background:var(--panel);color:var(--ink);text-align:left}button:hover{border-color:var(--accent)}button:disabled{opacity:.55;cursor:default}a{color:var(--accent)}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}h1,h2,h3,p{margin:0 0 14px}h1,h2{line-height:1.25}h1{font:600 1.7rem/1.25 Georgia,serif}h2{font-size:1.2rem}h3{font-size:1rem}small,.muted{color:var(--muted);font-size:.85rem}.eyebrow{font-size:.82rem;color:var(--gold);letter-spacing:.06em}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.stack{display:grid;gap:10px}.primary{color:var(--panel);background:var(--gold);border-color:var(--gold);font-weight:700;text-align:center}.link-button{color:var(--accent);background:transparent;border:0;border-radius:0;padding:8px 0;text-align:left}.link-button:hover{color:#c2e9f7;text-decoration:underline}.action-link{display:flex;align-items:baseline;justify-content:space-between;gap:12px;width:100%;line-height:1.4}.action-link small{white-space:nowrap}.option{width:100%;display:block;color:var(--accent);background:transparent;border:0;border-left:2px solid var(--border);padding:9px 13px}.option strong,.option small{display:block}.option:hover{border-left-color:var(--accent);background:#202b37}.option:disabled{color:var(--muted)}.card{border:1px solid var(--border);padding:16px;border-radius:7px;margin:16px 0}.label{display:grid;gap:5px;margin:12px 0}input,select{width:100%;min-width:0;min-height:44px;padding:9px 10px;border:1px solid var(--border);border-radius:5px;background:var(--panel);color:var(--ink)}summary{cursor:pointer;min-height:44px;padding:8px 0;color:var(--accent)}#mobile-header{position:sticky;top:0;z-index:5;background:var(--sidebar);border-bottom:1px solid var(--border);padding:7px 12px;display:grid;grid-template-columns:44px minmax(0,1fr) auto;align-items:center;gap:4px 12px}#menu{font-size:1.25rem;min-width:44px;padding:4px 10px;text-align:center}#mobile-context{min-width:0}#header-name{font-size:.9rem;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}#header-meta{font-size:.76rem;color:var(--muted)}#quick-map{font-size:.85rem}#quick-needs{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding-top:1px}#quick-needs button{background:transparent;border:0;padding:3px 0 5px;min-width:0;min-height:44px;color:var(--muted);border-radius:3px;text-align:left}#quick-needs .compact-label{display:flex;align-items:center;gap:3px;font-size:.82rem;line-height:1.35;white-space:nowrap}#quick-needs progress{display:block;width:100%;height:5px;margin-top:5px;accent-color:var(--green)}#quick-needs .low{color:var(--danger)}#quick-needs .low progress{accent-color:var(--danger)}#quick-needs .need-warning{font-weight:700}.need-reading{font-size:1.1rem;margin-bottom:6px}#need-summary progress{width:100%;height:8px}#need-hint{margin-top:12px}#need-options{margin-top:16px}#sidebar{display:none;position:fixed;inset:0 auto 0 0;width:268px;overflow:auto;background:var(--sidebar);border-right:1px solid var(--border);padding:26px 20px}.brand{font:1.6rem/1.15 Georgia,serif;color:var(--gold);margin-bottom:6px}.hud-place{font-size:1rem;color:var(--ink);margin:22px 0 6px}.hud-clock{font-size:1.6rem;line-height:1.2;margin-bottom:6px;font-variant-numeric:tabular-nums}.hud-date,.hud-money{overflow-wrap:anywhere;font-size:.85rem;color:var(--muted);margin:5px 0}.hud-needs{display:grid;gap:10px;margin:20px 0 14px}.hud-need{min-width:0;background:transparent;border:0;padding:4px 0;text-align:left}.hud-need:hover{background:#202b37}.hud-need .need-label{display:flex;justify-content:space-between;font-size:.82rem;line-height:1.3}.hud-need progress{display:block;width:100%;height:7px;margin-top:5px;accent-color:var(--green)}.hud-need.low progress{accent-color:var(--danger)}.hud-alert{font-size:.82rem;color:var(--danger)}.hud-nav{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding-top:18px;margin-top:18px;border-top:1px solid var(--border)}.hud-nav button{font-size:.85rem;padding:7px 8px;background:transparent}.hud-goal{color:var(--gold);font-size:.85rem;margin:8px 0;line-height:1.4}.choice-detail{margin-top:5px;white-space:normal}.hud-footer{font-size:.72rem;color:var(--muted);margin:24px 0 0}html{scroll-padding-top:116px}main{max-width:920px;margin:auto;padding:26px 18px 48px}#creation{max-width:500px;margin:auto}#game{background:var(--panel);padding:22px 18px;border-radius:7px}#story-kicker{margin-bottom:10px}#story-copy{white-space:pre-line}#people{color:var(--muted);font-size:.87rem;margin-bottom:4px}#nearby-people{display:flex;flex-wrap:wrap;gap:4px 18px;margin-bottom:16px}#room-actions h2,#room-exits h2{font-size:.85rem;color:var(--muted);font-weight:500;border-top:1px solid var(--border);padding-top:12px;margin:12px 0 3px}#local-actions,#exit-actions{display:grid;gap:1px}#passage-controls{display:grid;gap:8px;margin-top:22px}#back{margin-bottom:18px}#composer-text{font-size:1rem}#route-status{color:var(--muted);font-size:.85rem;margin-top:14px}#message:empty{display:none}#message{font-size:.85rem;background:#443824;color:#f3e5c6;padding:10px 18px}dialog{color:var(--ink);background:var(--panel);border:1px solid var(--border);border-radius:7px;padding:20px;width:min(94vw,760px);max-height:90dvh;overflow:auto}dialog::backdrop{background:#000b}dialog h2{margin:0;overflow-wrap:anywhere}.dialog-heading{margin-bottom:20px;position:sticky;top:-20px;z-index:1;background:var(--panel);padding:6px 0;border-bottom:1px solid var(--border)}.dialog-close{border:0;min-width:44px;font-size:1.3rem;padding:4px 10px;text-align:center}#status-panel .brand{display:none}#status-panel .dialog-heading{margin-bottom:8px}#status-panel .hud-place{margin:6px 0 4px}#status-panel .hud-clock{font-size:1.2rem;margin-bottom:4px}#status-panel .hud-date,#status-panel .hud-money{margin:1px 0}#status-panel .hud-needs{grid-template-columns:1fr 1fr;gap:10px 12px;margin:12px 0 10px}#status-panel .hud-nav{margin-top:12px;padding-top:12px}#status-panel .hud-footer{display:none}#status-panel{width:min(88vw,340px);max-height:94dvh;margin:0 auto 0 0;min-height:100dvh;border-radius:0}.tabs{display:flex;flex-wrap:wrap;gap:5px;border-bottom:1px solid var(--border);padding-bottom:12px;margin-bottom:18px}.tabs button{font-size:.85rem;background:transparent}.tabs button[aria-selected="true"]{color:var(--accent);border-color:var(--accent)}.need{display:grid;grid-template-columns:90px 1fr 35px;align-items:center;gap:8px;font-size:.85rem}progress{max-width:100%;accent-color:var(--green);appearance:none;border:0;border-radius:8px;overflow:hidden;background:#35404e}progress::-webkit-progress-bar{background:#35404e;border-radius:8px}progress::-webkit-progress-value{background:var(--need-fill,var(--green));border-radius:8px}progress::-moz-progress-bar{background:var(--need-fill,var(--green));border-radius:8px}.low{--need-fill:var(--danger)}.diary-entry{margin:18px 0;padding:0 0 14px;border-bottom:1px solid var(--border)}.diary-entry p{margin:5px 0}.facts{font-size:.9rem}#map-graphic{position:relative;aspect-ratio:1;margin:12px 0 24px}#map-graphic svg{position:absolute;inset:0;width:100%;height:100%}#map-graphic button{position:absolute;transform:translate(-50%,-50%);padding:5px;max-width:29%;min-height:44px;font-size:.82rem;line-height:1.2;text-align:center}#map-graphic .here{background:var(--gold);color:var(--panel);font-weight:700}#map-destination{border-top:1px solid var(--border);padding-top:18px}#map-destination h3{font-size:1.1rem}#map-destination .muted{font-size:.85rem}#calendar p{margin-top:14px}.contact{border-bottom:1px solid var(--border);padding:14px 0}.contact p{font-size:.85rem}.contact h3{margin-bottom:5px}.empty{color:var(--muted);font-size:.9rem}@media(min-width:900px){#mobile-header{display:none}#sidebar{display:block}body{padding-left:268px}main{padding:44px 36px 60px;max-width:960px}#game{padding:34px 36px}#message{margin-left:0}h1{font-size:2rem}dialog{width:min(80vw,820px)}}@media(max-width:359px){main{padding:14px 12px 38px}#game{padding:16px 14px}#header-meta{font-size:.72rem}#map-graphic button{font-size:.82rem}dialog{padding:16px}.dialog-heading{top:-16px}#map-graphic{margin-bottom:28px}}@media(prefers-reduced-motion:no-preference){button{transition:color .12s,background-color .12s}}
+</style></head><body>
+<header id="mobile-header"><button id="menu" aria-label="Abrir painel do personagem">☰</button><div id="mobile-context"><div id="header-name">Fantasy Life</div><div id="header-meta">Ponteclara</div></div><button id="quick-map" class="link-button">Mapa</button><div id="quick-needs" aria-label="Necessidades" hidden></div></header>
+<aside id="sidebar" aria-label="Painel do personagem"><div id="desktop-hud"></div></aside>
+<div id="message" role="status" aria-live="polite"></div>
+<main>
+<section id="creation"><h1>Quem chega a Ponteclara?</h1><p class="muted">Comece com uma história. Descubra o restante vivendo.</p>
+<form id="creator"><label class="label">Nome<input id="name" value="Ari" maxlength="32" required autocomplete="off"></label><label class="label">De onde você vem?<select id="origin"><option value="artesao">Aprendiz de artesão · Ofício 35 e kit</option><option value="ervas">Coletor de ervas · Alquimia 35 e provisões</option><option value="viajante">Viajante · Exploração 35 e corda</option></select></label>
+<details><summary>Personalizar o personagem</summary><label class="label">Povo<select id="race"><option value="humano">Humano · 18 anos</option><option value="elfo">Elfo · 40 anos; enxerga no bosque à noite</option><option value="anao">Anão · 30 anos; resiste melhor ao cansaço</option></select></label><label class="label">Traço<select id="trait"><option value="observador">Observador · percebe outras soluções</option><option value="sociavel">Sociável · aproxima-se com mais facilidade</option><option value="persistente">Persistente · aprende mais com falhas</option></select></label><label class="label">Talento<select id="talent"><option value="oficio">Ofício</option><option value="alquimia">Alquimia</option><option value="arcanismo">Arcanismo</option><option value="esgrima">Esgrima</option><option value="exploracao">Exploração</option></select></label><label class="label">Dom singular<select id="gift"><option value="eco">Eco espiritual · perceber presenças</option><option value="pulso">Pulso vital · curar, gastando energia</option><option value="latente">Potencial latente · despertar ao explorar e estudar</option></select></label><label class="label">Semente do mundo<input id="seed" type="number" min="0" max="4294967295" value="2026" required></label><p class="muted">O mesmo personagem e a mesma semente repetem as condições iniciais. Suas escolhas mudam o caminho.</p></details>
+<button class="primary" type="submit" id="start">Começar aventura</button></form>
+<div id="legacy" class="card" hidden><h2>Seu personagem anterior está guardado</h2><p class="muted">Você pode continuar a versão anterior ou transferir um personagem sem compromissos pendentes. O arquivo anterior continua intacto.</p><div class="stack"><button id="migrate">Transferir o personagem anterior</button><a href="./legado/">Continuar na versão anterior</a></div></div>
+</section>
+<div id="game" hidden><section id="story-panel" aria-label="Cena atual"><div id="scene"><div id="story-kicker" class="eyebrow"></div><h1 id="story-title" tabindex="-1"></h1><p id="story-copy"></p><div id="people-area"><p id="people"></p><div id="nearby-people"></div></div><div id="pending-options" class="stack"></div><div id="room-actions"><h2>O que fazer</h2><div id="local-actions"></div></div><div id="room-exits"><h2>Seguir para</h2><div id="exit-actions"></div></div><div id="passage-controls"></div><div id="route-status"></div></div><section id="composer" hidden><button id="back" class="link-button">Voltar ao local</button><h1 id="composer-title" tabindex="-1"></h1><p id="composer-text"></p><div id="composer-options" class="stack"></div></section></section></div>
+</main>
+<dialog id="needs-panel" aria-labelledby="need-title"><div class="row dialog-heading"><h2 id="need-title">Necessidades</h2><button id="close-needs" class="dialog-close" aria-label="Fechar necessidade">×</button></div><div id="need-summary"></div><p id="need-hint" class="muted"></p><div id="need-options" class="stack"></div></dialog>
+<dialog id="status-panel" aria-labelledby="status-title"><div class="row dialog-heading"><h2 id="status-title">Fantasy Life</h2><button id="close-status" class="dialog-close" aria-label="Fechar painel">×</button></div><div id="mobile-hud"></div></dialog>
+<dialog id="map-panel" aria-labelledby="map-title"><div class="row dialog-heading"><h2 id="map-title">Vila e arredores</h2><button id="close-map" class="dialog-close" aria-label="Fechar mapa">×</button></div><div class="tabs" aria-label="Região do mapa"><button id="map-vila" aria-pressed="true">Vila</button><button id="map-arredores" aria-pressed="false">Arredores</button></div><p class="muted">Escolha um lugar para consultar o caminho. Novas passagens dependem do que você descobrir.</p><div id="map-graphic"></div><div id="map-destination" hidden></div></dialog>
+<dialog id="character-panel" aria-labelledby="character-name"><div class="row dialog-heading"><h2 id="character-name"></h2><button id="close-character" class="dialog-close" aria-label="Fechar personagem">×</button></div><div class="tabs" role="tablist" aria-label="Personagem"><button id="tab-summary" role="tab" aria-selected="true">Ficha</button><button id="tab-skills" role="tab" aria-selected="false">Habilidades</button><button id="tab-inventory" role="tab" aria-selected="false">Mochila</button></div><section id="character-summary" role="tabpanel" aria-labelledby="tab-summary"><p id="identity"></p><h3>Condições</h3><div id="needs"></div><p id="health" class="facts"></p></section><section id="character-skills" role="tabpanel" aria-labelledby="tab-skills" hidden><div id="skills"></div><p class="muted">A prática e seu talento abrem novas técnicas. Ânimo baixo dificulta o aprendizado.</p></section><section id="character-inventory" role="tabpanel" aria-labelledby="tab-inventory" hidden><div id="inventory"></div></section></dialog>
+<dialog id="people-panel" aria-labelledby="people-title"><div class="row dialog-heading"><h2 id="people-title">Pessoas</h2><button id="close-people" class="dialog-close" aria-label="Fechar pessoas">×</button></div><h3>Por aqui</h3><div id="people-here"></div><h3>Seus vínculos</h3><div id="contacts"></div></dialog>
+<dialog id="calendar-panel" aria-labelledby="calendar-title"><div class="row dialog-heading"><h2 id="calendar-title">Agenda</h2><button id="close-calendar" class="dialog-close" aria-label="Fechar agenda">×</button></div><div id="calendar"></div></dialog>
+<dialog id="diary-panel" aria-labelledby="diary-title"><div class="row dialog-heading"><h2 id="diary-title">Diário</h2><button id="close-diary" class="dialog-close" aria-label="Fechar diário">×</button></div><div class="tabs" aria-label="Diário"><button id="journal-memories-tab" aria-pressed="true">Lembranças</button><button id="journal-goals-tab" aria-pressed="false">Objetivos</button></div><div id="journal-memories"><p class="muted">Lembranças da sua jornada.</p><div id="diary"></div></div><div id="journal-goals" hidden></div></dialog>
+<dialog id="files" aria-labelledby="files-title"><div class="row dialog-heading"><h2 id="files-title">Arquivos e opções</h2><button id="close-files" class="dialog-close" aria-label="Fechar opções">×</button></div><div class="stack"><button id="export">Exportar personagem</button><label class="label">Importar personagem<input id="import" type="file" accept="application/json,.json"></label><button id="new-character">Criar outro personagem</button><div id="new-confirm" hidden><p>Exporte seu personagem antes de começar outro. O personagem atual só será substituído ao confirmar a criação.</p><button id="confirm-new">Abrir criação de personagem</button></div><a href="./legado-0-5/">Abrir cópia anterior ao capítulo do moinho (0.5.2)</a><a href="./legado/">Abrir laboratório anterior (0.4.1)</a><p class="muted">Fantasy Life 0.6.0 · Ponteclara. O Moinho Afogado conecta objetivos, preparo, exploração e decisões com consequências. O combate completo continua em desenvolvimento.</p></div></dialog>
+<script>
+(()=>{'use strict';
+const contract=(()=>{
+// Conteúdo declarativo: sem eval, funções ou caminhos de escrita arbitrários.
+const copy = x => JSON.parse(JSON.stringify(x));
+const integer = (x, min = 0) => Number.isSafeInteger(x) && x >= min;
+const check = (condition, message) => { if (!condition) throw new Error(message); };
+const id = x => typeof x === 'string' && /^[a-z][a-z0-9_.-]{0,95}$/.test(x)
+  && !['__proto__', 'prototype', 'constructor'].includes(x);
+const token = x => typeof x === 'string' && /^[a-z][a-z0-9_]{0,63}$/.test(x)
+  && !['__proto__', 'prototype', 'constructor'].includes(x);
+const text = x => typeof x === 'string' && x.trim().length > 0;
+const record = x => x && typeof x === 'object' && !Array.isArray(x);
+const scalar = x => typeof x === 'string' || typeof x === 'boolean' || Number.isSafeInteger(x);
+const only=(object,keys)=>check(Object.keys(object).every(k=>keys.includes(k)), 'Campo desconhecido no contrato');
+function jsonData(x, depth = 0) {
+  check(depth < 40, 'Dados excessivamente profundos');
+  if (x === null || ['string', 'boolean'].includes(typeof x)) return;
+  if (typeof x === 'number') { check(Number.isFinite(x), 'Número inválido'); return; }
+  check(typeof x === 'object' && x !== undefined, 'Somente dados JSON são aceitos');
+  for (const [key, value] of Object.entries(x)) {
+    check(!['__proto__', 'prototype', 'constructor'].includes(key), 'Chave reservada');
+    jsonData(value, depth + 1);
+  }
+}
+function statKey(key) {
+  return ['money', 'health', 'age'].includes(key) || typeof key === 'string' && (
+    /^(skill|aptitude|need):[a-z][a-z0-9_]*$/.test(key) && token(key.split(':')[1]) ||
+    /^trust:[a-z][a-z0-9_]*:[a-z][a-z0-9_]*$/.test(key) && key.split(':').slice(1).every(token));
+}
+function condition(c) {
+  check(record(c), 'Condição inválida');
+  const types = ['all', 'any', 'not', 'stat', 'flag', 'world', 'item', 'knows', 'person', 'freeSlot'];
+  check(types.filter(k => Object.hasOwn(c, k)).length === 1, 'Condição deve ter um operador');
+  const operator=types.find(k=>Object.hasOwn(c,k));
+  only(c,{stat:['stat','op','value'],flag:['flag','is'],world:['world','is'],item:['item','min'],person:['person','alive','local']}[operator]||[operator]);
+  if (c.all || c.any) {
+    const list = c.all || c.any;
+    check(Array.isArray(list) && list.length > 0, 'Grupo de condições vazio'); list.forEach(condition);
+  } else if (c.not) condition(c.not);
+  else if (c.stat) check(statKey(c.stat) && ['eq', 'gte', 'lte'].includes(c.op) && Number.isSafeInteger(c.value), 'Comparação inválida');
+  else if (c.flag) check(token(c.flag) && typeof c.is === 'boolean', 'Flag inválida');
+  else if (c.world) check(token(c.world) && scalar(c.is), 'Fato de mundo inválido');
+  else if (c.item) check(token(c.item) && integer(c.min, 1), 'Requisito de item inválido');
+  else if (c.knows) check(token(c.knows.who) && token(c.knows.fact), 'Conhecimento inválido');
+  else if (c.freeSlot) check(['occupation','project'].includes(c.freeSlot), 'Categoria de compromisso inválida');
+  else if (c.person) check(token(c.person) && (c.alive === undefined || typeof c.alive === 'boolean') &&
+    (c.local === undefined || typeof c.local === 'boolean'), 'Pessoa inválida');
+  else check(false, 'Operador de condição inválido');
+}
+function effects(list, refs) {
+  check(Array.isArray(list), 'Efeitos devem ser uma lista');
+  for (const e of list) {
+    check(record(e), 'Efeito inválido');
+    const fields={add:['stat','amount'],flag:['id','value'],world:['id','value'],item:['id','amount'],learn:['who','fact'],move:['who','to'],kill:['who'],schedule:['consequence','after'],offer:['decision'],startActivity:['activity'],cancelActivity:['activity']}[e.op];
+    check(!!fields, `Operação de efeito desconhecida: ${e.op}`);only(e,['op',...fields]);
+    switch (e.op) {
+      case 'add': check(statKey(e.stat) && !['age'].includes(e.stat) && !e.stat.startsWith('aptitude:') && Number.isSafeInteger(e.amount), 'Alteração numérica inválida'); break;
+      case 'flag': check(token(e.id) && typeof e.value === 'boolean', 'Efeito flag inválido'); break;
+      case 'world': check(token(e.id) && scalar(e.value), 'Efeito mundo inválido'); break;
+      case 'item': check(token(e.id) && Number.isSafeInteger(e.amount), 'Efeito item inválido'); break;
+      case 'learn': check(token(e.who) && token(e.fact), 'Aprendizado inválido'); break;
+      case 'move': check(token(e.who) && token(e.to), 'Deslocamento inválido'); break;
+      case 'kill': check(token(e.who), 'Morte inválida'); break;
+      case 'schedule': check(refs.consequences.has(e.consequence) && integer(e.after, 1), 'Consequência desconhecida ou prazo inválido'); break;
+      case 'offer': check(refs.decisions.get(e.decision)?.kind === 'opportunity', 'Decisão futura desconhecida'); break;
+      case 'startActivity': case 'cancelActivity': check(refs.activities.has(e.activity), 'Atividade desconhecida'); break;
+      default: check(false, `Operação de efeito desconhecida: ${e.op}`);
+    }
+  }
+}
+function participants(list = []) {
+  check(Array.isArray(list), 'Participantes inválidos');
+  for (const p of list) {
+    check(token(p.id) && typeof p.alive === 'boolean' && typeof p.local === 'boolean', 'Contrato de participante inválido');
+  }
+  check(new Set(list.map(p => p.id)).size === list.length, 'Participante duplicado');
+}
+function base(x) {
+  check(id(x.id) && integer(x.version, 1), 'ID ou versão de conteúdo inválidos');
+  if (x.requires) condition(x.requires);
+  participants(x.participants);
+}
+function compile(input) {
+  jsonData(input);
+  const c = copy(input);
+  check(c.schemaVersion === 1 && id(c.id) && integer(c.version, 1), 'Schema de catálogo incompatível');
+  if(c.clock) check(c.clock.unit==='minute' && integer(c.clock.ticksPerDay,1) && integer(c.clock.pulseEvery,1) && Number.isFinite(c.clock.pulseChance) && c.clock.pulseChance>=0 && c.clock.pulseChance<=1, 'Relógio inválido');
+  for (const key of ['decisions', 'consequences', 'activities']) {
+    check(Array.isArray(c[key]), `Catálogo sem ${key}`);
+    check(new Set(c[key].map(x => x.id)).size === c[key].length, `IDs duplicados em ${key}`);
+  }
+  const refs = Object.fromEntries(['decisions', 'consequences', 'activities'].map(k => [k, new Map(c[k].map(x => [x.id, x]))]));
+  for (const d of c.decisions) {
+    base(d);
+    check(['action', 'opportunity'].includes(d.kind) && id(d.family) && text(d.domain) && text(d.title) && text(d.text), 'Decisão incompleta');
+    check(integer(d.repeat?.max, 1) && integer(d.repeat?.cooldown), 'Repetição sem limite explícito');
+    if (d.selection) check(d.kind === 'opportunity' && Number.isFinite(d.selection.weight) && d.selection.weight > 0, 'Seleção inválida');
+    check(Array.isArray(d.options) && d.options.length > 0, 'Decisão sem opções');
+    check(new Set(d.options.map(x => x.id)).size === d.options.length, 'Opção duplicada');
+    for (const o of d.options) {
+      check(id(o.id) && text(o.label) && text(o.intent) && text(o.hint) && text(o.blockedReason), 'Opção incompleta');
+      if (o.requires) condition(o.requires);
+      if(o.completionRequires) condition(o.completionRequires);
+      if(o.resolution) check(o.resolution==='first','Resolução inválida');
+      if (o.visibleWhen) condition(o.visibleWhen);
+      check(integer(o.cost?.money) && integer(o.cost?.days) && o.cost.days <= 36500, 'Custo inválido');
+      effects(o.effects, refs);
+      check(Array.isArray(o.outcomes) && o.outcomes.length > 0, 'Opção sem resultados');
+      check(new Set(o.outcomes.map(x => x.id)).size === o.outcomes.length, 'Resultado duplicado');
+      // Um fallback evita sorteio sem resultados após mudança de contexto.
+      check(o.outcomes.some(r => !r.when && Number.isFinite(r.weight) && r.weight > 0), 'Resultado sem fallback');
+      for (const r of o.outcomes) {
+        check(id(r.id) && text(r.text) && Number.isFinite(r.weight) && r.weight > 0, 'Resultado inválido');
+        if (r.when) condition(r.when);
+        effects(r.effects, refs);
+      }
+    }
+  }
+  for (const e of c.consequences) {
+    base(e); effects(e.effects, refs);
+    check(['observed', 'private'].includes(e.visibility) && (e.visibility === 'private' || text(e.text)), 'Visibilidade de consequência inválida');
+  }
+  for (const a of c.activities) {
+    base(a);
+    check(text(a.label) && ['occupation', 'project'].includes(a.slot) && integer(a.duration, 1) &&
+      token(a.skill) && integer(a.rate) && integer(a.pay) && integer(a.costPerDay), 'Atividade inválida');
+    effects(a.onComplete, refs); check(text(a.completionText), 'Conclusão sem texto');
+  }
+  return { catalog: c, ...refs };
+}
+function readStat(s, key) {
+  const [type, a, b] = key.split(':');
+  if (type === 'money' || type === 'health') return s[type];
+  if (type === 'age') return Math.floor((s.day - s.birthDay) / (365*(s.clock?.ticksPerDay||1)));
+  if (type === 'need') return s.life?.needs[a] ?? 0;
+  if (type === 'skill') return s.skills[a] || 0;
+  if (type === 'aptitude') return s.attributes[a] || 0;
+  if (type === 'trust') return s.relations[`${a}:${b}`] || 0;
+  throw new Error('Estatística desconhecida');
+}
+const person = (s, who) => who === 'player' ? { alive: s.alive, location: s.location } : s.npcs[who];
+function eligible(s, c) {
+  if (!c) return true;
+  if (c.all) return c.all.every(x => eligible(s, x));
+  if (c.any) return c.any.some(x => eligible(s, x));
+  if (c.not) return !eligible(s, c.not);
+  if (c.stat) { const v = readStat(s, c.stat); return c.op === 'eq' ? v === c.value : c.op === 'gte' ? v >= c.value : v <= c.value; }
+  if (c.flag) return (s.flags[c.flag] || false) === c.is;
+  if (c.world) return s.world[c.world] === c.is;
+  if (c.item) return (s.items[c.item] || 0) >= c.min;
+  if (c.knows) return !!s.knowledge[c.knows.who]?.[c.knows.fact];
+  if (c.freeSlot) return !s.activities.some(a=>a.slot===c.freeSlot);
+  if (c.person) {
+    const p = person(s, c.person);
+    return !!p && (c.alive === undefined || p.alive === c.alive) && (c.local === undefined || (p.location === s.location) === c.local);
+  }
+  return false;
+}
+const availableParticipants = (s, list = []) => list.every(p => eligible(s, {person: p.id, alive: p.alive, local: p.local ? true : undefined}));
+
+return {copy,integer,check,id,jsonData,compile,eligible,readStat,person,availableParticipants};})();
+const kernel=(()=>{
+// Evolução do motor da etapa 1.2: preserva relógio por marcos, fila, PRNG,
+// pausa/retomada, agenda legada e seleção ponderada. Contrato novo: save v2.
+const {copy, integer, check, id, jsonData, compile, eligible, readStat, person, availableParticipants}=contract;
+const EMPTY = {schemaVersion:1, id:'laboratorio', version:1, decisions:[], consequences:[], activities:[]};
+const order = {playerDeath:0, npcDeath:1, fact:2, consequence:2, offer:3, decision:3};
+const log = (s, type, data = {}) => s.history.push({day:s.day, type, ...data});
+function mix(seed) { let n = seed ^ 0x9e3779b9; n = Math.imul(n ^ n >>> 16, 0x21f0aaad); n = Math.imul(n ^ n >>> 15, 0x735a2d97); return (n ^ n >>> 15) >>> 0 || 1; }
+function random(s) { let x=s.rng; x^=x<<13; x^=x>>>17; x^=x<<5; s.rng=x>>>0; return s.rng/4294967296; }
+function weighted(s, entries, weight) {
+  if (entries.length === 1) return entries[0];
+  const scale=Math.max(...entries.map(weight));check(Number.isFinite(scale)&&scale>0,'Pesos inválidos');
+  let draw = random(s) * entries.reduce((sum, e) => sum + weight(e)/scale, 0);
+  for (const e of entries) { draw -= weight(e)/scale; if (draw < 0) return e; }
+  return entries.at(-1);
+}
+const idle = s => check(s.alive && !s.pending && s.target === null && !s.work.length, 'Ação indisponível durante avanço ou decisão');
+function createEngine(input = EMPTY, simulation = {}) {
+  // Catálogo privado: o chamador não pode alterar regras de um save em andamento.
+  const {catalog, decisions, consequences, activities} = compile(input);
+  const pulseEvery=catalog.clock?.pulseEvery||7;
+  const stamp = {id:catalog.id, version:catalog.version, fingerprint:JSON.stringify(catalog)};
+  function validate(s) {
+    jsonData(s);
+    check(s.version === 2 && s.catalog?.id === stamp.id && s.catalog.version === stamp.version && s.catalog.fingerprint === stamp.fingerprint, 'Save/catálogo incompatível');
+    check(integer(s.seed) && s.seed <= 0xffffffff && integer(s.rng,1) && s.rng <= 0xffffffff && integer(s.day) &&
+      Number.isSafeInteger(s.birthDay) && s.birthDay <= s.day && typeof s.alive === 'boolean' && integer(s.money) &&
+      integer(s.health) && s.health <= 100 && id(s.location) && integer(s.nextId,1) &&
+      integer(s.nextPulse,1) && s.nextPulse >= s.day && s.nextPulse % pulseEvery === 0 &&
+      (s.target === null || integer(s.target) && s.target >= s.day), 'Estado vital/temporal inválido');
+    for (const field of ['skills','attributes','items','relations','flags','world','knowledge','npcs','seen','families','resolved','processed'])
+      check(s[field] && typeof s[field] === 'object' && !Array.isArray(s[field]), `Mapa inválido: ${field}`);
+    for (const field of ['skills','attributes','items']) for (const [key,value] of Object.entries(s[field])) check(id(key) && integer(value), `Valor inválido: ${field}`);
+    for (const [key,value] of Object.entries(s.relations)) check(key.split(':').length === 2 && key.split(':').every(who => !!person(s,who)) && Number.isSafeInteger(value) && value >= -100 && value <= 100, 'Relação inválida');
+    for (const [key,value] of Object.entries(s.flags)) check(id(key) && typeof value === 'boolean', 'Flag de save inválida');
+    for (const [key,value] of Object.entries(s.world)) check(id(key) && ['boolean','string','number'].includes(typeof value) && (typeof value !== 'number' || Number.isSafeInteger(value)), 'Fato de save inválido');
+    for (const [who,facts] of Object.entries(s.knowledge)) {
+      check(!!person(s,who) && facts && typeof facts === 'object' && !Array.isArray(facts), 'Conhecedor inexistente');
+      for (const [fact,value] of Object.entries(facts)) check(id(fact) && value === true, 'Conhecimento de save inválido');
+    }
+    for (const [key,n] of Object.entries(s.npcs)) check(id(key) && key !== 'player' && typeof n.alive === 'boolean' && id(n.location) && typeof n.name === 'string', 'NPC de save inválido');
+    for (const [key,value] of Object.entries(s.seen)) check(id(key) && integer(value.count,1) && integer(value.last) && value.last <= s.day, 'Exposição inválida');
+    for (const [key,value] of Object.entries(s.families)) check(id(key) && integer(value,1), 'Família inválida');
+    for (const field of ['resolved','processed']) for (const [key,value] of Object.entries(s[field])) check(integer(Number(key),1) && Number(key)<s.nextId && value === true, 'Registro de execução inválido');
+    check(Array.isArray(s.history) && Array.isArray(s.queue) && Array.isArray(s.activities) && Array.isArray(s.work), 'Coleções inválidas');
+    let previous = 0;
+    for (const h of s.history) { check(integer(h.day) && h.day >= previous && h.day <= s.day && typeof h.type === 'string', 'Diário inválido'); previous=h.day; }
+    const runningIds = new Set();
+    const instance = e => { check(integer(e.id,1) && e.id < s.nextId && !runningIds.has(e.id) && !s.processed[e.id] && !s.resolved[e.id], 'Instância duplicada ou reaplicada'); runningIds.add(e.id); };
+    function event(e, pending = false) {
+      check(e && Object.hasOwn(order,e.type) && integer(e.day) && (pending ? e.day <= s.day : e.day >= s.day), 'Evento de save inválido'); instance(e);
+      if (['npcDeath','offer'].includes(e.type)) check(!!s.npcs[e.npc], 'NPC de evento desconhecido');
+      if (e.type === 'offer') check(typeof e.title === 'string' && integer(e.reward), 'Oferta legada inválida');
+      if (e.type === 'fact') check(typeof e.title === 'string', 'Fato legado inválido');
+      if (e.type === 'decision') check(decisions.get(e.decision)?.kind === 'opportunity', 'Decisão de save desconhecida');
+      if (e.type === 'consequence') check(consequences.has(e.consequence), 'Consequência de save desconhecida');
+      check(!pending || ['offer','decision'].includes(e.type), 'Pendência inválida');
+    }
+    s.queue.forEach(e => event(e)); if (s.pending !== null) event(s.pending,true);
+    for (const w of s.work) {
+      instance(w); const d = decisions.get(w.decision), o=d?.options.find(x => x.id===w.option);
+      check(!!o && integer(w.remaining) && w.remaining <= o.cost.days && integer(w.started) && w.started <= s.day, 'Ação em curso inválida');
+    }
+    check(!s.work.length || s.target !== null, 'Ação em curso sem destino');
+    check(new Set(s.activities.map(a => a.id)).size === s.activities.length, 'Atividade duplicada');
+    for (const a of s.activities) {
+      check(id(a.id) && integer(a.end) && a.end >= s.day, 'Atividade de save inválida');
+      if (a.definition) check(activities.has(a.definition) && a.definition === a.id && ['occupation','project'].includes(a.slot), 'Definição de atividade inválida');
+      else check(integer(a.hours,1) && a.hours <= 12 && id(a.skill) && integer(a.rate) && integer(a.pay), 'Atividade legada inválida');
+    }
+    const modern = s.activities.filter(a=>a.definition);
+    check(new Set(modern.map(a=>a.slot)).size===modern.length && s.activities.filter(a=>!a.definition).reduce((n,a)=>n+a.hours,0)<=12, 'Atividades incompatíveis');
+    check(s.alive || (!s.pending && !s.work.length && !s.activities.length && !s.queue.length && s.target === null), 'Morte não encerrada');
+    check(!s.alive || s.health>0, 'Pessoa viva sem saúde');
+    if(catalog.clock) check(JSON.stringify(s.clock)===JSON.stringify(catalog.clock),'Perfil temporal incompatível');
+    simulation.validate?.(s);
+    return s;
+  }
+  function tx(s, operation) { const draft=copy(s); operation(draft); validate(draft); Object.assign(s,draft); return s; }
+  function create(seed=1, initial={}) {
+    check(integer(seed) && seed <= 0xffffffff, 'Seed inválida'); jsonData(initial);
+    const allowed=[...(catalog.clock?['day','life']:[]),'money','health','birthDay','location','skills','attributes','items','relations','flags','world','knowledge','npcs'];
+    check(Object.keys(initial).every(k=>allowed.includes(k)), 'Campo inicial desconhecido');
+    return validate({version:2,catalog:copy(stamp),seed,rng:mix(seed),day:0,birthDay:0,alive:true,money:0,health:100,
+      location:'aldeia',skills:{},attributes:{},items:{},relations:{},flags:{},world:{},knowledge:{player:{}},
+      activities:[],npcs:{},queue:[],pending:null,target:null,work:[],history:[],seen:{},families:{},resolved:{},processed:{},nextId:1,nextPulse: (Math.floor((initial.day||0)/pulseEvery)+1)*pulseEvery,...(catalog.clock?{clock:copy(catalog.clock)}:{}),...copy(initial)});
+  }
+  function load(raw) {
+    check(typeof raw === 'string' && raw.length < 8_000_000, 'Save ausente ou grande demais');
+    let s=JSON.parse(raw); jsonData(s);
+    if (s.version === 1) {
+      // A base 1.2 só continha agenda, fatos e ofertas legadas. Não inventar pessoas/posses.
+      const defaults=create(s.seed);
+      s={...defaults,...s,version:2,catalog:copy(stamp),nextPulse:(Math.floor(s.day/7)+1)*7,
+        npcs:Object.fromEntries(Object.entries(s.npcs || {}).map(([key,n])=>[key,{name:key,location:'aldeia',...n}]))};
+    }
+    return validate(s);
+  }
+  const save = s => JSON.stringify(validate(s));
+  const permitted = (s,d) => !!d && s.alive && eligible(s,d.requires) && availableParticipants(s,d.participants);
+  const repetition = (s,d) => (s.seen[d.id]?.count || 0) < d.repeat.max && s.day-(s.seen[d.id]?.last ?? -Infinity) >= d.repeat.cooldown;
+  function expose(s,d) { s.seen[d.id]={count:(s.seen[d.id]?.count||0)+1,last:s.day}; s.families[d.family]=(s.families[d.family]||0)+1; }
+  function push(s,event) { s.queue.push({...copy(event),id:s.nextId++}); }
+  function dead(s) { s.alive=false; s.activities=[]; s.queue=[]; s.pending=null; s.work=[]; s.target=null; log(s,'death',{text:'Sua vida chegou ao fim.'}); }
+  function change(s,key,amount) {
+    const [type,a,b]=key.split(':'); const value=readStat(s,key)+amount;
+    check(Number.isSafeInteger(value), 'Resultado numérico inválido');
+    if(type==='money') {check(value>=0,'Recursos insuficientes'); s.money=value;}
+    else if(type==='health') {s.health=Math.max(0,Math.min(100,value)); if(s.health===0) dead(s);}
+    else if(type==='need') {check(s.life&&Object.hasOwn(s.life.needs,a),'Necessidade desconhecida');s.life.needs[a]=Math.max(0,Math.min(100,value));}
+    else if(type==='skill') {check(value>=0,'Habilidade negativa');s.skills[a]=value;}
+    else if(type==='trust') {check(person(s,a)&&person(s,b),'Relação com pessoa inexistente');s.relations[`${a}:${b}`]=Math.max(-100,Math.min(100,value));}
+    else check(false,'Estatística não alterável');
+  }
+  function start(s,key) {
+    const a=activities.get(key); check(!!a && eligible(s,a.requires) && availableParticipants(s,a.participants),'Requisitos da atividade não atendidos');
+    check(!s.activities.some(x=>x.id===key || x.slot===a.slot),'Já existe um compromisso nessa categoria');
+    check(s.money>=a.costPerDay,'Recursos insuficientes para iniciar');
+    s.activities.push({id:a.id,definition:a.id,slot:a.slot,end:s.day+a.duration});
+    log(s,'activityStart',{id:a.id,text:`Você começou: ${a.label}.`});
+  }
+  function apply(s,list) {
+    for (const e of list) {
+      if (!s.alive) break;
+      switch(e.op) {
+        case 'add': change(s,e.stat,e.amount); break;
+        case 'flag': s.flags[e.id]=e.value; break;
+        case 'world': s.world[e.id]=e.value; break;
+        case 'item': {const n=(s.items[e.id]||0)+e.amount;check(integer(n),'Item insuficiente');s.items[e.id]=n;break;}
+        case 'learn': check(person(s,e.who)?.alive,'Conhecedor indisponível');(s.knowledge[e.who]??={})[e.fact]=true;break;
+        case 'move': check(person(s,e.who)?.alive,'Pessoa indisponível');if(e.who==='player')s.location=e.to;else s.npcs[e.who].location=e.to;break;
+        case 'kill': check(!!person(s,e.who),'Pessoa desconhecida');if(e.who==='player')dead(s);else if(s.npcs[e.who].alive){s.npcs[e.who].alive=false;log(s,'npcDeath',{npc:e.who});}break;
+        case 'schedule': push(s,{type:'consequence',consequence:e.consequence,day:s.day+e.after});break;
+        case 'offer': push(s,{type:'decision',decision:e.decision,day:s.day});break;
+        case 'startActivity': start(s,e.activity);break;
+        case 'cancelActivity': s.activities=s.activities.filter(a=>a.id!==e.activity);log(s,'activityCancel',{id:e.activity});break;
+        default: throw new Error('Operação não suportada');
+      }
+    }
+  }
+  function finish(s,w) {
+    const d=decisions.get(w.decision),o=d.options.find(x=>x.id===w.option);
+    s.resolved[w.id]=true;
+    if(!permitted(s,d) || !eligible(s,o.completionRequires||o.requires)) {log(s,'actionInvalidated',{id:w.id,text:'A situação mudou antes da conclusão. A ação foi interrompida; o tempo e os custos já gastos foram preservados.'});return;}
+    const results=o.outcomes.filter(r=>eligible(s,r.when));
+    const r=o.resolution==='first'?results[0]:weighted(s,results,x=>x.weight);
+    apply(s,o.effects); apply(s,r.effects);
+    simulation.afterChoice?.(s,{decision:d,option:o,outcome:r});
+    log(s,'decision',{id:w.id,decision:d.id,choice:o.id,intent:o.intent,outcome:r.id,text:r.text});
+  }
+  function cleanActivities(s) {
+    for (const a of [...s.activities]) {
+      if(!a.definition) continue;
+      const d=activities.get(a.definition);
+      if(!eligible(s,d.requires)||!availableParticipants(s,d.participants)) {
+        s.activities=s.activities.filter(x=>x.id!==a.id); log(s,'activityInterrupted',{id:a.id,text:`${d.label}: o compromisso terminou porque as condições mudaram.`});
+      }
+    }
+  }
+  function pulse(s) {
+    s.nextPulse+=pulseEvery;
+    if(catalog.clock && random(s)>=catalog.clock.pulseChance)return;
+    const list=[...decisions.values()].filter(d=>d.selection&&permitted(s,d)&&repetition(s,d)&&!s.queue.some(e=>e.decision===d.id));
+    if(list.length) {
+      const d=weighted(s,list,x=>x.selection.weight/(1+3*(s.seen[x.id]?.count||0)+2*(s.families[x.family]||0)));
+      push(s,{type:'decision',decision:d.id,day:s.day});
+    }
+  }
+  function settle(s) {
+    if(!s.alive || s.pending) return;
+    simulation.settle?.(s);
+    const sorted=()=>s.queue.sort((a,b)=>a.day-b.day||order[a.type]-order[b.type]||a.id-b.id);
+    // Mudanças causais vencem conclusões e convites na mesma data.
+    sorted();
+    while(s.alive && s.queue[0]?.day<=s.day && order[s.queue[0].type]<3) {
+      const e=s.queue.shift();s.processed[e.id]=true;
+      if(e.type==='playerDeath') dead(s);
+      else if(e.type==='npcDeath') {if(s.npcs[e.npc].alive){s.npcs[e.npc].alive=false;log(s,'npcDeath',{npc:e.npc});}}
+      else if(e.type==='fact') log(s,'fact',{title:e.title,text:e.title});
+      else {
+        const c=consequences.get(e.consequence);
+        if(eligible(s,c.requires)&&availableParticipants(s,c.participants)) {apply(s,c.effects);if(c.visibility==='observed')log(s,'consequence',{id:e.id,consequence:c.id,text:c.text});}
+        else log(s,'invalidated',{id:e.id});
+      }
+      sorted();
+    }
+    if(!s.alive) return;
+    cleanActivities(s);
+    for(const a of [...s.activities].filter(a=>a.end===s.day)) {
+      if(!s.alive)break;
+      if(!s.activities.some(x=>x.id===a.id))continue;
+      s.activities=s.activities.filter(x=>x.id!==a.id);
+      if(a.definition) {const d=activities.get(a.definition);
+        if(!eligible(s,d.requires)||!availableParticipants(s,d.participants)){log(s,'activityInterrupted',{id:a.id,text:`${d.label}: as condições mudaram antes da conclusão.`});continue;}
+        apply(s,d.onComplete);log(s,'activityComplete',{id:a.id,text:d.completionText});}
+      else log(s,'activityComplete',{id:a.id});
+    }
+    while(s.alive && s.work.at(-1)?.remaining===0) finish(s,s.work.pop());
+    cleanActivities(s);
+    if(!s.alive) return;
+    simulation.settle?.(s);
+    if(s.day===s.nextPulse) pulse(s);
+    sorted();
+    while(s.alive&&!s.pending&&s.queue[0]?.day<=s.day) {
+      const e=s.queue.shift();
+      check(order[e.type]===3,'Fato fora de fase');
+      if(e.type==='offer' ? s.npcs[e.npc].alive : permitted(s,decisions.get(e.decision))&&repetition(s,decisions.get(e.decision))) {
+        s.pending=e;
+        simulation.onOffer?.(s,e,()=>random(s));
+        if(e.type==='decision')expose(s,decisions.get(e.decision));
+        log(s,'offer',{id:e.id,...(e.decision?{decision:e.decision}:{npc:e.npc})});
+      } else {s.processed[e.id]=true;log(s,'invalidated',{id:e.id});}
+    }
+    if(!s.pending&&!s.work.length&&s.day===s.target)s.target=null;
+  }
+  function progress(s,dt) {
+    cleanActivities(s);
+    // Categorias simples substituem a distribuição de horas no conteúdo novo.
+    for(const a of [...s.activities]) {
+      const d=a.definition?activities.get(a.definition):null;
+      if(d) {
+        if(s.money < d.costPerDay*dt) { // O relógio inclui um marco antes de faltar dinheiro.
+          throw new Error('Marco financeiro ausente');
+        }
+        s.money+=(d.pay-d.costPerDay)*dt;s.skills[d.skill]=(s.skills[d.skill]||0)+d.rate*dt;
+      } else {s.skills[a.skill]=(s.skills[a.skill]||0)+a.hours*a.rate*dt;s.money+=a.pay*dt;}
+    }
+    simulation.progress?.(s,dt);
+    if(s.work.length)s.work.at(-1).remaining-=dt;
+  }
+  function run(s,stopAfter=null) {
+    while(s.alive&&!s.pending&&s.target!==null) {
+      settle(s); if(!s.alive||s.pending||s.target===null)break;
+      // Cumprir a duração da resposta não autoriza retomar o resto do salto.
+      if(stopAfter!==null&&!s.work.some(w=>w.id===stopAfter))break;
+      if(s.day===s.target) {s.target=null;break;}
+      // Custos de rotina são reservados por dia, antes de contar renda futura.
+      let dailyCost=s.activities.reduce((sum,a)=>sum+(a.definition?activities.get(a.definition).costPerDay:0),0);
+      if(dailyCost>s.money) {
+        for(const a of [...s.activities].filter(a=>a.definition&&activities.get(a.definition).costPerDay>0)) {
+          s.activities=s.activities.filter(x=>x.id!==a.id);log(s,'activityInterrupted',{id:a.id,text:'A atividade foi interrompida por falta de recursos.'});
+        }
+        dailyCost=0;
+      }
+      const next=Math.min(s.target,s.nextPulse,simulation.nextBoundary?.(s)??Infinity,...s.queue.map(e=>e.day),...s.activities.map(a=>a.end),
+        s.work.length?s.day+s.work.at(-1).remaining:Infinity,dailyCost?s.day+1:Infinity);
+      const dt=next-s.day;check(integer(dt,1),'Relógio travado');progress(s,dt);s.day=next;
+    }
+  }
+  function options(s,d) {
+    return d.options.filter(o=>eligible(s,o.visibleWhen)).map(o=>({id:o.id,label:o.label,intent:o.intent,hint:o.hint,cost:copy(o.cost),
+      enabled:eligible(s,o.requires)&&s.money>=o.cost.money,
+      reason:!eligible(s,o.requires)?o.blockedReason:s.money<o.cost.money?'Moedas insuficientes.':null}));
+  }
+  function begin(s,d,o,instance) {
+    check(eligible(s,o.visibleWhen)&&eligible(s,o.requires)&&s.money>=o.cost.money,'Escolha indisponível');
+    s.money-=o.cost.money;
+    log(s,'intention',{id:instance,decision:d.id,choice:o.id,intent:o.intent,text:o.intent,cost:copy(o.cost)});
+    const w={id:instance,decision:d.id,option:o.id,remaining:o.cost.days,started:s.day};
+    if(o.cost.days) {
+      s.work.push(w);
+      s.target=Math.max(s.target??s.day,s.day+s.work.reduce((n,a)=>n+a.remaining,0));
+      run(s,w.id);
+    } else {finish(s,w);settle(s);}
+  }
+  const api = {
+    create,save,load,
+    addNPC:(s,key,details={})=>tx(s,t=>{check(id(key)&&key!=='player'&&!Object.hasOwn(t.npcs,key),'NPC inválido');t.npcs[key]={alive:true,name:key,location:t.location,...copy(details)};}),
+    // API de compatibilidade do laboratório 1.2; horas não são expostas à UI nova.
+    activity:(s,a)=>tx(s,t=>{idle(t);check(id(a.id)&&id(a.skill)&&integer(a.hours,1)&&a.hours<=12&&integer(a.duration,1)&&integer(a.rate??1)&&integer(a.pay??0)&&!t.activities.some(x=>x.id===a.id),'Atividade inválida');check(t.activities.filter(x=>!x.definition).reduce((n,x)=>n+x.hours,0)+a.hours<=12,'Agenda excedida');t.activities.push({...copy(a),rate:a.rate??1,pay:a.pay??0,end:t.day+a.duration});log(t,'activityStart',{id:a.id});}),
+    cancel:(s,key)=>tx(s,t=>{idle(t);check(t.activities.some(a=>a.id===key),'Atividade inexistente');t.activities=t.activities.filter(a=>a.id!==key);log(t,'activityCancel',{id:key,text:'Você encerrou uma atividade.'});}),
+    schedule:(s,e)=>tx(s,t=>{check(t.alive&&integer(e.day)&&e.day>t.day&&Object.hasOwn(order,e.type),'Evento inválido');push(t,e);}),
+    advance:(s,days)=>tx(s,t=>{idle(t);check(integer(days,1)&&days<=36500*(catalog.clock?.ticksPerDay||1),'Avanço inválido');t.target=t.day+days;run(t);}),
+    age:s=>api.advance(s,365*(catalog.clock?.ticksPerDay||1)),
+    resume:s=>tx(s,t=>{check(t.alive&&!t.pending&&t.target!==null,'Não há avanço para retomar');run(t);}),
+    stop:s=>tx(s,t=>{check(!t.pending&&!t.work.length,'Resolva a decisão ou conclua a ação primeiro');t.target=null;}),
+    abandon:s=>tx(s,t=>{check(t.alive&&!t.pending&&t.work.length,'Não há ação para abandonar');for(const w of t.work){t.resolved[w.id]=true;log(t,'actionAbandoned',{id:w.id,text:'Você abandonou a ação em andamento. Os custos pagos e o tempo passado foram preservados.'});}t.work=[];t.target=null;settle(t);}),
+    act:(s,key,option)=>tx(s,t=>{idle(t);const d=decisions.get(key);check(d?.kind==='action'&&permitted(t,d)&&repetition(t,d),'Iniciativa indisponível');const o=d.options.find(x=>x.id===option);check(!!o,'Opção desconhecida');const instance=t.nextId++;expose(t,d);begin(t,d,o,instance);}),
+    choose:(s,{instance,option})=>tx(s,t=>{
+      check(t.alive&&t.pending?.type==='decision'&&t.pending.id===instance,'Decisão expirada ou já resolvida');
+      const e=t.pending,d=decisions.get(e.decision);
+      check(permitted(t,d),'Participantes ou situação indisponíveis');const o=d.options.find(x=>x.id===option);check(!!o,'Opção desconhecida');
+      t.pending=null;begin(t,d,o,e.id);
+    }),
+    dismiss:s=>tx(s,t=>{ // Usado apenas se uma integração externa mudou participantes enquanto a UI estava aberta.
+      check(t.pending?.type==='decision'&&!permitted(t,decisions.get(t.pending.decision)),'A decisão continua válida');
+      t.processed[t.pending.id]=true;log(t,'invalidated',{id:t.pending.id});t.pending=null;settle(t);
+    }),
+    resolve:(s,choice)=>tx(s,t=>{check(t.alive&&t.pending?.type==='offer'&&['accept','decline'].includes(choice),'Escolha legada inválida');const e=t.pending;t.pending=null;t.resolved[e.id]=true;if(choice==='accept')t.money+=e.reward;log(t,'decision',{id:e.id,choice});settle(t);}),
+    view:s=>{
+      const p=s.pending,d=p?.type==='decision'?decisions.get(p.decision):null;
+      return {day:s.day,age:readStat(s,'age'),alive:s.alive,money:s.money,health:s.health,location:s.location,
+        skills:copy(s.skills),items:copy(s.items),
+        activities:s.activities.map(a=>({id:a.id,label:activities.get(a.definition)?.label||a.id})),
+        pending:d?{instance:p.id,title:d.title,text:d.text,options:options(s,d)}:p?{instance:p.id,title:p.title,legacy:true}:null,
+        canAge:s.alive&&!p&&s.target===null&&!s.work.length,canResume:s.alive&&!p&&s.target!==null,
+        canStop:s.target!==null&&!p&&!s.work.length,
+        canAbandon:s.alive&&!p&&s.work.length>0,
+        remaining:s.target===null?0:s.target-s.day,
+        actions:s.alive&&!p&&s.target===null&&!s.work.length?[...decisions.values()].filter(d=>d.kind==='action'&&permitted(s,d)&&repetition(s,d)).map(d=>({id:d.id,title:d.title,text:d.text,options:options(s,d)})):[],
+        diary:s.history.filter(h=>h.text).map(h=>({day:h.day,type:h.type,text:h.text})).slice(-80)};
+    },
+    select:(s,list,context)=>{let chosen=null;tx(s,t=>{if(!t.alive||t.pending)return;const candidates=list.filter(e=>e.context===context&&e.weight>0&&(!e.npc||t.npcs[e.npc]?.alive)&&(t.seen[e.id]?.count||0)<(e.max||1)&&t.day-(t.seen[e.id]?.last??-Infinity)>=(e.cooldown||0));if(!candidates.length)return;const e=weighted(t,candidates,x=>x.weight/(1+3*(t.seen[x.id]?.count||0)+2*(t.families[x.family]||0)));t.seen[e.id]={count:(t.seen[e.id]?.count||0)+1,last:t.day};t.families[e.family]=(t.families[e.family]||0)+1;log(t,'storylet',{id:e.id,family:e.family});chosen=e.id;});return chosen;},
+  };
+  return Object.freeze(api);
+}
+// Os testes originais podem usar o mesmo conjunto de funções sem catálogo narrativo.
+const {create,save,load,addNPC,activity,cancel,schedule,advance,resolve,resume,stop,select}=createEngine();
+
+return {createEngine};})();
+const legacy=(()=>{
+// Autoria em dados. Estes atalhos só constroem JSON; o motor não executa scripts de conteúdo.
+const all=(...x)=>({all:x}), not=x=>({not:x});
+const flag=(key,value=true)=>({flag:key,is:value});
+const knows=fact=>({knows:{who:'player',fact}});
+const stat=(key,value)=>({stat:key,op:'gte',value});
+const item=id=>({item:id,min:1});
+const local=id=>({id,alive:true,local:true});
+const set=(id,value=true)=>({op:'flag',id,value});
+const add=(stat,amount)=>({op:'add',stat,amount});
+const learn=(who,fact)=>({op:'learn',who,fact});
+const later=(consequence,after)=>({op:'schedule',consequence,after});
+const result=(id,text,effects=[],weight=1,when)=>({id,text,effects,weight,...(when?{when}:{})});
+const option=(id,label,intent,hint,{days=0,money=0,requires,visibleWhen,effects=[],outcomes,blockedReason='As condições para esta abordagem ainda não foram atendidas.'}={})=>({
+  id,label,intent,hint,cost:{days,money},effects,outcomes:outcomes||[result('feito',intent)],blockedReason,...(requires?{requires}:{}),...(visibleWhen?{visibleWhen}:{})});
+const decision=(id,kind,family,domain,title,text,options,extra={})=>({id,version:1,kind,family,domain,title,text,repeat:{max:1,cooldown:0},options,...extra});
+const consequence=(id,text,effects,extra={})=>({id,version:1,visibility:'observed',text,effects,...extra});
+const activity=(id,label,slot,duration,skill,rate,pay,costPerDay,onComplete,completionText,extra={})=>({id,version:1,label,slot,duration,skill,rate,pay,costPerDay,onComplete,completionText,...extra});
+const sellEffects=[{op:'item',id:'grimorio',amount:-1},add('money',8),set('livro_vendido'),learn('mercador','comprou_livro'),later('comercio.retorno',10)];
+const repairHome=[set('casa_reparada'),{op:'world',id:'quarto_interditado',value:false}];
+
+const catalog={schemaVersion:1,id:'fantasy_life.agencia',version:1,
+  activities:[
+    activity('oficina','Trabalho na oficina','occupation',60,'oficio',1,1,0,[add('trust:maira:player',1)],'Você encerrou a temporada na oficina com prática e algum dinheiro.',{participants:[local('maira')]}),
+    activity('estudo','Estudo com materiais emprestados','project',28,'arcanismo',1,0,1,[learn('player','conducao_segura')],'Você aprendeu a conduzir luz sem aquecer o suporte.'),
+    activity('bolsa','Aprendizagem com Maíra','occupation',90,'oficio',2,0,0,[learn('player','conducao_segura'),add('skill:arcanismo',12)],'A aprendizagem terminou. Você domina uma técnica de selos e conserva seu ofício.',{participants:[local('maira')]}),
+    activity('telhado','Conserto do telhado','project',7,'oficio',1,0,0,repairHome,'O telhado está vedado. Sua família pode voltar a usar o quarto.'),
+    activity('lanterna','Construção de uma lanterna rúnica','project',14,'oficio',1,0,0,[{op:'item',id:'lanterna',amount:1},set('lanterna_feita')],'A lanterna acende sem óleo. Você pode usá-la no conserto ou vender seu trabalho.'),
+    activity('encomenda','Selos para iluminar a oficina','project',14,'oficio',1,0,0,[add('money',18)],'A oficina aceita seus selos e paga 18 moedas.',{participants:[local('maira')]})
+  ],
+  consequences:[
+    consequence('mentor.convite','Maíra pede que você volte à oficina; ela tem uma proposta de aprendizagem.',[{op:'offer',decision:'mentor.proposta'}],{
+      participants:[local('maira')],requires:{knows:{who:'maira',fact:'viu_grimorio'}}}),
+    consequence('comercio.retorno','O comprador do livro oferece apresentar você a uma banca de artefatos.',[set('contato_comercial')],{
+      participants:[local('mercador')],requires:all(flag('livro_vendido'),{knows:{who:'mercador',fact:'comprou_livro'}})}),
+    consequence('familia.retorno','Sua irmã volta a perguntar sobre o conserto.',[{op:'offer',decision:'familia.retorno'}],{participants:[local('irma')],requires:not(flag('casa_reparada'))}),
+    consequence('familia.chuva','A chuva encontrou as goteiras. Um quarto ficará inutilizável até alguém fazer o conserto.',[{op:'world',id:'quarto_interditado',value:true}],{
+      requires:not(flag('casa_reparada'))}),
+    consequence('magia.eco','', [{op:'world',id:'eco_no_poco',value:true}],{visibility:'private'}),
+    consequence('magia.oficina','Com a luz do poço estabilizada, a oficina recebeu uma encomenda de selos. Maíra lembra do seu trabalho.',[set('encomenda_aberta')],{participants:[local('maira')],requires:flag('poco_estavel')})
+  ],
+  decisions:[
+    decision('livro.destino','action','objeto_ambiguo','conhecimento','O livro sem título',
+      'Você encontrou um livro de diagramas entre materiais descartados. Pode investigar, consultar alguém ou escolher outro destino para o volume.',[
+      option('examinar','Examinar e copiar os diagramas','Estudar o livro antes de decidir seu destino.','2 dias. Você conserva o livro e suas anotações.',{
+        days:2,requires:not(knows('diagramas')),blockedReason:'Você já copiou os diagramas que consegue entender.',
+        effects:[learn('player','diagramas'),{op:'item',id:'notas',amount:1},later('magia.eco',5)],
+        outcomes:[result('anotacoes','Você copia um circuito de luz. O selo da capa continua sem tradução.')]}),
+      option('consultar','Mostrar o livro a Maíra','Pedir a opinião de uma gravadora de selos.','2 dias e 3 moedas. Maíra saberá que você possui o livro.',{
+        days:2,money:3,requires:all({person:'maira',alive:true,local:true},not(knows('selo_proibido'))),blockedReason:'Maíra precisa estar disponível na vila; uma consulta já concluída não precisa ser repetida.',
+        effects:[learn('player','selo_proibido'),learn('maira','viu_grimorio'),add('trust:maira:player',2),later('mentor.convite',7)],
+        outcomes:[result('identificado','Maíra reconhece um selo de uma escola banida. Ela conhece os diagramas de luz, mas aconselha cuidado com as outras páginas.')]}),
+      option('vender','Vender como livro antigo','Transformar o achado em dinheiro imediato.','1 dia. Receba 8 moedas e entregue o livro. Suas anotações ficam com você.',{
+        days:1,effects:sellEffects,outcomes:[result('venda','O livreiro compra o volume. Ele sabe da venda; ninguém mais é informado por ela.')]}),
+      option('revelar','Negociar explicando o selo','Vender o livro revelando o que aprendeu sobre sua origem.','3 dias. Receba 12 moedas; o comprador conhecerá o selo.',{
+        days:3,visibleWhen:knows('selo_proibido'),requires:stat('trust:mercador:player',2),blockedReason:'O comprador só aceita a negociação longa de alguém em quem confia.',
+        effects:[...sellEffects,add('money',4),learn('mercador','selo_proibido')],outcomes:[result('venda_informada','O comprador paga pela procedência e pelo risco que aceitou assumir.')]}),
+      option('entregar','Confiar o livro a Maíra','Entregar o livro para conservação na oficina.','Você perde o livro e ganha a confiança de Maíra.',{
+        requires:{person:'maira',alive:true,local:true},blockedReason:'Maíra precisa estar viva e na vila.',
+        effects:[{op:'item',id:'grimorio',amount:-1},learn('maira','viu_grimorio'),add('trust:maira:player',3),set('livro_entregue'),later('mentor.convite',3)],
+        outcomes:[result('arquivo','Maíra guarda o livro no armário seco da oficina. Ela não exige que você siga uma carreira mágica.')]}),
+      option('experimentar','Testar um circuito nas anotações','Tentar produzir uma luz antes de dominar a técnica.','3 dias e 1 moeda. Pode funcionar ou causar uma queimadura.',{
+        days:3,money:1,visibleWhen:knows('diagramas'),requires:not(flag('circuito_testado')),blockedReason:'Você já tentou este circuito; outro teste igual não trará aprendizado novo.',
+        effects:[set('circuito_testado')],outcomes:[
+          result('luz','Uma luz fraca se mantém. Você registra o que conseguiu reproduzir.',[add('skill:arcanismo',4)],3),
+          result('queimadura','O suporte esquenta e queima seus dedos. As notas sobrevivem; você ainda pode procurar ensino.',[add('health',-8)],2)]})
+    ],{repeat:{max:8,cooldown:0},requires:item('grimorio')}),
+    decision('oficina.iniciativa','action','trabalho_aprendizado','ocupacao','Procurar a oficina',
+      'Maíra grava placas e pequenos selos. Você pode pedir trabalho sem esperar por um convite.',[
+      option('trabalhar','Pedir uma temporada de trabalho','Trabalhar por pagamento e aprender o ofício na prática.','60 dias de rotina automática: 1 moeda e prática por dia.',{
+        requires:{freeSlot:'occupation'},blockedReason:'Encerre sua ocupação atual para assumir outra.',effects:[{op:'startActivity',activity:'oficina'}],
+        outcomes:[result('contratado','Maíra precisa de ajuda com placas. Vocês combinam uma temporada paga, sem compromisso permanente.')]}),
+      option('estudar','Pedir materiais de estudo','Aprender arcanismo por um projeto de estudo.','28 dias de rotina. Custa 1 moeda por dia; pode ser combinado com trabalho.',{
+        requires:all({freeSlot:'project'},stat('money',1)),blockedReason:'Você precisa de um projeto livre e ao menos 1 moeda para os materiais.',effects:[{op:'startActivity',activity:'estudo'}],
+        outcomes:[result('material','Maíra empresta exercícios simples. A compra de papel será descontada enquanto você estudar.')]})
+    ],{repeat:{max:10,cooldown:0},participants:[local('maira')]}),
+    decision('mentor.proposta','opportunity','trabalho_aprendizado','relacoes','Uma vaga, sem salário',
+      'Maíra oferece três meses de aprendizagem. A oficina fornece materiais, mas a vaga não paga salário.',[
+      option('aceitar','Aceitar a aprendizagem','Trocar renda imediata por ensino acompanhado.','90 dias de ocupação. Materiais incluídos.',{
+        requires:{freeSlot:'occupation'},blockedReason:'Sua ocupação atual precisa terminar antes de aceitar.',effects:[{op:'startActivity',activity:'bolsa'}],
+        outcomes:[result('aprendiz','Você aceita a vaga. O livro abriu uma relação; a decisão de seguir o ofício foi sua.')]}),
+      option('negociar','Propor um estudo independente','Usar a experiência de oficina para estudar mantendo o trabalho.','Requer prática de ofício. Projeto de 28 dias, 1 moeda por dia.',{
+        requires:all(stat('skill:oficio',7),{freeSlot:'project'},stat('money',1)),blockedReason:'Você precisa de sete dias de prática, um projeto livre e dinheiro para materiais.',effects:[{op:'startActivity',activity:'estudo'}],
+        outcomes:[result('acordo','Maíra aceita emprestar os exercícios. Você mantém liberdade para continuar trabalhando.')]}),
+      option('recusar','Recusar por enquanto','Manter seus compromissos e procurar outra formação quando quiser.','A recusa encerra esta oferta, preservando o contato.',{
+        effects:[set('bolsa_recusada')],outcomes:[result('recusa','Maíra chama outro aprendiz. Você ainda pode procurar trabalho e materiais na oficina.')]})
+    ],{participants:[local('maira')]}),
+    ...['familia.telhado','familia.retorno'].map((key,index)=>decision(key,'opportunity','cuidado_compromisso','familia',
+      index?'O conserto ficou para depois':'A chuva está chegando',
+      'Sua irmã mostra as goteiras do quarto. O carpinteiro cobra 9 moedas; você também pode fazer o serviço.',[
+      option('pagar','Pagar o carpinteiro','Usar suas economias para resolver o conserto.','9 moedas. Você conserva seu tempo de projeto.',{
+        money:9,effects:repairHome,outcomes:[result('contratado','O carpinteiro troca as peças soltas. Você conservou seus outros compromissos.')]}),
+      option('reparar','Fazer o conserto','Assumir o trabalho para poupar dinheiro.','Projeto automático de 7 dias. Usa o espaço de seu outro projeto.',{
+        requires:{freeSlot:'project'},blockedReason:'Encerre seu outro projeto se quiser assumir este trabalho.',effects:[{op:'startActivity',activity:'telhado'}],outcomes:[result('assumido','Você separa ferramentas. O conserto tomará parte dos próximos dias.')]}),
+      option('lanterna','Trocar a lanterna pelo serviço','Oferecer seu trabalho mágico ao carpinteiro.','Entrega uma lanterna rúnica e conserva seu dinheiro e projeto.',{
+        visibleWhen:flag('lanterna_feita'),requires:item('lanterna'),blockedReason:'Você já não possui a lanterna.',effects:[{op:'item',id:'lanterna',amount:-1},...repairHome],
+        outcomes:[result('troca','O carpinteiro aceita a lanterna para trabalhar à noite e assume o conserto.')]}),
+      ...(index?[]:[option('adiar','Combinar uma resposta mais tarde','Pedir dez dias para organizar seus planos.','A conversa voltará em 10 dias. A chuva não vai esperar indefinidamente.',{
+        effects:[later('familia.retorno',10)],outcomes:[result('prazo','Sua irmã concorda em esperar dez dias por sua resposta.')]})]),
+      option('recusar','Não assumir o conserto','Deixar sua família buscar outra solução.','Você conserva os recursos; as goteiras continuam se ninguém agir.',{
+        effects:[set('conserto_recusado')],outcomes:[result('recusa','Sua irmã diz que tentará encontrar ajuda. Você não assumiu o compromisso.')]})
+    ],{participants:[local('irma')],requires:not(flag('casa_reparada'))})),
+    decision('projeto.lanterna','action','criacao_utilidade','projeto','Criar uma lanterna rúnica',
+      'Você pode reunir seus diagramas, prática manual e condução segura em um objeto útil.',[
+      option('construir','Começar a construção','Transformar conhecimentos combinados em um projeto próprio.','4 moedas em materiais e 14 dias de projeto automático.',{
+        money:4,requires:{freeSlot:'project'},blockedReason:'Encerre seu projeto atual para iniciar este.',effects:[{op:'startActivity',activity:'lanterna'}],
+        outcomes:[result('iniciado','Você compra cobre e vidro e prepara sua bancada. A lanterna ficará pronta enquanto o tempo avança.')]})
+    ],{requires:all(knows('diagramas'),knows('conducao_segura'),stat('skill:oficio',7),not(flag('lanterna_feita')))}),
+    decision('lanterna.destino','action','troca_uso','posses','O destino da lanterna',
+      'A luz está pronta. Uma ferramenta pode ser uma fonte de renda ou uma moeda de troca.',[
+      option('vender','Vender sua criação','Receber dinheiro pelo projeto concluído.','1 dia. Receba 12 moedas e entregue a lanterna.',{
+        days:1,effects:[{op:'item',id:'lanterna',amount:-1},add('money',12)],outcomes:[result('vendida','Uma costureira compra a lanterna para trabalhar depois do pôr do sol.')]})
+    ],{requires:item('lanterna')}),
+    decision('magia.poco','opportunity','risco_conhecimento','magia','Luz sob a água',
+      'Um circuito de luz aparece nas pedras do poço. Você reconhece o desenho de suas anotações; não sabe quem o gravou.',[
+      option('estabilizar','Aplicar a condução segura','Estabilizar o circuito com o que aprendeu.','Exige condução segura. A oficina pode encontrar utilidade no seu trabalho.',{
+        requires:knows('conducao_segura'),blockedReason:'Você ainda não domina a condução segura.',effects:[set('poco_estavel'),set('poco_resolvido'),learn('maira','viu_reparo_poco'),later('magia.oficina',14)],
+        outcomes:[result('estavel','Você ajusta o circuito diante de Maíra. O poço fica iluminado sem aquecer a água.')]}),
+      option('conter','Conter com o suporte de cobre','Tentar apagar o circuito com uma ferramenta improvisada.','2 moedas. Risco de queimadura; a tentativa pode conter a luz.',{
+        money:2,effects:[set('poco_resolvido')],outcomes:[
+          result('contido','A luz se apaga. Sua ferramenta fica inutilizada.',[],2),
+          result('ferido','A descarga queima sua mão antes de apagar. Você precisará se recuperar.',[add('health',-12)],1)]}),
+      option('deixar','Continuar sua vida','Deixar o estudo do poço para outras pessoas.','Nenhum compromisso novo.',{
+        effects:[set('poco_resolvido')],outcomes:[result('ignorado','Você segue seu caminho. A luz não obriga você a se tornar aventureiro.')]})
+    ],{requires:all({world:'eco_no_poco',is:true},knows('diagramas'),not(flag('poco_resolvido'))),participants:[local('maira')],selection:{weight:1}}),
+    decision('comercio.iniciativa','action','contato_oportunidade','comercio','Conhecer a banca de artefatos',
+      'O livreiro pode apresentar você a compradores de pequenos objetos mágicos.',[
+      option('visitar','Pedir a apresentação','Usar o contato criado pela venda do livro.','2 dias. Abre um contato comercial, sem obrigar você a mudar de profissão.',{
+        days:2,effects:[set('banca_conhecida'),add('trust:mercador:player',2)],outcomes:[result('apresentado','Você conhece a banca e seus compradores. Eles passam a aceitar conversar sobre a procedência dos objetos.')]})
+    ],{requires:all(flag('contato_comercial'),not(flag('banca_conhecida'))),participants:[local('mercador')]})
+  ]
+};
+
+// Retomar situações por iniciativa própria evita que o sorteio seja o único portão.
+const well=catalog.decisions.find(d=>d.id==='magia.poco');
+catalog.decisions.push(decision('magia.investigar','action','risco_conhecimento','magia','Voltar ao poço',
+  'Você deixou o circuito para depois. Agora pode voltar com outra preparação.',JSON.parse(JSON.stringify(well.options)),
+  {participants:[local('maira')],requires:all(flag('poco_adiado'),not(flag('poco_resolvido')))}));
+well.options.splice(2,0,option('adiar','Voltar quando estiver preparado','Reservar a investigação para outra ocasião.',
+  'A investigação fica disponível nas suas iniciativas. Não é preciso esperar outro sorteio.',{
+    effects:[set('poco_adiado')],outcomes:[result('reservado','Você anota o local do circuito e decide voltar quando tiver meios melhores.')]}));
+catalog.decisions.push(decision('oficina.encomenda','action','criacao_utilidade','ocupacao','Assumir a encomenda de selos',
+  'Depois do conserto no poço, Maíra quer iluminar a oficina com a mesma técnica.',[
+    option('assumir','Preparar os selos','Usar o conhecimento demonstrado no poço para obter trabalho especializado.',
+      '6 moedas de materiais. Projeto de 14 dias; pagamento de 18 moedas na entrega.',{
+        money:6,requires:{freeSlot:'project'},blockedReason:'Seu projeto atual precisa terminar primeiro.',
+        effects:[set('encomenda_assumida'),{op:'startActivity',activity:'encomenda'}],outcomes:[result('contrato','Vocês combinam o preço e o prazo. Agora o trabalho ocupa seu espaço de projeto.')]
+      })
+  ],{participants:[local('maira')],requires:all(flag('encomenda_aberta'),not(flag('encomenda_assumida')))}));
+const home=catalog.decisions.find(d=>d.id==='familia.retorno');
+catalog.decisions.push(decision('familia.iniciativa','action','cuidado_compromisso','familia','Retomar o conserto de casa',
+  'O conserto continua necessário. Você pode propor outra solução mesmo depois de ter recusado.',
+  JSON.parse(JSON.stringify(home.options.filter(o=>o.id!=='recusar'))),
+  {participants:[local('irma')],requires:all(not(flag('casa_reparada')),{any:[flag('conserto_recusado'),{world:'quarto_interditado',is:true}]})}));
+
+function newLife(engine,seed=2026) {
+  const s=engine.create(seed,{
+    birthDay:-16*365,money:12,location:'vila',items:{grimorio:1},attributes:{intelecto:2},
+    npcs:{maira:{alive:true,name:'Maíra',location:'vila'},mercador:{alive:true,name:'Livreiro',location:'vila'},irma:{alive:true,name:'Lia, sua irmã',location:'vila'}},
+    relations:{'maira:player':0,'mercador:player':0},
+    world:{origem_livro:'escola_banida'},knowledge:{player:{},maira:{selo_proibido:true},mercador:{},irma:{}}
+  });
+  engine.schedule(s,{type:'decision',decision:'familia.telhado',day:14});
+  engine.schedule(s,{type:'consequence',consequence:'familia.chuva',day:30});
+  return s;
+}
+
+return {catalog,newLife};})();
+const world14=(()=>{
+const PLACES={
+ casa:{name:'Seu quarto',x:16,y:10,text:'A janela dá para os telhados de Ponteclara. Sua mochila repousa ao lado da cama.'},
+ praca:{name:'Praça da ponte',x:48,y:35,text:'A água corre sob a ponte de pedra. Recados e gente de passagem disputam o quadro de avisos.'},
+ mercado:{name:'Mercado',x:83,y:10,text:'Ervas, ferramentas e curiosidades ocupam as bancas. Nem todo vendedor conhece o valor do que tem.'},
+ taverna:{name:'Taverna',x:16,y:88,text:'Cheiro de caldo e pão quente. As mesas convidam a uma pausa e a conversas sem pressa.'},
+ oficina:{name:'Oficina de Maíra',x:16,y:62,text:'Limalha de cobre brilha no chão. Uma lanterna incompleta espera mãos pacientes.'},
+ patio:{name:'Pátio de treino',x:49,y:90,text:'Marcas de botas cercam os alvos de palha. Treinar sozinho é possível; aprender com alguém abre outros caminhos.'},
+ bosque:{name:'Bosque',x:83,y:90,text:'A trilha passa entre árvores antigas. Pequenos brilhos desaparecem quando você olha diretamente para eles.'},
+ poco:{name:'Poço antigo',x:83,y:62,text:'Runas desgastadas cercam a água escura. Uma vibração discreta sobe pela pedra.'}
+};
+const EDGES=[['casa','praca',10],['praca','mercado',10],['praca','taverna',10],['praca','oficina',15],['praca','patio',15],['praca','bosque',25],['oficina','poco',15],['bosque','poco',10]];
+const SKILLS={oficio:'Ofício',alquimia:'Alquimia',arcanismo:'Arcanismo',esgrima:'Esgrima',exploracao:'Exploração'};
+const ORIGINS={artesao:{name:'Aprendiz de artesão',text:'Ofício 35 · conhece ferramentas',skill:'oficio',value:35},ervas:{name:'Coletor de ervas',text:'Alquimia 35 · reconhece reagentes',skill:'alquimia',value:35},viajante:{name:'Viajante',text:'Exploração 35 · lê caminhos',skill:'exploracao',value:35}};
+const RACES={humano:'Humano',elfo:'Elfo',anao:'Anão'};
+const TRAITS={observador:'Observador',sociavel:'Sociável',persistente:'Persistente'};
+const GIFTS={eco:'Eco espiritual',pulso:'Pulso vital',latente:'Potencial latente'};
+function path(from,to){
+ const dist={[from]:0},routes={[from]:[]},todo=new Set(Object.keys(PLACES));
+ while(todo.size){const here=[...todo].sort((a,b)=>(dist[a]??Infinity)-(dist[b]??Infinity))[0];todo.delete(here);if(here===to)return {minutes:dist[here],legs:routes[here]};
+ for(const [a,b,n]of EDGES){const next=a===here?b:b===here?a:null;if(next&&todo.has(next)&&(dist[here]+n)<(dist[next]??Infinity)){dist[next]=dist[here]+n;routes[next]=[...routes[here],{from:here,to:next,minutes:n}];}}}throw Error('Caminho indisponível');
+}
+const weekdays=['Aurora','Brasa','Folha','Pedra','Vento','Rio','Estrela'];
+function calendar(t){const day=Math.floor(t/1440),minute=t%1440,h=Math.floor(minute/60),year=614+Math.floor(day/365),d=day%365;return {day,hour:h,minute,weekday:weekdays[day%7],date:d<360?`${d%30+1}/${Math.floor(d/30)+1}/${year}`:`Festa ${d-359}/${year}`,time:`${String(h).padStart(2,'0')}:${String(minute%60).padStart(2,'0')}`,phase:h<6?'Madrugada':h<12?'Manhã':h<18?'Tarde':'Noite'};}
+function npcPlace(id,t){const h=(t%1440)/60;if(id==='maira')return h>=8&&h<12||h>=13&&h<17?'oficina':h>=12&&h<13?'mercado':'moradia';if(id==='mercador')return h>=8&&h<18?'mercado':'taverna';if(id==='breno')return h>=9&&h<12?'patio':h>=18&&h<22?'taverna':'praca';return 'moradia';}
+
+return {PLACES,EDGES,SKILLS,ORIGINS,RACES,TRAITS,GIFTS,path,calendar,npcPlace};})();
+const content14=(()=>{
+const {EDGES,PLACES,SKILLS}=world14;
+const all=(...c)=>({all:c}),flag=(id,is=true)=>({flag:id,is}),stat=(key,value)=>({stat:key,op:'gte',value}),at=id=>flag(`at_${id}`),add=(stat,amount)=>({op:'add',stat,amount}),mark=(id,value=true)=>({op:'flag',id,value}),item=(id,amount)=>({op:'item',id,amount}),learn=(fact,who='player')=>({op:'learn',who,fact}),move=to=>({op:'move',who:'player',to});
+const fit=all(stat('need:food',15),stat('need:energy',15));
+const result=(id,text,effects=[],when)=>({id,text,effects,weight:1,...(when?{when}:{})});
+function option(id,label,minutes,text,effects=[],extra={}){return {id,label,intent:label,hint:minutes?`${minutes} min; o tempo passa apenas ao agir.`:'Sem passagem de tempo.',blockedReason:'Falta preparo, disposição ou alguma condição indicada.',cost:{money:0,days:minutes},effects:[],outcomes:[result('feito',text,effects)],...extra};}
+function action(id,title,text,options,requires,extra={}){return {id,version:1,kind:'action',family:id,domain:'vida',title,text,repeat:{max:100000,cooldown:0},options,...(requires?{requires}:{}),...extra};}
+const decisions=[];
+for(const[a,b,n]of EDGES)for(const[from,to]of[[a,b],[b,a]])decisions.push(action(`ir_${from}_${to}`,`Ir a ${PLACES[to].name}`,'Percorrer um trecho da vila.',[option('andar','Seguir pelo caminho',n,`Você chegou a ${PLACES[to].name}.`,[move(to)],{travel:true})],at(from)));
+decisions.push(action('rotina','Cuidar de si','Uma pausa também faz parte da aventura.',[
+ option('comer','Comer pão e caldo',20,'O pão ainda está quente. Você termina a refeição com mais disposição.',[add('need:food',65),add('need:mood',8)],{cost:{money:2,days:20},requires:{any:[at('casa'),at('taverna')]}}),
+ option('ajudar','Ajudar na taverna em troca de uma refeição',30,'Você ajuda a servir as mesas. Em troca, recebe uma refeição simples.',[add('need:food',45),add('need:energy',-3)],{requires:at('taverna'),completionRequires:at('taverna')}),
+ option('lavar','Lavar-se',20,'A água leva embora o pó da estrada.',[add('need:hygiene',70)],{requires:{any:[at('casa'),at('poco')]}}),
+ option('descansar','Descansar uma hora',60,'Você desacelera e recupera o fôlego.',[add('need:energy',22),add('need:mood',12)],{rest:true}),
+ option('dormir','Dormir oito horas',480,'Você acorda e escuta a vila retomando seu próprio ritmo.',[add('need:energy',90),add('need:mood',15)],{sleep:true,requires:at('casa'),completionRequires:at('casa')}),
+ option('esperar','Observar o lugar por meia hora',30,'Você acompanha o movimento ao redor. O mundo continua enquanto você espera.'),
+ option('lazer','Aproveitar uma hora livre',60,'Sem uma tarefa para cumprir, você encontra espaço para respirar.',[add('need:mood',30)],{requires:{any:[at('taverna'),at('bosque'),at('casa')]}})
+]));
+for(const[npc,name]of[['maira','Maíra'],['mercador','Livreiro'],['breno','Breno']]){
+ const participant=[{id:npc,alive:true,local:true}];
+ decisions.push(action(`conversar_${npc}`,`Conversar com ${name}`,'Ouvir alguém é o começo de uma relação, não uma promessa de intimidade.',[
+ option('ouvir','Ouvir e contar um pouco de si',20,`${name} compartilha um pouco de sua rotina. Vocês passam a se reconhecer melhor.`,[learn(`rotina_${npc}`),learn(`contato_${npc}`),add(`trust:player:${npc}`,5),add(`trust:${npc}:player`,5),add('need:mood',9)],{social:npc}),
+ option('amizade','Propor uma amizade',15,`${name} aceita cultivar uma amizade com você. Isso não apaga diferenças nem garante favores.`,[mark(`amizade_${npc}`),add(`trust:${npc}:player`,4)],{requires:all(stat(`trust:${npc}:player`,25),{not:flag(`amizade_${npc}`)})})
+ ],{person:npc,alive:true,local:true},{participants:participant,repeat:{max:100000,cooldown:120}}));
+}
+for(const[skill,name]of Object.entries(SKILLS)){
+ const place={oficio:'oficina',alquimia:'bosque',arcanismo:'poco',esgrima:'patio',exploracao:'bosque'}[skill];
+ decisions.push(action(`treinar_${skill}`,`Praticar ${name.toLowerCase()}`,'A prática ocupa tempo e disposição. A habilidade cresce ao concluir o exercício.',[
+ option('praticar','Praticar durante uma hora',60,`Você termina uma sessão de ${name.toLowerCase()}, percebendo melhor onde pode melhorar.`,[add('need:energy',-6)],{requires:fit,completionRequires:at(place),practice:{skill,base:6}}),
+ ...(skill==='esgrima'?[option('breno','Treinar com Breno',60,'Breno corrige sua base e põe seu controle à prova.',[add('need:energy',-9),add('trust:breno:player',2)],{requires:all(fit,{person:'breno',alive:true,local:true}),completionRequires:{person:'breno',alive:true,local:true},practice:{skill,base:9},cost:{money:2,days:60}})]:[])
+ ],at(place)));
+}
+decisions.push(action('oficina','Trabalhar e criar','Um trabalho paga pelo serviço concluído. A lanterna é um projeto que você pode retomar.',[
+ option('servico','Cumprir um serviço de duas horas',120,'Você entrega as peças revisadas e recebe seis moedas.',[add('money',6),add('need:energy',-10)],{requires:all(fit,flag('oficina_aberta')),completionRequires:at('oficina'),practice:{skill:'oficio',base:3}}),
+ option('lanterna','Trabalhar uma hora na lanterna',60,'Mais uma parte da lanterna se encaixa. A peça guarda a marca do seu trabalho.',[add('need:energy',-6)],{requires:all(fit,stat('skill:oficio',25),{not:flag('lanterna_pronta')}),completionRequires:at('oficina'),project:true,practice:{skill:'oficio',base:4}}),
+ option('vender','Vender a lanterna concluída',10,'Maíra examina sua lanterna e compra a peça por dezoito moedas.',[item('lanterna',-1),add('money',18)],{requires:all({item:'lanterna',min:1},{person:'maira',alive:true,local:true})}),
+ option('aula','Combinar uma aula amanhã às 09:00',10,'Maíra reserva um horário amanhã, às nove. Você combina encontrá-la na oficina até 09:30.',[],{requires:all({person:'maira',alive:true,local:true},{not:flag('aula_marcada')}),appointment:true})
+],at('oficina')));
+decisions.push(action('livro','O livro que veio na mochila','As páginas marcadas podem ser uma fonte de conhecimento, uma mercadoria ou um risco calculado.',[
+ option('examinar','Estudar as anotações',45,'Entre as margens você encontra uma sequência de runas incompleta. Guarda a descoberta para si.',[learn('runas_livro'),mark('livro_estudado')],{requires:all(fit,{not:flag('livro_estudado')}),completionRequires:{item:'grimorio',min:1},practice:{skill:'arcanismo',base:8}}),
+ option('consultar','Pedir a opinião do livreiro',20,'O livreiro identifica uma cópia rara. Agora ele também sabe o que você carrega.',[learn('livro_raro'),learn('livro_raro','mercador'),mark('livro_avaliado')],{requires:all({person:'mercador',alive:true,local:true},{not:flag('livro_avaliado')})}),
+ option('vender','Vender por doze moedas',10,'Você entrega o livro ao livreiro. As anotações que já aprendeu continuam com você.',[item('grimorio',-1),add('money',12)],{requires:{person:'mercador',alive:true,local:true}}),
+ option('negociar','Negociar o valor da cópia rara',15,'Você apresenta os detalhes da edição. O livreiro paga vinte e quatro moedas.',[item('grimorio',-1),add('money',24)],{requires:all({person:'mercador',alive:true,local:true},{knows:{who:'player',fact:'livro_raro'}})})
+],{item:'grimorio',min:1}));
+decisions.push(action('poco','Investigar o poço','A água responde de maneiras diferentes a quem se aproxima.',[
+ option('runa','Conduzir a vibração das runas',40,'Você estabiliza o pulso da água. Aprende um padrão que antes não reconhecia.',[learn('pulso_poco'),mark('poco_resolvido')],{requires:all(fit,stat('skill:arcanismo',30)),completionRequires:at('poco'),practice:{skill:'arcanismo',base:10}}),
+ option('eco','Ouvir com seu Eco espiritual',25,'Uma presença responde ao seu dom. Ela indica uma passagem esquecida entre as raízes.',[learn('passagem_raizes'),mark('poco_resolvido'),add('need:energy',-8)],{requires:flag('dom_eco')}),
+ option('observar','Investigar marcas na pedra',30,'Você encontra marcas de manutenção e descobre como aliviar a pressão da água sem magia.',[learn('mecanismo_poco'),mark('poco_resolvido')],{requires:{any:[flag('traco_observador'),stat('skill:oficio',30)]}})
+],all(at('poco'),{not:flag('poco_resolvido')})));
+decisions.push(action('dom','Usar seu dom','O Pulso vital restaura o corpo, mas consome sua disposição.',[option('curar','Canalizar o Pulso vital',15,'O calor percorre seus braços e fecha pequenas feridas.',[add('health',15),add('need:energy',-18)],{requires:stat('need:energy',30),completionRequires:flag('dom_pulso')})],flag('dom_pulso'),{repeat:{max:100000,cooldown:240}}));
+decisions.push(action('despertar','Investigar seu potencial latente','A experiência reunida ao explorar e estudar começa a ganhar forma.',[option('tentar','Tentar despertar o dom',60,'Seu potencial desperta como Eco espiritual. A água devolve um som que só você percebe.',[mark('dom_eco'),mark('dom_latente',false),add('need:energy',-15)],{requires:all(fit,stat('skill:arcanismo',30),stat('skill:exploracao',35)),completionRequires:at('poco')})],all(at('poco'),flag('dom_latente'))));
+const lesson=action('aula_agendada','A aula combinada','Maíra separou ferramentas e um problema real: reparar uma dobradiça sem partir o metal.',[
+ option('aprender','Participar da aula',60,'Maíra acompanha suas tentativas e explica as tensões do metal. O compromisso foi cumprido.',[add('trust:maira:player',8)],{cost:{money:3,days:60},requires:fit,completionRequires:{person:'maira',alive:true,local:true},practice:{skill:'oficio',base:14},lesson:true}),
+ option('cancelar','Explicar que não poderá ficar',0,'Você avisa Maíra antes de ir. Ela libera o horário, sem transformar isso em uma dívida.',[],{lesson:true})
+],at('oficina'),{kind:'opportunity',participants:[{id:'maira',alive:true,local:true}],repeat:{max:100000,cooldown:0}});decisions.push(lesson);
+const market=action('reagente','Uma caixa fora da banca','Uma vendedora de passagem oferece um reagente de brilho prateado. Ela pede quatro moedas e admite não conhecer sua origem.',[
+ option('comprar','Comprar sem examinar',5,'Você guarda o reagente. Seu valor real ainda precisa ser descoberto.',[item('reagente',1),mark('reagente_comprado')],{cost:{money:4,days:5},purchase:true}),
+ option('examinar','Examinar antes de decidir',15,'Você analisa o pó e o modo como ele reage à luz.',[],{resolution:'first',outcomes:[result('perito','Seu conhecimento identifica um reagente autêntico.',[mark('qualidade_conhecida'),{op:'offer',decision:'reagente_retorno'}],all(stat('skill:alquimia',30),{world:'reagente_real',is:true})),result('falso','A cor parece boa, mas a mistura é comum. Você percebe a diferença.',[mark('qualidade_conhecida'),{op:'offer',decision:'reagente_retorno'}],stat('skill:alquimia',30)),result('incerto','Você não tem certeza. Aprendeu algo ao observar, mas não o suficiente para garantir a origem.',[{op:'offer',decision:'reagente_retorno'}])],practice:{skill:'alquimia',base:2}}),
+ option('deixar','Seguir sem comprar',0,'Você agradece e segue. Uma oportunidade recusada também é uma escolha.')
+],all(at('mercado'),flag('mercado_aberto'),{not:flag('reagente_comprado')}),{kind:'opportunity',selection:{weight:1},repeat:{max:3,cooldown:2880}});decisions.push(market);
+decisions.push(action('reagente_retorno','Decidir sobre o reagente','A mesma vendedora espera sua decisão. A mercadoria continua sendo a que você examinou.',[market.options[0],market.options[2]],at('mercado'),{kind:'opportunity'}));
+decisions.push(action('usar_reagente','Preparar uma tinta rúnica','Você pode transformar o reagente em um material útil. O processo revela sua qualidade.',[option('misturar','Preparar a mistura',45,'A mistura termina.',[item('reagente',-1)],{requires:all(fit,stat('skill:alquimia',25)),completionRequires:at('casa'),resolution:'first',outcomes:[result('real','A tinta prateada conduz energia. Você criou um material valioso.',[item('tinta_runica',1)],{world:'reagente_real',is:true}),result('comum','O brilho se desfaz. Resta uma tinta comum; a experiência ensina como reconhecer a mistura.',[item('tinta',1)])],practice:{skill:'alquimia',base:8}})],all(at('casa'),{item:'reagente',min:1})));
+decisions.push(action('bosque_encontro','Um fio de luz entre raízes','Uma criatura pequena prendeu a pata em uma fivela abandonada. Ela se debate quando você se aproxima.',[
+ option('ferramenta','Soltar a fivela com cuidado',25,'Suas mãos destravam a peça. A criatura deixa uma semente luminosa antes de desaparecer.',[item('semente_luz',1)],{requires:{any:[stat('skill:oficio',25),flag('traco_observador')]}}),
+ option('eco','Acalmá-la com seu Eco espiritual',15,'Seu dom transforma o medo em uma breve aproximação. Ela entrega uma semente à sua mão.',[item('semente_luz',1),learn('espirito_bosque')],{requires:flag('dom_eco')}),
+ option('tentar','Tentar soltar a criatura',30,'Você tenta abrir a fivela.',[],{outcomes:[{...result('livre','A fivela cede. A criatura foge, deixando uma semente luminosa.',[item('semente_luz',1)]),weight:3},result('falha','A criatura se assusta e arranha sua mão antes de escapar. Você recupera a fivela e aprende com a tentativa.',[add('health',-5),item('fivela',1)])],practice:{skill:'exploracao',base:4}}),
+ option('recuar','Recuar e não interferir',0,'Você se afasta. A criatura procura outra saída entre as raízes.')
+],at('bosque'),{kind:'opportunity',selection:{weight:1},repeat:{max:2,cooldown:4320}}));
+decisions.push(action('colher','Procurar ingredientes no bosque','A luz, seu equipamento e sua experiência mudam os caminhos disponíveis.',[
+ option('ervas','Coletar ervas pela trilha',45,'Você volta com ervas úteis para misturas.',[item('ervas',2)],{requires:all(fit,{any:[flag('luz_dia'),flag('raca_elfo'),{item:'lanterna',min:1}]}),completionRequires:at('bosque'),practice:{skill:'exploracao',base:4}}),
+ option('raro','Seguir rastros de uma planta rara',45,'Sua leitura do terreno leva a uma flor de vidro, escondida acima da trilha.',[item('flor_vidro',1)],{requires:all(fit,flag('dominio_exploracao')),completionRequires:at('bosque'),practice:{skill:'exploracao',base:5}})
+],at('bosque'),{repeat:{max:100000,cooldown:180}}));
+decisions.push(action('tecnicas','Aplicar uma técnica aprendida','O domínio de uma habilidade libera usos que a prática inicial não oferecia.',[
+ option('guarda','Praticar a Guarda firme',45,'Você sustenta a base sob pressão e transforma esforço em controle.',[add('need:energy',-8)],{requires:all(at('patio'),fit,flag('dominio_esgrima')),completionRequires:at('patio'),practice:{skill:'esgrima',base:10}}),
+ option('reparo','Fazer um reparo delicado',60,'O mecanismo volta a funcionar. Você recebe oito moedas pelo reparo especializado.',[add('money',8)],{requires:all(at('oficina'),fit,flag('dominio_oficio'),flag('oficina_aberta')),completionRequires:at('oficina'),practice:{skill:'oficio',base:4}}),
+ option('tintura','Preparar uma tintura medicinal',40,'Você prepara uma tintura e trata as feridas que carregava.',[item('ervas',-2),add('health',12)],{requires:all(at('casa'),fit,flag('dominio_alquimia'),{item:'ervas',min:2}),completionRequires:at('casa'),practice:{skill:'alquimia',base:4}}),
+ option('foco','Conduzir energia sem desperdiçá-la',30,'A condução segura reduz sua tensão. Você recupera parte da disposição.',[add('need:energy',12)],{requires:all(at('poco'),flag('dominio_arcanismo')),completionRequires:at('poco')})
+],{any:[flag('dominio_esgrima'),flag('dominio_oficio'),flag('dominio_alquimia'),flag('dominio_arcanismo')]}));
+decisions.push(action('encomenda','Uma encomenda esquecida','Na mureta da praça, uma pequena encomenda traz o nome de Maíra. O lacre continua inteiro.',[
+ option('levar','Guardar para devolver',5,'Você guarda a encomenda sem romper o lacre. Entregá-la será uma escolha sua.',[item('encomenda',1),learn('encomenda_maira')]),
+ option('deixar','Deixar onde está',0,'Você deixa a encomenda sobre a mureta e segue seu caminho.')
+],at('praca'),{kind:'opportunity',selection:{weight:1},repeat:{max:1,cooldown:0}}));
+decisions.push(action('entrega','A encomenda de Maíra','O que você faz com algo que encontrou também constrói sua história.',[
+ option('devolver','Devolver a Maíra',10,'Maíra reconhece o lacre intacto. Ela agradece e passa a confiar mais em você.',[item('encomenda',-1),add('trust:maira:player',12),learn('encomenda_devolvida','maira')],{requires:{person:'maira',alive:true,local:true}}),
+ option('vender','Vender o pacote fechado no mercado',10,'Você recebe dez moedas. Maíra não sabe quem ficou com a encomenda.',[item('encomenda',-1),add('money',10)],{requires:all(at('mercado'),flag('mercado_aberto'))})
+],{item:'encomenda',min:1}));
+decisions.push(action('poco_retorno','Levar a descoberta à oficina','Maíra só saberá do que você encontrou se você decidir contar.',[
+ option('contar','Compartilhar sua descoberta',20,'Maíra relaciona sua descoberta a um selo usado na oficina. Ela propõe uma encomenda, sem exigir que você aceite.',[learn('poco_resolvido','maira'),mark('poco_compartilhado'),add('trust:maira:player',5)],{requires:{not:flag('poco_compartilhado')}}),
+ option('encomenda','Aceitar a encomenda de um selo',120,'Seu selo funciona. Maíra paga dezoito moedas pelo serviço especializado.',[add('money',18),mark('selo_entregue')],{cost:{money:4,days:120},requires:all(fit,flag('poco_compartilhado'),{not:flag('selo_entregue')},{any:[stat('skill:oficio',40),stat('skill:arcanismo',40)]}),completionRequires:{person:'maira',alive:true,local:true},practice:{skill:'oficio',base:6}})
+],all(at('oficina'),flag('poco_resolvido')),{participants:[{id:'maira',alive:true,local:true}]}));
+decisions.push(action('passagem_raizes','A passagem indicada pelo espírito','Você reconhece a direção que a presença do poço mostrou.',[
+ option('buscar','Procurar a passagem entre as raízes',45,'Entre raízes entrelaçadas, você encontra uma flor de vidro e a marca de um antigo caminho.',[item('flor_vidro',1),learn('caminho_antigo'),mark('passagem_visitada')],{requires:fit,completionRequires:at('bosque'),practice:{skill:'exploracao',base:7}})
+],all(at('bosque'),{knows:{who:'player',fact:'passagem_raizes'}},{not:flag('passagem_visitada')}),{repeat:{max:1,cooldown:0}}));
+const catalog={schemaVersion:1,id:'ponteclara',version:1,clock:{unit:'minute',ticksPerDay:1440,pulseEvery:60,pulseChance:0.25},decisions,activities:[],consequences:[]};
+
+return {catalog};})();
+const life14=(()=>{
+const {createEngine}=kernel;
+const {copy,check,integer,eligible}=contract;
+const {catalog}=content14;
+const {catalog : legacyCatalog}=legacy;
+const {PLACES,SKILLS,ORIGINS,RACES,TRAITS,GIFTS,path,calendar,npcPlace}=world14;
+const record=x=>x&&typeof x==='object'&&!Array.isArray(x);
+const needNames={food:'Saciedade',energy:'Energia',hygiene:'Higiene',mood:'Ânimo'};
+const note=(s,type,text)=>s.history.push({day:s.day,type,text});
+const talents=Object.keys(SKILLS);
+function identity(input={}){
+ const p={name:'Ari',race:'humano',origin:'artesao',trait:'observador',talent:'oficio',gift:'eco',...input};
+ check(typeof p.name==='string'&&p.name.trim().length>0&&p.name.trim().length<=32,'Use um nome entre 1 e 32 caracteres.');
+ check(!/[<>\u0000-\u001f]/.test(p.name),'O nome contém caracteres inválidos.');
+ check(Object.hasOwn(RACES,p.race)&&Object.hasOwn(ORIGINS,p.origin)&&Object.hasOwn(TRAITS,p.trait)&&talents.includes(p.talent)&&Object.hasOwn(GIFTS,p.gift),'Características de personagem inválidas.');
+ return {id:'player',name:p.name.trim(),race:p.race,origin:p.origin,trait:p.trait,talent:p.talent,gift:p.gift};
+}
+function data(p){return {identity:p,needs:{food:80,energy:85,hygiene:75,mood:70},carry:{food:0,energy:0,hygiene:0,mood:0},route:[],appointment:null,project:0,milestones:{},socialDay:-1,revision:1};}
+function validate(s){
+ const l=s.life;check(l?.revision===1,'Dados de vida incompatíveis.');identity(l.identity);
+ for(const k of Object.keys(needNames))check(integer(l.needs?.[k])&&l.needs[k]<=100&&integer(l.carry?.[k])&&l.carry[k]<60,'Necessidades inválidas.');
+ check(record(l.milestones)&&integer(l.project)&&l.project<=180&&Number.isSafeInteger(l.socialDay)&&Array.isArray(l.route)&&l.route.length<=8,'Progresso de vida inválido.');
+ for(const[id,n]of Object.entries(s.npcs))if(n.identity){identity(n.identity);check(n.identity.id===id&&n.identity.name===n.name,'Identidade de morador inválida.');}
+ check(Object.hasOwn(PLACES,s.location),'Lugar inválido.');
+ let from=s.location;
+ // O primeiro trecho pode estar em andamento; cada destino continua ligado à origem.
+ for(const leg of l.route){check(leg.from===from&&Object.hasOwn(PLACES,leg.to)&&path(from,leg.to).minutes===leg.minutes&&path(from,leg.to).legs.length===1,'Rota inválida.');from=leg.to;}
+ if(l.appointment){const a=l.appointment;check(a.npc==='maira'&&a.place==='oficina'&&integer(a.at)&&a.until===a.at+30&&['scheduled','offered','done','cancelled','missed'].includes(a.status),'Compromisso inválido.');}
+}
+function synchronize(s){
+ const h=(s.day%1440)/60;
+ for(const p of Object.keys(PLACES))s.flags[`at_${p}`]=s.location===p;
+ s.flags.luz_dia=h>=6&&h<18;
+ s.flags.oficina_aberta=h>=8&&h<17;s.flags.mercado_aberto=h>=8&&h<18;
+ for(const[id,n]of Object.entries(s.npcs))if(n.alive&&['maira','mercador','breno'].includes(id))n.location=npcPlace(id,s.day);
+ const day=Math.floor(s.day/1440);
+ if(h>=12&&h<13&&s.life.socialDay!==day){
+  s.life.socialDay=day;
+  const a=s.npcs.maira,b=s.npcs.mercador;
+  if(a?.alive&&b?.alive&&a.location===b.location){s.relations['maira:mercador']=Math.min(100,(s.relations['maira:mercador']||0)+1);s.relations['mercador:maira']=Math.min(100,(s.relations['mercador:maira']||0)+1);if(s.location===a.location)note(s,'witness','Maíra e o livreiro conversam durante a pausa. A vila tem relações que não dependem de você.');}
+ }
+ for(const[skill,value]of Object.entries(s.skills))if(value>=60&&!s.life.milestones[skill]){s.life.milestones[skill]=true;s.flags[`dominio_${skill}`]=true;note(s,'milestone',`${SKILLS[skill]||skill}: você atingiu um novo domínio. Novas técnicas ficam disponíveis.`);}
+ const a=s.life.appointment;
+ if(a&&['scheduled','offered'].includes(a.status)){
+  if(s.day>a.until&&a.status==='scheduled'){a.status='missed';s.flags.aula_marcada=false;s.relations['maira:player']=Math.max(-100,(s.relations['maira:player']||0)-3);note(s,'appointment','O horário da aula passou. Maíra voltou ao trabalho; você poderá combinar outra ocasião.');}
+  else if(a.status==='scheduled'&&s.day>=a.at&&s.location===a.place&&s.npcs[a.npc]?.alive&&s.npcs[a.npc].location===a.place){a.status='offered';s.queue.push({id:s.nextId++,type:'decision',decision:'aula_agendada',day:s.day});}
+ }
+}
+function progress(s,dt){
+ const o=s.work.length?catalog.decisions.find(d=>d.id===s.work.at(-1).decision)?.options.find(o=>o.id===s.work.at(-1).option):null;
+ const sleeping=!!o?.sleep,resting=!!o?.rest;
+ const rates={food:sleeping?2:4,energy:sleeping||resting?0:s.life.identity.race==='anao'?1:2,hygiene:1,mood:sleeping?0:1};
+ for(const[k,rate]of Object.entries(rates)){const amount=s.life.carry[k]+dt*rate,loss=Math.floor(amount/60);s.life.carry[k]=amount%60;s.life.needs[k]=Math.max(0,s.life.needs[k]-loss);}
+}
+function afterChoice(s,{decision:d,option:o,outcome:r}){
+ if(o.practice){const {skill,base}=o.practice;let gain=base+(s.life.identity.talent===skill?2:0)+(s.life.identity.trait==='persistente'&&r.id==='falha'?3:0);if(s.life.needs.mood<20)gain=Math.max(1,Math.floor(gain/2));s.skills[skill]=(s.skills[skill]||0)+gain;note(s,'practice',`${SKILLS[skill]}: +${gain} de prática.`);}
+ if(o.social){if(s.life.identity.trait==='sociavel')s.relations[`${o.social}:player`]=Math.min(100,(s.relations[`${o.social}:player`]||0)+3);if(s.life.needs.hygiene<20){s.relations[`${o.social}:player`]=Math.max(-100,(s.relations[`${o.social}:player`]||0)-3);note(s,'social','O cheiro da estrada dificulta a aproximação. Uma pausa para se lavar pode ajudar.');}}
+ if(o.project){s.life.project=Math.min(180,s.life.project+60);if(s.life.project===180){s.items.lanterna=(s.items.lanterna||0)+1;s.flags.lanterna_pronta=true;note(s,'project','A lanterna está pronta. Você pode guardá-la, vendê-la ou levá-la ao bosque.');}else note(s,'project',`Lanterna: ${s.life.project}/180 minutos de trabalho concluídos.`);}
+ if(o.travel){const leg=s.life.route[0];if(leg?.to===s.location)s.life.route.shift();}
+ if(o.appointment){const at=(Math.floor(s.day/1440)+1)*1440+540;s.life.appointment={npc:'maira',place:'oficina',at,until:at+30,status:'scheduled'};s.flags.aula_marcada=true;}
+ if(o.lesson&&s.life.appointment){s.life.appointment.status=o.id==='cancelar'?'cancelled':'done';s.flags.aula_marcada=false;}
+ if(d.id==='despertar')s.life.identity.gift='eco';
+ if(o.purchase)s.flags.reagente_adquirido=true;
+}
+const hooks={validate,settle:synchronize,progress,afterChoice,nextBoundary:s=>{
+ const a=s.life.appointment;return a?.status==='scheduled'?(s.day<a.at?a.at:s.day<=a.until?a.until+1:Infinity):Infinity;
+},onOffer:(s,e,random)=>{if(e.decision==='reagente'){s.world.reagente_real=random()<0.6;s.flags.qualidade_conhecida=false;}}};
+const engine=createEngine(catalog,hooks);
+const legacyEngine=createEngine(legacyCatalog);
+function transact(s,op){const draft=copy(s);op(draft);engine.save(draft);Object.assign(s,draft);return s;}
+function routeRun(s){while(s.life.route.length&&!s.pending&&s.target===null){const l=s.life.route[0];engine.act(s,`ir_${l.from}_${l.to}`,'andar');}return s;}
+function createLife(seed=1,options={}){
+ const p=identity(options),age={humano:18,elfo:40,anao:30}[p.race];
+ const s=engine.create(seed,{day:480,birthDay:480-age*365*1440,life:data(p),location:'casa',money:18,items:{grimorio:1},skills:{[ORIGINS[p.origin].skill]:ORIGINS[p.origin].value},flags:{[`raca_${p.race}`]:true,[`traco_${p.trait}`]:true,[`dom_${p.gift}`]:true},npcs:{
+ maira:{name:'Maíra',alive:true,location:'oficina',identity:{id:'maira',name:'Maíra',race:'anao',origin:'artesao',trait:'persistente',talent:'oficio',gift:'latente'}},
+ mercador:{name:'Livreiro',alive:true,location:'mercado',identity:{id:'mercador',name:'Livreiro',race:'humano',origin:'viajante',trait:'observador',talent:'alquimia',gift:'latente'}},
+ breno:{name:'Breno',alive:true,location:'praca',identity:{id:'breno',name:'Breno',race:'elfo',origin:'viajante',trait:'sociavel',talent:'esgrima',gift:'pulso'}}
+ }});synchronize(s);note(s,'arrival',`${p.name}, ${ORIGINS[p.origin].name.toLowerCase()}, começa uma nova vida em Ponteclara. O livro na mochila é apenas uma das possibilidades.`);return engine.load(engine.save(s));
+}
+const act=(s,id,option)=>transact(s,t=>engine.act(t,id,option));
+const choose=(s,option)=>transact(s,t=>engine.choose(t,{instance:t.pending.id,option}));
+const travel=(s,to)=>transact(s,t=>{check(!t.pending&&t.target===null,'Conclua a situação atual antes de viajar.');t.life.route=path(t.location,to).legs;routeRun(t);});
+const resume=s=>transact(s,t=>{if(t.target!==null)engine.resume(t);if(!t.pending&&t.target===null)routeRun(t);});
+const stopRoute=s=>transact(s,t=>{check(!t.pending,'Resolva a situação atual.');if(t.work.length)t.life.route=t.life.route.slice(0,1);else{t.life.route=[];if(t.target!==null)engine.stop(t);}note(t,'travel','Você decidiu não seguir para os próximos trechos do caminho.');});
+const abandon=s=>transact(s,t=>{t.life.route=[];engine.abandon(t);});
+const wait=(s,minutes)=>transact(s,t=>engine.advance(t,minutes));
+const save=engine.save,load=engine.load;
+function migrateLegacy(raw){
+ const old=legacyEngine.load(raw);check(!old.pending&&!old.work.length&&!old.activities.length&&old.target===null&&!old.queue.length,'Conclua os compromissos na versão anterior antes de transferir este personagem.');
+ const fresh=createLife(old.seed,{name:'Viajante',gift:'latente'}),t=copy(old);
+ t.catalog=fresh.catalog;t.clock=fresh.clock;t.life=fresh.life;t.flags={...fresh.flags,...old.flags};t.day=old.day*1440+480;t.birthDay=old.birthDay*1440+480;t.nextPulse=(Math.floor(t.day/60)+1)*60;t.location='praca';
+ t.history=old.history.map(h=>({...h,day:h.day*1440+480}));t.seen={};t.families={};t.npcs={...fresh.npcs,...t.npcs};
+ for(const n of Object.values(t.npcs))if(['aldeia','vila'].includes(n.location))n.location=n.name.includes('irmã')?'casa':'praca';
+ synchronize(t);note(t,'migration','Você chegou a Ponteclara. Suas posses, habilidades, memórias e consequências anteriores foram preservadas; a rotina passa a ser vivida em minutos.');
+ return load(save(t));
+}
+function reason(s,c){
+ if(!c||eligible(s,c))return null;
+ if(c.all)return c.all.map(x=>reason(s,x)).filter(Boolean).join(' ');
+ if(c.any)return 'Alternativas: '+c.any.map(x=>reason(s,x)).filter(Boolean).join(' ou ');
+ if(c.person)return `Encontre ${s.npcs[c.person]?.name||c.person} neste lugar.`;
+ if(c.stat){const [type,key]=c.stat.split(':');return `Precisa de ${type==='skill'?SKILLS[key]||key:needNames[key]||c.stat} ${c.value} ou mais.`;}
+ if(c.item)return `Precisa de ${c.min} × ${{ervas:'ervas',lanterna:'lanterna',grimorio:'livro'}[c.item]||c.item}.`;
+ if(c.knows)return 'Descubra essa informação conversando ou investigando.';
+ if(c.flag){if(c.flag.startsWith('at_'))return `Vá a ${PLACES[c.flag.slice(3)]?.name||'outro lugar'}.`;if(c.flag.startsWith('dominio_'))return `Domine ${SKILLS[c.flag.slice(8)]} (60 pontos).`;return ({oficina_aberta:'A oficina atende entre 08:00 e 17:00.',mercado_aberto:'O mercado abre das 08:00 às 18:00.',dom_eco:'Requer o dom Eco espiritual.',luz_dia:'Espere a luz do dia.',traco_observador:'Requer o traço Observador.',raca_elfo:'Um elfo enxerga na escuridão do bosque.'})[c.flag]||'Requer outra condição do personagem.';}
+ if(c.not)return 'Você já concluiu esta possibilidade ou tem um compromisso em aberto.';
+ return 'Falta uma condição para esta ação.';
+}
+function view(s){
+ const v=engine.view(s),l=s.life,c=calendar(s.day),p=l.identity;
+ const describe=(d,o)=>{const definition=catalog.decisions.find(x=>x.id===d)?.options.find(x=>x.id===o.id);return {...o,minutes:o.cost.days,reason:definition&&!eligible(s,definition.requires)?reason(s,definition.requires):o.reason};};
+ const actions=v.actions.filter(d=>!d.id.startsWith('ir_')).map(d=>({...d,options:d.options.map(o=>describe(d.id,o))}));
+ if(v.pending&&!v.pending.legacy)v.pending.options=v.pending.options.map(o=>describe(s.pending.decision,o));
+ const people=Object.entries(s.npcs).filter(([,n])=>n.alive&&n.location===s.location).map(([id,n])=>({id,name:n.name,friend:!!s.flags[`amizade_${id}`]}));
+ const contacts=Object.entries(s.npcs).filter(([id])=>s.knowledge.player?.[`contato_${id}`]||Object.hasOwn(s.relations,`player:${id}`)||Object.hasOwn(s.relations,`${id}:player`)).map(([id,n])=>({id,name:n.name,trust:s.relations[`player:${id}`]||0,reciprocal:s.relations[`${id}:player`]||0,friend:!!s.flags[`amizade_${id}`],routine:s.knowledge.player?.[`rotina_${id}`]?{maira:'Oficina 08–12 e 13–17; mercado ao meio-dia.',mercador:'Mercado 08–18; depois na taverna.',breno:'Pátio 09–12; taverna 18–22.'}[id]:null}));
+ return {...v,actions,calendar:c,identity:copy(p),place:{id:s.location,...PLACES[s.location]},people,contacts,route:copy(l.route),appointment:copy(l.appointment),project:l.project,
+  needs:Object.entries(l.needs).map(([id,value])=>({id,label:needNames[id],value})),
+  traits:[RACES[p.race],TRAITS[p.trait],`Talento: ${SKILLS[p.talent]}`,GIFTS[p.gift]],
+  skills:Object.entries(SKILLS).map(([id,label])=>({id,label,value:s.skills[id]||0,mastered:!!l.milestones[id]})),
+  diary:v.diary.filter(h=>h.type!=='intention').map(h=>({...h,calendar:calendar(h.day)}))};
+}
+
+return {engine,load};})();
+const world=(()=>{
+const {PLACES : basePlaces,EDGES : baseEdges,SKILLS,ORIGINS,RACES,TRAITS,GIFTS,calendar,npcPlace}=world14;
+
+const PLACES={...basePlaces,
+ margem:{name:'Margem do rio',x:18,y:22,region:'arredores',text:'Uma passarela cedeu sobre o rio. Acima da corrente, a roda do moinho continua batendo sem ninguém para movê-la.'},
+ mirante:{name:'Mirante das raízes',x:78,y:22,region:'arredores',text:'Raízes cobrem uma antiga galeria de manutenção. Deste ponto você vê os caminhos e o moinho inteiro.'},
+ moinho:{name:'Moinho Afogado',x:25,y:75,region:'arredores',text:'Um caranguejo de cobre patrulha a porta: pás no lugar das pinças, um sino rachado dentro do casco. A cada passo, dentes de engrenagem raspam na pedra.'},
+ camara:{name:'Câmara da roda',x:80,y:75,region:'arredores',text:'Um núcleo luminoso força a roda a girar. Presa às runas, uma presença arrasta a voz junto da água: “Ainda não terminou meu turno?”'}
+};
+const EDGES=[...baseEdges,['bosque','margem',20],['margem','mirante',15],['margem','moinho',15],['mirante','moinho',10],['moinho','camara',5],['praca','margem',15]];
+function edgeOpen(s,a,b){
+ if(!s)return true;const key=[a,b].sort().join(':');
+ if(key==='bosque:margem')return !!s.flags.moinho_conhecido;
+ if(key==='margem:moinho')return !!s.flags.travessia_segura;
+ if(key==='mirante:moinho')return !!s.flags.rota_alta;
+ if(key==='camara:moinho')return !!s.flags.guardiao_superado;
+ if(key==='margem:praca')return !!s.flags.rota_rio_aberta;
+ return true;
+}
+function path(from,to,s){
+ if(!Object.hasOwn(PLACES,from)||!Object.hasOwn(PLACES,to))throw Error('Lugar desconhecido.');
+ const dist={[from]:0},routes={[from]:[]},todo=new Set(Object.keys(PLACES));
+ while(todo.size){const here=[...todo].sort((a,b)=>(dist[a]??Infinity)-(dist[b]??Infinity))[0];if(dist[here]===undefined)break;todo.delete(here);if(here===to)return {minutes:dist[here],legs:routes[here]};
+  for(const[a,b,n]of EDGES){const next=a===here?b:b===here?a:null;if(next&&todo.has(next)&&edgeOpen(s,here,next)&&dist[here]+n<(dist[next]??Infinity)){dist[next]=dist[here]+n;routes[next]=[...routes[here],{from:here,to:next,minutes:n}];}}
+ }return null;
+}
+const ACTORS={iria:{name:'Iria',race:'humano',text:'Iria vigia a margem para impedir que alguém se perca nas galerias. Ela quer um caminho seguro, mas não aceita promessas vagas.'},nilo:{name:'Nilo',race:'anao',text:'Nilo conhece a antiga equipe do moinho. Ele quer recuperar o caminho e as ferramentas; não vai arriscar a própria vida para proteger uma relíquia.'}};
+function contextFor(seed){const n=Math.imul(seed^0x45d9f3b,2654435761)>>>0;return {weather:['cheia','nevoa','calmaria'][n%3],actor:n%2?'iria':'nilo'};}
+
+return {PLACES,EDGES,SKILLS,ORIGINS,RACES,TRAITS,GIFTS,path,calendar,npcPlace,ACTORS,contextFor,edgeOpen};})();
+const content=(()=>{
+const {catalog : baseCatalog}=content14;
+const {PLACES,EDGES,ACTORS}=world;
+const clone=x=>JSON.parse(JSON.stringify(x));
+const all=(...c)=>({all:c}),any=(...c)=>({any:c}),not=c=>({not:c}),f=(flag,is=true)=>({flag,is}),at=p=>f(`at_${p}`),stat=(key,value)=>({stat:key,op:'gte',value}),has=(item,min=1)=>({item,min}),knows=fact=>({knows:{who:'player',fact}}),who=id=>({person:id,alive:true,local:true});
+const add=(stat,amount)=>({op:'add',stat,amount}),mark=(id,value=true)=>({op:'flag',id,value}),item=(id,amount)=>({op:'item',id,amount}),learn=(fact,who='player')=>({op:'learn',who,fact});
+const fit=all(stat('need:food',10),stat('need:energy',12));
+const result=(id,text,effects=[],when,weight=1)=>({id,text,effects,weight,...(when?{when}:{})});
+function option(id,label,minutes,text,effects=[],extra={}){return {id,label,intent:label,hint:'Escolha como agir.',blockedReason:'Falta uma condição de preparo ou informação.',cost:{money:0,days:minutes},effects:extra.outcomes?effects:[],outcomes:[result('feito',text,effects)],...extra};}
+function action(id,title,text,options,requires,extra={}){return {id,version:1,kind:'action',family:id,domain:'aventura',title,text,repeat:{max:100000,cooldown:0},options,...(requires?{requires}:{}),...extra};}
+const c=clone(baseCatalog);c.version=2;
+const push=(...d)=>c.decisions.push(...d);
+for(const[a,b,n]of EDGES.filter(([a,b])=>!baseCatalog.decisions.some(d=>d.id===`ir_${a}_${b}`)))for(const[from,to]of[[a,b],[b,a]]){
+ const gate=[from,to].sort().join(':');const open=gate==='bosque:margem'?f('moinho_conhecido'):gate==='margem:moinho'?f('travessia_segura'):gate==='mirante:moinho'?f('rota_alta'):gate==='camara:moinho'?f('guardiao_superado'):gate==='margem:praca'?f('rota_rio_aberta'):null;
+ push(action(`ir_${from}_${to}`,`Ir a ${PLACES[to].name}`,'Seguir um trecho do caminho.',[option('andar','Seguir pelo caminho',n,`Você chegou a ${PLACES[to].name}.`,[{op:'move',who:'player',to}],{travel:true})],open?all(at(from),open):at(from)));
+}
+push(action('rumos','Rumores e pedidos','No quadro da praça, três recados falam do velho moinho. Você pode seguir um interesse, mudar de ideia ou ignorar os recados.',[
+ option('ferramentas','Procurar as ferramentas de Maíra',5,'O estojo perdido traz o selo da oficina. Você anota o caminho do moinho.',[mark('moinho_conhecido'),learn('ferramentas_moinho')],{objective:'ferramentas'}),
+ option('presenca','Investigar a voz na água',5,'Há relatos de uma voz presa à roda do moinho. Você decide investigar por conta própria.',[mark('moinho_conhecido'),learn('voz_moinho')],{objective:'presenca'}),
+ option('travessia','Procurar um caminho pela margem',5,'Uma rota curta ligava a margem à praça. Você anota onde começar a procurar.',[mark('moinho_conhecido'),learn('rota_moinho')],{objective:'travessia'})
+],at('praca')));
+push(action('trilha_moinho','A trilha que acompanha o rio','Uma placa quase coberta aponta para um moinho antigo.',[option('seguir','Examinar a placa e marcar o caminho',10,'Você reconhece uma trilha até a margem. Pode explorá-la quando quiser.',[mark('moinho_conhecido'),learn('rota_moinho')])],all(at('bosque'),not(f('moinho_conhecido')))));
+push(action('preparo','Preparar a mochila','Equipamento abre possibilidades, mas você pode explorar sem comprar tudo.',[
+ ...[['corda','Corda',4],['kit_ferramentas','Kit de ferramentas',8],['lamina_curta','Lâmina curta',9]].map(([id,label,money])=>option(id,`Comprar ${label.toLowerCase()}`,5,`Você guarda ${label.toLowerCase()} na mochila.`,[item(id,1)],{cost:{money,days:5},requires:not(has(id))})),
+ option('racao','Comprar uma provisão',5,'Pão seco e fruta, embrulhados para a viagem.',[item('racao',1)],{cost:{money:2,days:5}}),
+ option('curativo','Comprar um curativo',5,'Você guarda tiras de tecido e uma pomada simples.',[item('curativo',1)],{cost:{money:3,days:5}})
+],all(at('mercado'),f('mercado_aberto'))));
+c.decisions.find(d=>d.id==='rotina').options.push(option('provisao','Comer uma provisão da mochila',15,'Você faz uma pausa e come o que trouxe para a viagem.',[item('racao',-1),add('need:food',50)],{requires:has('racao'),completionRequires:has('racao')}));
+push(action('curativo','Tratar ferimentos','Um curativo recupera saúde e é consumido no tratamento.',[option('tratar','Usar um curativo',20,'Você limpa e protege os ferimentos. A dor diminui.',[item('curativo',-1),add('health',20)],{requires:has('curativo'),completionRequires:has('curativo')})],all(has('curativo'),{stat:'health',op:'lte',value:99})));
+for(const d of c.decisions.filter(d=>d.id.startsWith('treinar_'))){const o=clone(d.options[0]);o.id='bloco';o.label='Dedicar duas horas à prática';o.intent=o.label;o.cost.days=120;o.practice.base*=2;o.practice.sessions=2;for(const r of o.outcomes)for(const e of r.effects)if(e.op==='add'&&e.stat==='need:energy')e.amount*=2;o.detail='Um bloco mais longo. Encontros importantes ainda podem interromper sua prática.';d.options.push(o);}
+for(const[id,n]of Object.entries(ACTORS)){
+ push(action(`conversar_${id}`,`Conversar com ${n.name}`,n.text,[
+  option('riscos','Perguntar pelos caminhos e perigos',15,`${n.name} descreve a passagem alta e o ruído das engrenagens. “Olhe antes de meter a mão”, recomenda.`,[learn(`contato_${id}`),learn(`rotina_${id}`),learn('junta_guardiao'),learn('rota_moinho'),add(`trust:${id}:player`,3)],{social:id,requires:not(knows(`rotina_${id}`))}),
+  option('corda','Pedir uma corda emprestada',10,`${n.name} entrega uma corda velha. Você combina devolvê-la ou ajudar a reabrir o caminho.`,[item('corda',1),mark('corda_emprestada'),learn(`contato_${id}`)],{requires:all(not(f('corda_emprestada')),any(f('traco_sociavel'),stat(`trust:${id}:player`,3),knows('apoio_breno')))}),
+  option('devolver','Devolver a corda emprestada',10,`${n.name} recolhe a corda e lembra que você cumpriu o combinado.`,[item('corda',-1),mark('corda_devolvida'),learn('corda_devolvida',id),add(`trust:${id}:player`,4)],{requires:all(f('corda_emprestada'),not(f('corda_devolvida')),has('corda')),completionRequires:has('corda')}),
+  option('retorno','Contar que o caminho está aberto',10,`${n.name} confere a passagem antes de agradecer. Vocês agora têm uma história em comum.`,[learn('caminho_reaberto',id),add(`trust:${id}:player`,8),mark(`retorno_${id}`)],{requires:all(f('rota_rio_aberta'),not(f(`retorno_${id}`)))})
+ ],all(who(id),f(`contato_ativo_${id}`)),{participants:[{id,alive:true,local:true}]}));
+}
+push(action('preparo_breno','Pedir conselho a Breno','Breno prefere que você volte inteiro. Ele conhece a patrulha da margem e não confunde coragem com pressa.',[
+ option('orientacao','Pedir uma apresentação à patrulha',15,'Breno empresta seu nome como referência e ensina a reconhecer um bote anunciado pelo sino.',[learn('apoio_breno'),learn('junta_guardiao'),add('trust:breno:player',2)])
+],all(who('breno'),f('moinho_conhecido'),not(knows('apoio_breno'))),{participants:[{id:'breno',alive:true,local:true}]}));
+push(action('margem','Encontrar uma travessia','O caminho direto até o moinho está rompido. O mirante oferece uma alternativa demorada, mesmo sem equipamento.',[
+ option('leito','Marcar um caminho pelas pedras',20,'Com o rio baixo, você encontra apoios firmes até a porta do moinho.',[mark('travessia_segura')],{requires:all(fit,not(f('rio_alto'))),completionRequires:at('margem')}),
+ option('corda','Fixar uma corda para a passagem',15,'Você ancora a corda. Ela fica no lugar, oferecendo uma passagem segura de ida e volta.',[item('corda',-1),mark('travessia_segura')],{requires:all(fit,has('corda')),completionRequires:all(at('margem'),has('corda'))}),
+ option('ponte','Reparar a passarela até a praça',45,'Você prende os apoios e firma as tábuas. A margem volta a ter um caminho curto até a vila.',[item('corda',-1),mark('rota_rio_aberta'),mark('ponte_reparada')],{requires:all(fit,has('corda'),stat('skill:oficio',25),not(f('rota_rio_aberta'))),completionRequires:all(at('margem'),has('corda')),practice:{skill:'oficio',base:8}})
+],all(at('margem'),any(not(f('travessia_segura')),not(f('rota_rio_aberta'))))));
+push(action('mirante','Ler o terreno','Uma rota de manutenção passa por cima do canal. É possível segui-la com cuidado.',[
+ option('cuidado','Procurar uma passagem com calma',40,'Você localiza apoios entre as raízes e uma galeria que contorna a porta do moinho.',[mark('rota_alta'),learn('galeria_moinho'),learn('junta_guardiao')],{requires:fit,completionRequires:at('mirante'),practice:{skill:'exploracao',base:7}}),
+ option('rastrear','Ler as marcas da antiga equipe',20,'As marcas levam à galeria alta. Você encontra também uma anotação sobre a alimentação do selo.',[mark('rota_alta'),learn('galeria_moinho'),learn('junta_guardiao'),learn('pacto_alternativo')],{requires:all(fit,any(stat('skill:exploracao',25),f('traco_observador'))),completionRequires:at('mirante'),practice:{skill:'exploracao',base:7}})
+],all(at('mirante'),not(f('rota_alta')))));
+const victory=[mark('guardiao_superado'),mark('guardiao_quebrado'),item('cobre_guardiao',1)];
+const trained=stat('skill:esgrima',25),blade=has('lamina_curta');
+push(action('guardiao','O caranguejo de cobre','O sino estala antes de cada investida. Ele protege a passagem da câmara, sem impedir sua retirada para a margem.',[
+ option('observar','Estudar as articulações a distância',15,'Uma junta frouxa perde pressão entre dois botes. Você aprende a reconhecer a abertura.',[learn('junta_guardiao')],{requires:not(knows('junta_guardiao'))}),
+ option('lutar','Enfrentar o guardião',20,'Você enfrenta as pás de cobre.',[add('need:energy',-8)],{requires:fit,completionRequires:at('moinho'),detail:'Pode causar ferimentos e ser fatal com pouca saúde. Treino e uma lâmina aumentam sua chance; a cheia piora o risco.',practice:{skill:'esgrima',base:7},outcomes:[
+  result('equipado','Você lê o bote, corta a correia e derruba o guardião.',victory,all(trained,blade),8),
+  result('armado','Sua lâmina alcança a correia. O sino finalmente se cala.',victory,all(not(trained),blade),5),
+  result('treinado','Você usa os apoios para derrubar o corpo de cobre no vão.',victory,all(trained,not(blade)),3),
+  result('improviso','Você improvisa uma alavanca e rompe a engrenagem.',victory,all(not(trained),not(blade)),1),
+  result('corrente','A corrente muda seu apoio. Uma pá abre um corte antes de você recuar.',[add('health',-16)],f('rio_alto'),2),
+  result('falha','O sino anuncia o bote, mas você reage tarde. Ferido, recua; o guardião continua na porta.',[add('health',-10)],undefined,4)
+ ]}),
+ option('consertar','Despressurizar a junta defeituosa',25,'Seu kit permite abrir a válvula certa. O guardião se recolhe, ainda inteiro.',[mark('guardiao_superado'),mark('guardiao_pacificado'),add('need:energy',-6)],{requires:all(fit,has('kit_ferramentas'),stat('skill:oficio',25),knows('junta_guardiao')),completionRequires:all(at('moinho'),has('kit_ferramentas')),practice:{skill:'oficio',base:8}}),
+ option('selo','Sintonizar o selo do guardião',25,'Você repete o sinal de manutenção. As pás baixam e deixam você passar.',[mark('guardiao_superado'),mark('guardiao_pacificado'),add('need:energy',-10)],{requires:all(fit,any(stat('skill:arcanismo',30),all(f('dom_eco'),knows('runas_livro')))),completionRequires:at('moinho'),practice:{skill:'arcanismo',base:8}}),
+ option('galeria','Contornar pela galeria alta',30,'Você passa acima do guardião e abre o acesso interno. Ele continua patrulhando a porta externa.',[mark('guardiao_superado'),mark('guardiao_contornado')],{requires:all(fit,knows('galeria_moinho')),completionRequires:at('moinho'),practice:{skill:'exploracao',base:6}}),
+ option('guarda','Sustentar a Guarda firme até ele perder pressão',20,'Sua base não cede. Você redireciona os botes até as pás pararem de se mover.',[mark('guardiao_superado'),mark('guardiao_pacificado'),add('need:energy',-10)],{requires:all(fit,f('dominio_esgrima')),completionRequires:at('moinho'),practice:{skill:'esgrima',base:8}})
+],all(at('moinho'),not(f('guardiao_superado')))));
+push(action('achados','O que a equipe deixou para trás','Entre correias e madeira encharcada, um estojo de ferramentas traz a marca da oficina.',[
+ option('ferramentas','Recuperar o estojo de Maíra',20,'Você recupera o estojo. Maíra ainda não sabe que você o encontrou.',[item('ferramentas_perdidas',1),mark('ferramentas_recuperadas')],{requires:not(f('ferramentas_recuperadas'))}),
+ option('notas','Copiar as anotações da equipe',25,'As anotações descrevem a promessa imposta à presença e uma possível troca de fonte mágica.',[learn('pacto_alternativo'),learn('historia_moinho'),mark('notas_moinho')],{requires:not(f('notas_moinho')),practice:{skill:'arcanismo',base:5}})
+],all(at('moinho'),f('guardiao_superado'),any(not(f('ferramentas_recuperadas')),not(f('notas_moinho'))))));
+const fuel=any(has('tinta_runica'),has('semente_luz'),has('flor_vidro'));
+push(action('destino_moinho','O destino da roda','A presença foi obrigada a manter a roda girando. Você pode resolver o problema de modos diferentes. A escolha altera o que ficará disponível na margem.',[
+ option('reparar','Reparar o mecanismo e manter o vínculo',45,'A roda volta a alimentar o canal. A presença continua ligada ao moinho; o trabalho da antiga equipe poderá ser retomado.',[mark('moinho_resolvido'),mark('fluxo_estavel'),mark('moinho_reparado')],{requires:fit,completionRequires:at('camara'),practice:{skill:'oficio',base:8},detail:'Restaura o moinho e abre serviços de manutenção. A presença permanece vinculada.'}),
+ option('libertar','Abrir a comporta e libertar a presença',30,'A voz se transforma em água livre. O moinho para, mas o canal antigo revela um caminho até a praça e plantas antes submersas.',[mark('moinho_resolvido'),mark('espirito_livre'),mark('rota_rio_aberta')],{requires:fit,completionRequires:at('camara'),detail:'A presença parte. O moinho deixa de trabalhar; a margem oferece outra rota e ingredientes de cura.'}),
+ option('extrair','Retirar o núcleo para si',30,'Você corta a ligação e guarda o núcleo. A roda para de vez. O núcleo ainda carrega energia que você poderá usar ou negociar.',[mark('moinho_resolvido'),mark('nucleo_retirado'),item('nucleo_moinho',1)],{requires:fit,completionRequires:at('camara'),detail:'Você leva uma fonte de energia valiosa. O moinho para; a oficina só saberá sua decisão se você contar.'}),
+ option('renovar','Negociar outro pacto e substituir a fonte',60,'Você oferece uma fonte de luz no lugar do vínculo. A presença aceita manter a água por vontade própria e abre o caminho da margem.',[mark('moinho_resolvido'),mark('fluxo_estavel'),mark('pacto_renovado'),mark('rota_rio_aberta')],{requires:all(fit,knows('pacto_alternativo'),fuel,any(stat('skill:oficio',35),stat('skill:alquimia',35),stat('skill:arcanismo',30))),completionRequires:all(at('camara'),fuel),consumeOneOf:['tinta_runica','semente_luz','flor_vidro'],detail:'Consome tinta rúnica, semente luminosa ou flor de vidro, nessa ordem de preferência. Mantém o moinho e estabelece um vínculo voluntário.'})
+],all(at('camara'),not(f('moinho_resolvido')))));
+push(action('retorno_maira','O retorno à oficina','Maíra examina o que você traz e escuta aquilo que você decide contar.',[
+ option('devolver','Entregar as ferramentas recuperadas',10,'Maíra limpa as peças antes de falar. “Agora posso terminar o serviço que ficou parado.” Ela paga oito moedas e guarda sua ajuda na memória.',[item('ferramentas_perdidas',-1),add('money',8),add('trust:maira:player',10),mark('ferramentas_devolvidas'),learn('ferramentas_devolvidas','maira')],{requires:has('ferramentas_perdidas')}),
+ option('relatar','Contar o que fez na câmara',15,'Maíra escuta os detalhes do mecanismo e pensa no que a decisão significa para a oficina.',[mark('moinho_relato_maira'),learn('decisao_moinho','maira')],{requires:all(f('moinho_resolvido'),not(f('moinho_relato_maira'))),reportTo:'maira',resolution:'first',outcomes:[
+ result('pacto','Maíra escuta o acordo e volta aos seus desenhos. “Talvez a gente possa trabalhar com a água, sem prender ninguém a uma roda.”',[add('trust:maira:player',6)],f('pacto_renovado')),
+ result('reparo','Maíra olha na direção do rio. “A roda voltou. Agora ainda falta decidir o que devemos a quem a move.”',[add('trust:maira:player',4)],f('moinho_reparado')),
+ result('livre','Maíra demora a responder. “Vou ter que adaptar meu trabalho. Mas consigo entender por que você abriu a comporta.”',[add('trust:maira:player',1)],f('espirito_livre')),
+ result('nucleo','Maíra fecha o estojo. “Você levou a fonte de energia. Agora alguém terá que encontrar outro jeito de mover aquela roda.”',[add('trust:maira:player',-3)])
+ ]})
+],all(who('maira'),any(has('ferramentas_perdidas'),all(f('moinho_resolvido'),not(f('moinho_relato_maira'))))),{participants:[{id:'maira',alive:true,local:true}]}));
+push(action('retorno_livreiro','O interesse do livreiro','O livreiro quer conhecer a história da roda. Um relato e um artefato não têm o mesmo valor para ele.',[
+ option('notas','Compartilhar a história e suas anotações',15,'O livreiro compara suas anotações com uma edição antiga. Paga dez moedas pelo trabalho de pesquisa e passa a conhecer sua descoberta.',[add('money',10),mark('notas_entregues'),learn('historia_moinho','mercador'),add('trust:mercador:player',4)],{requires:all(f('notas_moinho'),not(f('notas_entregues')))}),
+ option('nucleo','Vender o núcleo',15,'O livreiro paga trinta moedas e guarda o núcleo em uma caixa opaca. Agora sabe o que você retirou do moinho.',[item('nucleo_moinho',-1),add('money',30),learn('nucleo_retirado','mercador'),mark('nucleo_vendido')],{requires:has('nucleo_moinho')})
+],all(who('mercador'),any(all(f('notas_moinho'),not(f('notas_entregues'))),has('nucleo_moinho'))),{participants:[{id:'mercador',alive:true,local:true}]}));
+push(action('manutencao_moinho','Trabalhar no moinho recuperado','A roda precisa de manutenção. Seu ofício agora tem utilidade longe da vila.',[option('servico','Fazer uma manutenção de duas horas',120,'Você entrega a manutenção do turno e recebe nove moedas.',[add('money',9),add('need:energy',-10)],{requires:all(fit,stat('skill:oficio',25)),completionRequires:at('moinho'),practice:{skill:'oficio',base:4}})],all(at('moinho'),f('fluxo_estavel'))));
+push(action('ervas_rio','As plantas do canal aberto','A água livre deixou brotos de folhas azuladas ao alcance da margem.',[option('coletar','Preparar um emplastro com os brotos',45,'Você identifica as folhas, prepara um emplastro e trata seus ferimentos.',[add('health',18)],{requires:fit,completionRequires:at('margem'),practice:{skill:'alquimia',base:5}})],all(at('margem'),f('espirito_livre')),{repeat:{max:100000,cooldown:180}}));
+push(action('meditar_rio','A presença reconhece você','A água se aquieta quando você chega. Há espaço para descansar sem perder a sintonia.',[option('descansar','Descansar junto do rio',30,'A presença acompanha sua respiração. Você volta a se sentir inteiro.',[add('need:energy',18),add('need:mood',14)],{rest:true,completionRequires:at('margem')})],all(at('margem'),f('pacto_renovado')),{repeat:{max:100000,cooldown:120}}));
+push(action('usar_nucleo','A energia do núcleo','Você pode recorrer ao núcleo, sabendo que sua energia força o corpo.',[option('canalizar','Canalizar a energia',20,'O núcleo aquece sua mão e devolve energia. A pressão deixa uma dor breve nos braços.',[add('need:energy',22),add('health',-2)],{requires:stat('health',3),completionRequires:has('nucleo_moinho'),detail:'Recupera energia, custa saúde. Você conserva o núcleo.'})],has('nucleo_moinho'),{repeat:{max:100000,cooldown:240}}));
+const catalog=c;
+
+return {catalog};})();
+const life=(()=>{
+const {createEngine}=kernel;
+const {copy,check,integer,eligible}=contract;
+const {catalog}=content;
+const {load : loadPrevious}=life14;
+const {catalog : legacyCatalog}=legacy;
+const {PLACES,SKILLS,ORIGINS,RACES,TRAITS,GIFTS,path,calendar,npcPlace,ACTORS,contextFor,EDGES,edgeOpen}=world;
+const record=x=>x&&typeof x==='object'&&!Array.isArray(x);
+const needNames={food:'Saciedade',energy:'Energia',hygiene:'Higiene',mood:'Ânimo'};
+const note=(s,type,text)=>s.history.push({day:s.day,type,text});
+const talents=Object.keys(SKILLS);
+function identity(input={}){
+ const p={name:'Ari',race:'humano',origin:'artesao',trait:'observador',talent:'oficio',gift:'eco',...input};
+ check(typeof p.name==='string'&&p.name.trim().length>0&&p.name.trim().length<=32,'Use um nome entre 1 e 32 caracteres.');
+ check(!/[<>\u0000-\u001f]/.test(p.name),'O nome contém caracteres inválidos.');
+ check(Object.hasOwn(RACES,p.race)&&Object.hasOwn(ORIGINS,p.origin)&&Object.hasOwn(TRAITS,p.trait)&&talents.includes(p.talent)&&Object.hasOwn(GIFTS,p.gift),'Características de personagem inválidas.');
+ return {id:'player',name:p.name.trim(),race:p.race,origin:p.origin,trait:p.trait,talent:p.talent,gift:p.gift};
+}
+function data(p){return {identity:p,needs:{food:80,energy:85,hygiene:75,mood:70},carry:{food:0,energy:0,hygiene:0,mood:0},route:[],appointment:null,project:0,milestones:{},socialDay:-1,revision:2,chapter:{...contextFor(0),objective:null}};}
+function validate(s){
+ const l=s.life;check(l?.revision===2,'Dados de vida incompatíveis.');identity(l.identity);
+ check(l.chapter&&['cheia','nevoa','calmaria'].includes(l.chapter.weather)&&Object.hasOwn(ACTORS,l.chapter.actor)&&[null,'ferramentas','presenca','travessia'].includes(l.chapter.objective),'Capítulo inválido.');
+ const endings=['moinho_reparado','espirito_livre','nucleo_retirado','pacto_renovado'].filter(k=>s.flags[k]);check(endings.length<=1&&!!s.flags.moinho_resolvido===(endings.length===1),'Desfecho de moinho inconsistente.');
+ for(const k of Object.keys(needNames))check(integer(l.needs?.[k])&&l.needs[k]<=100&&integer(l.carry?.[k])&&l.carry[k]<60,'Necessidades inválidas.');
+ check(record(l.milestones)&&integer(l.project)&&l.project<=180&&Number.isSafeInteger(l.socialDay)&&Array.isArray(l.route)&&l.route.length<=8,'Progresso de vida inválido.');
+ for(const[id,n]of Object.entries(s.npcs))if(n.identity){identity(n.identity);check(n.identity.id===id&&n.identity.name===n.name,'Identidade de morador inválida.');}
+ check(Object.hasOwn(PLACES,s.location),'Lugar inválido.');
+ let from=s.location;
+ // O primeiro trecho pode estar em andamento; cada destino continua ligado à origem.
+ for(const leg of l.route){check(leg.from===from&&Object.hasOwn(PLACES,leg.to)&&path(from,leg.to).minutes===leg.minutes&&path(from,leg.to).legs.length===1,'Rota inválida.');from=leg.to;}
+ if(l.appointment){const a=l.appointment;check(a.npc==='maira'&&a.place==='oficina'&&integer(a.at)&&a.until===a.at+30&&['scheduled','offered','done','cancelled','missed'].includes(a.status),'Compromisso inválido.');}
+}
+function synchronize(s){
+ const h=(s.day%1440)/60;
+ for(const p of Object.keys(PLACES))s.flags[`at_${p}`]=s.location===p;
+ s.flags.luz_dia=h>=6&&h<18;
+ s.flags.oficina_aberta=h>=8&&h<17;s.flags.mercado_aberto=h>=8&&h<18;
+ for(const id of Object.keys(ACTORS)){s.flags[`contato_ativo_${id}`]=s.life.chapter.actor===id;if(s.npcs[id]?.alive)s.npcs[id].location=s.flags[`contato_ativo_${id}`]&&h>=8&&h<19?'margem':'moradia';}
+ for(const[id,n]of Object.entries(s.npcs))if(n.alive&&['maira','mercador','breno'].includes(id))n.location=npcPlace(id,s.day);
+ const day=Math.floor(s.day/1440);
+ if(h>=12&&h<13&&s.life.socialDay!==day){
+  s.life.socialDay=day;
+  const a=s.npcs.maira,b=s.npcs.mercador;
+  if(a?.alive&&b?.alive&&a.location===b.location){s.relations['maira:mercador']=Math.min(100,(s.relations['maira:mercador']||0)+1);s.relations['mercador:maira']=Math.min(100,(s.relations['mercador:maira']||0)+1);if(s.location===a.location)note(s,'witness','Maíra e o livreiro conversam durante a pausa. A vila tem relações que não dependem de você.');}
+ }
+ for(const[skill,value]of Object.entries(s.skills))if(value>=60&&!s.life.milestones[skill]){s.life.milestones[skill]=true;s.flags[`dominio_${skill}`]=true;note(s,'milestone',`${SKILLS[skill]||skill}: você atingiu um novo domínio. Novas técnicas ficam disponíveis.`);}
+ const a=s.life.appointment;
+ if(a&&['scheduled','offered'].includes(a.status)){
+  if(s.day>a.until&&a.status==='scheduled'){a.status='missed';s.flags.aula_marcada=false;s.relations['maira:player']=Math.max(-100,(s.relations['maira:player']||0)-3);note(s,'appointment','O horário da aula passou. Maíra voltou ao trabalho; você poderá combinar outra ocasião.');}
+  else if(a.status==='scheduled'&&s.day>=a.at&&s.location===a.place&&s.npcs[a.npc]?.alive&&s.npcs[a.npc].location===a.place){a.status='offered';s.queue.push({id:s.nextId++,type:'decision',decision:'aula_agendada',day:s.day});}
+ }
+}
+function progress(s,dt){
+ const o=s.work.length?catalog.decisions.find(d=>d.id===s.work.at(-1).decision)?.options.find(o=>o.id===s.work.at(-1).option):null;
+ const sleeping=!!o?.sleep,resting=!!o?.rest;
+ const rates={food:sleeping?2:4,energy:sleeping||resting?0:s.life.identity.race==='anao'?1:2,hygiene:1,mood:sleeping?0:1};
+ for(const[k,rate]of Object.entries(rates)){const amount=s.life.carry[k]+dt*rate,loss=Math.floor(amount/60);s.life.carry[k]=amount%60;s.life.needs[k]=Math.max(0,s.life.needs[k]-loss);}
+}
+function afterChoice(s,{decision:d,option:o,outcome:r}){
+ if(!s.alive)return;
+ if(o.practice){const {skill,base}=o.practice;let gain=base+(s.life.identity.talent===skill?2*(o.practice.sessions||1):0)+(s.life.identity.trait==='persistente'&&r.id==='falha'?3:0);if(s.life.needs.mood<20)gain=Math.max(1,Math.floor(gain/2));s.skills[skill]=(s.skills[skill]||0)+gain;note(s,'practice',`${SKILLS[skill]}: +${gain} de prática.`);}
+ if(o.social){if(s.life.identity.trait==='sociavel')s.relations[`${o.social}:player`]=Math.min(100,(s.relations[`${o.social}:player`]||0)+3);if(s.life.needs.hygiene<20){s.relations[`${o.social}:player`]=Math.max(-100,(s.relations[`${o.social}:player`]||0)-3);note(s,'social','O cheiro da estrada dificulta a aproximação. Uma pausa para se lavar pode ajudar.');}}
+ if(o.project){s.life.project=Math.min(180,s.life.project+60);if(s.life.project===180){s.items.lanterna=(s.items.lanterna||0)+1;s.flags.lanterna_pronta=true;note(s,'project','A lanterna está pronta. Você pode guardá-la, vendê-la ou levá-la ao bosque.');}else note(s,'project',`Lanterna: ${s.life.project}/180 minutos de trabalho concluídos.`);}
+ if(o.travel){const leg=s.life.route[0];if(leg?.to===s.location)s.life.route.shift();}
+ if(o.appointment){const at=(Math.floor(s.day/1440)+1)*1440+540;s.life.appointment={npc:'maira',place:'oficina',at,until:at+30,status:'scheduled'};s.flags.aula_marcada=true;}
+ if(o.lesson&&s.life.appointment){s.life.appointment.status=o.id==='cancelar'?'cancelled':'done';s.flags.aula_marcada=false;}
+ if(d.id==='despertar')s.life.identity.gift='eco';
+ if(o.purchase)s.flags.reagente_adquirido=true;
+ if(o.objective)s.life.chapter.objective=o.objective;
+ if(o.consumeOneOf){const fuel=o.consumeOneOf.find(k=>s.items[k]>0);check(fuel,'A fonte mágica já não está disponível.');s.items[fuel]--;}
+ if(o.reportTo){const ending=['moinho_reparado','espirito_livre','nucleo_retirado','pacto_renovado'].find(k=>s.flags[k]);(s.knowledge[o.reportTo]??={})[ending]=true;}
+
+}
+const hooks={validate,settle:synchronize,progress,afterChoice,nextBoundary:s=>{
+ const a=s.life.appointment;return a?.status==='scheduled'?(s.day<a.at?a.at:s.day<=a.until?a.until+1:Infinity):Infinity;
+},onOffer:(s,e,random)=>{if(e.decision==='reagente'){s.world.reagente_real=random()<0.6;s.flags.qualidade_conhecida=false;}}};
+function chapterNPCs(seed){return Object.fromEntries(Object.entries(ACTORS).map(([id,n])=>[id,{name:n.name,alive:true,location:'moradia',identity:{id,name:n.name,race:n.race,origin:'viajante',trait:'observador',talent:'exploracao',gift:'latente'}}]));}
+function placeText(s){
+ const base=PLACES[s.location].text;
+ if(s.location==='praca')return base+' '+({cheia:'O rio está alto; espuma se acumula nos pilares.',nevoa:'A névoa cobre a margem e engole o som dos sinos.',calmaria:'Com o rio baixo, antigas marcas aparecem junto da margem.'})[s.life.chapter.weather];
+ if(s.location==='moinho'&&s.flags.guardiao_superado)return s.flags.guardiao_quebrado?'O sino do guardião repousa entre peças de cobre. O caminho para a câmara está livre.':'A passagem interna está aberta. Você reconhece o caminho que encontrou para passar pelo guardião.';
+ if(['camara','margem'].includes(s.location)&&s.flags.moinho_resolvido)return ({moinho_reparado:'A roda gira com regularidade. O canal volta a alimentar a vila; a voz ainda acompanha o trabalho.',espirito_livre:'A roda parou. Água livre corre pelo canal aberto, revelando uma trilha e plantas de folhas azuis.',nucleo_retirado:'O moinho está quieto. Sem seu núcleo, a roda não vai voltar a trabalhar por conta própria.',pacto_renovado:'A água corre com regularidade. Uma voz canta entre os apoios, agora por escolha própria.'})[['moinho_reparado','espirito_livre','nucleo_retirado','pacto_renovado'].find(k=>s.flags[k])];
+ return base;
+}
+const goalNames={ferramentas:'Recuperar as ferramentas',presenca:'Investigar a voz na água',travessia:'Reabrir a travessia'};
+function journeyView(s){
+ const done={ferramentas:!!s.flags.ferramentas_devolvidas,presenca:!!s.flags.moinho_resolvido,travessia:!!s.flags.rota_rio_aberta};
+ const hints={ferramentas:s.items.ferramentas_perdidas?'Entregar o estojo a Maíra na oficina.':s.flags.guardiao_superado?'Examinar o que a equipe deixou no moinho.':'Encontrar uma passagem até o interior do moinho.',presenca:s.flags.moinho_resolvido?'Você decidiu o destino da roda.':s.flags.guardiao_superado?'Entrar na câmara e decidir como lidar com a presença.':'Observar a margem e buscar um modo de passar pelo guardião.',travessia:done.travessia?'O caminho curto até a praça está disponível.':'Uma corda e ofício ajudam na passarela; a câmara também pode revelar outro caminho.'};
+ return {selected:s.life.chapter.objective,known:!!s.flags.moinho_conhecido,weather:s.life.chapter.weather,goals:Object.entries(goalNames).map(([id,title])=>({id,title,done:done[id],hint:hints[id]})),ending:['moinho_reparado','espirito_livre','nucleo_retirado','pacto_renovado'].find(k=>s.flags[k])||null};
+}
+function publicMemories(s,id){
+ const known=s.knowledge[id]||{},out=[];
+ if(known.corda_devolvida)out.push('Lembra que você devolveu a corda emprestada.');
+ if(known.ferramentas_devolvidas)out.push('Lembra que você devolveu as ferramentas.');
+ if(known.historia_moinho)out.push('Conhece as anotações que você compartilhou sobre o moinho.');
+ if(known.decisao_moinho)out.push('Você contou a esta pessoa o que decidiu na câmara.');
+ if(known.nucleo_retirado)out.push('Sabe que você retirou o núcleo.');
+ if(known.caminho_reaberto)out.push('Conferiu o caminho que você ajudou a reabrir.');
+ return out;
+}
+const engine=createEngine(catalog,hooks);
+const legacyEngine=createEngine(legacyCatalog);
+function transact(s,op){const draft=copy(s);op(draft);engine.save(draft);Object.assign(s,draft);return s;}
+function routeRun(s){while(s.life.route.length&&!s.pending&&s.target===null){const l=s.life.route[0];engine.act(s,`ir_${l.from}_${l.to}`,'andar');}return s;}
+function createLife(seed=1,options={}){
+ const p=identity(options),age={humano:18,elfo:40,anao:30}[p.race];
+ const s=engine.create(seed,{day:480,birthDay:480-age*365*1440,life:{...data(p),chapter:{...contextFor(seed),objective:null}},location:'casa',money:18,items:{grimorio:1},skills:{[ORIGINS[p.origin].skill]:ORIGINS[p.origin].value},world:{tempo_margem:contextFor(seed).weather},flags:{[`raca_${p.race}`]:true,[`traco_${p.trait}`]:true,[`dom_${p.gift}`]:true,rio_alto:contextFor(seed).weather==='cheia'},npcs:{...chapterNPCs(seed),
+ maira:{name:'Maíra',alive:true,location:'oficina',identity:{id:'maira',name:'Maíra',race:'anao',origin:'artesao',trait:'persistente',talent:'oficio',gift:'latente'}},
+ mercador:{name:'Livreiro',alive:true,location:'mercado',identity:{id:'mercador',name:'Livreiro',race:'humano',origin:'viajante',trait:'observador',talent:'alquimia',gift:'latente'}},
+ breno:{name:'Breno',alive:true,location:'praca',identity:{id:'breno',name:'Breno',race:'elfo',origin:'viajante',trait:'sociavel',talent:'esgrima',gift:'pulso'}}
+ }});
+ const gear={artesao:{kit_ferramentas:1},ervas:{racao:2,ervas:2},viajante:{corda:1,racao:1}}[p.origin];Object.assign(s.items,gear);
+ synchronize(s);note(s,'arrival',`${p.name}, ${ORIGINS[p.origin].name.toLowerCase()}, começa uma nova vida em Ponteclara. O livro na mochila é apenas uma das possibilidades.`);return engine.load(engine.save(s));
+}
+const act=(s,id,option)=>transact(s,t=>engine.act(t,id,option));
+const choose=(s,option)=>transact(s,t=>engine.choose(t,{instance:t.pending.id,option}));
+const travel=(s,to)=>transact(s,t=>{check(!t.pending&&t.target===null,'Conclua a situação atual antes de viajar.');const route=path(t.location,to,t);check(route,'O caminho ainda não está disponível.');t.life.route=route.legs;routeRun(t);});
+const resume=s=>transact(s,t=>{if(t.target!==null)engine.resume(t);if(!t.pending&&t.target===null)routeRun(t);});
+const stopRoute=s=>transact(s,t=>{check(!t.pending,'Resolva a situação atual.');if(t.work.length)t.life.route=t.life.route.slice(0,1);else{t.life.route=[];if(t.target!==null)engine.stop(t);}note(t,'travel','Você decidiu não seguir para os próximos trechos do caminho.');});
+const abandon=s=>transact(s,t=>{t.life.route=[];engine.abandon(t);});
+const wait=(s,minutes)=>transact(s,t=>engine.advance(t,minutes));
+const trackGoal=(s,id)=>transact(s,t=>{check(t.flags.moinho_conhecido&&['ferramentas','presenca','travessia'].includes(id),'Objetivo ainda desconhecido.');t.life.chapter.objective=id;});
+const save=engine.save;
+function load(raw){
+ try{return engine.load(raw);}catch(error){
+  const parsed=JSON.parse(raw);if(parsed.catalog?.version!==1||parsed.catalog?.id!=='ponteclara')throw error;
+  const t=copy(loadPrevious(raw)),stamp=createLife(t.seed).catalog;
+  t.catalog=stamp;t.life.revision=2;t.life.chapter={...contextFor(t.seed),objective:null};
+  t.npcs={...chapterNPCs(t.seed),...t.npcs};t.world.tempo_margem=t.life.chapter.weather;t.flags.rio_alto=t.life.chapter.weather==='cheia';
+  for(const id of Object.keys(ACTORS))t.flags[`contato_ativo_${id}`]=t.life.chapter.actor===id;
+  note(t,'migration','Novos recados sobre o moinho apareceram na praça. Seu personagem, memórias e compromissos continuam preservados.');
+  return engine.load(engine.save(t));
+ }
+}
+
+function migrateLegacy(raw){
+ const old=legacyEngine.load(raw);check(!old.pending&&!old.work.length&&!old.activities.length&&old.target===null&&!old.queue.length,'Conclua os compromissos na versão anterior antes de transferir este personagem.');
+ const fresh=createLife(old.seed,{name:'Viajante',gift:'latente'}),t=copy(old);
+ t.catalog=fresh.catalog;t.clock=fresh.clock;t.life=fresh.life;t.flags={...fresh.flags,...old.flags};t.world={...fresh.world,...old.world};t.day=old.day*1440+480;t.birthDay=old.birthDay*1440+480;t.nextPulse=(Math.floor(t.day/60)+1)*60;t.location='praca';
+ t.history=old.history.map(h=>({...h,day:h.day*1440+480}));t.seen={};t.families={};t.npcs={...fresh.npcs,...t.npcs};
+ for(const n of Object.values(t.npcs))if(['aldeia','vila'].includes(n.location))n.location=n.name.includes('irmã')?'casa':'praca';
+ synchronize(t);note(t,'migration','Você chegou a Ponteclara. Suas posses, habilidades, memórias e consequências anteriores foram preservadas; a rotina passa a ser vivida em minutos.');
+ return load(save(t));
+}
+function reason(s,c){
+ if(!c||eligible(s,c))return null;
+ if(c.all)return c.all.map(x=>reason(s,x)).filter(Boolean).join(' ');
+ if(c.any)return 'Alternativas: '+c.any.map(x=>reason(s,x)).filter(Boolean).join(' ou ');
+ if(c.person)return `Encontre ${s.npcs[c.person]?.name||c.person} neste lugar.`;
+ if(c.stat){const [type,key]=c.stat.split(':');return `Precisa de ${type==='skill'?SKILLS[key]||key:needNames[key]||c.stat} ${c.value} ou mais.`;}
+ if(c.item)return `Precisa de ${c.min} × ${{ervas:'ervas',lanterna:'lanterna',grimorio:'livro',corda:'corda',kit_ferramentas:'kit de ferramentas',lamina_curta:'lâmina curta',racao:'provisão',tinta_runica:'tinta rúnica',semente_luz:'semente luminosa',flor_vidro:'flor de vidro',ferramentas_perdidas:'estojo de Maíra'}[c.item]||c.item}.`;
+ if(c.knows)return 'Descubra essa informação conversando ou investigando.';
+ if(c.flag){if(c.flag.startsWith('at_'))return `Vá a ${PLACES[c.flag.slice(3)]?.name||'outro lugar'}.`;if(c.flag.startsWith('dominio_'))return `Domine ${SKILLS[c.flag.slice(8)]} (60 pontos).`;return ({oficina_aberta:'A oficina atende entre 08:00 e 17:00.',mercado_aberto:'O mercado abre das 08:00 às 18:00.',travessia_segura:'Fixe uma corda ou encontre pedras firmes para atravessar.',rota_alta:'Examine a passagem no mirante.',guardiao_superado:'Encontre uma forma de passar pelo guardião.',dom_eco:'Requer o dom Eco espiritual.',luz_dia:'Espere a luz do dia.',traco_observador:'Requer o traço Observador.',raca_elfo:'Um elfo enxerga na escuridão do bosque.'})[c.flag]||'Requer outra condição do personagem.';}
+ if(c.not)return 'Você já concluiu esta possibilidade ou tem um compromisso em aberto.';
+ return 'Falta uma condição para esta ação.';
+}
+function view(s){
+ const v=engine.view(s),l=s.life,c=calendar(s.day),p=l.identity;
+ const describe=(d,o)=>{const definition=catalog.decisions.find(x=>x.id===d)?.options.find(x=>x.id===o.id);return {...o,detail:definition?.detail||null,minutes:o.cost.days,reason:definition&&!eligible(s,definition.requires)?reason(s,definition.requires):o.reason};};
+ const actions=v.actions.filter(d=>!d.id.startsWith('ir_')).map(d=>({...d,options:d.options.map(o=>describe(d.id,o))}));
+ if(v.pending&&!v.pending.legacy)v.pending.options=v.pending.options.map(o=>describe(s.pending.decision,o));
+ const people=Object.entries(s.npcs).filter(([,n])=>n.alive&&n.location===s.location).map(([id,n])=>({id,name:n.name,friend:!!s.flags[`amizade_${id}`]}));
+ const contacts=Object.entries(s.npcs).filter(([id])=>s.knowledge.player?.[`contato_${id}`]||Object.hasOwn(s.relations,`player:${id}`)||Object.hasOwn(s.relations,`${id}:player`)).map(([id,n])=>({id,name:n.name,trust:s.relations[`player:${id}`]||0,reciprocal:s.relations[`${id}:player`]||0,friend:!!s.flags[`amizade_${id}`],routine:s.knowledge.player?.[`rotina_${id}`]?{maira:'Oficina 08–12 e 13–17; mercado ao meio-dia.',mercador:'Mercado 08–18; depois na taverna.',breno:'Pátio 09–12; taverna 18–22.',iria:'Margem do rio 08–19.',nilo:'Margem do rio 08–19.'}[id]:null}));
+ const exits=EDGES.flatMap(([a,b,minutes])=>{const to=a===s.location?b:b===s.location?a:null;return to&&edgeOpen(s,s.location,to)?[{id:to,name:PLACES[to].name,minutes}]:[];});
+ const journey=journeyView(s);
+ for(const contact of contacts)contact.memories=publicMemories(s,contact.id);
+ return {...v,actions,exits,journey,calendar:c,identity:copy(p),place:{id:s.location,...PLACES[s.location],text:placeText(s)},people,contacts,route:copy(l.route),appointment:copy(l.appointment),project:l.project,
+  needs:Object.entries(l.needs).map(([id,value])=>({id,label:needNames[id],value})),
+  traits:[RACES[p.race],TRAITS[p.trait],`Talento: ${SKILLS[p.talent]}`,GIFTS[p.gift]],
+  skills:Object.entries(SKILLS).map(([id,label])=>({id,label,value:s.skills[id]||0,mastered:!!l.milestones[id]})),
+  diary:v.diary.filter(h=>h.type!=='intention').map(h=>({...h,calendar:calendar(h.day)}))};
+}
+
+return {engine,legacyEngine,createLife,act,choose,travel,resume,stopRoute,abandon,wait,save,load,migrateLegacy,view,trackGoal};})();
+const ui=(()=>{
+const {createLife,act,choose,travel,resume,stopRoute,abandon,save,load,migrateLegacy,view,trackGoal}=life;
+const {PLACES,EDGES,SKILLS,path,calendar}=world;
+const KEY='fantasy-life-vida-1.4',OLD='fantasy-life-agencia-1.3';
+const $=id=>document.getElementById(id),clear=e=>e.replaceChildren(),text=(e,t)=>e.textContent=t;
+function el(tag,content,cls){const e=document.createElement(tag);if(content!==undefined)e.textContent=content;if(cls)e.className=cls;return e;}
+function button(label,fn,cls='link-button'){const b=el('button',label,cls);b.type='button';b.addEventListener('click',fn);return b;}
+let state=null,composer=null,destination=null,oldRaw=null,unreadRaw=null,passage=null,characterTab='summary',selectedNeed='food',journalTab='memories',mapRegion='vila';
+const dialogs=['needs','status','map','character','people','calendar','diary','files'];
+const dialog=id=>$(id==='files'?'files':`${id}-panel`);
+function closePanels(){for(const id of dialogs)if(dialog(id).open)dialog(id).close();}
+function showPanel(id){closePanels();if(state&&id==='map')renderMap(view(state));if(state&&id==='diary')renderDiary(view(state));if(state&&id==='character')renderCharacter(view(state));if(state&&id==='needs')renderNeed(view(state));dialog(id).showModal();}
+function message(t=''){text($('message'),t);}
+function store(){try{if(unreadRaw){localStorage.setItem(`${KEY}-recuperacao`,unreadRaw);unreadRaw=null;}localStorage.setItem(KEY,save(state));}catch{message('O navegador não conseguiu salvar. Exporte o personagem para guardar seu progresso.');}}
+function focusScene(){window.scrollTo({top:0,behavior:'instant'});$(composer?'composer-title':'story-title').focus({preventScroll:true});}
+function run(fn,title){
+ try{
+  const before=state.history.length,from=state.location;message();fn();
+  // Só a resposta deste comando vira uma passagem. O histórico nunca alimenta a sala.
+  const outcome=state.history.slice(before).filter(h=>h.type==='decision'||h.type==='actionInvalidated').at(-1);
+  passage=!state.pending&&state.location===from&&outcome?{title:title||PLACES[state.location].name,text:outcome.text}:null;
+  composer=null;closePanels();store();render();focusScene();
+ }catch(e){message(e.message);}
+}
+function duration(n){return n>=60?`${Math.floor(n/60)}h${n%60?` ${n%60}min`:''}`:`${n}min`;}
+function cost(o){return [o.cost.days?duration(o.cost.days):'sem tempo',o.cost.money?`${o.cost.money} moedas`:null].filter(Boolean).join(' · ');}
+function options(container,items,onSelect){
+ clear(container);const unavailable=[];
+ for(const o of items){const b=button('',()=>onSelect(o.id),'option');b.append(el('strong',o.label),el('small',cost(o)));
+  if(o.detail)b.append(el('small',o.detail,'choice-detail'));if(o.enabled)container.append(b);else{b.append(el('small',o.reason));b.disabled=true;unavailable.push(b);}}
+ if(unavailable.length){const details=el('details');details.append(el('summary',`Outras possibilidades (${unavailable.length})`),...unavailable);container.append(details);}
+}
+function openAction(id){
+ const a=view(state).actions.find(a=>a.id===id);if(!a)return;
+ composer=id;passage=null;closePanels();render();focusScene();
+}
+function returnToPlace(){composer=null;passage=null;render();focusScene();}
+function nav(label,fn,id){const b=button(label,fn,'hud-button');b.id=id;return b;}
+function renderHud(container,prefix,v){
+ clear(container);container.append(el('div','Fantasy Life','brand'));
+ if(!v){container.append(el('p','Ponteclara','muted'),button('Arquivos e opções',()=>showPanel('files')));return;}
+ container.append(el('p',v.identity.name,'hud-date'),el('div',v.place.name,'hud-place'),el('div',v.calendar.time,'hud-clock'),el('p',`${v.calendar.weekday} · ${v.calendar.date}`,'hud-date'),el('p',`${v.money} moedas`,'hud-money'));
+ const bars=el('div',undefined,'hud-needs');
+ for(const n of v.needs){const row=button('',()=>openNeed(n.id),`hud-need${n.value<20?' low':''}`),label=el('span',undefined,'need-label');row.setAttribute('aria-label',`${n.label}: ${n.value} de 100. Ver cuidados.`);label.append(el('span',n.label),el('span',String(n.value)));const bar=el('progress');bar.max=100;bar.value=n.value;bar.setAttribute('aria-hidden','true');row.append(label,bar);bars.append(row);}container.append(bars);
+ const low=v.needs.filter(n=>n.value<20);if(low.length)container.append(el('p',low.map(n=>`${n.label} baixa`).join(' · '),'hud-alert'));
+ if(v.journey.selected){const goal=v.journey.goals.find(g=>g.id===v.journey.selected);container.append(button(`${goal.done?'Concluído:':'Objetivo:'} ${goal.title}`,()=>{journalTab='goals';showPanel('diary');},'hud-goal'));}
+ const a=v.appointment;if(a&&['scheduled','offered'].includes(a.status)){const c=calendar(a.at);container.append(button(`Aula com Maíra · ${c.weekday} 09:00`,()=>showPanel('calendar')));}
+ const controls=el('nav',undefined,'hud-nav');controls.setAttribute('aria-label','Menu do personagem');
+ for(const [key,label,fn]of[
+  ['character','Personagem',()=>{characterTab='summary';showPanel('character');}],
+  ['skills','Habilidades',()=>{characterTab='skills';showPanel('character');}],
+  ['people','Pessoas',()=>showPanel('people')],
+  ['inventory','Mochila',()=>{characterTab='inventory';showPanel('character');}],
+  ['map','Mapa',()=>{mapRegion=PLACES[state.location].region||'vila';showPanel('map');}],['calendar','Agenda',()=>showPanel('calendar')],
+  ['diary','Diário',()=>{journalTab='memories';showPanel('diary');}],['files','Arquivos',()=>showPanel('files')]
+ ])controls.append(nav(label,fn,`${prefix}-nav-${key}`));
+ container.append(controls,el('p','Ponteclara · 0.6.0','hud-footer'));
+}
+const compactNames={food:'Comida',energy:'Energia',hygiene:'Higiene',mood:'Ânimo'};
+const careOptions={food:['comer','ajudar','provisao'],energy:['descansar','dormir'],hygiene:['lavar'],mood:['lazer','descansar']};
+function openNeed(id){selectedNeed=id;showPanel('needs');}
+function renderCompactNeeds(v){
+ const box=$('quick-needs');clear(box);box.hidden=!v;if(!v)return;
+ for(const n of v.needs){const b=button('',()=>openNeed(n.id),`compact-need${n.value<20?' low':''}`);b.id=`quick-need-${n.id}`;b.setAttribute('aria-label',`${n.label}: ${n.value} de 100${n.value<20?'. Baixa':''}. Ver cuidados.`);b.title=`${n.label}: ${n.value}/100`;
+  const label=el('span',compactNames[n.id],'compact-label');if(n.value<20){const warning=el('span','!','need-warning');warning.setAttribute('aria-hidden','true');label.append(warning);}const bar=el('progress');bar.max=100;bar.value=n.value;bar.setAttribute('aria-hidden','true');b.append(label,bar);box.append(b);
+ }
+}
+function renderNeed(v){
+ const n=v.needs.find(n=>n.id===selectedNeed);if(!n)return;
+ text($('need-title'),n.label);clear($('need-summary'));$('need-summary').append(el('p',`${n.value}/100${n.value<20?' · baixa':''}`,'need-reading'));const bar=el('progress');bar.max=100;bar.value=n.value;bar.setAttribute('aria-label',`${n.label}: ${n.value} de 100`);$('need-summary').append(bar);
+ const hints={food:'Uma refeição recupera a saciedade. Você pode comer em casa ou na taverna; na taverna também pode ajudar em troca de comida.',energy:'Uma pausa recupera energia. No seu quarto, você também pode dormir.',hygiene:'Você pode se lavar no seu quarto ou no poço antigo.',mood:'Tempo livre e descanso ajudam a recuperar o ânimo. Conversar com as pessoas também pode fazer bem.'};
+ const routine=v.actions.find(a=>a.id==='rotina');text($('need-hint'),!v.alive?'Sua jornada chegou ao fim.':v.pending?'Resolva a decisão atual antes de fazer uma pausa.':v.canResume||v.route.length?'Você pode consultar suas condições agora. Retome ou encerre a ação em andamento antes de escolher outra pausa.':hints[n.id]);
+ const list=(routine?.options||[]).filter(o=>careOptions[n.id].includes(o.id));options($('need-options'),list,id=>run(()=>act(state,'rotina',id),'Uma pausa'));
+}
+function render(){
+ $('creation').hidden=!!state;$('game').hidden=!state;
+ const v=state?view(state):null;renderHud($('desktop-hud'),'desktop',v);renderHud($('mobile-hud'),'mobile',v);
+ $('quick-map').disabled=!v;renderCompactNeeds(v);
+ if(!v)return;
+ text($('header-name'),v.place.name);text($('header-meta'),`${v.calendar.time} · ${v.calendar.weekday} · ${v.money} moedas`);
+ $('scene').hidden=!!composer;$('composer').hidden=!composer;
+ renderScene(v);renderMap(v);renderCharacter(v);renderPeople(v);renderCalendar(v);renderDiary(v);renderNeed(v);
+ if(composer){const a=v.actions.find(a=>a.id===composer);if(!a){composer=null;$('scene').hidden=false;$('composer').hidden=true;return;}
+  text($('composer-title'),a.title);text($('composer-text'),a.text);options($('composer-options'),a.options,o=>run(()=>act(state,a.id,o),a.title));}
+}
+function renderScene(v){
+ const pending=v.pending,room=!pending&&!passage&&!v.canResume&&!v.route.length;
+ text($('story-kicker'),`Ponteclara · ${v.calendar.phase.toLowerCase()}`);
+ text($('story-title'),pending?.title||passage?.title||v.place.name);
+ text($('story-copy'),pending?.text||passage?.text||v.place.text);
+ $('people-area').hidden=!room;$('room-actions').hidden=!room;$('room-exits').hidden=!room;
+ options($('pending-options'),pending?.options||[],o=>run(()=>choose(state,o),pending.title));
+ text($('people'),v.people.length?'Por aqui':'');clear($('nearby-people'));
+ for(const p of v.people)$('nearby-people').append(button(p.name,()=>{const a=v.actions.find(a=>a.id===`conversar_${p.id}`);if(a)openAction(a.id);else showPanel('people');}));
+ clear($('local-actions'));for(const a of v.actions.filter(a=>!a.id.startsWith('conversar_')))$('local-actions').append(button(a.title,()=>openAction(a.id),'link-button action-link'));
+ if(room&&!v.actions.length)$('local-actions').append(el('p','Você pode seguir para outro lugar.','empty'));
+ clear($('exit-actions'));for(const exit of v.exits){const to=exit.id,n=exit.minutes;const link=button('',()=>run(()=>travel(state,to)),'link-button action-link');link.append(el('span',PLACES[to].name),el('small',duration(n)));$('exit-actions').append(link);}
+ clear($('passage-controls'));clear($('route-status'));
+ if(!pending){
+  if(v.canResume||v.route.length){$('passage-controls').append(button(v.canResume?'Retomar ação':'Continuar caminho',()=>run(()=>resume(state))));}
+  else if(passage)$('passage-controls').append(button('Continuar',returnToPlace));
+  if(v.route.length){$('route-status').append(el('p',`Você está a caminho de ${PLACES[v.route.at(-1).to].name}.`),button('Parar após este trecho',()=>run(()=>stopRoute(state))));}
+  if(v.canResume)$('route-status').append(el('p',`Restam até ${duration(v.remaining)} para concluir o que você estava fazendo.`));
+  if(v.canAbandon)$('route-status').append(button('Abandonar a ação atual',()=>run(()=>abandon(state))));
+ }
+ if(!v.alive){$('room-actions').hidden=true;$('room-exits').hidden=true;text($('story-title'),'O fim da jornada');text($('story-copy'),'Sua jornada chegou ao fim. As lembranças continuam guardadas no diário.');}
+}
+function renderMap(v){
+ clear($('map-graphic'));const members=Object.entries(PLACES).filter(([,p])=>(p.region||'vila')===mapRegion),ids=new Set(members.map(([id])=>id));
+ for(const id of ['vila','arredores'])$(`map-${id}`).setAttribute('aria-pressed',String(mapRegion===id));
+ const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 100 100');svg.setAttribute('preserveAspectRatio','none');svg.setAttribute('aria-hidden','true');
+ for(const[a,b]of EDGES.filter(([a,b])=>ids.has(a)&&ids.has(b))){const line=document.createElementNS('http://www.w3.org/2000/svg','line');for(const[k,val]of Object.entries({x1:PLACES[a].x,y1:PLACES[a].y,x2:PLACES[b].x,y2:PLACES[b].y,stroke:'#44566b','stroke-width':.7}))line.setAttribute(k,String(val));svg.append(line);}$('map-graphic').append(svg);
+ for(const[id,p]of members){const b=button(p.name,()=>{destination=id;renderMap(view(state));},id===v.location?'here':'');b.style.left=`${p.x}%`;b.style.top=`${p.y}%`;if(id===v.location)b.setAttribute('aria-label',`${p.name}, você está aqui`);$('map-graphic').append(b);}
+ const box=$('map-destination');clear(box);box.hidden=!destination;
+ if(destination){const p=PLACES[destination],route=path(v.location,destination,state);box.append(el('h3',p.name));
+  if(destination===v.location)box.append(el('p','Você está aqui.'));else if(!route)box.append(el('p',v.journey.known?'Ainda falta descobrir ou abrir um caminho para este lugar.':'Procure os recados da praça ou a trilha do bosque para conhecer os arredores.','muted'));
+  else{box.append(el('p',`${duration(route.minutes)} · ${route.legs.length} trecho(s)`));const b=button('Ir até lá',()=>run(()=>travel(state,destination)));b.disabled=!!v.pending||v.canResume||v.route.length>0;box.append(b);if(b.disabled)box.append(el('p','Resolva ou encerre a ação atual para escolher outro caminho.','muted'));}}
+}
+function renderCalendar(v){
+ clear($('calendar'));$('calendar').append(el('p',`${v.calendar.weekday} · ${v.calendar.date} · ${v.calendar.time}`));
+ const a=v.appointment;if(a){const c=calendar(a.at),status={scheduled:'Combinada',offered:'Sua aula está disponível',done:'Concluída',cancelled:'Cancelada com aviso',missed:'Horário perdido'}[a.status];$('calendar').append(el('p',`${status}: aula com Maíra, ${c.weekday} ${c.date}, 09:00–09:30, na oficina.`));}else $('calendar').append(el('p','Sem compromisso marcado. Converse com as pessoas para conhecer seus hábitos e combinar encontros.','muted'));
+}
+const itemNames={grimorio:'Livro anotado',lanterna:'Lanterna',reagente:'Reagente prateado',tinta_runica:'Tinta rúnica',tinta:'Tinta comum',semente_luz:'Semente luminosa',fivela:'Fivela',ervas:'Ervas',flor_vidro:'Flor de vidro',encomenda:'Encomenda de Maíra',corda:'Corda',kit_ferramentas:'Kit de ferramentas',lamina_curta:'Lâmina curta',racao:'Provisão',curativo:'Curativo',ferramentas_perdidas:'Estojo de Maíra',nucleo_moinho:'Núcleo do moinho',cobre_guardiao:'Peça de cobre do guardião'};
+function renderCharacter(v){
+ text($('character-name'),`${v.identity.name} · ${v.age} anos`);text($('identity'),v.traits.join(' · '));clear($('needs'));
+ for(const n of v.needs){const row=el('div',undefined,'need'),bar=el('progress');bar.max=100;bar.value=n.value;bar.setAttribute('aria-label',n.label);row.append(el('span',n.label),bar,el('span',String(n.value)));$('needs').append(row);}
+ text($('health'),`Saúde: ${v.health}/100.`);clear($('skills'));for(const s of v.skills)$('skills').append(el('p',`${s.label}: ${s.value}${s.mastered?' · domínio alcançado':''}`,'facts'));
+ clear($('inventory'));let count=0;for(const[id,n]of Object.entries(v.items))if(n){count++;$('inventory').append(el('p',`${itemNames[id]||id}: ${n}`,'facts'));}if(!count)$('inventory').append(el('p','Sua mochila está vazia.','empty'));if(v.project)$('inventory').append(el('p',`Lanterna: ${v.project}/180 min de trabalho.`,'facts'));
+ for(const id of ['summary','skills','inventory']){$(`character-${id}`).hidden=characterTab!==id;$(`tab-${id}`).setAttribute('aria-selected',String(characterTab===id));$(`tab-${id}`).tabIndex=characterTab===id?0:-1;}
+}
+function renderPeople(v){
+ clear($('people-here'));if(!v.people.length)$('people-here').append(el('p','Ninguém por perto agora.','empty'));
+ for(const p of v.people){const a=v.actions.find(a=>a.id===`conversar_${p.id}`);$('people-here').append(a?button(`Conversar com ${p.name}`,()=>openAction(a.id)):el('p',p.name,'facts'));}
+ clear($('contacts'));if(!v.contacts.length)$('contacts').append(el('p','Você ainda está conhecendo as pessoas de Ponteclara.','empty'));
+ for(const c of v.contacts){const box=el('article',undefined,'contact');box.append(el('h3',`${c.name}${c.friend?' · amizade':''}`),el('p',`Sua confiança: ${c.trust}. Confiança em você: ${c.reciprocal}.`),el('p',c.routine||'Rotina ainda desconhecida.','muted'));for(const memory of c.memories||[])box.append(el('p',memory,'muted'));$('contacts').append(box);}
+}
+function renderDiary(v){
+ $('journal-memories').hidden=journalTab!=='memories';$('journal-goals').hidden=journalTab!=='goals';$('journal-memories-tab').setAttribute('aria-pressed',String(journalTab==='memories'));$('journal-goals-tab').setAttribute('aria-pressed',String(journalTab==='goals'));
+ clear($('journal-goals'));if(!v.journey.known)$('journal-goals').append(el('p','Os recados da praça e a trilha no bosque oferecem os primeiros caminhos. Você pode escolher o que deseja perseguir.','muted'));
+ else for(const goal of v.journey.goals){const card=el('article',undefined,'contact');card.append(el('h3',goal.title),el('p',goal.done?'Concluído.':goal.hint,'muted'));const b=button(v.journey.selected===goal.id?'Acompanhando':'Acompanhar este objetivo',()=>{try{trackGoal(state,goal.id);store();render();$('journal-goals-tab').focus();}catch(e){message(e.message);}});card.append(b);$('journal-goals').append(card);}
+ clear($('diary'));
+ const memory=v.diary.filter(h=>['decision','arrival','migration','witness','consequence','appointment','milestone'].includes(h.type)&&!h.text.startsWith('Você chegou a '));
+ for(const h of memory.slice(-24).reverse()){const a=el('article',undefined,'diary-entry');a.append(el('small',`${h.calendar.weekday} · ${h.calendar.date}`),el('p',h.text));$('diary').append(a);}
+}
+$('creator').addEventListener('submit',e=>{
+ e.preventDefault();try{const seed=Number($('seed').value),next=createLife(seed,Object.fromEntries(['name','origin','race','trait','talent','gift'].map(k=>[k,$(k).value])));if(state)localStorage.setItem(`${KEY}-backup`,save(state));state=next;composer=null;passage=null;closePanels();message();store();render();focusScene();}catch(e){message(e.message);}
+});
+$('back').addEventListener('click',returnToPlace);
+$('menu').addEventListener('click',()=>showPanel('status'));
+$('quick-map').addEventListener('click',()=>{mapRegion=PLACES[state.location].region||'vila';showPanel('map');});
+for(const id of ['vila','arredores'])$(`map-${id}`).addEventListener('click',()=>{mapRegion=id;destination=null;renderMap(view(state));});
+for(const id of ['memories','goals'])$(`journal-${id}-tab`).addEventListener('click',()=>{journalTab=id;renderDiary(view(state));});
+for(const id of dialogs)$(`close-${id==='files'?'files':id}`).addEventListener('click',()=>dialog(id).close());
+const characterTabs=['summary','skills','inventory'];
+for(const [index,id]of characterTabs.entries()){
+ const tab=$(`tab-${id}`);tab.setAttribute('aria-controls',`character-${id}`);
+ tab.addEventListener('click',()=>{characterTab=id;renderCharacter(view(state));});
+ tab.addEventListener('keydown',e=>{const next=e.key==='ArrowRight'?(index+1)%3:e.key==='ArrowLeft'?(index+2)%3:e.key==='Home'?0:e.key==='End'?2:null;if(next===null)return;e.preventDefault();characterTab=characterTabs[next];renderCharacter(view(state));$(`tab-${characterTab}`).focus();});
+}
+$('new-character').addEventListener('click',()=>{$('new-confirm').hidden=false;});
+$('confirm-new').addEventListener('click',()=>{closePanels();$('creation').hidden=false;$('game').hidden=true;$('new-confirm').hidden=true;window.scrollTo({top:0,behavior:'instant'});$('name').focus();});
+$('export').addEventListener('click',()=>{if(!state){message('Crie ou importe um personagem primeiro.');return;}const a=el('a'),url=URL.createObjectURL(new Blob([save(state)],{type:'application/json'}));a.href=url;a.download='fantasy-life-personagem.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+$('import').addEventListener('change',async e=>{
+ const file=e.target.files?.[0];if(!file)return;try{if(file.size>8000000)throw Error('Arquivo grande demais.');const raw=await file.text();let next;try{next=load(raw);}catch{next=migrateLegacy(raw);}if(state)localStorage.setItem(`${KEY}-backup`,save(state));state=next;composer=null;passage=null;message('Personagem importado.');store();closePanels();render();focusScene();}catch(e){message(`O personagem não foi importado. ${e.message}`);}finally{e.target.value='';}
+});
+$('migrate').addEventListener('click',()=>{try{state=migrateLegacy(oldRaw);composer=null;passage=null;store();message('Personagem transferido. O progresso anterior continua guardado.');render();}catch(e){message(e.message);}});
+try{const raw=localStorage.getItem(KEY);unreadRaw=raw;if(raw){state=load(raw);if(JSON.parse(raw).catalog.fingerprint!==state.catalog.fingerprint){try{if(!localStorage.getItem(`${KEY}-antes-0.6`))localStorage.setItem(`${KEY}-antes-0.6`,raw);localStorage.setItem(KEY,save(state));message('Seu progresso foi atualizado para o novo capítulo. Uma cópia anterior ficou guardada em Arquivos.');}catch{message('Personagem atualizado em memória. Exporte para guardar seu progresso; o arquivo anterior foi preservado.');}}}unreadRaw=null;oldRaw=localStorage.getItem(OLD);$('legacy').hidden=!oldRaw;}catch(e){message(`Não foi possível abrir o personagem salvo. O arquivo foi preservado. ${e.message}`);}
+render();
+
+return {};})();
+})();
+</script>
+</body></html>

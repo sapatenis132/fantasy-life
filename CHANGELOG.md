@@ -1,5 +1,15 @@
 # Histórico de desenvolvimento
 
+## 0.6.0 — 26/11/2026 — O Moinho Afogado / etapa 1.5
+
+- Objetivos opcionais, mapa em duas regiões e quatro lugares de expedição.
+- Preparo por origem, equipamentos, provisões, curativos e treino em blocos de duas horas.
+- Contexto por seed com cheia e contato fixo, conselho, empréstimo/devolução e memória explícita.
+- Guardião com soluções por exploração, ofício, dom/conhecimento, técnica e confronto com ferimentos.
+- Quatro desfechos exclusivos mudam caminho, trabalho, cuidado, recurso e relato posterior.
+- Migração validada da 0.5, inclusive compromisso, decisão e ação paga interrompida; backup anterior e HTML 0.5.2 separado.
+- 194 casos atuais, 71 de compatibilidade 0.5 e 14 históricos; 100 expedições e quatro trajetórias sem inserção de recursos. Meta de 50h e combate tático completo permanecem pendentes.
+
 ## 0.5.2 — 26/11/2026 — necessidades contidas e presentes
 
 - Quatro medidores persistentes no cabeçalho móvel: comida, energia, higiene e ânimo.

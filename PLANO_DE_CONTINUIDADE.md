@@ -1,12 +1,12 @@
 # Plano de continuidade — Fantasy Life
 
-Versão jogável 0.5.2 · Direção revista em 26/11/2026.
+Versão jogável 0.6.0 · Direção revista em 26/11/2026.
 
 ## Ponto de retomada
 
-**1.3 preservada; 1.4 implementada como fundação conectada de personagem e vida cotidiana.** A direção foi revista por solicitação do usuário: diário vivido, calendário por ações, necessidades, lugares, relações e capacidades de fantasia. A orientação mais recente retira BitLife das referências ativas: desenvolver um RPG de fantasia com as mecânicas de calendário, relações, necessidades, treino e lugares de Course of Temptation, sem seu cenário ou conteúdo adulto. O começo atual é um jovem adulto em Ponteclara e serve como base para o RPG principal.
+**1.3 e 1.4 preservadas; 1.5 implementada na primeira expedição conectada.** A direção foi revista por solicitação do usuário: diário vivido, calendário por ações, necessidades, lugares, relações e capacidades de fantasia. A orientação mais recente retira BitLife das referências ativas: desenvolver um RPG de fantasia com as mecânicas de calendário, relações, necessidades, treino e lugares de Course of Temptation, sem seu cenário ou conteúdo adulto. O começo atual é um jovem adulto em Ponteclara e serve como base para o RPG principal.
 
-Ler `DOCUMENTO_MESTRE.md`, `etapa_1_4/README.md`, `etapa_1_4/docs/DESIGN_E_IMPLEMENTACAO.md` e evidências atuais. Executar `node etapa_1_4/verificar.mjs`. Publicar com `node scripts/preparar-pages.mjs`; enviar código, documentação e build juntos ao repositório **sapatenis132/fantasy-life**, branch `main`, Pages `/docs`.
+Ler `DOCUMENTO_MESTRE.md`, `etapa_1_5/README.md`, `etapa_1_5/docs/DESIGN_E_IMPLEMENTACAO.md` e evidências atuais. Executar `node etapa_1_5/verificar.mjs`. Publicar com `node scripts/preparar-pages.mjs`; enviar código, documentação e build juntos ao repositório **sapatenis132/fantasy-life**, branch `main`, Pages `/docs`.
 
 ## Entregue nesta fatia
 
@@ -24,17 +24,27 @@ Ainda faltam aventuras e conflitos mais profundos, combate, equipamento, magia v
 
 A crítica ao log foi tratada na HUD 0.5.1. A 0.5.2 mantém necessidades no cabeçalho móvel e acrescenta consultas/cuidados rápidos, sem alterar regras ou saves. Ler `etapa_1_4/docs/REVISAO_HUD_0_5_1.md` e `etapa_1_4/docs/REVISAO_HUD_0_5_2.md` antes de alterar a apresentação: não preencher a sala com a última entrada do histórico.
 
-## Próximo bloco: 1.5 — consolidar o ciclo de RPG e variar contextos
+## Etapa 1.5 entregue — O Moinho Afogado
 
-1. Conectar um objetivo escolhido pelo jogador a uma expedição ou conflito com diferentes soluções. Preparo, equipamentos, habilidades, informações e vínculos devem mudar as alternativas e os resultados.
-2. Aprofundar os lugares atuais: situações persistentes, retornos, descobertas e consequências observáveis. O mapa precisa oferecer razões para ir e voltar.
-3. Dar aos moradores objetivos, reações e memória das interações. Suas agendas criam oportunidades de encontro; sua presença e seu conhecimento continuam limitados. Selecionar participantes plausíveis por contexto e fixar seus IDs na ocorrência, inclusive após save/load.
-4. Integrar treino e capacidades de fantasia às situações jogáveis. Aprender uma técnica ou despertar um dom precisa mudar o que o personagem consegue fazer, com caminhos também viáveis para outros perfis.
-5. Variar origens e condições iniciais por seed quando isso gerar experiências diferentes. Criar ao menos duas iniciativas viáveis e uma forma de recuperação para cada começo, sem exigir nascimento ou infância jogáveis.
-6. Projetar atalhos e rotinas opcionais para atividades repetidas. Calendário e necessidades sustentam decisões de preparo e convivência; evitar repetição obrigatória de refeições, descanso e treino.
-7. Preparar a próxima fatia de risco/combate com consequências persistentes e espaço para alternativas plausíveis. Não apagar soluções sociais, mágicas ou de exploração para impor um único caminho.
+- Três interesses opcionais no diário; quatro lugares novos e rotas persistentes que precisam ser descobertas ou abertas.
+- Origem com equipamento de preparo, compra de corda/kit/lâmina, provisões e curativos; blocos de treino de duas horas.
+- Cheia, névoa ou calmaria persistidas; cheia altera travessia e risco, demais condições são ambientação neste recorte. Iria ou Nilo fixados por seed, com agenda, conselho, empréstimo/devolução e retorno com memória.
+- Soluções por exploração, ofício, magia/dom, técnica e confronto. Nenhuma origem exige compra ou luta para terminar.
+- Quatro decisões exclusivas com atividades e relações no retorno. Sem NPC onisciente nem pagamento repetido por relato/entrega.
+- Migração automática da 0.5, inclusive ação paga interrompida e decisão pendente. Backups, HTML anterior e todos os registros preservados.
+- 194 casos atuais, 71 de compatibilidade 0.5 e 14 históricos; quatro saves comparativos sem recursos inseridos. Inspeção móvel em Chrome remoto, sem equivaler a Android físico.
 
-Critérios: objetivo e iniciativa do jogador, capacidades com soluções diferentes, consequências que afetam retornos, informação privada preservada, nenhum começo sem alternativas, UI simples e continuidade após save/load. Comparar trajetórias e efeitos, não apenas quantidade de eventos.
+## Próximo bloco: 1.6 — aprofundar a região e o risco
+
+1. Evoluir o confronto de uma resolução para pequenas decisões táticas legíveis: intenção do inimigo, posição/preparo, atacar, técnica, magia, defesa e retirada. Custo e ferimento devem afetar o restante da expedição sem impor combate a todo perfil.
+2. Equipar arma/ferramenta e descrever efeitos concretos. A lâmina atual funciona por posse; ainda não há slots, armadura ou inventário tático. Evitar planilha de itens.
+3. Magia com efeitos distintos e limites compreensíveis; dons e técnicas devem oferecer estratégias, com soluções de exploração e conversa preservadas.
+4. Dar retornos tardios ao moinho: trabalho e ambiente já mudam, mas moradores ainda não têm projetos autônomos, rumores ou conflitos continuados. Não inventar conhecimento fora da presença/relato.
+5. Ampliar personalidade e habilidades próprias de Iria/Nilo e os vínculos existentes. Hoje há identidade fixa, pauta, agenda e lembranças explícitas; suas falas de conselho compartilham estrutura.
+6. Medir repetição real em sessões humanas. Expandir situações combináveis e motivos de retorno antes de multiplicar mapas. A meta de 50h permanece distante.
+7. Projetar automação opcional de rotina quando a duração de jornadas justificar. Blocos de treino já existem; ainda não há agenda automática.
+
+Critérios: jogador escolhe se envolve, entende risco antes de agir, pode preparar/retirar e percebe consequência além de uma frase. Save/reload preserva intenção, fase, custo e participante. Definir migração do catálogo 2 antes de alterar opções publicadas.
 
 Nascimento, infância, ciclo completo até a morte e sucessão deixam de ser a sequência obrigatória de entregas. Idade, origem e família podem enriquecer identidade, relações e conflitos. Propostas antigas permanecem como histórico ou possibilidades futuras, sem bloquear o aprofundamento do RPG.
 
@@ -57,8 +67,8 @@ Nascimento, infância, ciclo completo até a morte e sucessão deixam de ser a s
 | 1.2 Tempo/diversidade | Base histórica preservada; perfil em minutos acrescentado |
 | 1.3 Escolhas/agência | Implementada; 71 casos anteriores continuam passando |
 | 1.4 Personagem e fatia de rotina | Implementada na 0.5.0, HUD revista na 0.5.2; aprofundamento social e das capacidades de fantasia continua no plano |
-| 1.5 Ciclo de RPG e variedade de contextos | Próximo bloco funcional; objetivos, exploração, capacidades e relações conectadas |
-| 1.6 Primeira região aprofundada | Consolidar aventura, risco/combate, equipamentos, magia e retornos com consequências |
+| 1.5 Ciclo de RPG e variedade de contextos | Implementada na 0.6.0: Moinho Afogado, preparo, exploração e retornos |
+| 1.6 Primeira região aprofundada | Próximo bloco: combate com decisões táticas, equipamento, magia e consequências tardias |
 | Blocos posteriores | Mundo, relações profundas, ofícios/economia, magia, aventura/combate, facções, justiça, conteúdo, arte/UI, balanceamento e Android; reavaliar etapas antigas segundo a identidade de RPG |
 
 Trabalhar por fatias jogáveis; preservar código/histórico; registrar o que foi testado e o que ainda não existe. Qualidade, criatividade e agência acima do volume de sistemas.

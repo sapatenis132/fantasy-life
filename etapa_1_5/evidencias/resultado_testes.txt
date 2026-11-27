@@ -1,0 +1,154 @@
+Fantasy Life 0.6.0 — etapa 1.5
+2026-11-27T02:07:23.556Z
+Node v24.22.3
+
+== Base preservada e compatibilidade 0.5.2 ==
+OK — Compatibilidade da etapa 1.3 e base original
+OK — Build autocontido atual
+OK — Vida, calendário, agência e integração da interface
+
+== Build atual com migrador do catálogo anterior ==
+Moinho Afogado 0.6.0: build gerado e cópia 0.5.2 preservada.
+
+== Regressão atual, capítulo, migração e interface ==
+✔ diário oferece objetivos sem encher a cena com histórico (30.337956ms)
+✔ acompanhar objetivo muda só marcador e mantém horário, RNG e lembranças (32.629778ms)
+✔ mapa separa regiões e caminho ainda fechado não oferece teleporte (23.543583ms)
+✔ mapa abre na região atual e conserva saída de volta (38.052777ms)
+✔ provisões aparecem no cuidado rápido da saciedade (33.328831ms)
+✔ risco do confronto fica escrito antes da escolha (78.80541ms)
+✔ morador escolhido pela seed conversa com identidade própria (37.626885ms)
+✔ primeiro carregamento migra 0.5 e guarda todos os bytes anteriores (46.419455ms)
+✔ falha no armazenamento mantém save antigo enquanto personagem migra em memória (20.121354ms)
+✔ importar 0.5 migra sem conceder kit ou apagar backup atual (27.82728ms)
+✔ arquivos mantêm link de recuperação 0.5 e versão atual explícita (0.347215ms)
+✔ origens começam com equipamentos diferentes e nenhuma depende de compra (11.489583ms)
+✔ contextos têm duas pessoas e três condições fixadas por seed sem rolar ao consultar (84.737971ms)
+✔ mapa tem doze lugares e rotas bloqueadas não cobram viagem (3.01816ms)
+✔ descoberta no bosque é alternativa ao quadro da praça (7.461053ms)
+✔ escolher interesse não impõe desfecho nem contrato e pode ser trocado sem tempo (7.368817ms)
+✔ quadros não exigem ferramenta, talento ou ouro para continuar (464.377925ms)
+✔ cheia fecha pedras mas mantém mirante e retirada (9.70242ms)
+✔ corda paga uma vez abre passagem persistente e é consumida (12.769932ms)
+✔ reparo da ponte muda o custo real de voltar à praça (11.675538ms)
+✔ equipamento comprado tem preço e não pode duplicar kit (7.027711ms)
+✔ provisão é utilizável fora da vila e gasta um item (9.502453ms)
+✔ curativo recupera saúde e é consumido sem duplicação (5.299516ms)
+✔ treino de duas horas dá duas sessões e bônus proporcional do talento (5.183083ms)
+✔ consertar guardião usa ofício e kit sem destruir nem ferir (14.02171ms)
+✔ dom e conhecimento do livro permitem outra passagem (16.586487ms)
+✔ domínio da esgrima oferece solução de técnica sem dano (14.205863ms)
+✔ galeria mantém guardião inteiro e libera câmara (15.096035ms)
+✔ confronto depende de preparo e produz ferimentos reais (2631.905394ms)
+✔ confronto pode matar com pouca saúde, encerra atividade e não dá recompensa póstuma (13.870504ms)
+✔ desfecho reparar é exclusivo, persiste e não pode ser refeito (22.392731ms)
+✔ desfecho libertar é exclusivo, persiste e não pode ser refeito (23.293648ms)
+✔ desfecho extrair é exclusivo, persiste e não pode ser refeito (22.101148ms)
+✔ desfecho renovar é exclusivo, persiste e não pode ser refeito (22.086376ms)
+✔ pacto alternativo exige informação, habilidade e consome só uma fonte (18.998293ms)
+✔ reparo abre renda no moinho que libertação não oferece (44.798352ms)
+✔ libertação muda rota e cria cuidado na margem (25.165846ms)
+✔ pacto cria descanso opcional sem bloquear caminhos antigos (25.270742ms)
+✔ núcleo oferece energia com custo de saúde e pode ser vendido uma vez (33.601294ms)
+✔ ferramentas não geram pagamento ou conhecimento até a entrega presencial (35.830994ms)
+✔ relato muda confiança conforme escolha e registra só aquilo que foi contado (119.696852ms)
+✔ contato é fixo ao salvar, rotina plausível e pessoa morta não é substituída (13.357532ms)
+✔ relação permite pedir corda, sem multiplicação de empréstimos (11.106483ms)
+✔ migração 0.5 preserva dinheiro, item, tempo, RNG, memórias e habilidades sem novo kit (4.214565ms)
+✔ migração mantém decisão pendente e viagem em curso sem cobrar duas vezes (10.275218ms)
+✔ migração preserva compromisso e projeto sem apagar progresso (5.570186ms)
+✔ migração recusa catálogo antigo adulterado e save atual incoerente (23.494306ms)
+✔ 100 expedições completas passam por save/load e preservam consequências (3060.126141ms)
+✔ pacto alternativo pode ser alcançado com preparação real na vila sem itens de teste (25.22186ms)
+✔ empréstimo tem devolução presencial lembrada e não repete benefício (16.456612ms)
+✔ ação paga interrompida migra conservando custo, restante e prática (10.433123ms)
+✔ combate cobra energia em qualquer resultado e retomada não repete efeitos (13.533984ms)
+✔ criação aplica origem, identidade, dom e idade de fantasia (4.48026ms)
+✔ nomes e características inválidos são rejeitados (0.708942ms)
+✔ mapa conecta doze lugares e preserva custo do caminho (3.083897ms)
+✔ deslocamento realmente muda lugar, relógio e opções (7.01396ms)
+✔ necessidades não dependem de dividir o avanço em cliques (187.006228ms)
+✔ restos fracionários são preservados ao salvar (6.823357ms)
+✔ necessidades ficam limitadas sem matar por tarefas comuns (4.195056ms)
+✔ alimentação e descanso têm tempo, custo e recuperação (5.940627ms)
+✔ necessidade baixa bloqueia treino sem cobrar tempo (6.831429ms)
+✔ sono não causa cansaço e fome passa mais devagar (3.394508ms)
+✔ anão resiste ao cansaço, elfo enxerga no bosque à noite (30.079483ms)
+✔ NPCs seguem agenda e não ficam disponíveis em casa do jogador (5.609055ms)
+✔ conversar ensina rotina e constrói confiança nos dois sentidos (5.527484ms)
+✔ traço sociável afeta reciprocidade, higiene afeta aproximação (11.653315ms)
+✔ conversa tem intervalo; amizade requer confiança e iniciativa (12.721261ms)
+✔ morador que sai durante conversa invalida resultado (7.078275ms)
+✔ conhecimentos privados não vazam na visão pública (1.571352ms)
+✔ NPCs têm relação entre si e testemunho depende de presença (14.292963ms)
+✔ treino concluído aplica talento; ler menus não treina (13.046564ms)
+✔ ânimo baixo reduz aprendizado e domínio libera técnica real (5.587432ms)
+✔ trabalho paga só ao concluir; dormir não gera renda (12.442487ms)
+✔ projeto avança por blocos dedicados e pode ser retomado (18.619815ms)
+✔ mesmo problema oferece solução por habilidade, traço e dom (13.969813ms)
+✔ dom cura com custo e intervalo (4.168917ms)
+✔ potencial latente desperta por investimento em duas habilidades (7.44502ms)
+✔ venda do livro preserva aprendizado e informação muda preço (10.4836ms)
+✔ compromisso salvo aparece no horário e não cobra ausência se recusado (10.523329ms)
+✔ aula cumprida dá prática e fecha compromisso (11.578344ms)
+✔ atraso sem presença encerra compromisso uma vez (11.755327ms)
+✔ encontro interrompe viagem e rota sobrevive ao save sem teleporte (8.986988ms)
+✔ decisão no trajeto preserva duração restante e custa só sua própria resposta (9.829789ms)
+✔ parar rota não desfaz o trecho atual nem inicia o próximo (9.68208ms)
+✔ abandonar tarefa suspensa não concede salário (10.357061ms)
+✔ qualidade aleatória nasce no encontro e não muda ao examinar ou recarregar (13.486497ms)
+✔ duas sementes produzem variantes, mesma semente reproduz percurso (194.070143ms)
+✔ migração conserva posses, memórias e arquivo original (3.080361ms)
+✔ migração recusa pendências e preserva todos os bytes do save (0.785777ms)
+✔ save inválido não substitui o estado e versão temporal é verificada (4.555982ms)
+✔ 100 percursos integrados mantêm invariantes e retomada reprodutível (7666.080389ms)
+✔ personagem sem moeda nem comida sempre pode conseguir refeição pelo próprio esforço (12.462504ms)
+✔ migração mantém livro utilizável e não inventa um dom desperto (2.406572ms)
+✔ opção bloqueada informa um requisito concreto (1.526816ms)
+✔ descoberta só abre encomenda quando o jogador compartilha com a pessoa certa (10.598658ms)
+✔ bundle inicia com criação e janelas secundárias fechadas (31.740068ms)
+✔ criação coloca lugar e ações no primeiro plano, sem registro de chegada (19.174348ms)
+✔ consultar todos os painéis e fechar não muda tempo, RNG ou resultado (25.62366ms)
+✔ ação mostra sua própria passagem e continuar volta ao lugar sem tempo (33.87112ms)
+✔ mapa abre como janela, viagem atualiza sala e iniciativas locais (25.224237ms)
+✔ recarregar conserva efeitos e retorna ao lugar sem reproduzir log antigo (48.480674ms)
+✔ importar arquivo inválido conserva personagem e cena (21.743901ms)
+✔ importar save preserva dados e guarda cópia anterior (45.642801ms)
+✔ save incompatível é guardado antes de criar outro personagem (13.336433ms)
+✔ outro personagem exige criação explícita e não apaga arquivo ao abrir formulário (22.385825ms)
+✔ legado continua em chave separada e só transfere por iniciativa (18.069258ms)
+✔ falha ao salvar avisa e conserva passagem em memória (25.884126ms)
+✔ diário é janela independente e preserva lembranças fora da cena (26.093677ms)
+✔ painel móvel oferece condições e atalhos, com uma janela por vez (39.666892ms)
+✔ atalhos de habilidades e mochila abrem a aba correspondente (38.012447ms)
+✔ saída próxima viaja diretamente com custo real (16.38681ms)
+✔ NPC presente abre opções da pessoa certa sem passar tempo (40.236388ms)
+✔ prática atualiza habilidades sem despejar ganhos mecânicos na cena (73.40836ms)
+✔ decisão pendente permanece ao consultar painéis e pode ser resolvida (32.809294ms)
+✔ interrupção em viagem conserva escolha e retoma trecho sem teleporte (35.611103ms)
+✔ abas respondem ao teclado, devolvem foco e não avançam o relógio (15.715665ms)
+✔ necessidades ficam visíveis com valores acessíveis durante a cena e escolha (19.441865ms)
+✔ tocar em necessidade consulta cuidados sem agir ou passar tempo (14.326272ms)
+✔ cuidado rápido conserva custo e atualiza faixa após ação (17.750986ms)
+✔ necessidade baixa usa marcador e rótulo além da cor (21.98522ms)
+✔ consulta rápida durante decisão não permite ignorá-la ou alterar o save (21.16343ms)
+✔ consulta informa onde se recuperar sem viajar ou executar opção bloqueada (20.740763ms)
+✔ barras do painel lateral também dão acesso aos cuidados (14.537366ms)
+ℹ tests 123
+ℹ suites 0
+ℹ pass 123
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8484.501065
+
+== Comparação de quatro trajetórias jogáveis ==
+Quatro trajetórias sem inserção de recursos; mesma identidade e seed, decisões e preparação diferentes. Saves importáveis.
+
+== Ambiente público de revisão isolado ==
+Revisão com save isolado preparada em docs/vida-preview/.
+
+194 casos do conjunto atual: 71 da arquitetura anterior + 123 da versão 0.6 (43 de vida, 28 de HUD, 41 do capítulo, 11 da nova interface).
+71 casos da fundação 0.5.2 também reexecutados em separado; 14 da base original. Há casos de regressão equivalentes nas duas versões.
+100 expedições, 100 percursos cotidianos e comparação de 200 confrontos na bateria atual. Não comprovam 50h de variedade, diversão ou equilíbrio. VM/DOM não verifica layout; Android físico pendente.

@@ -1,6 +1,6 @@
 # Fantasy Life — documento mestre de design
 
-Versão jogável 0.5.2 · Direção revista em 26/11/2026. Nome de trabalho. Estado e decisões atuais prevalecem sobre GDDs históricos.
+Versão jogável 0.6.0 · Direção revista em 26/11/2026. Nome de trabalho. Estado e decisões atuais prevalecem sobre GDDs históricos.
 
 ## Identidade e prioridades
 
@@ -45,18 +45,24 @@ NPCs têm identidades estáveis, conhecimento individual e relações direcionai
 - O kernel suporta perfis temporais. O legado permanece em dias; Ponteclara opera em minutos. O botão anual e as rotinas passivas antigas não definem a direção atual.
 - Rotinas repetidas e períodos longos precisarão de automação opcional e resumos. Não expandir o jogo como uma lista infinita de tarefas de manutenção.
 
-## Estado implementado — 0.5.2
+## Estado implementado — 0.6.0
 
 A arquitetura 1.3 foi preservada e estendida. A fatia 1.4 entrega criação de jovem adulto, identidade reutilizável, oito lugares em Ponteclara, calendário, três moradores com agendas, necessidades com recuperação, relações direcionais e amizade, cinco habilidades com técnicas aos 60 pontos, três traços, talentos por habilidade, três povos, dois dons despertos e um potencial latente que pode despertar.
 
 Treino, trabalho e projetos ocupam tempo dedicado. Uma aula marcada tem horário e janela de chegada. Oportunidades são selecionadas em marcos fixos com contexto e intervalo; o resultado oculto do reagente é persistido. Exemplos conectados incluem livro, poço, passagem, lanterna, coleta noturna, descoberta compartilhada, encomenda especializada e devolução ou venda de um pacote encontrado. Resolver problemas com outro conhecimento ou dom muda o que o personagem aprende e faz depois.
 
-O jogo está em [sapatenis132.github.io/fantasy-life](https://sapatenis132.github.io/fantasy-life/), no repositório separado [sapatenis132/fantasy-life](https://github.com/sapatenis132/fantasy-life). `docs/index.html` é o build autocontido atual. A versão 0.4.1 permanece em `/legado/`. A chave de save nova é separada; transferência é explícita e recusa compromissos ainda ativos. A base original não foi alterada.
+O jogo está em [sapatenis132.github.io/fantasy-life](https://sapatenis132.github.io/fantasy-life/), no repositório separado [sapatenis132/fantasy-life](https://github.com/sapatenis132/fantasy-life). `docs/index.html` é o build autocontido atual. A versão 0.4.1 permanece em `/legado/`. A chave de save do laboratório 0.4.1 é separada; a transferência desse legado é explícita e recusa compromissos ainda ativos. A base original não foi alterada.
 
-Verificação automatizada: **142 casos atuais** — 71 anteriores + 43 de vida + 28 da nova UI — e 14 testes da base histórica executados separadamente. Inclui 100 percursos integrados novos e 500 de agência da etapa anterior. Isso verifica consistência, não diversão ou 50 horas de conteúdo. Evidências e limites da revisão atual em `etapa_1_4/docs/REVISAO_HUD_0_5_2.md` e `etapa_1_4/evidencias/HUD_0_5_2_MEDIDAS.json`; a validação anterior permanece em `etapa_1_4/evidencias/VALIDACAO_MOBILE.md`.
+A etapa 1.5 amplia a região para doze lugares com a expedição opcional **O Moinho Afogado**. Três interesses podem ser acompanhados no diário sem contrato obrigatório. Origem fornece equipamentos iniciais diferentes; provisões e curativos tornam o preparo útil. A margem muda conforme a cheia; dois contatos possíveis são fixados pela seed e conservam identidade, agenda e memória individual. Um único contato está ativo por personagem.
+
+O guardião aceita soluções por galeria, ferramentas/ofício, conhecimento mágico/dom, técnica de esgrima e confronto. Existe uma rota sem ouro e sem luta para todas as origens. A decisão na câmara tem quatro desfechos exclusivos: manter a roda e o vínculo, libertar a presença, extrair o núcleo ou preparar um novo pacto. Mudam trabalho, caminho curto, cuidados na margem, artefato utilizável e reação após relato. Maíra não sabe sua escolha até ouvi-la; o livreiro só conhece o núcleo quando o compra. Não há transmissão geral de rumores nesta versão.
+
+Catálogo 2 com migração de 0.5 validada pelo catálogo anterior congelado. Preserva tempo, RNG, bens, compromissos, projetos, escolhas e trabalhos em andamento. Backup automático anterior à gravação, arquivo 0.5.2 independente em `/legado-0-5/`, legado 0.4.1 mantido em `/legado/`. A chave principal continua `fantasy-life-vida-1.4`; o backup usa o sufixo `-antes-0.6`.
+
+Verificação: **194 casos do conjunto atual** (71 de arquitetura, 43 de vida, 28 de HUD, 41 do capítulo e 11 da interface nova), outros 71 da fundação 0.5.2 e 14 históricos. As regressões das duas versões têm casos equivalentes; não somar como funcionalidades distintas. Inclui 100 expedições e comparação de 200 confrontos, quatro trajetórias jogadas sem inserção de recursos e inspeção de três viewports CSS. Não comprovam diversão, equilíbrio ou 50 horas. Evidências em `etapa_1_5/evidencias/`; HUD anterior preservada em `etapa_1_4/docs/REVISAO_HUD_0_5_2.md`.
 
 ## Limites e próximos blocos
 
-O começo atual é fixo em uma vila e ainda oferece pouco conteúdo de aventura. Combate completo, equipamentos aprofundados, magia variada, explorações extensas, facções e mundo amplo ainda precisam ser desenvolvidos. NPCs têm uma base de agenda e vínculo; objetivos, personalidade reativa e desenvolvimento autônomo ainda precisam de profundidade. Economia, curva de aprendizado e raridade de dons são provisórias. Contexto familiar e origens variadas podem ser ampliados conforme a utilidade para o RPG; nascimento e simulação geracional ficam como possibilidades sem prioridade definida.
+A primeira aventura conecta a vila aos arredores; o volume de conteúdo continua pequeno. Combate completo, equipamentos aprofundados, magia variada, explorações extensas, facções e mundo amplo ainda precisam ser desenvolvidos. NPCs têm uma base de agenda e vínculo; objetivos, personalidade reativa e desenvolvimento autônomo ainda precisam de profundidade. Economia, curva de aprendizado e raridade de dons são provisórias. Contexto familiar e origens variadas podem ser ampliados conforme a utilidade para o RPG; nascimento e simulação geracional ficam como possibilidades sem prioridade definida.
 
-A direção permanece: ampliar combinações e consequências antes de despejar centenas de eventos. Próximo bloco: **1.5 — consolidar o ciclo de RPG e a variedade de contextos**, conectando objetivos, exploração, capacidades e relações. O roadmap deve aprofundar o que o personagem pode viver e fazer. Veja `PLANO_DE_CONTINUIDADE.md` e `etapa_1_4/docs/DESIGN_E_IMPLEMENTACAO.md`.
+A direção permanece: ampliar combinações e consequências antes de despejar centenas de eventos. Próximo bloco: **1.6 — aprofundar a primeira região e o risco**, com combate de decisões táticas, equipamento, magia e consequências tardias. O roadmap deve aprofundar o que o personagem pode viver e fazer. Veja `PLANO_DE_CONTINUIDADE.md` e `etapa_1_5/docs/DESIGN_E_IMPLEMENTACAO.md`.
