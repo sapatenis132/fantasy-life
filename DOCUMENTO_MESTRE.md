@@ -1,10 +1,12 @@
 # Fantasy Life — documento mestre de design
 
-Versão 0.5.0 · 26/11/2026. Nome de trabalho. Estado e decisões atuais prevalecem sobre GDDs históricos.
+Versão jogável 0.5.0 · Direção revista em 26/11/2026. Nome de trabalho. Estado e decisões atuais prevalecem sobre GDDs históricos.
 
 ## Identidade e prioridades
 
-RPG de vida textual medieval fantástico. O jogador vive como um indivíduo, com espaço para uma vida comum ou extraordinária, sem classe definitiva, herói obrigatório ou campanha principal imposta. Acessibilidade de BitLife, escolhas de Life in Adventure e diversidade de 1 in 8 Billion permanecem referências; o avanço anual deixou de ser a interface principal por orientação do usuário.
+RPG de fantasia medieval textual, com exploração, evolução do personagem, relações e liberdade de trajetória. O jogador acompanha as experiências de uma pessoa por seu diário e decide quais objetivos perseguir. Há espaço para aventura, magia, ofícios, vínculos e vida cotidiana, sem classe definitiva ou herói obrigatório.
+
+**BitLife deixa de ser referência ativa de design.** Menções anteriores pertencem ao histórico do projeto. Course of Temptation passa a ser a referência estrutural principal para calendário, agendas, relações, necessidades, treino e deslocamento entre lugares, adaptados ao RPG de fantasia. Life in Adventure e 1 in 8 Billion podem continuar como referências secundárias de escolhas e diversidade de personagens.
 
 1. **Liberdade e escolhas significativas.** Iniciativa, consequências e meios diferentes para perseguir objetivos. A simulação serve às escolhas.
 2. **Variedade profunda.** Meta: mesmo após 50 horas, não sentir a mesma experiência. Variar conflitos, abordagens, relações, oportunidades e consequências; textos cosméticos e contagem de eventos não comprovam a meta.
@@ -12,11 +14,15 @@ RPG de vida textual medieval fantástico. O jogador vive como um indivíduo, com
 
 Escolhas e liberdade > consequências/variedade > profundidade sistêmica > gerenciamento. Qualidade, criatividade e profundidade têm prioridade sobre volume ou velocidade.
 
-## Direção atual: acompanhar uma vida pelo diário
+## Direção atual: viver um RPG pelo diário
 
-Criar um personagem → perceber a situação e as pessoas presentes → escolher o que fazer ou aonde ir → viver o resultado → registrar a experiência. Ações, deslocamentos, descanso e treino movem um calendário. Dias continuam existindo no mundo, mas não são turnos que o jogador precise consumir mecanicamente. O tempo não passa durante leitura ou navegação.
+Criar um personagem → escolher um objetivo → explorar lugares e conhecer pessoas → agir com os recursos e capacidades disponíveis → lidar com resultados → acompanhar a evolução pelo diário. Ações, deslocamentos, descanso e treino movem um calendário. O tempo não passa durante leitura ou navegação.
 
-Course of Temptation é referência somente para relações, agendas, calendário, necessidades, treino e navegação por lugares. Nenhum cenário ou conteúdo adulto dessa referência faz parte do projeto. Habilidades, traços, talentos, povos e dons singulares devem produzir soluções e trajetórias de fantasia, não apenas números.
+Exploração, desafios, combate, aprendizado, equipamentos, magia e relações precisam alimentar uns aos outros. Rotina cria encontros, oportunidades e decisões de preparo; necessidades influenciam a forma de se aventurar e devem ter soluções acessíveis. Evitar que comer, dormir e treinar se tornem a atividade dominante por repetição. O diário registra a experiência do personagem.
+
+Nascimento, infância, envelhecimento até a morte e sucessão deixam de ser requisitos centrais ou etapas obrigatórias de desenvolvimento. Idade, origem e família continuam disponíveis como contexto e possíveis relações quando enriquecerem o RPG. O início adulto atual é uma base válida para desenvolver a experiência principal.
+
+Course of Temptation orienta as mecânicas de relações, agendas, calendário, necessidades, treino e navegação por lugares. Nenhum cenário ou conteúdo adulto dessa referência faz parte do projeto. Habilidades, traços, talentos, povos e dons singulares devem produzir soluções e trajetórias de fantasia, não apenas números.
 
 Aleatoriedade é parte do gameplay: encontrar circunstâncias inesperadas, lidar com informação incompleta e avaliar risco. Preparo, capacidade, relações e decisões mudam as alternativas e seus resultados. Não sortear novamente ao abrir menus; não usar surpresa como desculpa para ignorar intenção ou consequências.
 
@@ -49,6 +55,6 @@ Verificação automatizada: **126 casos atuais** — 71 anteriores + 43 de vida 
 
 ## Limites e próximos blocos
 
-O começo atual é fixo em uma vila e não demonstra o ciclo inteiro de vida. Nascimento procedural, família, infância, fases de vida, morte natural, romance, facções, combate completo e mundo amplo são etapas futuras. NPCs têm uma base de agenda e vínculo; objetivos, personalidade reativa e desenvolvimento autônomo ainda precisam de profundidade. Economia, curva de aprendizado e raridade de dons são provisórias.
+O começo atual é fixo em uma vila e ainda oferece pouco conteúdo de aventura. Combate completo, equipamentos aprofundados, magia variada, explorações extensas, facções e mundo amplo ainda precisam ser desenvolvidos. NPCs têm uma base de agenda e vínculo; objetivos, personalidade reativa e desenvolvimento autônomo ainda precisam de profundidade. Economia, curva de aprendizado e raridade de dons são provisórias. Contexto familiar e origens variadas podem ser ampliados conforme a utilidade para o RPG; nascimento e simulação geracional ficam como possibilidades sem prioridade definida.
 
-A direção permanece: ampliar combinações e consequências antes de despejar centenas de eventos. Próximo bloco: completar validações do personagem e projetar **1.5 — nascimento, família e contexto procedural**, ligados às possibilidades de início. Preservar opção de início rápido adulto para testes, sem substituir o simulador de vida por uma aventura única. Veja `PLANO_DE_CONTINUIDADE.md` e `etapa_1_4/docs/DESIGN_E_IMPLEMENTACAO.md`.
+A direção permanece: ampliar combinações e consequências antes de despejar centenas de eventos. Próximo bloco: **1.5 — consolidar o ciclo de RPG e a variedade de contextos**, conectando objetivos, exploração, capacidades e relações. O roadmap deve aprofundar o que o personagem pode viver e fazer. Veja `PLANO_DE_CONTINUIDADE.md` e `etapa_1_4/docs/DESIGN_E_IMPLEMENTACAO.md`.

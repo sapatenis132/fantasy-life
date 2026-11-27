@@ -1,10 +1,10 @@
 # Fantasy Life
 
-RPG de vida medieval fantástico textual, em português, com escolhas, consequências e liberdade de trajetória.
+RPG de fantasia medieval textual, em português, com exploração, evolução do personagem, relações e escolhas com consequências. Calendário, necessidades, treino e deslocamento entre lugares se inspiram nas mecânicas de Course of Temptation, adaptadas ao nosso mundo de fantasia, sem seu cenário ou conteúdo adulto.
 
 **[Jogar Fantasy Life](https://sapatenis132.github.io/fantasy-life/)**
 
-Versão **0.5.0 — Ponteclara**, etapa 1.4. Crie um personagem, acompanhe o diário, circule pela vila e decida como aprender, trabalhar, construir relações e investigar o que encontrar. Ações movem um calendário; capacidades e informações abrem soluções diferentes. O jogo começa com um jovem adulto; nascimento procedural e ciclo completo de vida são próximos blocos.
+Versão **0.5.0 — Ponteclara**, etapa 1.4. Crie um personagem, acompanhe o diário, circule pela vila e decida como aprender, trabalhar, construir relações e investigar o que encontrar. Ações movem um calendário; capacidades e informações abrem soluções diferentes. O jogo começa com um jovem adulto. Os próximos blocos aprofundam objetivos, exploração, progressão, relações e aventura. BitLife deixa de orientar o projeto; referências a essa direção em documentos antigos são históricas.
 
 A história aparece primeiro. Use **O que fazer aqui**, **Mapa** e **Personagem**. O menu superior contém exportação/importação. Saves ficam no navegador; exporte para transferir entre aparelhos. A [versão anterior](https://sapatenis132.github.io/fantasy-life/legado/) e sua chave de save foram preservadas.
 

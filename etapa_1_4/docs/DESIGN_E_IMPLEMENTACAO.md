@@ -1,10 +1,10 @@
 # Do simulador anual ao diário vivido — 0.5.0
 
-26/11/2026. Decisões atualizadas a partir das orientações do usuário. Este documento complementa o documento mestre; regras anuais antigas continuam somente no laboratório legado.
+26/11/2026. Este documento descreve a entrega 0.5.0. Direção revisada após a entrega: o projeto é um RPG de fantasia com as mecânicas de relações, calendário, necessidades, treino e lugares de Course of Temptation. BitLife deixa de ser referência ativa. O documento mestre e o plano de continuidade registram a nova prioridade de exploração, progressão e aventuras; as regras anuais antigas permanecem somente no histórico e no laboratório legado.
 
 ## Experiência entregue
 
-Criação resumida por nome e origem, com povo, traço, talento, dom e seed em personalização opcional. O começo é fixo em Ponteclara, às 08:00, com um jovem adulto; nascimento e família procedural continuam futuros. Humano começa aos 18 anos, elfo aos 40 e anão aos 30. Essas idades são parâmetros iniciais do mundo, não uma simulação completa de estágios ou longevidade.
+Criação resumida por nome e origem, com povo, traço, talento, dom e seed em personalização opcional. O começo é fixo em Ponteclara, às 08:00, com um jovem adulto. Origens e contextos poderão variar para ampliar os caminhos do RPG; nascimento e infância jogáveis não são requisitos. Humano começa aos 18 anos, elfo aos 40 e anão aos 30. Essas idades são parâmetros iniciais do mundo, não uma simulação completa de estágios ou longevidade.
 
 O diário mostra o resultado recente, o lugar e as pessoas presentes. A ação principal abre iniciativas locais. Mapa e personagem ocupam abas próprias; outras possibilidades bloqueadas ficam recolhidas e explicam condições concretas. Não há avanço offline nem sorteio ao consultar uma aba. A HUD mostra horário/data/moedas e avisa necessidades apenas quando baixas.
 

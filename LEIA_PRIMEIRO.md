@@ -9,6 +9,6 @@ Jogo: https://sapatenis132.github.io/fantasy-life/
 3. Executar `node etapa_1_4/verificar.mjs`.
 4. Conferir `etapa_1_4/evidencias/` e o estado de publicação em `PUBLICACAO.md`.
 
-A direção atual é diário, ações com tempo, mapa, relações e capacidades de fantasia. O botão anual pertence à versão anterior. A versão atual começa em um contexto adulto fixo; nascimento e família procedural vêm depois. Prioridades: escolhas, variedade e interface simples.
+A direção atual é **RPG de fantasia**, com diário, exploração, evolução do personagem, mapa, relações, calendário e necessidades. Course of Temptation é a referência estrutural para as mecânicas destacadas pelo usuário; seu cenário e conteúdo adulto não fazem parte do projeto. **BitLife deixou de ser referência ativa.** A versão atual começa em um contexto adulto fixo; a continuidade aprofunda o ciclo de RPG. Nascimento, infância e simulação geracional não são entregas obrigatórias. Prioridades: escolhas, variedade e interface simples.
 
 A versão anterior está em `/legado/`; saves separados e transferência explícita. A base histórica permanece em `base_original/` e `historico/`. O repositório oficial específico é `sapatenis132/fantasy-life`.

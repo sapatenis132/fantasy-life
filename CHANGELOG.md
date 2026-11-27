@@ -1,5 +1,13 @@
 # Histórico de desenvolvimento
 
+## Direção revista após 0.5.0 — 26/11/2026
+
+- RPG de fantasia como identidade central; BitLife deixa de orientar novas decisões.
+- Course of Temptation como referência estrutural para relações, calendário, necessidades, treino e deslocamento entre lugares, sem cenário ou conteúdo adulto.
+- Continuidade passa a aprofundar objetivos, exploração, capacidades, relações e aventura.
+- Nascimento, infância, envelhecimento até a morte e sucessão deixam de ser entregas obrigatórias.
+- Documento mestre, plano, apresentação e instruções de retomada alinhados; a implementação publicada permanece 0.5.0.
+
 ## 0.5.0 — 26/11/2026 — Ponteclara / etapa 1.4
 
 - Evolução do motor 1.3, com perfil temporal opcional em minutos e compatibilidade anterior verificada.
