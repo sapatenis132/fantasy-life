@@ -8,6 +8,17 @@ Versão jogável 0.6.0 · Direção revista em 26/11/2026.
 
 Ler `DOCUMENTO_MESTRE.md`, `etapa_1_5/README.md`, `etapa_1_5/docs/DESIGN_E_IMPLEMENTACAO.md` e evidências atuais. Executar `node etapa_1_5/verificar.mjs`. Publicar com `node scripts/preparar-pages.mjs`; enviar código, documentação e build juntos ao repositório **sapatenis132/fantasy-life**, branch `main`, Pages `/docs`.
 
+## Prioridade atual — preparação narrativa de Terastera
+
+O trabalho imediato é preparar mundo, história e região inicial antes de ampliar as mecânicas, conforme a direção estabelecida pelo autor. A base fornecida pelo autor está em `mundo/TERASTERA.md`; a ordem de trabalho, em `mundo/PREPARACAO_NARRATIVA.md`. Os cinco países são a base atual, com expansão aberta. Separar fatos, relatos e propostas; preservar as questões ainda sem resposta.
+
+1. Esclarecer a Guerra dos 3 e estabelecer relações históricas e contexto presente.
+2. Desenvolver geografia, tom, origens e vínculos possíveis do protagonista.
+3. Escolher a primeira região, aprofundar pessoas e situações e revisar a integração de Ponteclara e do moinho.
+4. Retomar a implementação da 1.6 a partir das necessidades narrativas e escolhas dessa região.
+
+O código e os saves da 0.6.0 continuam preservados. Preparação registrada não significa reinos implementados. A localização de Ponteclara, as causas dos mistérios e respostas secretas ainda estão em aberto. O calendário de 614 e demais parâmetros do protótipo precisam de conciliação, sem alterar saves durante o planejamento.
+
 ## Entregue nesta fatia
 
 - Identidade comum a jogador e moradores; origens, povos, traços, talentos e dons com usos concretos no jogador.
@@ -34,7 +45,7 @@ A crítica ao log foi tratada na HUD 0.5.1. A 0.5.2 mantém necessidades no cabe
 - Migração automática da 0.5, inclusive ação paga interrompida e decisão pendente. Backups, HTML anterior e todos os registros preservados.
 - 194 casos atuais, 71 de compatibilidade 0.5 e 14 históricos; quatro saves comparativos sem recursos inseridos. Inspeção móvel em Chrome remoto, sem equivaler a Android físico.
 
-## Próximo bloco: 1.6 — aprofundar a região e o risco
+## Bloco posterior à preparação narrativa: 1.6 — aprofundar a região e o risco
 
 1. Evoluir o confronto de uma resolução para pequenas decisões táticas legíveis: intenção do inimigo, posição/preparo, atacar, técnica, magia, defesa e retirada. Custo e ferimento devem afetar o restante da expedição sem impor combate a todo perfil.
 2. Equipar arma/ferramenta e descrever efeitos concretos. A lâmina atual funciona por posse; ainda não há slots, armadura ou inventário tático. Evitar planilha de itens.
@@ -68,7 +79,8 @@ Nascimento, infância, ciclo completo até a morte e sucessão deixam de ser a s
 | 1.3 Escolhas/agência | Implementada; 71 casos anteriores continuam passando |
 | 1.4 Personagem e fatia de rotina | Implementada na 0.5.0, HUD revista na 0.5.2; aprofundamento social e das capacidades de fantasia continua no plano |
 | 1.5 Ciclo de RPG e variedade de contextos | Implementada na 0.6.0: Moinho Afogado, preparo, exploração e retornos |
-| 1.6 Primeira região aprofundada | Próximo bloco: combate com decisões táticas, equipamento, magia e consequências tardias |
+| Fundação narrativa de Terastera | Trabalho atual: consolidar mundo, história, pessoas e região inicial a partir da base do autor |
+| 1.6 Primeira região aprofundada | Depois da preparação narrativa: combate com decisões táticas, equipamento, magia e consequências tardias |
 | Blocos posteriores | Mundo, relações profundas, ofícios/economia, magia, aventura/combate, facções, justiça, conteúdo, arte/UI, balanceamento e Android; reavaliar etapas antigas segundo a identidade de RPG |
 
 Trabalhar por fatias jogáveis; preservar código/histórico; registrar o que foi testado e o que ainda não existe. Qualidade, criatividade e agência acima do volume de sistemas.

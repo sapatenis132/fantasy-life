@@ -14,6 +14,14 @@ RPG de fantasia medieval textual, com exploração, evolução do personagem, re
 
 Escolhas e liberdade > consequências/variedade > profundidade sistêmica > gerenciamento. Qualidade, criatividade e profundidade têm prioridade sobre volume ou velocidade.
 
+## Fundação narrativa vigente — Terastera
+
+O cenário passa a ter como base **Terastera**, o grande continente apresentado pelo autor, com regiões frias, desérticas e tropicais. Os cinco países-reinos fornecidos são Shasmoe, Lorick, InverséeMonte, Utopía de Ralph e RegalisFundios; outros podem ser desenvolvidos depois. Ler `mundo/TERASTERA.md` para os fatos estabelecidos, rumores e questões abertas, e `mundo/PREPARACAO_NARRATIVA.md` para a ordem do trabalho e possibilidades ainda não aprovadas.
+
+**Prioridade atual: preparar a história e a região antes da próxima expansão mecânica.** A etapa 1.6 continua no planejamento, depois dessa preparação. O protótipo 0.6.0 permanece preservado. Ponteclara, o Moinho Afogado, seus parâmetros de calendário e as regras de personagem ainda precisam ser conciliados com Terastera; a localização da vila não está definida. Os reinos não estão implementados no jogo.
+
+Fatos fornecidos pelo autor prevalecem sobre propostas do assistente. Rumores sobre demônios em RegalisFundios não confirmam sua presença. A Guerra dos 3 e as causas dos mistérios permanecem abertas. Documentar uma possibilidade não a torna cânone, nem autoriza expor informação secreta ao personagem.
+
 ## Direção atual: viver um RPG pelo diário
 
 Criar um personagem → escolher um objetivo → explorar lugares e conhecer pessoas → agir com os recursos e capacidades disponíveis → lidar com resultados → acompanhar a evolução pelo diário. Ações, deslocamentos, descanso e treino movem um calendário. O tempo não passa durante leitura ou navegação.
@@ -65,4 +73,4 @@ Verificação: **194 casos do conjunto atual** (71 de arquitetura, 43 de vida, 2
 
 A primeira aventura conecta a vila aos arredores; o volume de conteúdo continua pequeno. Combate completo, equipamentos aprofundados, magia variada, explorações extensas, facções e mundo amplo ainda precisam ser desenvolvidos. NPCs têm uma base de agenda e vínculo; objetivos, personalidade reativa e desenvolvimento autônomo ainda precisam de profundidade. Economia, curva de aprendizado e raridade de dons são provisórias. Contexto familiar e origens variadas podem ser ampliados conforme a utilidade para o RPG; nascimento e simulação geracional ficam como possibilidades sem prioridade definida.
 
-A direção permanece: ampliar combinações e consequências antes de despejar centenas de eventos. Próximo bloco: **1.6 — aprofundar a primeira região e o risco**, com combate de decisões táticas, equipamento, magia e consequências tardias. O roadmap deve aprofundar o que o personagem pode viver e fazer. Veja `PLANO_DE_CONTINUIDADE.md` e `etapa_1_5/docs/DESIGN_E_IMPLEMENTACAO.md`.
+A direção permanece: ampliar combinações e consequências antes de despejar centenas de eventos. Trabalho imediato: **fundação narrativa de Terastera e revisão da região inicial**. Depois, retomar a **1.6 — aprofundar a primeira região e o risco**, com combate de decisões táticas, equipamento, magia e consequências tardias. O roadmap deve aprofundar o que o personagem pode viver e fazer. Veja `PLANO_DE_CONTINUIDADE.md` e `etapa_1_5/docs/DESIGN_E_IMPLEMENTACAO.md`.

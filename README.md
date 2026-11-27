@@ -6,8 +6,12 @@ RPG de fantasia medieval textual, em português, com exploração, evolução do
 
 Versão **0.6.0 — O Moinho Afogado**, etapa 1.5. A primeira expedição opcional conecta objetivos, preparo, exploração, capacidades e retornos à vila. Investigue uma voz, recupere ferramentas ou reabra uma travessia. Você pode contornar, desativar ou enfrentar o guardião e escolher entre quatro destinos para o moinho. As escolhas mudam caminhos, trabalho, cuidados, recursos e aquilo que os moradores sabem.
 
-Há doze lugares, equipamento de preparo, provisões, curativos e treino por blocos de duas horas. O confronto atual é uma resolução de encontro com risco de ferimentos; combate completo é o próximo aprofundamento. BitLife deixou de orientar o projeto.
+Há doze lugares, equipamento de preparo, provisões, curativos e treino por blocos de duas horas. O confronto atual é uma resolução de encontro com risco de ferimentos; combate completo está planejado para depois da preparação narrativa. BitLife deixou de orientar o projeto.
 A cena mostra o lugar, as pessoas, o que fazer e as saídas próximas. No celular, quatro medidores discretos mantêm as necessidades à vista; toque em um deles para consultar cuidados do lugar. No celular, abra o painel pelo botão superior para consultar condições, personagem, mapa, pessoas, agenda e diário. Em telas largas, esse painel fica à esquerda. Arquivos contém exportação/importação. Saves ficam no navegador; exporte para transferir entre aparelhos. A [versão anterior](https://sapatenis132.github.io/fantasy-life/legado/) e sua chave de save foram preservadas.
+
+## Mundo e trabalho atual
+
+**Terastera** é o continente apresentado pelo autor: cinco países-reinos, diferentes climas e conflitos, com expansão aberta. A [base de mundo](mundo/TERASTERA.md) distingue fatos, rumores e questões ainda sem resposta. A [preparação narrativa](mundo/PREPARACAO_NARRATIVA.md) precede a próxima expansão de mecânicas. Ponteclara e o moinho permanecem preservados como protótipo; sua localização e integração nesse mundo ainda serão definidas. Os reinos não estão implementados na versão 0.6.0.
 
 ## Desenvolver
 

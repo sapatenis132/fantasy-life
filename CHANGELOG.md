@@ -1,5 +1,12 @@
 # Histórico de desenvolvimento
 
+## Preparação narrativa — 26/11/2026 — Terastera
+
+- Registrada a base do autor para Terastera e seus cinco países-reinos, preservando fatos, rumores e questões em aberto.
+- Preparação de mundo, história, pessoas e região inicial passa à frente da implementação da 1.6.
+- Ponteclara e o moinho preservados como protótipo, com localização e integração narrativa pendentes.
+- Documentação e instruções de retomada alinhadas; versão jogável, código e saves continuam 0.6.0.
+
 ## 0.6.0 — 26/11/2026 — O Moinho Afogado / etapa 1.5
 
 - Objetivos opcionais, mapa em duas regiões e quatro lugares de expedição.

@@ -4,7 +4,7 @@
 
 Jogo: https://sapatenis132.github.io/fantasy-life/
 
-1. Ler `DOCUMENTO_MESTRE.md` e `PLANO_DE_CONTINUIDADE.md`.
+1. Ler `DOCUMENTO_MESTRE.md`, `PLANO_DE_CONTINUIDADE.md`, `mundo/TERASTERA.md` e `mundo/PREPARACAO_NARRATIVA.md`.
 2. Ler `etapa_1_5/README.md` e `docs/DESIGN_E_IMPLEMENTACAO.md` dentro da etapa.
 3. Executar `node etapa_1_5/verificar.mjs`.
 4. Ler `etapa_1_4/docs/REVISAO_HUD_0_5_1.md`: cena e diário são apresentações separadas.
@@ -14,4 +14,6 @@ A direção atual é **RPG de fantasia**, com diário, exploração, evolução 
 
 A versão anterior está em `/legado/`; saves separados e transferência explícita. A base histórica permanece em `base_original/` e `historico/`. O repositório oficial específico é `sapatenis132/fantasy-life`.
 
-A primeira expedição está em `etapa_1_5/`. Próximo bloco: 1.6. Saves 0.5 são migrados automaticamente com backup e cópia anterior em `/legado-0-5/`; o legado 0.4 continua separado.
+A primeira expedição está em `etapa_1_5/`. Trabalho atual: preparar Terastera e a região inicial antes de retomar a 1.6. Saves 0.5 são migrados automaticamente com backup e cópia anterior em `/legado-0-5/`; o legado 0.4 continua separado.
+
+A base de Terastera foi fornecida pelo autor. Preservar os nomes e distinguir fatos, rumores e propostas. Não escolher a localização de Ponteclara nem resolver a Guerra dos 3 ou os mistérios como se o autor já tivesse definido suas respostas.
