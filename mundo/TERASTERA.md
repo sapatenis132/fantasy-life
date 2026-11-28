@@ -128,7 +128,9 @@ O pouco conhecimento externo não equivale a afirmar que nenhum habitante conhe�
 
 O autor escolheu as raças de Pathfinder das comuns às raras. A referência de trabalho está em `POVOS_PATHFINDER.md`: Pathfinder 2e, incluindo comuns, incomuns e raras, com edição ainda não explicitada pelo autor. O catálogo consultado tem 54 ancestralidades. Seus povos serão integrados à história e aos lugares de Terastera durante a expansão; os reinos e as culturas de Golarion não foram adotados como parte do nosso continente. Heranças são uma camada distinta a detalhar.
 
-Nenhuma nova origem nacional, distribuição populacional ou regra de convivência foi fixada nesta consulta. A presença de um povo no catálogo tampouco confirma boatos específicos, como os relatos sobre demônios em RegalisFundios.
+Em 28/11/2026, o autor acrescentou uma diretriz populacional: muitas raças raras têm até dez indivíduos da própria raça além do jogador, e algumas incomuns possuem pequenos povoados. Quais raças, números exatos e distribuição ainda serão desenvolvidos; o limite não se aplica automaticamente a todas as raras. O âmbito geográfico da contagem ainda não foi explicitado. Ver `POVOS_PATHFINDER.md`.
+
+Origens nacionais e regras de convivência locais continuam abertas. A presença de um povo no catálogo tampouco confirma boatos específicos, como os relatos sobre demônios em RegalisFundios.
 
 ## Situação do protótipo existente
 

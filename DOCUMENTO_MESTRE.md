@@ -1,6 +1,6 @@
 # Fantasy Life — documento mestre de design
 
-Versão jogável 0.6.0 · Diretrizes narrativas atualizadas em 27/11/2026. Nome de trabalho. Estado e decisões atuais prevalecem sobre GDDs históricos.
+Versão jogável 0.6.0 · Diretrizes narrativas atualizadas em 28/11/2026. Nome de trabalho. Estado e decisões atuais prevalecem sobre GDDs históricos.
 
 ## Identidade e prioridades
 
@@ -32,7 +32,7 @@ Fatos fornecidos pelo autor prevalecem sobre propostas do assistente. Rumores so
 
 O autor definiu usar as raças de Pathfinder, das comuns às raras, como base para os povos. A consulta de trabalho usa Pathfinder 2e e inclui comuns, incomuns e raras; a edição ainda não foi explicitada pelo autor. O índice consultado reúne 54 ancestralidades (8 comuns, 23 incomuns, 23 raras), registradas em `mundo/POVOS_PATHFINDER.md` e no inventário de referência associado.
 
-Essa decisão orienta o catálogo a adaptar. História, culturas, distribuição em Terastera, heranças, características e regras jogáveis ainda serão desenvolvidas. Raridade da fonte não fixa porcentagem de encontros nem disponibilidade na criação. A versão 0.6.0 continua com os três povos originais do protótipo; não houve implementação das novas opções. O próximo bloco sugerido ao autor é magia, habilidades, talentos e dons.
+Essa decisão orienta o catálogo a adaptar. Em 28/11/2026, o autor definiu a escala populacional: muitas raças raras têm até dez indivíduos da própria raça, além do jogador; algumas incomuns possuem pequenos povoados. Não universalizar o limite de dez nem atribuir números a cada raça sem desenvolvimento. Quantidades específicas, distribuição geográfica, história, culturas, heranças, características e regras jogáveis ainda serão desenvolvidas. Raridade da fonte não fixa porcentagem de encontros nem disponibilidade na criação. A versão 0.6.0 continua com os três povos originais do protótipo; não houve implementação das novas opções. O próximo bloco sugerido ao autor é magia, habilidades, talentos e dons.
 
 ## Direção atual: viver um RPG pelo diário
 

@@ -24,6 +24,8 @@ Uma ideia pode ser definitiva, uma possibilidade ou uma lenda do mundo. Quando e
 
 **Base do catálogo recebida em 27/11/2026:** usar as raças de Pathfinder das comuns às raras. Consulta de trabalho em Pathfinder 2e, incluindo comuns, incomuns e raras; a edição não foi explicitada pelo autor. Ver `POVOS_PATHFINDER.md` para as 54 ancestralidades conferidas. Cultura e convivência em Terastera ainda serão desenvolvidas; as perguntas abaixo servem para preferências que o autor queira acrescentar, sem pedir que reescreva cada ancestralidade da referência.
 
+**Escala populacional recebida em 28/11/2026:** muitas raças raras têm até dez indivíduos da própria raça além do jogador; algumas incomuns possuem pequenos povoados. Números, exceções e distribuição ainda serão desenvolvidos. Essa base já está registrada e não exige um censo completo do autor para continuar.
+
 **O que trazer:** quais povos existem e o que distingue os que considera importantes. Aparência, longevidade aproximada, particularidades e formas de convivência que você queira estabelecer. Como é viver entre outros povos? Há preconceitos, alianças ou diferenças regionais relevantes?
 
 **O que já temos:** humanos, elfos, anões e halflings citados na base. A presença de demônios em RegalisFundios permanece um rumor. A descrição de um reino não determina que só um povo possa morar nele.

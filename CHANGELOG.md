@@ -1,5 +1,11 @@
 # Histórico de desenvolvimento
 
+## Escala populacional dos povos — 28/11/2026
+
+- Registrada a base do autor: muitas raças raras têm até dez indivíduos por raça além do jogador; algumas incomuns formam pequenos povoados.
+- Quantidades por povo, exceções e distribuição permanecem abertas; implicações para continuidade e geração registradas como propostas.
+- Catálogo de referência e protótipo 0.6.0 preservados; nenhum censo ou novo gerador implementado.
+
 ## Base de povos — 27/11/2026
 
 - Registrada a escolha do autor por raças de Pathfinder, das comuns às raras.

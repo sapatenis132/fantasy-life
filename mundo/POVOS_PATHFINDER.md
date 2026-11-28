@@ -26,11 +26,35 @@ Anadi, Android, Automaton, Awakened Animal, Conrasu, Dragonet, Fleshwarp, Ghoran
 
 O catálogo de povos é a base escolhida pelo autor. História, culturas, distribuição territorial, origens locais e relações ainda precisam ser desenvolvidas para Terastera. A adoção das ancestralidades não estabelece que os países, guerras, deuses e acontecimentos de Golarion façam parte do nosso cenário.
 
-As raridades acima são as da fonte. A distribuição local por reino, a frequência de encontros, a disponibilidade na criação e os caminhos de acesso ainda serão projetados. Uma categoria de referência não fornece uma porcentagem de nascimento ou sorteio.
+As categorias da lista são as da fonte. O autor acrescentou uma diretriz própria de população em 28/11/2026, registrada abaixo. A distribuição por reino, as quantidades de cada povo, a frequência de encontros e os detalhes da criação ainda serão projetados. Uma categoria de referência não fornece uma porcentagem de nascimento ou sorteio.
 
 Como diretriz proposta para a adaptação, a raridade deve orientar presença e particularidades de contexto; o equilíbrio deve permitir escolhas interessantes em todos os povos. Ainda não existem bônus novos, seleção rara automática, custos de desbloqueio ou diferenças numéricas implementadas.
 
 Características como tamanho, corpo aquático, voo, forma construída ou condição de morto-vivo exigem soluções de exploração, convivência e cuidados compatíveis com o motor do jogo. Esses pontos serão detalhados na expansão e não são motivo para retirar silenciosamente opções do catálogo escolhido.
+
+## População — base do autor em 28/11/2026
+
+O autor propôs que, **além do jogador, muitas das raças raras não passam de dez indivíduos**. Algumas raças incomuns possuem pequenos povoados.
+
+| Grupo | Diretriz recebida | O que ainda está em aberto |
+|---|---|---|
+| Raras | Muitas têm até dez indivíduos da própria raça, além do personagem do jogador | Quais raças seguem essa escala, exceções, números e distribuição de cada uma |
+| Incomuns | Algumas possuem pequenos povoados | Quais povos, quantidade e tamanho dos povoados e outras formas de distribuição |
+| Comuns | Não receberam novos números nesta definição | Quantidades e distribuição local |
+
+“Até dez” se refere a muitas raças raras individualmente; não é uma soma de todas as raças raras. A formulação também não impõe esse limite a todas elas. O jogador é uma exceção possível e fica fora dessa contagem de NPCs; isso não estabelece que seja uma figura conhecida, escolhida ou destinada a uma missão.
+
+A escala geográfica exata da contagem ainda não foi explicitada — continente, mundo ou outra delimitação. A raridade deve ser percebida no cenário, sem fixar cotas independentes por cidade, encontro ou região que multipliquem artificialmente a população total. A localização de cada pessoa, as causas dessa escassez e as origens dos pequenos povoados ficam para a expansão.
+
+### Implicações propostas para desenvolver depois
+
+- Para raças de população mínima, preparar pessoas com identidade e continuidade próprias. Viagens, reaparições e mudanças de estado devem conservar quem essa pessoa é.
+- Na futura geração de NPCs, respeitar o conjunto populacional definido, evitando produzir novos indivíduos raros sem controle a cada local ou encontro. O registro de existência e o aparecimento em cena são decisões diferentes.
+- Povoados de povos incomuns podem criar presença local mais concentrada. Encontrar uma comunidade não transforma aquele povo em comum no restante do cenário.
+- Distribuir conhecimento conforme a experiência de cada pessoa. Alguém pode nunca ter encontrado um membro de uma raça rara; identificação, curiosidade ou outras reações dependem do contexto. Não atribuir a todos o censo real ou a identidade do jogador.
+- A raridade da população e as regras de escolha do personagem são questões distintas. Esta diretriz não cria sorteio obrigatório, custo de desbloqueio ou punição automática pela escolha de um povo raro.
+
+São propostas de continuidade e geração para uma implementação futura. Não há lista nominal, censo por raça, quota de dez aplicada a todas as raras ou gerador demográfico implementado nesta entrega. A decisão do autor vale como base de mundo, enquanto os detalhes são desenvolvidos.
 
 ## Ancestralidade e herança
 
