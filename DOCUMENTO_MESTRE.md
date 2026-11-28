@@ -16,7 +16,7 @@ Escolhas e liberdade > consequências/variedade > profundidade sistêmica > gere
 
 ## Tom, trajetórias e ritmo — base recebida em 27/11/2026
 
-O tom acompanha as escolhas e a trajetória do jogador: o mundo deve comportar experiências como uma campanha slasher e uma vida mais tranquila na Utopía de Ralph. A aventura é o foco, com liberdade para construir outras formas de viver. As pessoas e os lugares preservam coerência e reações plausíveis às ações do personagem.
+O tom acompanha as escolhas e a trajetória do jogador: o mundo deve comportar experiências como uma campanha slasher ou uma vida mais tranquila. Essas trajetórias não ficam vinculadas obrigatoriamente a um reino; o contexto e as reações locais continuam coerentes. A aventura é o foco, com liberdade para construir outras formas de viver. As pessoas e os lugares preservam coerência e reações plausíveis às ações do personagem.
 
 **O tempo deve favorecer diversão e escolhas.** Aprender uma língua, por exemplo, não deve exigir consumir um ano inteiro de calendário por imitação da vida real. Durações e curvas de aprendizado precisam oferecer utilidade perceptível e evitar sensação de obrigação. Valores exatos e soluções ainda serão projetados; a diretriz não foi implementada como um novo sistema na 0.6.0. Ler `mundo/TOM_POSSIBILIDADES_E_TEMPO.md`, que distingue a base do autor das aplicações propostas.
 
@@ -27,6 +27,12 @@ O cenário passa a ter como base **Terastera**, o grande continente apresentado 
 **Prioridade atual: preparar a história e a região antes da próxima expansão mecânica.** A etapa 1.6 continua no planejamento, depois dessa preparação. O protótipo 0.6.0 permanece preservado. Ponteclara, o Moinho Afogado, seus parâmetros de calendário e as regras de personagem ainda precisam ser conciliados com Terastera; a localização da vila não está definida. Os reinos não estão implementados no jogo.
 
 Fatos fornecidos pelo autor prevalecem sobre propostas do assistente. Rumores sobre demônios em RegalisFundios não confirmam sua presença. A versão lendária da Guerra dos 3 foi definida em 27/11/2026: Sol, Lua e Rei lutaram; a Tempestade venceu. A verdade histórica, as identidades e as causas dos demais mistérios permanecem abertas. Ler `mundo/LENDAS_E_MEMORIAS.md`. Documentar uma possibilidade não a torna cânone, nem autoriza expor informação secreta ao personagem.
+
+## Povos — base recebida em 27/11/2026
+
+O autor definiu usar as raças de Pathfinder, das comuns às raras, como base para os povos. A consulta de trabalho usa Pathfinder 2e e inclui comuns, incomuns e raras; a edição ainda não foi explicitada pelo autor. O índice consultado reúne 54 ancestralidades (8 comuns, 23 incomuns, 23 raras), registradas em `mundo/POVOS_PATHFINDER.md` e no inventário de referência associado.
+
+Essa decisão orienta o catálogo a adaptar. História, culturas, distribuição em Terastera, heranças, características e regras jogáveis ainda serão desenvolvidas. Raridade da fonte não fixa porcentagem de encontros nem disponibilidade na criação. A versão 0.6.0 continua com os três povos originais do protótipo; não houve implementação das novas opções. O próximo bloco sugerido ao autor é magia, habilidades, talentos e dons.
 
 ## Direção atual: viver um RPG pelo diário
 

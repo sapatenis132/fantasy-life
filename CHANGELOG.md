@@ -1,5 +1,11 @@
 # Histórico de desenvolvimento
 
+## Base de povos — 27/11/2026
+
+- Registrada a escolha do autor por raças de Pathfinder, das comuns às raras.
+- Conferido inventário de 54 ancestralidades de Pathfinder 2e (8 comuns, 23 incomuns e 23 raras); edição mantida como hipótese de consulta, pois não foi explicitada pelo autor.
+- Adaptação cultural e territorial pendente; próximo bloco sugerido: magia e capacidades. Correção de tom preservada para todos os reinos. Código, build e saves permanecem 0.6.0.
+
 ## Tom, possibilidades e tempo — 27/11/2026
 
 - Registrada a base do autor: tom pelas escolhas, aventura como foco e liberdade de outras trajetórias.

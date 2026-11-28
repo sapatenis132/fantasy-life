@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "kind": "reference_catalog",
+  "game": "Fantasy Life",
+  "role": "base_de_povos_para_expansao",
+  "status": "referencia_sem_implementacao",
+  "consultedOn": "2026-11-27",
+  "edition": "Pathfinder Second Edition",
+  "editionSelection": "hipotese_de_trabalho_da_consulta_autor_nao_especificou_edicao",
+  "source": {
+    "name": "Archives of Nethys — Ancestries",
+    "url": "https://2e.aonprd.com/Ancestries.aspx"
+  },
+  "counts": {
+    "common": 8,
+    "uncommon": 23,
+    "rare": 23,
+    "total": 54
+  },
+  "ancestries": [
+    {
+      "name": "Dwarf",
+      "rarityInSource": "comum"
+    },
+    {
+      "name": "Elf",
+      "rarityInSource": "comum"
+    },
+    {
+      "name": "Gnome",
+      "rarityInSource": "comum"
+    },
+    {
+      "name": "Goblin",
+      "rarityInSource": "comum"
+    },
+    {
+      "name": "Halfling",
+      "rarityInSource": "comum"
+    },
+    {
+      "name": "Human",
+      "rarityInSource": "comum"
+    },
+    {
+      "name": "Leshy",
+      "rarityInSource": "comum"
+    },
+    {
+      "name": "Orc",
+      "rarityInSource": "comum"
+    },
+    {
+      "name": "Athamaru",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Azarketi",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Bugbear",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Catfolk",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Centaur",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Faun",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Fetchling",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Hobgoblin",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Kholo",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Kitsune",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Kobold",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Lizardfolk",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Merfolk",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Minotaur",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Nagaji",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Nymph",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Ratfolk",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Samsaran",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Tanuki",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Tengu",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Tripkee",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Vanara",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Wayang",
+      "rarityInSource": "incomum"
+    },
+    {
+      "name": "Anadi",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Android",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Automaton",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Awakened Animal",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Conrasu",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Dragonet",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Fleshwarp",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Ghoran",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Goloma",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Gremlin",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Jotunborn",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Kashrishi",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Poppet",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Sarangay",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Shisk",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Shoony",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Skeleton",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Sprite",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Strix",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Surki",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Vishkanya",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Yaksha",
+      "rarityInSource": "rara"
+    },
+    {
+      "name": "Yaoguai",
+      "rarityInSource": "rara"
+    }
+  ]
+}

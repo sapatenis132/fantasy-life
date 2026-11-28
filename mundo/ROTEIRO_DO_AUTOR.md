@@ -22,6 +22,8 @@ Uma ideia pode ser definitiva, uma possibilidade ou uma lenda do mundo. Quando e
 
 ## 2. Povos e convivência
 
+**Base do catálogo recebida em 27/11/2026:** usar as raças de Pathfinder das comuns às raras. Consulta de trabalho em Pathfinder 2e, incluindo comuns, incomuns e raras; a edição não foi explicitada pelo autor. Ver `POVOS_PATHFINDER.md` para as 54 ancestralidades conferidas. Cultura e convivência em Terastera ainda serão desenvolvidas; as perguntas abaixo servem para preferências que o autor queira acrescentar, sem pedir que reescreva cada ancestralidade da referência.
+
 **O que trazer:** quais povos existem e o que distingue os que considera importantes. Aparência, longevidade aproximada, particularidades e formas de convivência que você queira estabelecer. Como é viver entre outros povos? Há preconceitos, alianças ou diferenças regionais relevantes?
 
 **O que já temos:** humanos, elfos, anões e halflings citados na base. A presença de demônios em RegalisFundios permanece um rumor. A descrição de um reino não determina que só um povo possa morar nele.
@@ -64,7 +66,7 @@ Ponteclara, seus moradores e o moinho ficam preservados como protótipo. Sua int
 
 ## Ponto de partida sugerido
 
-A base do bloco 1 foi recebida. O próximo bloco sugerido é **2. Povos e convivência**: quais povos deseja no mundo, suas particularidades e como vivem juntos. Depois, magia e capacidades ajudam a definir as maneiras de agir dessas pessoas. A ordem permanece flexível.
+A base do bloco 1 e o catálogo de povos do bloco 2 foram recebidos. O próximo bloco sugerido é **3. Magia, habilidades, talentos e dons**. Convivência e diferenças locais dos povos continuam disponíveis para aprofundamento conforme o interesse do autor. A ordem permanece flexível.
 
 Um formato opcional para qualquer tema:
 

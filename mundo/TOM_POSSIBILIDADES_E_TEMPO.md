@@ -6,7 +6,7 @@
 
 ### Tom orientado pelas escolhas
 
-O tom pode variar muito conforme as escolhas do jogador. O autor deu como exemplos uma campanha slasher e uma vida na Utopía de Ralph. Terastera deve comportar trajetórias de horror e violência, aventura e experiências mais tranquilas, conforme o contexto e o envolvimento do personagem.
+O tom pode variar muito conforme as escolhas do jogador. Terastera deve comportar trajetórias de horror e violência, aventura e experiências mais tranquilas, conforme o contexto e o envolvimento do personagem. O autor citou a Utopía de Ralph como exemplo; a correção posterior esclarece que ela não deve concentrar a ideia de vida tranquila. Os estilos de campanha não ficam vinculados obrigatoriamente a países específicos.
 
 Não foi definido um único tom obrigatório para todas as campanhas. A menção a slasher não determina um papel específico para o protagonista nessas histórias.
 
@@ -47,4 +47,4 @@ Distinguir tempo real do jogador, tempo do calendário e investimento necessári
 
 ## Continuidade da preparação
 
-A base do bloco 1 está recebida e registrada; pode ser aprofundada durante a expansão. O próximo bloco sugerido ao autor é **povos e convivência**. As regras de magia, diferenças entre povos e contexto da região ainda serão apresentados. A expansão mecânica da 1.6 continua posterior à preparação e revisão da região.
+A base do bloco 1 está recebida e registrada; pode ser aprofundada durante a expansão. O catálogo do bloco 2 também foi recebido: povos de Pathfinder como referência, em `POVOS_PATHFINDER.md`. O próximo bloco sugerido ao autor é **magia, habilidades, talentos e dons**. Diferenças locais entre povos e contexto da região ainda serão desenvolvidos. A expansão mecânica da 1.6 continua posterior à preparação e revisão da região.

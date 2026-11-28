@@ -7,7 +7,7 @@
 O roteiro para o autor está em `ROTEIRO_DO_AUTOR.md`. O autor fornece os pilares e o assistente expande a partir deles. A ordem prioriza a vida presente e o espaço do personagem; lendas e respostas secretas podem continuar abertas.
 
 1. Expandir a base de tom e possibilidades já fornecida pelo autor em `TOM_POSSIBILIDADES_E_TEMPO.md`: tom pelas escolhas, aventura como foco e liberdade de outras vidas. Aprendizado e passagem de tempo precisam favorecer a diversão.
-2. Apresentar povos e convivência; depois magia, habilidades, talentos e dons.
+2. Expandir a base de povos escolhida em `POVOS_PATHFINDER.md`, com convivência e integração a Terastera; o próximo tema sugerido ao autor é magia, habilidades, talentos e dons.
 3. Aprofundar a vida atual dos reinos, crenças e geografia funcional, um país por vez.
 4. Estabelecer a natureza fantástica, as possibilidades de aventura e os perigos.
 5. Escolher a primeira região e desenvolver pessoas, vínculos e situações abertas.
@@ -51,7 +51,7 @@ O nível de detalhe deve ajudar a construir cenas e escolhas. Completar todos os
 
 A versão lendária da Guerra dos 3 agora está definida: Sol, Lua e Rei, poderosos quase como forças da natureza, lutaram; a Tempestade venceu. O relato é muito antigo e não revela a verdade histórica. Permanecem abertas as identidades, o motivo da disputa, o significado da vitória e a relação exata da Tempestade com Lorick. Não é necessário responder a todos esses mistérios para preparar a vida atual dos reinos. A guerra não foi estabelecida como causa comum do frio, do fechamento das fronteiras, da queda anã ou de RegalisFundios.
 
-A base de tom, vidas possíveis e ritmo do aprendizado está recebida. O próximo bloco sugerido ao autor é povos e convivência, seguido por magia. A ligação Shasmoe–RegalisFundios, a sucessão dos Rumnaheim, o alcance da sorte de Ralph e outras questões podem ser aprofundados quando o autor chegar a esses temas. Causas secretas e reviravoltas permanecem abertas enquanto ele estiver apresentando sua base.
+A base de tom, vidas possíveis e ritmo do aprendizado está recebida, assim como a escolha de Pathfinder como catálogo de povos. O próximo bloco sugerido ao autor é magia, habilidades, talentos e dons. A convivência dos povos será desenvolvida para Terastera a partir dos reinos e das preferências que o autor apresentar. A ligação Shasmoe–RegalisFundios, a sucessão dos Rumnaheim, o alcance da sorte de Ralph e outras questões podem ser aprofundados quando o autor chegar a esses temas. Causas secretas e reviravoltas permanecem abertas enquanto ele estiver apresentando sua base.
 
 ## Estado desta entrega
 

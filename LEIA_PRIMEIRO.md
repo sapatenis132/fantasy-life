@@ -18,4 +18,6 @@ A primeira expedição está em `etapa_1_5/`. Trabalho atual: preparar Terastera
 
 A base de Terastera foi fornecida pelo autor. Preservar os nomes e distinguir fatos, rumores e propostas. A lenda da Guerra dos 3 está em `mundo/LENDAS_E_MEMORIAS.md`: Sol, Lua e Rei lutaram; a Tempestade venceu. Sua verdade histórica e suas identidades permanecem abertas, assim como a localização de Ponteclara e as causas dos demais mistérios.
 
-Bloco 1 recebido em 27/11/2026: `mundo/TOM_POSSIBILIDADES_E_TEMPO.md`. Tom pelas escolhas; aventura como foco com liberdade de outras trajetórias; aprendizado e tempo voltados à diversão, sem duração realista excessiva ou obrigação repetitiva. Próximo bloco sugerido ao autor: povos e convivência. Nenhuma duração nova foi implementada.
+Bloco 1 recebido em 27/11/2026: `mundo/TOM_POSSIBILIDADES_E_TEMPO.md`. Tom pelas escolhas; aventura como foco com liberdade de outras trajetórias; aprendizado e tempo voltados à diversão, sem duração realista excessiva ou obrigação repetitiva. A base do catálogo de povos também foi recebida; próximo bloco sugerido ao autor: magia, habilidades, talentos e dons. Nenhuma duração nova foi implementada.
+
+Bloco 2: `mundo/POVOS_PATHFINDER.md`. O autor escolheu raças de Pathfinder das comuns às raras. Consulta em Pathfinder 2e, com edição ainda não explicitada; 54 ancestralidades comuns/incomuns/raras. A referência não altera os três povos jogáveis da 0.6.0. A correção de tom vale para todos os reinos: estilos de campanha não são exclusivos de um país.

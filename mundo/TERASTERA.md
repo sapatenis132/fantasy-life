@@ -124,6 +124,12 @@ O pouco conhecimento externo não equivale a afirmar que nenhum habitante conhe�
 | Utopía de Ralph | Proposta de convivência pacífica e festiva, com líder de sorte inata |
 | Alianças, rivalidades e fronteiras entre os demais países | Ainda não definidas |
 
+## Base de povos recebida em 27/11/2026
+
+O autor escolheu as raças de Pathfinder das comuns às raras. A referência de trabalho está em `POVOS_PATHFINDER.md`: Pathfinder 2e, incluindo comuns, incomuns e raras, com edição ainda não explicitada pelo autor. O catálogo consultado tem 54 ancestralidades. Seus povos serão integrados à história e aos lugares de Terastera durante a expansão; os reinos e as culturas de Golarion não foram adotados como parte do nosso continente. Heranças são uma camada distinta a detalhar.
+
+Nenhuma nova origem nacional, distribuição populacional ou regra de convivência foi fixada nesta consulta. A presença de um povo no catálogo tampouco confirma boatos específicos, como os relatos sobre demônios em RegalisFundios.
+
 ## Situação do protótipo existente
 
 Ponteclara, seus moradores e o Moinho Afogado continuam preservados no código e nos saves. **Sua posição em Terastera e seu papel no cenário definitivo estão em revisão narrativa.** Ainda não foi escolhido um reino para a vila, nem confirmado que seu moinho esteja ligado a qualquer mistério continental.
